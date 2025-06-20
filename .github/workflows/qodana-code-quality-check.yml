@@ -9,6 +9,7 @@ on:
 jobs:
   qodana:
     runs-on: ubuntu-latest
+    if: github.repository_owner != 'QubitPi'
     steps:
       - uses: actions/checkout@v3
         with:
