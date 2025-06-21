@@ -1,0 +1,90 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-06-21T03:45:39.029925435"><link rel="canonical" href="https://kotlinlang.org/docs/jvm-test-using-junit.html" data-react-helmet="true"><script>
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+        var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&amp;l=' + l : '';
+        j.async = true;
+        j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5P98');
+</script>
+<script src="https://resources.jetbrains.com/storage/help-app/v6/analytics.js"></script>
+<title>Test code using JUnit in JVM &ndash; tutorial | Kotlin Documentation</title><script type="application/json" id="virtual-toc-data">[{"id":"add-dependencies","level":0,"title":"Add dependencies","anchor":"#add-dependencies"},{"id":"add-the-code-to-test-it","level":0,"title":"Add the code to test it","anchor":"#add-the-code-to-test-it"},{"id":"create-a-test","level":0,"title":"Create a test","anchor":"#create-a-test"},{"id":"run-a-test","level":0,"title":"Run a test","anchor":"#run-a-test"},{"id":"what-s-next","level":0,"title":"What\u0027s next","anchor":"#what-s-next"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.css" rel="stylesheet"><link rel="icon" type="image/svg" sizes="16x16" href="https://kotlinlang.org/assets/images/favicon.svg?v2"><link rel="icon" type="image/x-icon" sizes="32x32" href="https://kotlinlang.org/assets/images/favicon.ico?v2"><link rel="icon" type="image/png" sizes="96x96" href="https://kotlinlang.org/assets/images/apple-touch-icon.png?v2"><link rel="icon" type="image/png" sizes="300x300" href="https://kotlinlang.org/assets/images/apple-touch-icon-72x72.png?v2"><link rel="icon" type="image/png" sizes="500x500" href="https://kotlinlang.org/assets/images/apple-touch-icon-114x114.png?v2"><meta name="image" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><!-- Open Graph --><meta property="og:title" content="Test code using JUnit in JVM &ndash; tutorial | Kotlin"><meta property="og:description" content=""><meta property="og:image" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><meta property="og:site_name" content="Kotlin Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="https://kotlinlang.org/docs/jvm-test-using-junit.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@kotlin"><meta name="twitter:title" content="Test code using JUnit in JVM &ndash; tutorial | Kotlin"><meta name="twitter:description" content=""><meta name="twitter:creator" content="@kotlin"><meta name="twitter:image:src" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "https://kotlinlang.org/docs/jvm-test-using-junit.html#webpage",
+    "url": "https://kotlinlang.org/docs/jvm-test-using-junit.html",
+    "name": "Test code using JUnit in JVM &ndash; tutorial | Kotlin",
+    "description": "",
+    "image": "https://kotlinlang.org/assets/images/open-graph/docs.png",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "https://kotlinlang.org/docs/#website",
+    "url": "https://kotlinlang.org/docs/",
+    "name": "Kotlin Help"
+}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="jvm-test-using-junit" data-main-title="Test code using JUnit in JVM – tutorial" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Platforms///JVM" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/jvm/jvm-test-using-junit.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="jvm-test-using-junit" id="jvm-test-using-junit.md">Test code using JUnit in JVM – tutorial</h1><p id="xd857v_2">This tutorial shows you how to write a simple unit test in a Kotlin/JVM project and run it with the Gradle build tool.</p><p id="xd857v_3">In this project, you'll use the <a href="https://kotlinlang.org/api/latest/kotlin.test/index.html" id="xd857v_10" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="xd857v_12">kotlin.test</code></a> library and run the test using JUnit. If you're working on a multiplatform app, see the <a href="https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-run-tests.html" id="xd857v_11" data-external="true" rel="noopener noreferrer" target="_blank">Kotlin Multiplatform tutorial</a>.</p><p id="xd857v_4">To get started, first download and install the latest version of <a href="https://www.jetbrains.com/idea/download/index.html" id="xd857v_13" data-external="true" rel="noopener noreferrer" target="_blank">IntelliJ IDEA</a>.</p><section class="chapter"><h2 id="add-dependencies" data-toc="add-dependencies">Add dependencies</h2><ol class="list _decimal" id="xd857v_14" type="1"><li class="list__item" id="xd857v_17"><p id="xd857v_20">Open a Kotlin project in IntelliJ IDEA. If you don't have a project, <a href="https://www.jetbrains.com/help/idea/create-your-first-kotlin-app.html#create-project" id="xd857v_21" data-external="true" rel="noopener noreferrer" target="_blank">create one</a>.</p></li><li class="list__item" id="xd857v_18"><p id="xd857v_22">Open the <code class="code" id="xd857v_24">build.gradle(.kts)</code> file and check that the <code class="code" id="xd857v_25">testImplementation</code> dependency is present. This dependency allows you to work with <code class="code" id="xd857v_26">kotlin.test</code> and <code class="code" id="xd857v_27">JUnit</code>:</p><div class="tabs" id="xd857v_23" data-group="build-script" data-anchors="[xd857v_28,xd857v_29]"><div class="tabs__content" data-gtm="tab" id="xd857v_28" data-sync-tabs="kotlin" data-title="Kotlin"><div class="code-block" data-lang="kotlin" data-title="Kotlin">
+dependencies {
+    // Other dependencies.
+    testImplementation(kotlin(&quot;test&quot;))
+}
+</div></div><div class="tabs__content" data-gtm="tab" id="xd857v_29" data-sync-tabs="groovy" data-title="Groovy"><div class="code-block" data-lang="groovy" data-title="Groovy">
+dependencies {
+    // Other dependencies.
+    testImplementation 'org.jetbrains.kotlin:kotlin-test'
+}
+</div></div></div></li><li class="list__item" id="xd857v_19"><p id="xd857v_32">Add the <code class="code" id="xd857v_36">test</code> task to the <code class="code" id="xd857v_37">build.gradle(.kts)</code> file:</p><div class="tabs" id="xd857v_33" data-group="build-script" data-anchors="[xd857v_38,xd857v_39]"><div class="tabs__content" data-gtm="tab" id="xd857v_38" data-sync-tabs="kotlin" data-title="Kotlin"><div class="code-block" data-lang="kotlin" data-title="Kotlin">
+tasks.test {
+    useJUnitPlatform()
+}
+</div></div><div class="tabs__content" data-gtm="tab" id="xd857v_39" data-sync-tabs="groovy" data-title="Groovy"><div class="code-block" data-lang="groovy" data-title="Groovy">
+test {
+    useJUnitPlatform()
+}
+</div></div></div><aside class="prompt" data-type="note" data-title="" id="xd857v_34"><p id="xd857v_42">If you use the <code class="code" id="xd857v_43">useJUnitPlatform()</code>function in your build script, the <code class="code" id="xd857v_44">kotlin-test</code> library automatically includes JUnit 5 as a dependency. This setup enables access to all JUnit 5 APIs, along with the <code class="code" id="xd857v_45">kotlin-test</code> API, in JVM-only projects and JVM tests of Kotlin Multiplatform (KMP) projects.</p></aside><p id="xd857v_35"></p></li></ol><p id="xd857v_15">Here's a complete code for the <code class="code" id="xd857v_46">build.gradle.kts</code>:</p><div class="code-collapse" data-lang="kotlin" data-is-expanded="false" data-synopsis="plugins {">
+plugins {
+    kotlin(&quot;jvm&quot;) version &quot;2.1.21&quot;
+}
+
+group = &quot;org.example&quot;
+version = &quot;1.0-SNAPSHOT&quot;
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation(kotlin(&quot;test&quot;))
+}
+
+tasks.test {
+    useJUnitPlatform()
+}
+</div></section><section class="chapter"><h2 id="add-the-code-to-test-it" data-toc="add-the-code-to-test-it">Add the code to test it</h2><ol class="list _decimal" id="xd857v_47" type="1"><li class="list__item" id="xd857v_48"><p id="xd857v_50">Open the <code class="code" id="xd857v_52">Main.kt</code> file in <code class="code" id="xd857v_53">src/main/kotlin</code>.</p><p id="xd857v_51">The <code class="code" id="xd857v_54">src</code> directory contains Kotlin source files and resources. The <code class="code" id="xd857v_55">Main.kt</code> file contains sample code that prints <code class="code" id="xd857v_56">Hello, World!</code>.</p></li><li class="list__item" id="xd857v_49"><p id="xd857v_57">Create the <code class="code" id="xd857v_59">Sample</code> class with the <code class="code" id="xd857v_60">sum()</code> function that adds two integers together:</p><div class="code-block" data-lang="kotlin">
+class Sample() {
+    fun sum(a: Int, b: Int): Int {
+        return a + b
+    }
+}
+</div></li></ol></section><section class="chapter"><h2 id="create-a-test" data-toc="create-a-test">Create a test</h2><ol class="list _decimal" id="xd857v_61" type="1"><li class="list__item" id="xd857v_62"><p id="xd857v_65">In IntelliJ IDEA, select <span class="control" id="xd857v_67">Code</span> | <span class="control" id="xd857v_68">Generate</span> | <span class="control" id="xd857v_69">Test...</span> for the <code class="code" id="xd857v_70">Sample</code> class:</p><figure id="xd857v_66"><img alt="Generate a test" src="images/generate-test.png" title="Generate a test" width="1244" height="754"></figure></li><li class="list__item" id="xd857v_63"><p id="xd857v_71">Specify the name of the test class. For example, <code class="code" id="xd857v_76">SampleTest</code>:</p><figure id="xd857v_72"><img alt="Create a test" src="images/create-test.png" title="Create a test" width="878" height="828"></figure><p id="xd857v_73">IntelliJ IDEA creates the <code class="code" id="xd857v_77">SampleTest.kt</code> file in the <code class="code" id="xd857v_78">test</code> directory. This directory contains Kotlin test source files and resources.</p><aside class="prompt" data-type="note" data-title="" id="xd857v_74"><p id="xd857v_79">You can also manually create a <code class="code" id="xd857v_80">*.kt</code> file for tests in <code class="code" id="xd857v_81">src/test/kotlin</code>.</p></aside><p id="xd857v_75"></p></li><li class="list__item" id="xd857v_64"><p id="xd857v_82">Add the test code for the <code class="code" id="xd857v_85">sum()</code> function in <code class="code" id="xd857v_86">SampleTest.kt</code>:</p><ul class="list _bullet" id="xd857v_83"><li class="list__item" id="xd857v_87"><p id="xd857v_89">Define the test <code class="code" id="xd857v_90">testSum()</code> function using the <a href="https://kotlinlang.org/api/latest/kotlin.test/kotlin.test/-test/index.html" id="xd857v_91" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="xd857v_92">@Test</code> annotation</a>.</p></li><li class="list__item" id="xd857v_88"><p id="xd857v_93">Check that the <code class="code" id="xd857v_94">sum()</code> function returns the expected value by using the <a href="https://kotlinlang.org/api/latest/kotlin.test/kotlin.test/assert-equals.html" id="xd857v_95" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="xd857v_96">assertEquals()</code></a> function.</p></li></ul><div class="code-block" data-lang="kotlin">
+import org.example.Sample
+import org.junit.jupiter.api.Assertions.*
+import kotlin.test.Test
+
+class SampleTest {
+    private val testSample: Sample = Sample()
+
+    @Test
+    fun testSum() {
+        val expected = 42
+        assertEquals(expected, testSample.sum(40, 2))
+    }
+}
+</div></li></ol></section><section class="chapter"><h2 id="run-a-test" data-toc="run-a-test">Run a test</h2><ol class="list _decimal" id="xd857v_97" type="1"><li class="list__item" id="xd857v_98"><p id="xd857v_102">Run the test using the gutter icon:</p><figure id="xd857v_103"><img alt="Run the test" src="images/run-test.png" title="Run the test" width="1242" height="780"></figure><aside class="prompt" data-type="note" data-title="" id="xd857v_104"><p id="xd857v_106">You can also run all project tests via the command-line interface using the <code class="code" id="xd857v_107">./gradlew check</code> command.</p></aside><p id="xd857v_105"></p></li><li class="list__item" id="xd857v_99"><p id="xd857v_108">Check the result in the <span class="control" id="xd857v_111">Run</span> tool window:</p><figure id="xd857v_109"><img alt="Check the test result. The test passed successfully" src="images/test-successful.png" title="Check the test result. The test passed successfully" width="1796" height="676"></figure><p id="xd857v_110">The test function was executed successfully.</p></li><li class="list__item" id="xd857v_100"><p id="xd857v_112">Make sure that the test works correctly by changing the <code class="code" id="xd857v_114">expected</code> variable value to 43:</p><div class="code-block" data-lang="kotlin">
+@Test
+fun testSum() {
+    val expected = 43
+    assertEquals(expected, classForTesting.sum(40, 2))
+}
+</div></li><li class="list__item" id="xd857v_101"><p id="xd857v_115">Run the test again and check the result:</p><figure id="xd857v_116"><img alt="Check the test result. The test has failed" src="images/test-failed.png" title="Check the test result. The test has failed" width="1642" height="690"></figure><p id="xd857v_117">The test execution failed.</p></li></ol></section><section class="chapter"><h2 id="what-s-next" data-toc="what-s-next">What's next</h2><p id="xd857v_118">Once you've finished your first test, you can:</p><ul class="list _bullet" id="xd857v_119"><li class="list__item" id="xd857v_120"><p id="xd857v_123">Write more tests using other <a href="https://kotlinlang.org/api/latest/kotlin.test/kotlin.test/" id="xd857v_124" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="xd857v_126">kotlin.test</code></a> functions. For example, use the <a href="https://kotlinlang.org/api/latest/kotlin.test/kotlin.test/assert-not-equals.html" id="xd857v_125" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="xd857v_127">assertNotEquals()</code></a> function.</p></li><li class="list__item" id="xd857v_121"><p id="xd857v_128">Improve your test output with the <a href="power-assert.html" id="xd857v_129">Kotlin Power-assert compiler plugin</a>. The plugin enriches the test output with contextual information.</p></li><li class="list__item" id="xd857v_122"><p id="xd857v_130"><a href="jvm-get-started-spring-boot.html" id="xd857v_131">Create your first server-side application</a> with Kotlin and Spring Boot.</p></li></ul></section><div class="last-modified">21 June 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="spring-ai-guide.html" class="navigation-links__prev">Build a Kotlin app that uses Spring AI to answer questions based on documents stored in Qdrant &mdash; tutorial</a><a href="mixing-java-kotlin-intellij.html" class="navigation-links__next">Mixing Java and Kotlin in one project &ndash; tutorial</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-06-21T03:45:36.920644892"><link rel="canonical" href="https://kotlinlang.org/docs/inline-functions.html" data-react-helmet="true"><script>
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+        var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&amp;l=' + l : '';
+        j.async = true;
+        j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5P98');
+</script>
+<script src="https://resources.jetbrains.com/storage/help-app/v6/analytics.js"></script>
+<title>Inline functions | Kotlin Documentation</title><script type="application/json" id="virtual-toc-data">[{"id":"noinline","level":0,"title":"noinline","anchor":"#noinline"},{"id":"non-local-jump-expressions","level":0,"title":"Non-local jump expressions","anchor":"#non-local-jump-expressions"},{"id":"returns","level":1,"title":"Returns","anchor":"#returns"},{"id":"break-and-continue","level":1,"title":"Break and continue","anchor":"#break-and-continue"},{"id":"reified-type-parameters","level":0,"title":"Reified type parameters","anchor":"#reified-type-parameters"},{"id":"inline-properties","level":0,"title":"Inline properties","anchor":"#inline-properties"},{"id":"restrictions-for-public-api-inline-functions","level":0,"title":"Restrictions for public API inline functions","anchor":"#restrictions-for-public-api-inline-functions"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.css" rel="stylesheet"><link rel="icon" type="image/svg" sizes="16x16" href="https://kotlinlang.org/assets/images/favicon.svg?v2"><link rel="icon" type="image/x-icon" sizes="32x32" href="https://kotlinlang.org/assets/images/favicon.ico?v2"><link rel="icon" type="image/png" sizes="96x96" href="https://kotlinlang.org/assets/images/apple-touch-icon.png?v2"><link rel="icon" type="image/png" sizes="300x300" href="https://kotlinlang.org/assets/images/apple-touch-icon-72x72.png?v2"><link rel="icon" type="image/png" sizes="500x500" href="https://kotlinlang.org/assets/images/apple-touch-icon-114x114.png?v2"><meta name="image" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><!-- Open Graph --><meta property="og:title" content="Inline functions | Kotlin"><meta property="og:description" content=""><meta property="og:image" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><meta property="og:site_name" content="Kotlin Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="https://kotlinlang.org/docs/inline-functions.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@kotlin"><meta name="twitter:title" content="Inline functions | Kotlin"><meta name="twitter:description" content=""><meta name="twitter:creator" content="@kotlin"><meta name="twitter:image:src" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "https://kotlinlang.org/docs/inline-functions.html#webpage",
+    "url": "https://kotlinlang.org/docs/inline-functions.html",
+    "name": "Inline functions | Kotlin",
+    "description": "",
+    "image": "https://kotlinlang.org/assets/images/open-graph/docs.png",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "https://kotlinlang.org/docs/#website",
+    "url": "https://kotlinlang.org/docs/",
+    "name": "Kotlin Help"
+}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="inline-functions" data-main-title="Inline functions" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Concepts///Functions" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/inline-functions.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="inline-functions" id="inline-functions.md">Inline functions</h1><p id="u4tsje_2">Using <a href="lambdas.html" id="u4tsje_16">higher-order functions</a> imposes certain runtime penalties: each function is an object, and it captures a closure. A closure is a scope of variables that can be accessed in the body of the function. Memory allocations (both for function objects and classes) and virtual calls introduce runtime overhead.</p><p id="u4tsje_3">But it appears that in many cases this kind of overhead can be eliminated by inlining the lambda expressions. The functions shown below are good examples of this situation. The <code class="code" id="u4tsje_17">lock()</code> function could be easily inlined at call-sites. Consider the following case:</p><div class="code-block" data-lang="kotlin">
+lock(l) { foo() }
+</div><p id="u4tsje_5">Instead of creating a function object for the parameter and generating a call, the compiler could emit the following code:</p><div class="code-block" data-lang="kotlin">
+l.lock()
+try {
+    foo()
+} finally {
+    l.unlock()
+}
+</div><p id="u4tsje_7">To make the compiler do this, mark the <code class="code" id="u4tsje_18">lock()</code> function with the <code class="code" id="u4tsje_19">inline</code> modifier:</p><div class="code-block" data-lang="kotlin">
+inline fun &lt;T&gt; lock(lock: Lock, body: () -&gt; T): T { ... }
+</div><p id="u4tsje_9">The <code class="code" id="u4tsje_20">inline</code> modifier affects both the function itself and the lambdas passed to it: all of those will be inlined into the call site.</p><p id="u4tsje_10">Inlining may cause the generated code to grow. However, if you do it in a reasonable way (avoiding inlining large functions), it will pay off in performance, especially at &quot;megamorphic&quot; call-sites inside loops.</p><section class="chapter"><h2 id="noinline" data-toc="noinline">noinline</h2><p id="u4tsje_21">If you don't want all of the lambdas passed to an inline function to be inlined, mark some of your function parameters with the <code class="code" id="u4tsje_25">noinline</code> modifier:</p><div class="code-block" data-lang="kotlin">
+inline fun foo(inlined: () -&gt; Unit, noinline notInlined: () -&gt; Unit) { ... }
+</div><p id="u4tsje_23">Inlinable lambdas can only be called inside inline functions or passed as inlinable arguments. <code class="code" id="u4tsje_26">noinline</code> lambdas, however, can be manipulated in any way you like, including being stored in fields or passed around.</p><aside class="prompt" data-type="note" data-title="" id="u4tsje_24"><p id="u4tsje_27">If an inline function has no inlinable function parameters and no <a href="#reified-type-parameters" id="u4tsje_28">reified type parameters</a>, the compiler will issue a warning, since inlining such functions is very unlikely to be beneficial (you can use the <code class="code" id="u4tsje_29">@Suppress(&quot;NOTHING_TO_INLINE&quot;)</code> annotation to suppress the warning if you are sure the inlining is needed).</p></aside></section><section class="chapter"><h2 id="non-local-jump-expressions" data-toc="non-local-jump-expressions">Non-local jump expressions</h2><section class="chapter"><h3 id="returns" data-toc="returns">Returns</h3><p id="u4tsje_32">In Kotlin, you can only use a normal, unqualified <code class="code" id="u4tsje_40">return</code> to exit a named function or an anonymous function. To exit a lambda, use a <a href="returns.html#return-to-labels" id="u4tsje_41">label</a>. A bare <code class="code" id="u4tsje_42">return</code> is forbidden inside a lambda because a lambda cannot make the enclosing function <code class="code" id="u4tsje_43">return</code>:</p><div class="code-block" data-lang="kotlin" data-runnable="true">
+fun ordinaryFunction(block: () -&gt; Unit) {
+    println(&quot;hi!&quot;)
+}
+//sampleStart
+fun foo() {
+    ordinaryFunction {
+        return // ERROR: cannot make `foo` return here
+    }
+}
+//sampleEnd
+fun main() {
+    foo()
+}
+</div><p id="u4tsje_34">But if the function the lambda is passed to is inlined, the return can be inlined, as well. So it is allowed:</p><div class="code-block" data-lang="kotlin" data-runnable="true">
+inline fun inlined(block: () -&gt; Unit) {
+    println(&quot;hi!&quot;)
+}
+//sampleStart
+fun foo() {
+    inlined {
+        return // OK: the lambda is inlined
+    }
+}
+//sampleEnd
+fun main() {
+    foo()
+}
+</div><p id="u4tsje_36">Such returns (located in a lambda, but exiting the enclosing function) are called <span class="emphasis" id="u4tsje_44">non-local</span> returns. This sort of construct usually occurs in loops, which inline functions often enclose:</p><div class="code-block" data-lang="kotlin">
+fun hasZeros(ints: List&lt;Int&gt;): Boolean {
+    ints.forEach {
+        if (it == 0) return true // returns from hasZeros
+    }
+    return false
+}
+</div><p id="u4tsje_38">Note that some inline functions may call the lambdas passed to them as parameters not directly from the function body, but from another execution context, such as a local object or a nested function. In such cases, non-local control flow is also not allowed in the lambdas. To indicate that the lambda parameter of the inline function cannot use non-local returns, mark the lambda parameter with the <code class="code" id="u4tsje_45">crossinline</code> modifier:</p><div class="code-block" data-lang="kotlin">
+inline fun f(crossinline body: () -&gt; Unit) {
+    val f = object: Runnable {
+        override fun run() = body()
+    }
+    // ...
+}
+</div></section><section class="chapter"><h3 id="break-and-continue" data-toc="break-and-continue">Break and continue</h3><aside class="prompt" data-type="warning" data-title="" id="u4tsje_46"><p id="u4tsje_49">This feature is currently <a href="kotlin-evolution-principles.html#pre-stable-features" id="u4tsje_50">In preview</a>. We're planning to stabilize it in future releases. To opt in, use the <code class="code" id="u4tsje_51">-Xnon-local-break-continue</code> compiler option. We would appreciate your feedback on it in <a href="https://youtrack.jetbrains.com/issue/KT-1436" id="u4tsje_52" data-external="true" rel="noopener noreferrer" target="_blank">YouTrack</a>.</p></aside><p id="u4tsje_47">Similar to non-local <code class="code" id="u4tsje_53">return</code>, you can apply <code class="code" id="u4tsje_54">break</code> and <code class="code" id="u4tsje_55">continue</code> <a href="returns.html" id="u4tsje_56">jump expressions</a> in lambdas passed as arguments to an inline function that encloses a loop:</p><div class="code-block" data-lang="kotlin">
+fun processList(elements: List&lt;Int&gt;): Boolean {
+    for (element in elements) {
+        val variable = element.nullableMethod() ?: run {
+            log.warning(&quot;Element is null or invalid, continuing...&quot;)
+            continue
+        }
+        if (variable == 0) return true
+    }
+    return false
+}
+</div></section></section><section class="chapter"><h2 id="reified-type-parameters" data-toc="reified-type-parameters">Reified type parameters</h2><p id="u4tsje_57">Sometimes you need to access a type passed as a parameter:</p><div class="code-block" data-lang="kotlin">
+fun &lt;T&gt; TreeNode.findParentOfType(clazz: Class&lt;T&gt;): T? {
+    var p = parent
+    while (p != null &amp;&amp; !clazz.isInstance(p)) {
+        p = p.parent
+    }
+    @Suppress(&quot;UNCHECKED_CAST&quot;)
+    return p as T?
+}
+</div><p id="u4tsje_59">Here, you walk up a tree and use reflection to check whether a node has a certain type. It's all fine, but the call site is not very pretty:</p><div class="code-block" data-lang="kotlin">
+treeNode.findParentOfType(MyTreeNode::class.java)
+</div><p id="u4tsje_61">A better solution would be to simply pass a type to this function. You can call it as follows:</p><div class="code-block" data-lang="kotlin">
+treeNode.findParentOfType&lt;MyTreeNode&gt;()
+</div><p id="u4tsje_63">To enable this, inline functions support <span class="emphasis" id="u4tsje_69">reified type parameters</span>, so you can write something like this:</p><div class="code-block" data-lang="kotlin">
+inline fun &lt;reified T&gt; TreeNode.findParentOfType(): T? {
+    var p = parent
+    while (p != null &amp;&amp; p !is T) {
+        p = p.parent
+    }
+    return p as T?
+}
+</div><p id="u4tsje_65">The code above qualifies the type parameter with the <code class="code" id="u4tsje_70">reified</code> modifier to make it accessible inside the function, almost as if it were a normal class. Since the function is inlined, no reflection is needed and normal operators like <code class="code" id="u4tsje_71">!is</code> and <code class="code" id="u4tsje_72">as</code> are now available for you to use. Also, you can call the function as shown above: <code class="code" id="u4tsje_73">myTree.findParentOfType&lt;MyTreeNodeType&gt;()</code>.</p><p id="u4tsje_66">Though reflection may not be needed in many cases, you can still use it with a reified type parameter:</p><div class="code-block" data-lang="kotlin">
+inline fun &lt;reified T&gt; membersOf() = T::class.members
+
+fun main(s: Array&lt;String&gt;) {
+    println(membersOf&lt;StringBuilder&gt;().joinToString(&quot;\n&quot;))
+}
+</div><p id="u4tsje_68">Normal functions (not marked as inline) cannot have reified parameters. A type that does not have a run-time representation (for example, a non-reified type parameter or a fictitious type like <code class="code" id="u4tsje_74">Nothing</code>) cannot be used as an argument for a reified type parameter.</p></section><section class="chapter"><h2 id="inline-properties" data-toc="inline-properties">Inline properties</h2><p id="u4tsje_75">The <code class="code" id="u4tsje_80">inline</code> modifier can be used on accessors of properties that don't have <a href="properties.html#backing-fields" id="u4tsje_81">backing fields</a>. You can annotate individual property accessors:</p><div class="code-block" data-lang="kotlin">
+val foo: Foo
+    inline get() = Foo()
+
+var bar: Bar
+    get() = ...
+    inline set(v) { ... }
+</div><p id="u4tsje_77">You can also annotate an entire property, which marks both of its accessors as <code class="code" id="u4tsje_82">inline</code>:</p><div class="code-block" data-lang="kotlin">
+inline var bar: Bar
+    get() = ...
+    set(v) { ... }
+</div><p id="u4tsje_79">At the call site, inline accessors are inlined as regular inline functions.</p></section><section class="chapter"><h2 id="restrictions-for-public-api-inline-functions" data-toc="restrictions-for-public-api-inline-functions">Restrictions for public API inline functions</h2><p id="u4tsje_83">When an inline function is <code class="code" id="u4tsje_87">public</code> or <code class="code" id="u4tsje_88">protected</code> but is not a part of a <code class="code" id="u4tsje_89">private</code> or <code class="code" id="u4tsje_90">internal</code> declaration, it is considered a <a href="visibility-modifiers.html#modules" id="u4tsje_91">module</a>'s public API. It can be called in other modules and is inlined at such call sites as well.</p><p id="u4tsje_84">This imposes certain risks of binary incompatibility caused by changes in the module that declares an inline function in case the calling module is not re-compiled after the change.</p><p id="u4tsje_85">To eliminate the risk of such incompatibility being introduced by a change in a <span class="emphasis" id="u4tsje_92">non</span>-public API of a module, public API inline functions are not allowed to use non-public-API declarations, i.e. <code class="code" id="u4tsje_93">private</code> and <code class="code" id="u4tsje_94">internal</code> declarations and their parts, in their bodies.</p><p id="u4tsje_86">An <code class="code" id="u4tsje_95">internal</code> declaration can be annotated with <code class="code" id="u4tsje_96">@PublishedApi</code>, which allows its use in public API inline functions. When an <code class="code" id="u4tsje_97">internal</code> inline function is marked as <code class="code" id="u4tsje_98">@PublishedApi</code>, its body is checked too, as if it were public.</p></section><div class="last-modified">21 June 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="lambdas.html" class="navigation-links__prev">Higher-order functions and lambdas</a><a href="operator-overloading.html" class="navigation-links__next">Operator overloading</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>

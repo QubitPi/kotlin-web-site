@@ -1,0 +1,341 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="robots" content="noindex"><meta name="built-on" content="2025-06-21T03:45:37.071751283"><link rel="canonical" href="https://kotlinlang.org/docs/kotlin-tour-intermediate-open-special-classes.html" data-react-helmet="true"><script>
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+        var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&amp;l=' + l : '';
+        j.async = true;
+        j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5P98');
+</script>
+<script src="https://resources.jetbrains.com/storage/help-app/v6/analytics.js"></script>
+<title>Intermediate: Open and special classes | Kotlin Documentation</title><script type="application/json" id="virtual-toc-data">[{"id":"open-classes","level":0,"title":"Open classes","anchor":"#open-classes"},{"id":"overriding-inherited-behavior","level":1,"title":"Overriding inherited behavior","anchor":"#overriding-inherited-behavior"},{"id":"open-classes-and-interfaces","level":1,"title":"Open classes and interfaces","anchor":"#open-classes-and-interfaces"},{"id":"special-classes","level":0,"title":"Special classes","anchor":"#special-classes"},{"id":"sealed-classes","level":1,"title":"Sealed classes","anchor":"#sealed-classes"},{"id":"enum-classes","level":1,"title":"Enum classes","anchor":"#enum-classes"},{"id":"inline-value-classes","level":1,"title":"Inline value classes","anchor":"#inline-value-classes"},{"id":"practice","level":0,"title":"Practice","anchor":"#practice"},{"id":"special-classes-exercise-1","level":1,"title":"Exercise 1","anchor":"#special-classes-exercise-1"},{"id":"special-classes-exercise-2","level":1,"title":"Exercise 2","anchor":"#special-classes-exercise-2"},{"id":"next-step","level":0,"title":"Next step","anchor":"#next-step"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.css" rel="stylesheet"><link rel="icon" type="image/svg" sizes="16x16" href="https://kotlinlang.org/assets/images/favicon.svg?v2"><link rel="icon" type="image/x-icon" sizes="32x32" href="https://kotlinlang.org/assets/images/favicon.ico?v2"><link rel="icon" type="image/png" sizes="96x96" href="https://kotlinlang.org/assets/images/apple-touch-icon.png?v2"><link rel="icon" type="image/png" sizes="300x300" href="https://kotlinlang.org/assets/images/apple-touch-icon-72x72.png?v2"><link rel="icon" type="image/png" sizes="500x500" href="https://kotlinlang.org/assets/images/apple-touch-icon-114x114.png?v2"><meta name="image" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><!-- Open Graph --><meta property="og:title" content="Intermediate: Open and special classes | Kotlin"><meta property="og:description" content=""><meta property="og:image" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><meta property="og:site_name" content="Kotlin Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="https://kotlinlang.org/docs/kotlin-tour-intermediate-open-special-classes.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@kotlin"><meta name="twitter:title" content="Intermediate: Open and special classes | Kotlin"><meta name="twitter:description" content=""><meta name="twitter:creator" content="@kotlin"><meta name="twitter:image:src" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "https://kotlinlang.org/docs/kotlin-tour-intermediate-open-special-classes.html#webpage",
+    "url": "https://kotlinlang.org/docs/kotlin-tour-intermediate-open-special-classes.html",
+    "name": "Intermediate: Open and special classes | Kotlin",
+    "description": "",
+    "image": "https://kotlinlang.org/assets/images/open-graph/docs.png",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "https://kotlinlang.org/docs/#website",
+    "url": "https://kotlinlang.org/docs/",
+    "name": "Kotlin Help"
+}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="kotlin-tour-intermediate-open-special-classes" data-main-title="Intermediate: Open and special classes" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="kotlin-tour-welcome.md|Take Kotlin tour" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/tour/kotlin-tour-intermediate-open-special-classes.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="kotlin-tour-intermediate-open-special-classes" id="kotlin-tour-intermediate-open-special-classes.md">Intermediate: Open and special classes</h1><div class="micro-format" data-content="{&quot;microFormat&quot;:[&quot;\u003cp id\u003d\&quot;an1m4v_9\&quot;\u003e\u003cimg alt\u003d\&quot;First step\&quot; src\u003d\&quot;images/icon-1-done.svg\&quot; class\u003d\&quot;inline-icon-\&quot; title\u003d\&quot;First step\&quot; id\u003d\&quot;an1m4v_10\&quot; width\u003d\&quot;20\&quot; height\u003d\&quot;20\&quot;\u003e \u003ca href\u003d\&quot;kotlin-tour-intermediate-extension-functions.html\&quot; id\u003d\&quot;an1m4v_11\&quot;\u003eExtension functions\u003c/a\u003e\u003cbr\u003e \u003cimg alt\u003d\&quot;Second step\&quot; src\u003d\&quot;images/icon-2-done.svg\&quot; class\u003d\&quot;inline-icon-\&quot; title\u003d\&quot;Second step\&quot; id\u003d\&quot;an1m4v_13\&quot; width\u003d\&quot;20\&quot; height\u003d\&quot;20\&quot;\u003e \u003ca href\u003d\&quot;kotlin-tour-intermediate-scope-functions.html\&quot; id\u003d\&quot;an1m4v_14\&quot;\u003eScope functions\u003c/a\u003e\u003cbr\u003e \u003cimg alt\u003d\&quot;Third step\&quot; src\u003d\&quot;images/icon-3-done.svg\&quot; class\u003d\&quot;inline-icon-\&quot; title\u003d\&quot;Third step\&quot; id\u003d\&quot;an1m4v_16\&quot; width\u003d\&quot;20\&quot; height\u003d\&quot;20\&quot;\u003e \u003ca href\u003d\&quot;kotlin-tour-intermediate-lambdas-receiver.html\&quot; id\u003d\&quot;an1m4v_17\&quot;\u003eLambda expressions with receiver\u003c/a\u003e\u003cbr\u003e \u003cimg alt\u003d\&quot;Fourth step\&quot; src\u003d\&quot;images/icon-4-done.svg\&quot; class\u003d\&quot;inline-icon-\&quot; title\u003d\&quot;Fourth step\&quot; id\u003d\&quot;an1m4v_19\&quot; width\u003d\&quot;20\&quot; height\u003d\&quot;20\&quot;\u003e \u003ca href\u003d\&quot;kotlin-tour-intermediate-classes-interfaces.html\&quot; id\u003d\&quot;an1m4v_20\&quot;\u003eClasses and interfaces\u003c/a\u003e\u003cbr\u003e \u003cimg alt\u003d\&quot;Fifth step\&quot; src\u003d\&quot;images/icon-5-done.svg\&quot; class\u003d\&quot;inline-icon-\&quot; title\u003d\&quot;Fifth step\&quot; id\u003d\&quot;an1m4v_22\&quot; width\u003d\&quot;20\&quot; height\u003d\&quot;20\&quot;\u003e \u003ca href\u003d\&quot;kotlin-tour-intermediate-objects.html\&quot; id\u003d\&quot;an1m4v_23\&quot;\u003eObjects\u003c/a\u003e\u003cbr\u003e \u003cimg alt\u003d\&quot;Fourth step\&quot; src\u003d\&quot;images/icon-6.svg\&quot; class\u003d\&quot;inline-icon-\&quot; title\u003d\&quot;Fourth step\&quot; id\u003d\&quot;an1m4v_25\&quot; width\u003d\&quot;20\&quot; height\u003d\&quot;20\&quot;\u003e \u003cb id\u003d\&quot;an1m4v_26\&quot;\u003eOpen and special classes\u003c/b\u003e\u003cbr\u003e \u003cimg alt\u003d\&quot;Seventh step\&quot; src\u003d\&quot;images/icon-7-todo.svg\&quot; class\u003d\&quot;inline-icon-\&quot; title\u003d\&quot;Seventh step\&quot; id\u003d\&quot;an1m4v_28\&quot; width\u003d\&quot;20\&quot; height\u003d\&quot;20\&quot;\u003e \u003ca href\u003d\&quot;kotlin-tour-intermediate-properties.html\&quot; id\u003d\&quot;an1m4v_29\&quot;\u003eProperties\u003c/a\u003e\u003cbr\u003e \u003cimg alt\u003d\&quot;Eighth step\&quot; src\u003d\&quot;images/icon-8-todo.svg\&quot; class\u003d\&quot;inline-icon-\&quot; title\u003d\&quot;Eighth step\&quot; id\u003d\&quot;an1m4v_31\&quot; width\u003d\&quot;20\&quot; height\u003d\&quot;20\&quot;\u003e \u003ca href\u003d\&quot;kotlin-tour-intermediate-null-safety.html\&quot; id\u003d\&quot;an1m4v_32\&quot;\u003eNull safety\u003c/a\u003e\u003cbr\u003e \u003cimg alt\u003d\&quot;Ninth step\&quot; src\u003d\&quot;images/icon-9-todo.svg\&quot; class\u003d\&quot;inline-icon-\&quot; title\u003d\&quot;Ninth step\&quot; id\u003d\&quot;an1m4v_34\&quot; width\u003d\&quot;20\&quot; height\u003d\&quot;20\&quot;\u003e \u003ca href\u003d\&quot;kotlin-tour-intermediate-libraries-and-apis.html\&quot; id\u003d\&quot;an1m4v_35\&quot;\u003eLibraries and APIs\u003c/a\u003e\u003c/p\u003e&quot;]}"></div><p id="an1m4v_4">In this chapter, you'll learn about open classes, how they work with interfaces, and other special types of classes available in Kotlin.</p><section class="chapter"><h2 id="open-classes" data-toc="open-classes">Open classes</h2><p id="an1m4v_36">If you can't use interfaces or abstract classes, you can explicitly make a class inheritable by declaring it as <span class="control" id="an1m4v_45">open</span>. To do this, use the <code class="code" id="an1m4v_46">open</code> keyword before your class declaration:</p><div class="code-block" data-lang="kotlin">
+open class Vehicle
+</div><p id="an1m4v_38">To create a class that inherits from another, add a colon after your class header followed by a call to the constructor of the parent class that you want to inherit from:</p><div class="code-block" data-lang="kotlin">
+class Car : Vehicle
+</div><p id="an1m4v_40">In this example, the <code class="code" id="an1m4v_47">Car</code> class inherits from the <code class="code" id="an1m4v_48">Vehicle</code> class:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-tour-classes-open-class">
+open class Vehicle(val make: String, val model: String)
+
+class Car(make: String, model: String, val numberOfDoors: Int) : Vehicle(make, model)
+
+fun main() {
+    // Creates an instance of the Car class
+    val car = Car(&quot;Toyota&quot;, &quot;Corolla&quot;, 4)
+
+    // Prints the details of the car
+    println(&quot;Car Info: Make - ${car.make}, Model - ${car.model}, Number of doors - ${car.numberOfDoors}&quot;)
+    // Car Info: Make - Toyota, Model - Corolla, Number of doors - 4
+}
+</div><p id="an1m4v_42">Just like when creating a normal class instance, if your class inherits from a parent class, then it must initialize all the parameters declared in the parent class header. So in the example, the <code class="code" id="an1m4v_49">car</code> instance of the <code class="code" id="an1m4v_50">Car</code> class initializes the parent class parameters: <code class="code" id="an1m4v_51">make</code> and <code class="code" id="an1m4v_52">model</code>.</p><section class="chapter"><h3 id="overriding-inherited-behavior" data-toc="overriding-inherited-behavior">Overriding inherited behavior</h3><p id="an1m4v_53">If you want to inherit from a class but change some of the behavior, you can override the inherited behavior.</p><p id="an1m4v_54">By default, it's not possible to override a member function or property of a parent class. Just like with abstract classes, you need to add special keywords.</p><section class="chapter"><h4 id="member-functions" data-toc="member-functions">Member functions</h4><p id="an1m4v_57">To allow a function in the parent class to be overridden, use the <code class="code" id="an1m4v_65">open</code> keyword before its declaration in the parent class:</p><div class="code-block" data-lang="kotlin">
+open fun displayInfo() {}
+</div><p id="an1m4v_59">To override an inherited member function, use the <code class="code" id="an1m4v_66">override</code> keyword before the function declaration in the child class:</p><div class="code-block" data-lang="kotlin">
+override fun displayInfo() {}
+</div><p id="an1m4v_61">For example:</p><div class="code-block" data-lang="kotlin" data-runnable="true" id="kotlin-tour-class-override-function">
+open class Vehicle(val make: String, val model: String) {
+    open fun displayInfo() {
+        println(&quot;Vehicle Info: Make - $make, Model - $model&quot;)
+    }
+}
+
+class Car(make: String, model: String, val numberOfDoors: Int) : Vehicle(make, model) {
+    override fun displayInfo() {
+        println(&quot;Car Info: Make - $make, Model - $model, Number of Doors - $numberOfDoors&quot;)
+    }
+}
+
+fun main() {
+    val car1 = Car(&quot;Toyota&quot;, &quot;Corolla&quot;, 4)
+    val car2 = Car(&quot;Honda&quot;, &quot;Civic&quot;, 2)
+
+    // Uses the overridden displayInfo() function
+    car1.displayInfo()
+    // Car Info: Make - Toyota, Model - Corolla, Number of Doors - 4
+    car2.displayInfo()
+    // Car Info: Make - Honda, Model - Civic, Number of Doors - 2
+}
+</div><p id="an1m4v_63">This example:</p><ul class="list _bullet" id="an1m4v_64"><li class="list__item" id="an1m4v_67"><p id="an1m4v_70">Creates two instances of the <code class="code" id="an1m4v_71">Car</code> class that inherit from the <code class="code" id="an1m4v_72">Vehicle</code> class: <code class="code" id="an1m4v_73">car1</code> and <code class="code" id="an1m4v_74">car2</code>.</p></li><li class="list__item" id="an1m4v_68"><p id="an1m4v_75">Overrides the <code class="code" id="an1m4v_76">displayInfo()</code> function in the <code class="code" id="an1m4v_77">Car</code> class to also print the number of doors.</p></li><li class="list__item" id="an1m4v_69"><p id="an1m4v_78">Calls the overridden <code class="code" id="an1m4v_79">displayInfo()</code> function on <code class="code" id="an1m4v_80">car1</code> and <code class="code" id="an1m4v_81">car2</code> instances.</p></li></ul></section><section class="chapter"><h4 id="properties" data-toc="properties">Properties</h4><p id="an1m4v_82">In Kotlin, it's not common practice to make a property inheritable by using the <code class="code" id="an1m4v_90">open</code> keyword and overriding it later. Most of the time, you use an abstract class or an interface where properties are inheritable by default.</p><p id="an1m4v_83">Properties inside open classes are accessible by their child class. In general, it's better to access them directly rather than override them with a new property.</p><p id="an1m4v_84">For example, let's say that you have a property called <code class="code" id="an1m4v_91">transmissionType</code> that you want to override later. The syntax for overriding properties is exactly the same as for overriding member functions. You can do this:</p><div class="code-block" data-lang="kotlin">
+open class Vehicle(val make: String, val model: String) {
+    open val transmissionType: String = &quot;Manual&quot;
+}
+
+class Car(make: String, model: String, val numberOfDoors: Int) : Vehicle(make, model) {
+    override val transmissionType: String = &quot;Automatic&quot;
+}
+</div><p id="an1m4v_86">However, this is not good practice. Instead, you can add the property to the constructor of your inheritable class and declare its value when you create the <code class="code" id="an1m4v_92">Car</code> child class:</p><div class="code-block" data-lang="kotlin">
+open class Vehicle(val make: String, val model: String, val transmissionType: String = &quot;Manual&quot;)
+
+class Car(make: String, model: String, val numberOfDoors: Int) : Vehicle(make, model, &quot;Automatic&quot;)
+</div><p id="an1m4v_88">Accessing properties directly, instead of overriding them, leads to simpler and more readable code. By declaring properties once in the parent class and passing their values through the constructor, you eliminate the need for unnecessary overrides in child classes.</p><p id="an1m4v_89">For more information about class inheritance and overriding class behavior, see <a href="inheritance.html" id="an1m4v_93">Inheritance</a>.</p></section></section><section class="chapter"><h3 id="open-classes-and-interfaces" data-toc="open-classes-and-interfaces">Open classes and interfaces</h3><p id="an1m4v_94">You can create a class that inherits a class <span class="control" id="an1m4v_96">and</span> implements multiple interfaces. In this case, you must declare the parent class first, after the colon, before listing the interfaces:</p><div class="code-block" data-lang="kotlin">
+// Define interfaces
+interface EcoFriendly {
+    val emissionLevel: String
+}
+
+interface ElectricVehicle {
+    val batteryCapacity: Double
+}
+
+// Parent class
+open class Vehicle(val make: String, val model: String)
+
+// Child class
+open class Car(make: String, model: String, val numberOfDoors: Int) : Vehicle(make, model)
+
+// New class that inherits from Car and implements two interfaces
+class ElectricCar(
+    make: String,
+    model: String,
+    numberOfDoors: Int,
+    val capacity: Double,
+    val emission: String
+) : Car(make, model, numberOfDoors), EcoFriendly, ElectricVehicle {
+    override val batteryCapacity: Double = capacity
+    override val emissionLevel: String = emission
+}
+</div></section></section><section class="chapter"><h2 id="special-classes" data-toc="special-classes">Special classes</h2><p id="an1m4v_97">In addition to abstract, open, and data classes, Kotlin has special types of classes designed for various purposes, such as restricting specific behavior or reducing the performance impact of creating small objects.</p><section class="chapter"><h3 id="sealed-classes" data-toc="sealed-classes">Sealed classes</h3><p id="an1m4v_101">There may be times when you want to restrict inheritance. You can do this with sealed classes. Sealed classes are a special type of <a href="kotlin-tour-intermediate-classes-interfaces.html#abstract-classes" id="an1m4v_111">abstract class</a>. Once you declare that a class is sealed, you can only create child classes from it within the same package. It's not possible to inherit from the sealed class outside of this scope.</p><aside class="prompt" data-type="tip" data-title="" id="an1m4v_102"><p id="an1m4v_112">A package is a collection of code with related classes and functions, typically within a directory. To learn more about packages in Kotlin, see <a href="packages.html" id="an1m4v_113">Packages and imports</a>.</p></aside><p id="an1m4v_103">To create a sealed class, use the <code class="code" id="an1m4v_114">sealed</code> keyword:</p><div class="code-block" data-lang="kotlin">
+sealed class Mammal
+</div><p id="an1m4v_105">Sealed classes are particularly useful when combined with a <code class="code" id="an1m4v_115">when</code> expression. By using a <code class="code" id="an1m4v_116">when</code> expression, you can define the behavior for all possible child classes. For example:</p><div class="code-block" data-lang="kotlin" data-runnable="true" id="kotlin-tour-sealed-classes">
+sealed class Mammal(val name: String)
+
+class Cat(val catName: String) : Mammal(catName)
+class Human(val humanName: String, val job: String) : Mammal(humanName)
+
+fun greetMammal(mammal: Mammal): String {
+    when (mammal) {
+        is Human -&gt; return &quot;Hello ${mammal.name}; You're working as a ${mammal.job}&quot;
+        is Cat -&gt; return &quot;Hello ${mammal.name}&quot;   
+    }
+}
+
+fun main() {
+    println(greetMammal(Cat(&quot;Snowy&quot;)))
+    // Hello Snowy
+}
+</div><p id="an1m4v_107">In the example:</p><ul class="list _bullet" id="an1m4v_108"><li class="list__item" id="an1m4v_117"><p id="an1m4v_123">There is a sealed class called <code class="code" id="an1m4v_124">Mammal</code> that has the <code class="code" id="an1m4v_125">name</code> parameter in the constructor.</p></li><li class="list__item" id="an1m4v_118"><p id="an1m4v_126">The <code class="code" id="an1m4v_127">Cat</code> class inherits from the <code class="code" id="an1m4v_128">Mammal</code> sealed class and uses the <code class="code" id="an1m4v_129">name</code> parameter from the <code class="code" id="an1m4v_130">Mammal</code> class as the <code class="code" id="an1m4v_131">catName</code> parameter in its own constructor.</p></li><li class="list__item" id="an1m4v_119"><p id="an1m4v_132">The <code class="code" id="an1m4v_133">Human</code> class inherits from the <code class="code" id="an1m4v_134">Mammal</code> sealed class and uses the <code class="code" id="an1m4v_135">name</code> parameter from the <code class="code" id="an1m4v_136">Mammal</code> class as the <code class="code" id="an1m4v_137">humanName</code> parameter in its own constructor. It also has the <code class="code" id="an1m4v_138">job</code> parameter in its constructor.</p></li><li class="list__item" id="an1m4v_120"><p id="an1m4v_139">The <code class="code" id="an1m4v_140">greetMammal()</code> function accepts an argument of <code class="code" id="an1m4v_141">Mammal</code> type and returns a string.</p></li><li class="list__item" id="an1m4v_121"><p id="an1m4v_142">Within the <code class="code" id="an1m4v_143">greetMammal()</code> function body, there's a <code class="code" id="an1m4v_144">when</code> expression that uses the <a href="typecasts.html#is-and-is-operators" id="an1m4v_145"><code class="code" id="an1m4v_147">is</code> operator</a> to check the type of <code class="code" id="an1m4v_146">mammal</code> and decide which action to perform.</p></li><li class="list__item" id="an1m4v_122"><p id="an1m4v_148">The <code class="code" id="an1m4v_149">main()</code> function calls the <code class="code" id="an1m4v_150">greetMammal()</code> function with an instance of the <code class="code" id="an1m4v_151">Cat</code> class and <code class="code" id="an1m4v_152">name</code> parameter called <code class="code" id="an1m4v_153">Snowy</code>.</p></li></ul><aside class="prompt" data-type="tip" data-title="" id="an1m4v_109"><p id="an1m4v_154">This tour discusses the <code class="code" id="an1m4v_155">is</code> operator in more detail in the <a href="kotlin-tour-intermediate-null-safety.html" id="an1m4v_156">Null safety</a> chapter.</p></aside><p id="an1m4v_110">For more information about sealed classes and their recommended use cases, see <a href="sealed-classes.html" id="an1m4v_157">Sealed classes and interfaces</a>.</p></section><section class="chapter"><h3 id="enum-classes" data-toc="enum-classes">Enum classes</h3><p id="an1m4v_158">Enum classes are useful when you want to represent a finite set of distinct values in a class. An enum class contains enum constants, which are themselves instances of the enum class.</p><p id="an1m4v_159">To create an enum class, use the <code class="code" id="an1m4v_175">enum</code> keyword:</p><div class="code-block" data-lang="kotlin">
+enum class State
+</div><p id="an1m4v_161">Let's say that you want to create an enum class that contains the different states of a process. Each enum constant must be separated by a comma <code class="code" id="an1m4v_176">,</code>:</p><div class="code-block" data-lang="kotlin">
+enum class State {
+    IDLE, RUNNING, FINISHED
+}
+</div><p id="an1m4v_163">The <code class="code" id="an1m4v_177">State</code> enum class has enum constants: <code class="code" id="an1m4v_178">IDLE</code>, <code class="code" id="an1m4v_179">RUNNING</code>, and <code class="code" id="an1m4v_180">FINISHED</code>. To access an enum constant, use the class name followed by a <code class="code" id="an1m4v_181">.</code> and the name of the enum constant:</p><div class="code-block" data-lang="kotlin">
+val state = State.RUNNING
+</div><p id="an1m4v_165">You can use this enum class with a <code class="code" id="an1m4v_182">when</code> expression to define the action to take depending on the value of the enum constant:</p><div class="code-block" data-lang="kotlin" data-runnable="true" id="kotlin-tour-enum-classes">
+enum class State {
+    IDLE, RUNNING, FINISHED
+}
+
+fun main() {
+    val state = State.RUNNING
+    val message = when (state) {
+        State.IDLE -&gt; &quot;It's idle&quot;
+        State.RUNNING -&gt; &quot;It's running&quot;
+        State.FINISHED -&gt; &quot;It's finished&quot;
+    }
+    println(message)
+    // It's running
+}
+</div><p id="an1m4v_167">Enum classes can have properties and member functions just like normal classes.</p><p id="an1m4v_168">For example, let's say you're working with HTML and you want to create an enum class containing some colors. You want each color to have a property, let's call it <code class="code" id="an1m4v_183">rgb</code>, that contains their RGB value as a hexadecimal. When creating the enum constants, you must initialize it with this property:</p><div class="code-block" data-lang="kotlin">
+enum class Color(val rgb: Int) {
+    RED(0xFF0000),
+    GREEN(0x00FF00),
+    BLUE(0x0000FF),
+    YELLOW(0xFFFF00)
+}
+</div><aside class="prompt" data-type="note" data-title="" id="an1m4v_170"><p id="an1m4v_184">Kotlin stores hexadecimals as integers, so the <code class="code" id="an1m4v_185">rgb</code> property has the <code class="code" id="an1m4v_186">Int</code> type, not the <code class="code" id="an1m4v_187">String</code> type.</p></aside><p id="an1m4v_171">To add a member function to this class, separate it from the enum constants with a semicolon <code class="code" id="an1m4v_188">;</code>:</p><div class="code-block" data-lang="kotlin" data-runnable="true" id="kotlin-tour-interface-enum-classes-members">
+enum class Color(val rgb: Int) {
+    RED(0xFF0000),
+    GREEN(0x00FF00),
+    BLUE(0x0000FF),
+    YELLOW(0xFFFF00);
+
+    fun containsRed() = (this.rgb and 0xFF0000 != 0)
+}
+
+fun main() {
+    val red = Color.RED
+    
+    // Calls containsRed() function on enum constant
+    println(red.containsRed())
+    // true
+
+    // Calls containsRed() function on enum constants via class names
+    println(Color.BLUE.containsRed())
+    // false
+  
+    println(Color.YELLOW.containsRed())
+    // true
+}
+</div><p id="an1m4v_173">In this example, the <code class="code" id="an1m4v_189">containsRed()</code> member function accesses the value of the enum constant's <code class="code" id="an1m4v_190">rgb</code> property using the <code class="code" id="an1m4v_191">this</code> keyword and checks if the hexadecimal value contains <code class="code" id="an1m4v_192">FF</code> as its first bits to return a boolean value.</p><p id="an1m4v_174">For more information, see <a href="enum-classes.html" id="an1m4v_193">Enum classes</a>.</p></section><section class="chapter"><h3 id="inline-value-classes" data-toc="inline-value-classes">Inline value classes</h3><p id="an1m4v_194">Sometimes in your code, you may want to create small objects from classes and use them only briefly. This approach can have a performance impact. Inline value classes are a special type of class that avoids this performance impact. However, they can only contain values.</p><p id="an1m4v_195">To create an inline value class, use the <code class="code" id="an1m4v_205">value</code> keyword and the <code class="code" id="an1m4v_206">@JvmInline</code> annotation:</p><div class="code-block" data-lang="kotlin">
+@JvmInline
+value class Email
+</div><aside class="prompt" data-type="tip" data-title="" id="an1m4v_197"><p id="an1m4v_207">The <code class="code" id="an1m4v_208">@JvmInline</code> annotation instructs Kotlin to optimize the code when it is compiled. To learn more, see <a href="annotations.html" id="an1m4v_209">Annotations</a>.</p></aside><p id="an1m4v_198">An inline value class <span class="control" id="an1m4v_210">must</span> have a single property initialized in the class header.</p><p id="an1m4v_199">Let's say that you want to create a class that collects an email address:</p><div class="code-block" data-lang="kotlin" data-runnable="true" id="kotlin-tour-inline-value-class">
+// The address property is initialized in the class header.
+@JvmInline
+value class Email(val address: String)
+
+fun sendEmail(email: Email) {
+    println(&quot;Sending email to ${email.address}&quot;)
+}
+
+fun main() {
+    val myEmail = Email(&quot;example@example.com&quot;)
+    sendEmail(myEmail)
+    // Sending email to example@example.com
+}
+</div><p id="an1m4v_201">In the example:</p><ul class="list _bullet" id="an1m4v_202"><li class="list__item" id="an1m4v_211"><p id="an1m4v_214"><code class="code" id="an1m4v_215">Email</code> is an inline value class that has one property in the class header: <code class="code" id="an1m4v_216">address</code>.</p></li><li class="list__item" id="an1m4v_212"><p id="an1m4v_217">The <code class="code" id="an1m4v_218">sendEmail()</code> function accepts objects with type <code class="code" id="an1m4v_219">Email</code> and prints a string to the standard output.</p></li><li class="list__item" id="an1m4v_213"><p id="an1m4v_220">The <code class="code" id="an1m4v_222">main()</code> function:</p><ul class="list _bullet" id="an1m4v_221"><li class="list__item" id="an1m4v_223"><p id="an1m4v_225">Creates an instance of the <code class="code" id="an1m4v_226">Email</code> class called <code class="code" id="an1m4v_227">email</code>.</p></li><li class="list__item" id="an1m4v_224"><p id="an1m4v_228">Calls the <code class="code" id="an1m4v_229">sendEmail()</code> function on the <code class="code" id="an1m4v_230">email</code> object.</p></li></ul></li></ul><p id="an1m4v_203">By using an inline value class, you make the class inlined and can use it directly in your code without creating an object. This can significantly reduce memory footprint and improve your code's runtime performance.</p><p id="an1m4v_204">For more information about inline value classes, see <a href="inline-classes.html" id="an1m4v_231">Inline value classes</a>.</p></section></section><section class="chapter"><h2 id="practice" data-toc="practice">Practice</h2><section class="chapter"><div class="collapse"><div class="collapse__title"><h3 id="special-classes-exercise-1" data-toc="special-classes-exercise-1">Exercise 1</h3></div><div class="collapse__content"><p id="an1m4v_234">You manage a delivery service and need a way to track the status of packages. Create a sealed class called <code class="code" id="an1m4v_239">DeliveryStatus</code>, containing data classes to represent the following statuses: <code class="code" id="an1m4v_240">Pending</code>, <code class="code" id="an1m4v_241">InTransit</code>, <code class="code" id="an1m4v_242">Delivered</code>, <code class="code" id="an1m4v_243">Canceled</code>. Complete the <code class="code" id="an1m4v_244">DeliveryStatus</code> class declaration so that the code in the <code class="code" id="an1m4v_245">main()</code> function runs successfully:</p><div class="table-wrapper"><table class="" id="an1m4v_235"><tbody></tbody></table></div><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-tour-special-classes-exercise-1">
+sealed class // Write your code here
+
+fun printDeliveryStatus(status: DeliveryStatus) {
+    when (status) {
+        is DeliveryStatus.Pending -&gt; {
+            println(&quot;The package is pending pickup from ${status.sender}.&quot;)
+        }
+        is DeliveryStatus.InTransit -&gt; {
+            println(&quot;The package is in transit and expected to arrive by ${status.estimatedDeliveryDate}.&quot;)
+        }
+        is DeliveryStatus.Delivered -&gt; {
+            println(&quot;The package was delivered to ${status.recipient} on ${status.deliveryDate}.&quot;)
+        }
+        is DeliveryStatus.Canceled -&gt; {
+            println(&quot;The delivery was canceled due to: ${status.reason}.&quot;)
+        }
+    }
+}
+
+fun main() {
+    val status1: DeliveryStatus = DeliveryStatus.Pending(&quot;Alice&quot;)
+    val status2: DeliveryStatus = DeliveryStatus.InTransit(&quot;2024-11-20&quot;)
+    val status3: DeliveryStatus = DeliveryStatus.Delivered(&quot;2024-11-18&quot;, &quot;Bob&quot;)
+    val status4: DeliveryStatus = DeliveryStatus.Canceled(&quot;Address not found&quot;)
+
+    printDeliveryStatus(status1)
+    // The package is pending pickup from Alice.
+    printDeliveryStatus(status2)
+    // The package is in transit and expected to arrive by 2024-11-20.
+    printDeliveryStatus(status3)
+    // The package was delivered to Bob on 2024-11-18.
+    printDeliveryStatus(status4)
+    // The delivery was canceled due to: Address not found.
+}
+</div><div class="table-wrapper"><table class="" id="an1m4v_237"><tbody></tbody></table></div><div class="code-collapse" data-lang="kotlin" id="kotlin-tour-special-classes-solution-1" data-is-expanded="false" data-synopsis="Example solution">
+sealed class DeliveryStatus {
+    data class Pending(val sender: String) : DeliveryStatus()
+    data class InTransit(val estimatedDeliveryDate: String) : DeliveryStatus()
+    data class Delivered(val deliveryDate: String, val recipient: String) : DeliveryStatus()
+    data class Canceled(val reason: String) : DeliveryStatus()
+}
+
+fun printDeliveryStatus(status: DeliveryStatus) {
+    when (status) {
+        is DeliveryStatus.Pending -&gt; {
+            println(&quot;The package is pending pickup from ${status.sender}.&quot;)
+        }
+        is DeliveryStatus.InTransit -&gt; {
+            println(&quot;The package is in transit and expected to arrive by ${status.estimatedDeliveryDate}.&quot;)
+        }
+        is DeliveryStatus.Delivered -&gt; {
+            println(&quot;The package was delivered to ${status.recipient} on ${status.deliveryDate}.&quot;)
+        }
+        is DeliveryStatus.Canceled -&gt; {
+            println(&quot;The delivery was canceled due to: ${status.reason}.&quot;)
+        }
+    }
+}
+
+fun main() {
+    val status1: DeliveryStatus = DeliveryStatus.Pending(&quot;Alice&quot;)
+    val status2: DeliveryStatus = DeliveryStatus.InTransit(&quot;2024-11-20&quot;)
+    val status3: DeliveryStatus = DeliveryStatus.Delivered(&quot;2024-11-18&quot;, &quot;Bob&quot;)
+    val status4: DeliveryStatus = DeliveryStatus.Canceled(&quot;Address not found&quot;)
+
+    printDeliveryStatus(status1)
+    // The package is pending pickup from Alice.
+    printDeliveryStatus(status2)
+    // The package is in transit and expected to arrive by 2024-11-20.
+    printDeliveryStatus(status3)
+    // The package was delivered to Bob on 2024-11-18.
+    printDeliveryStatus(status4)
+    // The delivery was canceled due to: Address not found.
+}
+</div></div></div></section><section class="chapter"><div class="collapse"><div class="collapse__title"><h3 id="special-classes-exercise-2" data-toc="special-classes-exercise-2">Exercise 2</h3></div><div class="collapse__content"><p id="an1m4v_246">In your program, you want to be able to handle different statuses and types of errors. You have a sealed class to capture the different statuses which are declared in data classes or objects. Complete the code below by creating an enum class called <code class="code" id="an1m4v_251">Problem</code> that represents the different problem types: <code class="code" id="an1m4v_252">NETWORK</code>, <code class="code" id="an1m4v_253">TIMEOUT</code>, and <code class="code" id="an1m4v_254">UNKNOWN</code>.</p><div class="table-wrapper"><table class="" id="an1m4v_247"><tbody></tbody></table></div><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-tour-special-classes-exercise-2">
+sealed class Status {
+    data object Loading : Status()
+    data class Error(val problem: Problem) : Status() {
+        // Write your code here
+    }
+
+    data class OK(val data: List&lt;String&gt;) : Status()
+}
+
+fun handleStatus(status: Status) {
+    when (status) {
+        is Status.Loading -&gt; println(&quot;Loading...&quot;)
+        is Status.OK -&gt; println(&quot;Data received: ${status.data}&quot;)
+        is Status.Error -&gt; when (status.problem) {
+            Status.Error.Problem.NETWORK -&gt; println(&quot;Network issue&quot;)
+            Status.Error.Problem.TIMEOUT -&gt; println(&quot;Request timed out&quot;)
+            Status.Error.Problem.UNKNOWN -&gt; println(&quot;Unknown error occurred&quot;)
+        }
+    }
+}
+
+fun main() {
+    val status1: Status = Status.Error(Status.Error.Problem.NETWORK)
+    val status2: Status = Status.OK(listOf(&quot;Data1&quot;, &quot;Data2&quot;))
+
+    handleStatus(status1)
+    // Network issue
+    handleStatus(status2)
+    // Data received: [Data1, Data2]
+}
+</div><div class="table-wrapper"><table class="" id="an1m4v_249"><tbody></tbody></table></div><div class="code-collapse" data-lang="kotlin" id="kotlin-tour-special-classes-solution-2" data-is-expanded="false" data-synopsis="Example solution">
+sealed class Status {
+    data object Loading : Status()
+    data class Error(val problem: Problem) : Status() {
+        enum class Problem {
+            NETWORK,
+            TIMEOUT,
+            UNKNOWN
+        }
+    }
+
+    data class OK(val data: List&lt;String&gt;) : Status()
+}
+
+fun handleStatus(status: Status) {
+    when (status) {
+        is Status.Loading -&gt; println(&quot;Loading...&quot;)
+        is Status.OK -&gt; println(&quot;Data received: ${status.data}&quot;)
+        is Status.Error -&gt; when (status.problem) {
+            Status.Error.Problem.NETWORK -&gt; println(&quot;Network issue&quot;)
+            Status.Error.Problem.TIMEOUT -&gt; println(&quot;Request timed out&quot;)
+            Status.Error.Problem.UNKNOWN -&gt; println(&quot;Unknown error occurred&quot;)
+        }
+    }
+}
+
+fun main() {
+    val status1: Status = Status.Error(Status.Error.Problem.NETWORK)
+    val status2: Status = Status.OK(listOf(&quot;Data1&quot;, &quot;Data2&quot;))
+
+    handleStatus(status1)
+    // Network issue
+    handleStatus(status2)
+    // Data received: [Data1, Data2]
+}
+</div></div></div></section></section><section class="chapter"><h2 id="next-step" data-toc="next-step">Next step</h2><p id="an1m4v_255"><a href="kotlin-tour-intermediate-properties.html" id="an1m4v_256">Intermediate: Properties</a></p></section><div class="last-modified">21 June 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="kotlin-tour-intermediate-objects.html" class="navigation-links__prev">Intermediate: Objects</a><a href="kotlin-tour-intermediate-properties.html" class="navigation-links__next">Intermediate: Properties</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>

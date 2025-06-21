@@ -1,0 +1,37 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-06-21T03:45:41.321877202"><link rel="canonical" href="https://kotlinlang.org/docs/characters.html" data-react-helmet="true"><script>
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+        var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&amp;l=' + l : '';
+        j.async = true;
+        j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5P98');
+</script>
+<script src="https://resources.jetbrains.com/storage/help-app/v6/analytics.js"></script>
+<title>Characters | Kotlin Documentation</title><script type="application/json" id="virtual-toc-data">[]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.css" rel="stylesheet"><link rel="icon" type="image/svg" sizes="16x16" href="https://kotlinlang.org/assets/images/favicon.svg?v2"><link rel="icon" type="image/x-icon" sizes="32x32" href="https://kotlinlang.org/assets/images/favicon.ico?v2"><link rel="icon" type="image/png" sizes="96x96" href="https://kotlinlang.org/assets/images/apple-touch-icon.png?v2"><link rel="icon" type="image/png" sizes="300x300" href="https://kotlinlang.org/assets/images/apple-touch-icon-72x72.png?v2"><link rel="icon" type="image/png" sizes="500x500" href="https://kotlinlang.org/assets/images/apple-touch-icon-114x114.png?v2"><meta name="image" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><!-- Open Graph --><meta property="og:title" content="Characters | Kotlin"><meta property="og:description" content=""><meta property="og:image" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><meta property="og:site_name" content="Kotlin Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="https://kotlinlang.org/docs/characters.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@kotlin"><meta name="twitter:title" content="Characters | Kotlin"><meta name="twitter:description" content=""><meta name="twitter:creator" content="@kotlin"><meta name="twitter:image:src" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "https://kotlinlang.org/docs/characters.html#webpage",
+    "url": "https://kotlinlang.org/docs/characters.html",
+    "name": "Characters | Kotlin",
+    "description": "",
+    "image": "https://kotlinlang.org/assets/images/open-graph/docs.png",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "https://kotlinlang.org/docs/#website",
+    "url": "https://kotlinlang.org/docs/",
+    "name": "Kotlin Help"
+}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="characters" data-main-title="Characters" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Concepts///Types///Basic types" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/characters.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="characters" id="characters.md">Characters</h1><p id="z9523b_2">Characters are represented by the type <code class="code" id="z9523b_10">Char</code>. Character literals go in single quotes: <code class="code" id="z9523b_11">'1'</code>.</p><aside class="prompt" data-type="note" data-title="" id="z9523b_3"><p id="z9523b_12">On the JVM, a character stored as primitive type: <code class="code" id="z9523b_13">char</code>, represents a 16-bit Unicode character.</p></aside><p id="z9523b_4">Special characters start from an escaping backslash <code class="code" id="z9523b_14">\</code>. The following escape sequences are supported:</p><ul class="list _bullet" id="z9523b_5"><li class="list__item" id="z9523b_15"><p id="z9523b_23"><code class="code" id="z9523b_24">\t</code> &ndash; tab</p></li><li class="list__item" id="z9523b_16"><p id="z9523b_25"><code class="code" id="z9523b_26">\b</code> &ndash; backspace</p></li><li class="list__item" id="z9523b_17"><p id="z9523b_27"><code class="code" id="z9523b_28">\n</code> &ndash; new line (LF)</p></li><li class="list__item" id="z9523b_18"><p id="z9523b_29"><code class="code" id="z9523b_30">\r</code> &ndash; carriage return (CR)</p></li><li class="list__item" id="z9523b_19"><p id="z9523b_31"><code class="code" id="z9523b_32">\'</code> &ndash; single quotation mark</p></li><li class="list__item" id="z9523b_20"><p id="z9523b_33"><code class="code" id="z9523b_34">\&quot;</code> &ndash; double quotation mark</p></li><li class="list__item" id="z9523b_21"><p id="z9523b_35"><code class="code" id="z9523b_36">\\</code> &ndash; backslash</p></li><li class="list__item" id="z9523b_22"><p id="z9523b_37"><code class="code" id="z9523b_38">\$</code> &ndash; dollar sign</p></li></ul><p id="z9523b_6">To encode any other character, use the Unicode escape sequence syntax: <code class="code" id="z9523b_39">'\uFF00'</code>.</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
+fun main() {
+//sampleStart
+    val aChar: Char = 'a'
+ 
+    println(aChar)
+    println('\n') // Prints an extra newline character
+    println('\uFF00')
+//sampleEnd
+}
+</div><p id="z9523b_8">If a value of character variable is a digit, you can explicitly convert it to an <code class="code" id="z9523b_40">Int</code> number using the <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/digit-to-int.html" id="z9523b_41" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="z9523b_42">digitToInt()</code></a> function.</p><aside class="prompt" data-type="note" data-title="" id="z9523b_9"><p id="z9523b_43">On the JVM, characters are boxed in Java classes when a nullable reference is needed, just like with <a href="numbers.html#boxing-and-caching-numbers-on-the-java-virtual-machine" id="z9523b_44">numbers</a>. Identity is not preserved by the boxing operation.</p></aside><div class="last-modified">21 June 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="booleans.html" class="navigation-links__prev">Booleans</a><a href="strings.html" class="navigation-links__next">Strings</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>

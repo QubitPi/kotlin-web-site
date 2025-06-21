@@ -1,0 +1,31 @@
+.root {
+  --horizontal-spacing-for-content: 32px;
+
+  @media (max-width: 640px) {
+    --horizontal-spacing-for-content: 16px;
+  }
+
+  display: flex;
+  flex-direction: column;
+
+  /* Fix global dokka styles */
+  .ktl-dokka-header nav > ul {
+    position: inherit;
+  }
+
+  /* / Fix global dokka styles */
+
+  @media (max-width: 759px) {
+    #leftColumn.open ~ #ktl-main #searchBar {
+      display: none;
+    }
+  }
+
+  #main {
+    box-sizing: border-box;
+  }
+
+  .main-content {
+    flex-grow: 1;
+  }
+}

@@ -1,0 +1,301 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-06-21T03:45:39.285053452"><link rel="canonical" href="https://kotlinlang.org/docs/metadata-jvm.html" data-react-helmet="true"><script>
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+        var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&amp;l=' + l : '';
+        j.async = true;
+        j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5P98');
+</script>
+<script src="https://resources.jetbrains.com/storage/help-app/v6/analytics.js"></script>
+<title>Kotlin Metadata JVM library | Kotlin Documentation</title><script type="application/json" id="virtual-toc-data">[{"id":"add-the-library-to-your-project","level":0,"title":"Add the library to your project","anchor":"#add-the-library-to-your-project"},{"id":"gradle","level":1,"title":"Gradle","anchor":"#gradle"},{"id":"maven","level":1,"title":"Maven","anchor":"#maven"},{"id":"read-and-parse-metadata","level":0,"title":"Read and parse metadata","anchor":"#read-and-parse-metadata"},{"id":"extract-metadata-from-bytecode","level":1,"title":"Extract metadata from bytecode","anchor":"#extract-metadata-from-bytecode"},{"id":"modify-metadata","level":0,"title":"Modify metadata","anchor":"#modify-metadata"},{"id":"create-metadata-from-scratch","level":0,"title":"Create metadata from scratch","anchor":"#create-metadata-from-scratch"},{"id":"what-s-next","level":0,"title":"What\u0027s next","anchor":"#what-s-next"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.css" rel="stylesheet"><link rel="icon" type="image/svg" sizes="16x16" href="https://kotlinlang.org/assets/images/favicon.svg?v2"><link rel="icon" type="image/x-icon" sizes="32x32" href="https://kotlinlang.org/assets/images/favicon.ico?v2"><link rel="icon" type="image/png" sizes="96x96" href="https://kotlinlang.org/assets/images/apple-touch-icon.png?v2"><link rel="icon" type="image/png" sizes="300x300" href="https://kotlinlang.org/assets/images/apple-touch-icon-72x72.png?v2"><link rel="icon" type="image/png" sizes="500x500" href="https://kotlinlang.org/assets/images/apple-touch-icon-114x114.png?v2"><meta name="image" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><!-- Open Graph --><meta property="og:title" content="Kotlin Metadata JVM library | Kotlin"><meta property="og:description" content=""><meta property="og:image" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><meta property="og:site_name" content="Kotlin Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="https://kotlinlang.org/docs/metadata-jvm.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@kotlin"><meta name="twitter:title" content="Kotlin Metadata JVM library | Kotlin"><meta name="twitter:description" content=""><meta name="twitter:creator" content="@kotlin"><meta name="twitter:image:src" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "https://kotlinlang.org/docs/metadata-jvm.html#webpage",
+    "url": "https://kotlinlang.org/docs/metadata-jvm.html",
+    "name": "Kotlin Metadata JVM library | Kotlin",
+    "description": "",
+    "image": "https://kotlinlang.org/assets/images/open-graph/docs.png",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "https://kotlinlang.org/docs/#website",
+    "url": "https://kotlinlang.org/docs/",
+    "name": "Kotlin Help"
+}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="metadata-jvm" data-main-title="Kotlin Metadata JVM library" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Official libraries" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/metadata-jvm.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="metadata-jvm" data-label-id="advanced" id="metadata-jvm.md">Kotlin Metadata JVM library</h1><p id="sf538e_3">The <a href="https://github.com/JetBrains/kotlin/tree/master/libraries/kotlinx-metadata/jvm" id="sf538e_11" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="sf538e_15">kotlin-metadata-jvm</code></a> library provides tools to read, modify, and generate metadata from Kotlin classes compiled for the JVM. This metadata, stored in the <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-metadata/" id="sf538e_12" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="sf538e_16">@Metadata</code></a> annotation within <code class="code" id="sf538e_13">.class</code> files, is used by libraries and tools such as <a href="reflection.html" id="sf538e_14"><code class="code" id="sf538e_17">kotlin-reflect</code></a> to inspect Kotlin-specific constructs such as properties, functions, and classes at runtime.</p><aside class="prompt" data-type="warning" data-title="" id="sf538e_4"><p id="sf538e_18">The <code class="code" id="sf538e_19">kotlin-reflect</code> library relies on metadata to retrieve Kotlin-specific class details at runtime. Any inconsistencies between the metadata and the actual <code class="code" id="sf538e_20">.class</code> file may lead to incorrect behavior when using reflection.</p></aside><p id="sf538e_5">You can also use the Kotlin Metadata JVM library to inspect various declaration attributes such as visibility or modality, or to generate and embed metadata into <code class="code" id="sf538e_21">.class</code> files.</p><section class="chapter"><h2 id="add-the-library-to-your-project" data-toc="add-the-library-to-your-project">Add the library to your project</h2><p id="sf538e_22">To include the Kotlin Metadata JVM library in your project, add the corresponding dependency configuration based on your build tool.</p><aside class="prompt" data-type="note" data-title="" id="sf538e_23"><p id="sf538e_26">The Kotlin Metadata JVM library follows the same versioning as the Kotlin compiler and standard library. Ensure that the version you use matches your project's Kotlin version.</p></aside><section class="chapter"><h3 id="gradle" data-toc="gradle">Gradle</h3><p id="sf538e_27">Add the following dependency to your <code class="code" id="sf538e_29">build.gradle(.kts)</code> file:</p><div class="tabs" id="sf538e_28" data-group="build-tool" data-anchors="[sf538e_30,sf538e_31]"><div class="tabs__content" data-gtm="tab" id="sf538e_30" data-sync-tabs="kotlin" data-title="Kotlin"><div class="code-block" data-lang="kotlin" data-title="Kotlin">
+// build.gradle.kts
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation(&quot;org.jetbrains.kotlin:kotlin-metadata-jvm:2.1.21&quot;)
+}
+</div></div><div class="tabs__content" data-gtm="tab" id="sf538e_31" data-sync-tabs="groovy" data-title="Groovy"><div class="code-block" data-lang="groovy" data-title="Groovy">
+// build.gradle
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.jetbrains.kotlin:kotlin-metadata-jvm:2.1.21'
+}
+</div></div></div></section><section class="chapter"><h3 id="maven" data-toc="maven">Maven</h3><p id="sf538e_34">Add the following dependency to your <code class="code" id="sf538e_36">pom.xml</code> file.</p><div class="code-block" data-lang="markup">
+&lt;project&gt;
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.jetbrains.kotlin&lt;/groupId&gt;
+            &lt;artifactId&gt;kotlin-metadata-jvm&lt;/artifactId&gt;
+            &lt;version&gt;2.1.21&lt;/version&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+    ...
+&lt;/project&gt;
+</div></section></section><section class="chapter"><h2 id="read-and-parse-metadata" data-toc="read-and-parse-metadata">Read and parse metadata</h2><p id="sf538e_37">The <code class="code" id="sf538e_46">kotlin-metadata-jvm</code> library extracts structured information from compiled Kotlin <code class="code" id="sf538e_47">.class</code> files, such as class names, visibility, and signatures. You can use it in projects that need to analyze compiled Kotlin declarations. For example, the <a href="https://github.com/Kotlin/binary-compatibility-validator" id="sf538e_48" data-external="true" rel="noopener noreferrer" target="_blank">Binary Compatibility Validator (BCV)</a> relies on <code class="code" id="sf538e_49">kotlin-metadata-jvm</code> to print public API declarations.</p><p id="sf538e_38">You can start exploring Kotlin class metadata by retrieving the <code class="code" id="sf538e_50">@Metadata</code> annotation from a compiled class using reflection:</p><div class="code-block" data-lang="kotlin">
+fun main() {
+    // Specifies the fully qualified name of the class
+    val clazz = Class.forName(&quot;org.example.SampleClass&quot;)
+
+    // Retrieves the @Metadata annotation
+    val metadata = clazz.getAnnotation(Metadata::class.java)
+
+    // Checks if the metadata is present
+    if (metadata != null) {
+        println(&quot;This is a Kotlin class with metadata.&quot;)
+    } else {
+        println(&quot;This is not a Kotlin class.&quot;)
+    }
+}
+</div><p id="sf538e_40">After retrieving the <code class="code" id="sf538e_51">@Metadata</code> annotation, use either the <a href="https://kotlinlang.org/api/kotlinx-metadata-jvm/kotlin-metadata-jvm/kotlin.metadata.jvm/-kotlin-class-metadata/-companion/read-lenient.html" id="sf538e_52" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="sf538e_55">readLenient()</code></a> or the <a href="https://kotlinlang.org/api/kotlinx-metadata-jvm/kotlin-metadata-jvm/kotlin.metadata.jvm/-kotlin-class-metadata/-companion/read-strict.html" id="sf538e_53" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="sf538e_56">readStrict()</code></a> function from the <a href="https://kotlinlang.org/api/kotlinx-metadata-jvm/kotlin-metadata-jvm/kotlin.metadata.jvm/-kotlin-class-metadata/" id="sf538e_54" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="sf538e_57">KotlinClassMetadata</code></a> API to parse it. These functions extract detailed information about classes or files, while addressing different compatibility requirements:</p><ul class="list _bullet" id="sf538e_41"><li class="list__item" id="sf538e_58"><p id="sf538e_60"><code class="code" id="sf538e_61">readLenient()</code>: Use this function to read metadata, including metadata generated by newer Kotlin compiler versions. This function doesn't support modifying or writing metadata.</p></li><li class="list__item" id="sf538e_59"><p id="sf538e_62"><code class="code" id="sf538e_65">readStrict()</code>: Use this function when you need to modify and write metadata. The <code class="code" id="sf538e_66">readStrict()</code> function only works with metadata generated by Kotlin compiler versions fully supported by your project.</p><aside class="prompt" data-type="note" data-title="" id="sf538e_63"><p id="sf538e_67">The <code class="code" id="sf538e_69">readStrict()</code> function supports metadata formats up to one version beyond <a href="https://kotlinlang.org/api/kotlinx-metadata-jvm/kotlin-metadata-jvm/kotlin.metadata.jvm/-jvm-metadata-version/-companion/-l-a-t-e-s-t_-s-t-a-b-l-e_-s-u-p-p-o-r-t-e-d.html" id="sf538e_70" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="sf538e_74">JvmMetadataVersion.LATEST_STABLE_SUPPORTED</code></a>, which corresponds to the latest Kotlin version used in the project. For example, if your project depends on <code class="code" id="sf538e_71">kotlin-metadata-jvm:2.1.0</code>, <code class="code" id="sf538e_72">readStrict()</code> can process metadata up to Kotlin <code class="code" id="sf538e_73">2.2.x</code>; otherwise, it throws an error to prevent mishandling unknown formats.</p><p id="sf538e_68">For more information, see the <a href="https://github.com/JetBrains/kotlin/blob/master/libraries/kotlinx-metadata/jvm/ReadMe.md#detailed-explanation" id="sf538e_75" data-external="true" rel="noopener noreferrer" target="_blank">Kotlin Metadata GitHub repository</a>.</p></aside><p id="sf538e_64"></p></li></ul><p id="sf538e_42">When parsing metadata, the <code class="code" id="sf538e_76">KotlinClassMetadata</code> instance provides structured information about class or file-level declarations. For classes, use the <a href="https://kotlinlang.org/api/kotlinx-metadata-jvm/kotlin-metadata-jvm/kotlin.metadata.jvm/-kotlin-class-metadata/-class/km-class.html" id="sf538e_77" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="sf538e_79">kmClass</code></a> property to analyze detailed class-level metadata, such as the class name, functions, properties, and attributes like visibility. For file-level declarations, the metadata is represented by the <code class="code" id="sf538e_78">kmPackage</code> property, which includes top-level functions and properties from file facades generated by the Kotlin compiler.</p><p id="sf538e_43">The following code example demonstrates how to use <code class="code" id="sf538e_80">readLenient()</code> to parse metadata, analyze class-level details with <code class="code" id="sf538e_81">kmClass</code>, and retrieve file-level declarations with <code class="code" id="sf538e_82">kmPackage</code>:</p><div class="code-block" data-lang="kotlin">
+// Imports the necessary libraries
+import kotlin.metadata.jvm.*
+import kotlin.metadata.*
+
+fun main() {
+    // Specifies the fully qualified class name
+    val className = &quot;org.example.SampleClass&quot;
+
+    try {
+        // Retrieves the class object for the specified name
+        val clazz = Class.forName(className)
+
+        // Retrieves the @Metadata annotation
+        val metadataAnnotation = clazz.getAnnotation(Metadata::class.java)
+        if (metadataAnnotation != null) {
+            println(&quot;Kotlin Metadata found for class: $className&quot;)
+
+            // Parses metadata using the readLenient() function
+            val metadata = KotlinClassMetadata.readLenient(metadataAnnotation)
+            when (metadata) {
+                is KotlinClassMetadata.Class -&gt; {
+                    val kmClass = metadata.kmClass
+                    println(&quot;Class name: ${kmClass.name}&quot;)
+
+                    // Iterates over functions and checks visibility
+                    kmClass.functions.forEach { function -&gt;
+                        val visibility = function.visibility
+                        println(&quot;Function: ${function.name}, Visibility: $visibility&quot;)
+                    }
+                }
+                is KotlinClassMetadata.FileFacade -&gt; {
+                    val kmPackage = metadata.kmPackage
+
+                    // Iterates over functions and checks visibility
+                    kmPackage.functions.forEach { function -&gt;
+                        val visibility = function.visibility
+                        println(&quot;Function: ${function.name}, Visibility: $visibility&quot;)
+                    }
+                }
+                else -&gt; {
+                    println(&quot;Unsupported metadata type: $metadata&quot;)
+                }
+            }
+        } else {
+            println(&quot;No Kotlin Metadata found for class: $className&quot;)
+        }
+    } catch (e: ClassNotFoundException) {
+        println(&quot;Class not found: $className&quot;)
+    } catch (e: Exception) {
+        println(&quot;Error processing metadata: ${e.message}&quot;)
+        e.printStackTrace()
+    }
+}
+</div><section class="chapter"><h3 id="extract-metadata-from-bytecode" data-toc="extract-metadata-from-bytecode">Extract metadata from bytecode</h3><p id="sf538e_83">While you can retrieve metadata using reflection, another approach is to extract it from bytecode using a bytecode manipulation framework such as <a href="https://asm.ow2.io/" id="sf538e_88" data-external="true" rel="noopener noreferrer" target="_blank">ASM</a>.</p><p id="sf538e_84">You can do this by following these steps:</p><ol class="list _decimal" id="sf538e_85" type="1"><li class="list__item" id="sf538e_89"><p id="sf538e_93">Read the bytecode of a <code class="code" id="sf538e_94">.class</code> file using the ASM library's <code class="code" id="sf538e_95">ClassReader</code> class. This class processes the compiled file and populates a <code class="code" id="sf538e_96">ClassNode</code> object, which represents the class structure.</p></li><li class="list__item" id="sf538e_90"><p id="sf538e_97">Extract the <code class="code" id="sf538e_98">@Metadata</code> from the <code class="code" id="sf538e_99">ClassNode</code> object. The example below uses a custom extension function <code class="code" id="sf538e_100">findAnnotation()</code> for this.</p></li><li class="list__item" id="sf538e_91"><p id="sf538e_101">Parse the extracted metadata using the <code class="code" id="sf538e_102">KotlinClassMetadata.readLenient()</code> function.</p></li><li class="list__item" id="sf538e_92"><p id="sf538e_103">Inspect the parsed metadata with the <code class="code" id="sf538e_104">kmClass</code> and <code class="code" id="sf538e_105">kmPackage</code> properties.</p></li></ol><p id="sf538e_86">Here's an example:</p><div class="code-block" data-lang="kotlin">
+// Imports the necessary libraries
+import kotlin.metadata.jvm.*
+import kotlin.metadata.*
+import org.objectweb.asm.*
+import org.objectweb.asm.tree.*
+import java.io.File
+
+// Checks if an annotation refers to a specific name
+fun AnnotationNode.refersToName(name: String) =
+    desc.startsWith('L') &amp;&amp; desc.endsWith(';') &amp;&amp; desc.regionMatches(1, name, 0, name.length)
+
+// Retrieves annotation values by key
+private fun List&lt;Any&gt;.annotationValue(key: String): Any? {
+    for (index in (0 until size / 2)) {
+        if (this[index * 2] == key) {
+            return this[index * 2 + 1]
+        }
+    }
+    return null
+}
+
+// Defines a custom extension function to locate an annotation by its name in a ClassNode
+fun ClassNode.findAnnotation(annotationName: String, includeInvisible: Boolean = false): AnnotationNode? {
+    val visible = visibleAnnotations?.firstOrNull { it.refersToName(annotationName) }
+    if (!includeInvisible) return visible
+    return visible ?: invisibleAnnotations?.firstOrNull { it.refersToName(annotationName) }
+}
+
+// Operator to simplify retrieving annotation values
+operator fun AnnotationNode.get(key: String): Any? = values.annotationValue(key)
+
+// Extracts Kotlin metadata from a class node
+fun ClassNode.readMetadataLenient(): KotlinClassMetadata? {
+    val metadataAnnotation = findAnnotation(&quot;kotlin/Metadata&quot;, false) ?: return null
+    @Suppress(&quot;UNCHECKED_CAST&quot;)
+    val metadata = Metadata(
+        kind = metadataAnnotation[&quot;k&quot;] as Int?,
+        metadataVersion = (metadataAnnotation[&quot;mv&quot;] as List&lt;Int&gt;?)?.toIntArray(),
+        data1 = (metadataAnnotation[&quot;d1&quot;] as List&lt;String&gt;?)?.toTypedArray(),
+        data2 = (metadataAnnotation[&quot;d2&quot;] as List&lt;String&gt;?)?.toTypedArray(),
+        extraString = metadataAnnotation[&quot;xs&quot;] as String?,
+        packageName = metadataAnnotation[&quot;pn&quot;] as String?,
+        extraInt = metadataAnnotation[&quot;xi&quot;] as Int?
+    )
+    return KotlinClassMetadata.readLenient(metadata)
+}
+
+// Converts a file to a ClassNode for bytecode inspection
+fun File.toClassNode(): ClassNode {
+    val node = ClassNode()
+    this.inputStream().use { ClassReader(it).accept(node, ClassReader.SKIP_CODE) }
+    return node
+}
+
+fun main() {
+    val classFilePath = &quot;build/classes/kotlin/main/org/example/SampleClass.class&quot;
+    val classFile = File(classFilePath)
+
+    // Reads the bytecode and processes it into a ClassNode object
+    val classNode = classFile.toClassNode()
+
+    // Locates the @Metadata annotation and reads it leniently
+    val metadata = classNode.readMetadataLenient()
+    if (metadata != null &amp;&amp; metadata is KotlinClassMetadata.Class) {
+        // Inspects the parsed metadata
+        val kmClass = metadata.kmClass
+
+        // Prints class details
+        println(&quot;Class name: ${kmClass.name}&quot;)
+        println(&quot;Functions:&quot;)
+        kmClass.functions.forEach { function -&gt;
+            println(&quot;- ${function.name}, Visibility: ${function.visibility}&quot;)
+        }
+    }
+}
+</div></section></section><section class="chapter"><h2 id="modify-metadata" data-toc="modify-metadata">Modify metadata</h2><p id="sf538e_106">When using tools like <a href="https://github.com/Guardsquare/proguard" id="sf538e_113" data-external="true" rel="noopener noreferrer" target="_blank">ProGuard</a> to shrink and optimize bytecode, some declarations may be removed from <code class="code" id="sf538e_114">.class</code> files. ProGuard automatically updates metadata to keep it consistent with the modified bytecode.</p><p id="sf538e_107">However, if you're developing a custom tool that modifies Kotlin bytecode in a similar way, you need to ensure that metadata is adjusted accordingly. With the <code class="code" id="sf538e_115">kotlin-metadata-jvm</code> library, you can update declarations, adjust attributes, and remove specific elements.</p><p id="sf538e_108">For example, if you use a JVM tool that deletes private methods from Java class files, you must also delete private functions from Kotlin metadata to maintain consistency:</p><ol class="list _decimal" id="sf538e_109" type="1"><li class="list__item" id="sf538e_116"><p id="sf538e_119">Parse the metadata by using the <code class="code" id="sf538e_120">readStrict()</code> function to load the <code class="code" id="sf538e_121">@Metadata</code> annotation into a structured <code class="code" id="sf538e_122">KotlinClassMetadata</code> object.</p></li><li class="list__item" id="sf538e_117"><p id="sf538e_123">Apply modifications by adjusting the metadata, such as filtering functions or altering attributes, directly within <code class="code" id="sf538e_124">kmClass</code> or other metadata structures.</p></li><li class="list__item" id="sf538e_118"><p id="sf538e_125">Use the <a href="https://kotlinlang.org/api/kotlinx-metadata-jvm/kotlin-metadata-jvm/kotlin.metadata.jvm/-kotlin-class-metadata/write.html" id="sf538e_126" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="sf538e_128">write()</code></a> function to encode the modified metadata into a new <code class="code" id="sf538e_127">@Metadata</code> annotation.</p></li></ol><p id="sf538e_110">Here's an example where private functions are removed from a class's metadata:</p><div class="code-block" data-lang="kotlin">
+// Imports the necessary libraries
+import kotlin.metadata.jvm.*
+import kotlin.metadata.*
+
+fun main() {
+    // Specifies the fully qualified class name
+    val className = &quot;org.example.SampleClass&quot;
+
+    try {
+        // Retrieves the class object for the specified name
+        val clazz = Class.forName(className)
+
+        // Retrieves the @Metadata annotation
+        val metadataAnnotation = clazz.getAnnotation(Metadata::class.java)
+        if (metadataAnnotation != null) {
+            println(&quot;Kotlin Metadata found for class: $className&quot;)
+
+            // Parses metadata using the readStrict() function
+            val metadata = KotlinClassMetadata.readStrict(metadataAnnotation)
+            if (metadata is KotlinClassMetadata.Class) {
+                val kmClass = metadata.kmClass
+
+                // Removes private functions from the class metadata
+                kmClass.functions.removeIf { it.visibility == Visibility.PRIVATE }
+                println(&quot;Removed private functions. Remaining functions: ${kmClass.functions.map { it.name }}&quot;)
+
+                // Serializes the modified metadata back
+                val newMetadata = metadata.write()
+                // After modifying the metadata, you need to write it into the class file
+                // To do so, you can use a bytecode manipulation framework such as ASM
+                
+                println(&quot;Modified metadata: ${newMetadata}&quot;)
+            } else {
+                println(&quot;The metadata is not a class.&quot;)
+            }
+        } else {
+            println(&quot;No Kotlin Metadata found for class: $className&quot;)
+        }
+    } catch (e: ClassNotFoundException) {
+        println(&quot;Class not found: $className&quot;)
+    } catch (e: Exception) {
+        println(&quot;Error processing metadata: ${e.message}&quot;)
+        e.printStackTrace()
+    }
+}
+</div><aside class="prompt" data-type="tip" data-title="" id="sf538e_112"><p id="sf538e_129">Instead of separately calling <code class="code" id="sf538e_130">readStrict()</code> and <code class="code" id="sf538e_131">write()</code>, you can use the <a href="https://kotlinlang.org/api/kotlinx-metadata-jvm/kotlin-metadata-jvm/kotlin.metadata.jvm/-kotlin-class-metadata/-companion/transform.html" id="sf538e_132" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="sf538e_133">transform()</code></a> function. This function parses metadata, applies transformations through a lambda, and writes the modified metadata automatically.</p></aside></section><section class="chapter"><h2 id="create-metadata-from-scratch" data-toc="create-metadata-from-scratch">Create metadata from scratch</h2><p id="sf538e_134">To create metadata for a Kotlin class file from scratch using the Kotlin Metadata JVM library:</p><ol class="list _decimal" id="sf538e_135" type="1"><li class="list__item" id="sf538e_139"><p id="sf538e_144">Create an instance of <code class="code" id="sf538e_145">KmClass</code>, <code class="code" id="sf538e_146">KmPackage</code>, or <code class="code" id="sf538e_147">KmLambda</code>, depending on the type of metadata you want to generate.</p></li><li class="list__item" id="sf538e_140"><p id="sf538e_148">Add attributes to the instance, such as the class name, visibility, constructors, and function signatures.</p><aside class="prompt" data-type="tip" data-title="" id="sf538e_149"><p id="sf538e_151">You can use the <code class="code" id="sf538e_152">apply()</code> <a href="scope-functions.html" id="sf538e_153">scope function</a> to reduce boilerplate code while setting properties.</p></aside><p id="sf538e_150"></p></li><li class="list__item" id="sf538e_141"><p id="sf538e_154">Use the instance to create a <code class="code" id="sf538e_155">KotlinClassMetadata</code> object, which can generate a <code class="code" id="sf538e_156">@Metadata</code> annotation.</p></li><li class="list__item" id="sf538e_142"><p id="sf538e_157">Specify the metadata version, such as <code class="code" id="sf538e_158">JvmMetadataVersion.LATEST_STABLE_SUPPORTED</code>, and set flags (<code class="code" id="sf538e_159">0</code> for no flags, or copy flags from existing files if necessary).</p></li><li class="list__item" id="sf538e_143"><p id="sf538e_160">Use the <code class="code" id="sf538e_161">ClassWriter</code> class from <a href="https://asm.ow2.io/" id="sf538e_162" data-external="true" rel="noopener noreferrer" target="_blank">ASM</a> to embed metadata fields, such as <code class="code" id="sf538e_163">kind</code>, <code class="code" id="sf538e_164">data1</code> and <code class="code" id="sf538e_165">data2</code> into a <code class="code" id="sf538e_166">.class</code> file.</p></li></ol><p id="sf538e_136">The following example demonstrates how to create metadata for a simple Kotlin class:</p><div class="code-block" data-lang="kotlin">
+// Imports the necessary libraries
+import kotlin.metadata.*
+import kotlin.metadata.jvm.*
+import org.objectweb.asm.*
+
+fun main() {
+    // Creates a KmClass instance
+    val klass = KmClass().apply {
+        name = &quot;Hello&quot;
+        visibility = Visibility.PUBLIC
+        constructors += KmConstructor().apply {
+            visibility = Visibility.PUBLIC
+            signature = JvmMethodSignature(&quot;&lt;init&gt;&quot;, &quot;()V&quot;)
+        }
+        functions += KmFunction(&quot;hello&quot;).apply {
+            visibility = Visibility.PUBLIC
+            returnType = KmType().apply {
+                classifier = KmClassifier.Class(&quot;kotlin/String&quot;)
+            }
+            signature = JvmMethodSignature(&quot;hello&quot;, &quot;()Ljava/lang/String;&quot;)
+        }
+    }
+
+    // Serializes a KotlinClassMetadata.Class instance, including the version and flags, into a @kotlin.Metadata annotation
+    val annotationData = KotlinClassMetadata.Class(
+        klass, JvmMetadataVersion.LATEST_STABLE_SUPPORTED, 0
+    ).write()
+
+    // Generates a .class file with ASM
+    val classBytes = ClassWriter(0).apply {
+        visit(Opcodes.V1_6, Opcodes.ACC_PUBLIC, &quot;Hello&quot;, null, &quot;java/lang/Object&quot;, null)
+        // Writes @kotlin.Metadata instance to the .class file
+        visitAnnotation(&quot;Lkotlin/Metadata;&quot;, true).apply {
+            visit(&quot;mv&quot;, annotationData.metadataVersion)
+            visit(&quot;k&quot;, annotationData.kind)
+            visitArray(&quot;d1&quot;).apply {
+                annotationData.data1.forEach { visit(null, it) }
+                visitEnd()
+            }
+            visitArray(&quot;d2&quot;).apply {
+                annotationData.data2.forEach { visit(null, it) }
+                visitEnd()
+            }
+            visitEnd()
+        }
+        visitEnd()
+    }.toByteArray()
+
+    // Writes the generated class file to disk
+    java.io.File(&quot;Hello.class&quot;).writeBytes(classBytes)
+
+    println(&quot;Metadata and .class file created successfully.&quot;)
+}
+</div><aside class="prompt" data-type="tip" data-title="" id="sf538e_138"><p id="sf538e_167">For a more detailed example, see the <a href="https://github.com/JetBrains/kotlin/blob/50331fb1496378c82c862db04af597e4198ec645/libraries/kotlinx-metadata/jvm/test/kotlin/metadata/test/MetadataSmokeTest.kt#L43" id="sf538e_168" data-external="true" rel="noopener noreferrer" target="_blank">Kotlin Metadata JVM GitHub repository</a>.</p></aside></section><section class="chapter"><h2 id="what-s-next" data-toc="what-s-next">What's next</h2><ul class="list _bullet" id="sf538e_169"><li class="list__item" id="sf538e_170"><p id="sf538e_173"><a href="https://kotlinlang.org/api/kotlinx-metadata-jvm/" id="sf538e_174" data-external="true" rel="noopener noreferrer" target="_blank">See the API reference for the Kotlin Metadata JVM library</a>.</p></li><li class="list__item" id="sf538e_171"><p id="sf538e_175"><a href="https://github.com/JetBrains/kotlin/tree/master/libraries/kotlinx-metadata/jvm" id="sf538e_176" data-external="true" rel="noopener noreferrer" target="_blank">Check out the Kotlin Metadata JVM GitHub repository</a>.</p></li><li class="list__item" id="sf538e_172"><p id="sf538e_177"><a href="https://github.com/JetBrains/kotlin/blob/master/libraries/kotlinx-metadata/jvm/ReadMe.md#module-metadata" id="sf538e_178" data-external="true" rel="noopener noreferrer" target="_blank">Learn about module metadata and working with <code class="code" id="sf538e_179">.kotlin_module</code> files</a>.</p></li></ul></section><div class="last-modified">21 June 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="serialization.html" class="navigation-links__prev">Serialization</a><a href="keyword-reference.html" class="navigation-links__next">Keywords and operators</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>

@@ -1,0 +1,42 @@
+.root {
+  .navigation {
+    /* KTL-1420: Drop-down menu for the changing version is under the TOC */
+    position: relative;
+    z-index: 10;
+
+    background-color: #1b1b1b;
+
+    @media (min-width: 900px) {
+      padding-left: 32px
+    }
+  }
+
+  .library-name--link::before {
+    display: none;
+  }
+
+  #searchBar {
+    @media(min-width: 760px) {
+      display: none;
+    }
+  }
+
+  .ktl-dokka-header {
+    // hide kotlinlang header on dokka tablet in order to have only one navigation
+    @media (min-width: 760px) and (max-width: 899px) {
+      display: none;
+    }
+  }
+}
+
+.theme-dark .root .navigation {
+  background-color: #323237;
+}
+
+.core-api #searchBar {
+  display: none !important;
+}
+
+.filter-section > .platform-tag.platform-selector[data-filter*="/nativeMain"] {
+  --platform-tag-color: #E082F3;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-06-21T03:45:39.378796361"><link rel="canonical" href="https://kotlinlang.org/docs/standard-input.html" data-react-helmet="true"><script>
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+        var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&amp;l=' + l : '';
+        j.async = true;
+        j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5P98');
+</script>
+<script src="https://resources.jetbrains.com/storage/help-app/v6/analytics.js"></script>
+<title>Standard input | Kotlin Documentation</title><script type="application/json" id="virtual-toc-data">[{"id":"read-from-the-standard-input-with-java-scanner","level":0,"title":"Read from the standard input with Java Scanner","anchor":"#read-from-the-standard-input-with-java-scanner"},{"id":"use-java-scanner-in-kotlin","level":1,"title":"Use Java Scanner in Kotlin","anchor":"#use-java-scanner-in-kotlin"},{"id":"read-from-the-standard-input-with-readln","level":0,"title":"Read from the standard input with readln()","anchor":"#read-from-the-standard-input-with-readln"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.css" rel="stylesheet"><link rel="icon" type="image/svg" sizes="16x16" href="https://kotlinlang.org/assets/images/favicon.svg?v2"><link rel="icon" type="image/x-icon" sizes="32x32" href="https://kotlinlang.org/assets/images/favicon.ico?v2"><link rel="icon" type="image/png" sizes="96x96" href="https://kotlinlang.org/assets/images/apple-touch-icon.png?v2"><link rel="icon" type="image/png" sizes="300x300" href="https://kotlinlang.org/assets/images/apple-touch-icon-72x72.png?v2"><link rel="icon" type="image/png" sizes="500x500" href="https://kotlinlang.org/assets/images/apple-touch-icon-114x114.png?v2"><meta name="image" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><!-- Open Graph --><meta property="og:title" content="Standard input | Kotlin"><meta property="og:description" content=""><meta property="og:image" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><meta property="og:site_name" content="Kotlin Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="https://kotlinlang.org/docs/standard-input.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@kotlin"><meta name="twitter:title" content="Standard input | Kotlin"><meta name="twitter:description" content=""><meta name="twitter:creator" content="@kotlin"><meta name="twitter:image:src" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "https://kotlinlang.org/docs/standard-input.html#webpage",
+    "url": "https://kotlinlang.org/docs/standard-input.html",
+    "name": "Standard input | Kotlin",
+    "description": "",
+    "image": "https://kotlinlang.org/assets/images/open-graph/docs.png",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "https://kotlinlang.org/docs/#website",
+    "url": "https://kotlinlang.org/docs/",
+    "name": "Kotlin Help"
+}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="standard-input" data-main-title="Standard input" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Platforms///JVM///Java to Kotlin migration guides" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/standard-input.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="standard-input" id="standard-input.md">Standard input</h1><aside class="prompt" data-type="note" data-title="" id="z6s8vbb_2"><p id="z6s8vbb_6">Java Scanner is a slow tool. Use it only when you need the specific functionalities it offers. Otherwise, it's generally preferable to use Kotlin's <code class="code" id="z6s8vbb_7">readln()</code> function to <a href="basic-syntax.html#read-from-the-standard-input" id="z6s8vbb_8">read standard input</a>.</p></aside><p id="z6s8vbb_3">To read from the standard input, Java provides the <code class="code" id="z6s8vbb_9">Scanner</code> class. Kotlin offers two main ways to read from the standard input: the <code class="code" id="z6s8vbb_10">Scanner</code> class, similar to Java, and the <code class="code" id="z6s8vbb_11">readln()</code> function.</p><section class="chapter"><h2 id="read-from-the-standard-input-with-java-scanner" data-toc="read-from-the-standard-input-with-java-scanner">Read from the standard input with Java Scanner</h2><p id="z6s8vbb_12">In Java, the standard input is typically accessed through the <code class="code" id="z6s8vbb_15">System.in</code> object. You need to import the <code class="code" id="z6s8vbb_16">Scanner</code> class, create an object, and use methods like <code class="code" id="z6s8vbb_17">.nextLine()</code> and <code class="code" id="z6s8vbb_18">.nextInt()</code> to read different data types:</p><div class="code-block" data-lang="java">
+//Java implementation
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Reads a single line of input. For example: Hi there!
+        System.out.print(&quot;Enter a line: &quot;);
+        String line = scanner.nextLine();
+        System.out.println(&quot;You entered: &quot; + line);
+        // You entered: Hi there!
+
+        // Reads an integer. For example: 08081990
+        System.out.print(&quot;Enter an integer: &quot;);
+        int number = scanner.nextInt();
+        System.out.println(&quot;You entered: &quot; + number);
+        // You entered: 08081990
+
+        scanner.close();
+    }
+}
+</div><section class="chapter"><h3 id="use-java-scanner-in-kotlin" data-toc="use-java-scanner-in-kotlin">Use Java Scanner in Kotlin</h3><p id="z6s8vbb_19">Due to Kotlin's interoperability with Java libraries, you can access Java Scanner from Kotlin code out of the box.</p><p id="z6s8vbb_20">To use Java Scanner in Kotlin, you need to import the <code class="code" id="z6s8vbb_25">Scanner</code> class and initialize it by passing a <code class="code" id="z6s8vbb_26">System.in</code> object that represents the standard input stream and dictates how to read the data. You can use the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html" id="z6s8vbb_27" data-external="true" rel="noopener noreferrer" target="_blank">available reading methods</a> for reading values different from strings, such as <code class="code" id="z6s8vbb_28">.nextLine()</code>, <code class="code" id="z6s8vbb_29">.next()</code>, and <code class="code" id="z6s8vbb_30">.nextInt()</code>:</p><div class="code-block" data-lang="kotlin">
+// Imports Java Scanner
+import java.util.Scanner
+
+fun main() {
+    // Initializes the Scanner
+    val scanner = Scanner(System.`in`)
+
+    // Reads a whole string line. For example: &quot;Hello, Kotlin&quot;
+    val line = scanner.nextLine()
+    print(line)
+    // Hello, Kotlin
+
+    // Reads a string. For example: &quot;Hello&quot;
+    val string = scanner.next()
+    print(string)
+    // Hello
+
+    // Reads a number. For example: 123
+    val num = scanner.nextInt()
+    print(num)
+    // 123
+}
+</div><p id="z6s8vbb_22">Other useful methods for reading input with Java Scanner are <code class="code" id="z6s8vbb_31">.hasNext()</code>, <code class="code" id="z6s8vbb_32">.useDelimiter()</code>, and <code class="code" id="z6s8vbb_33">.close()</code>:</p><ul class="list _bullet" id="z6s8vbb_23"><li class="list__item" id="z6s8vbb_34"><p id="z6s8vbb_37">The <code class="code" id="z6s8vbb_38">.hasNext()</code> method checks if there's more data available in the input. It returns the boolean value <code class="code" id="z6s8vbb_39">true</code> if there are remaining elements to iterate and <code class="code" id="z6s8vbb_40">false</code> if no more elements are left in the input.</p></li><li class="list__item" id="z6s8vbb_35"><p id="z6s8vbb_41">The <code class="code" id="z6s8vbb_42">.useDelimiter()</code> method sets the delimiter for reading input elements. The delimiter is whitespaces by default, but you can specify other characters. For example, <code class="code" id="z6s8vbb_43">.useDelimiter(&quot;,&quot;)</code> reads the input elements separated by commas.</p></li><li class="list__item" id="z6s8vbb_36"><p id="z6s8vbb_44">The <code class="code" id="z6s8vbb_45">.close()</code> method closes the input stream associated with the Scanner, preventing further use of the Scanner for reading input.</p></li></ul><aside class="prompt" data-type="note" data-title="" id="z6s8vbb_24"><p id="z6s8vbb_46">Always use the <code class="code" id="z6s8vbb_47">.close()</code> method when you're finished using Java Scanner. Closing the Java Scanner releases the resources it consumes and ensures proper program behavior.</p></aside></section></section><section class="chapter"><h2 id="read-from-the-standard-input-with-readln" data-toc="read-from-the-standard-input-with-readln">Read from the standard input with readln()</h2><p id="z6s8vbb_48">In Kotlin, apart from the Java Scanner, you have the <code class="code" id="z6s8vbb_51">readln()</code> function. It is the most straightforward way to read input. This function reads a line of text from the standard input and returns it as a string:</p><div class="code-block" data-lang="kotlin">
+// Reads a string. For example: Charlotte
+val name = readln()
+
+// Reads a string and converts it into an integer. For example: 43
+val age = readln().toInt()
+
+println(&quot;Hello, $name! You are $age years old.&quot;)
+// Hello, Charlotte! You are 43 years old.
+</div><p id="z6s8vbb_50">For more information, see <a href="read-standard-input.html" id="z6s8vbb_52">Read standard input</a>.</p></section><div class="last-modified">21 June 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="java-to-kotlin-nullability-guide.html" class="navigation-links__prev">Nullability in Java and Kotlin</a><a href="native-get-started.html" class="navigation-links__next">Get started with Kotlin/Native</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>

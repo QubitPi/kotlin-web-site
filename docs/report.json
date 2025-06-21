@@ -1,0 +1,2753 @@
+{
+  "testsErrorsCount" : 2,
+  "testsTotal" : 177,
+  "testsWarningsCount" : 5,
+  "testsPassedCount" : 170,
+  "testsWarnings" : {
+    "INT002" : [ {
+      "id" : "INT002---Basic-types---in-kr-tree-78-5--kr-tree-8-3",
+      "problemId" : "INT002",
+      "name" : "Map ID is not unique",
+      "description" : "\"\"Basic types\"\" in kr.tree:78:5; kr.tree:8:3"
+    }, {
+      "id" : "INT002---Basic-types---in-kr-tree-78-5--kr-tree-8-3",
+      "problemId" : "INT002",
+      "name" : "Map ID is not unique",
+      "description" : "\"\"Basic+types\"\" in kr.tree:78:5; kr.tree:8:3"
+    }, {
+      "id" : "INT002---Classes---in-kr-tree-12-3--kr-tree-95-4",
+      "problemId" : "INT002",
+      "name" : "Map ID is not unique",
+      "description" : "\"\"Classes\"\" in kr.tree:12:3; kr.tree:95:4"
+    }, {
+      "id" : "INT002---Functions---in-kr-tree-114-4--kr-tree-11-3",
+      "problemId" : "INT002",
+      "name" : "Map ID is not unique",
+      "description" : "\"\"Functions\"\" in kr.tree:114:4; kr.tree:11:3"
+    }, {
+      "id" : "INT002---Null-safety---in-kr-tree-123-3--kr-tree-13-3",
+      "problemId" : "INT002",
+      "name" : "Map ID is not unique",
+      "description" : "\"\"Null safety\"\" in kr.tree:123:3; kr.tree:13:3"
+    }, {
+      "id" : "INT002---Null-safety---in-kr-tree-123-3--kr-tree-13-3",
+      "problemId" : "INT002",
+      "name" : "Map ID is not unique",
+      "description" : "\"\"Null+safety\"\" in kr.tree:123:3; kr.tree:13:3"
+    } ],
+    "MRK058" : [ {
+      "id" : "MRK058-In-kotlin-notebook-share-md-11-3",
+      "problemId" : "MRK058",
+      "name" : "Large image in paragraph rendered as a block element by default. Put it outside the paragraph or set the 'style' attribute to indicate your intent.",
+      "description" : "In kotlin-notebook-share.md:11:3"
+    }, {
+      "id" : "MRK058-In-kotlin-notebook-share-md-14-3",
+      "problemId" : "MRK058",
+      "name" : "Large image in paragraph rendered as a block element by default. Put it outside the paragraph or set the 'style' attribute to indicate your intent.",
+      "description" : "In kotlin-notebook-share.md:14:3"
+    } ],
+    "SCT001" : [ {
+      "id" : "SCT001---Alt---Enter---in-whatsnew21-md-392-1",
+      "problemId" : "SCT001",
+      "name" : "Hard-coded shortcut: consider referencing the corresponding action in the 'key' attribute of the 'shortcut' element",
+      "description" : "\"\"Alt + Enter\"\" in whatsnew21.md:392:1"
+    }, {
+      "id" : "SCT001---Cmd---B---in-mapping-function-pointers-from-c-md-77-1--mapping-primitive-data-types-from-c-md-222-1--mapping-strings-from-c-md-104-1--mapping-struct-union-types-from-c-md-134-1",
+      "problemId" : "SCT001",
+      "name" : "Hard-coded shortcut: consider referencing the corresponding action in the 'key' attribute of the 'shortcut' element",
+      "description" : "\"\"Cmd + B\"\" in mapping-function-pointers-from-c.md:77:1; mapping-primitive-data-types-from-c.md:222:1; mapping-strings-from-c.md:104:1; mapping-struct-union-types-from-c.md:134:1"
+    }, {
+      "id" : "SCT001---Cmd---Enter---in-whatsnew21-md-392-1",
+      "problemId" : "SCT001",
+      "name" : "Hard-coded shortcut: consider referencing the corresponding action in the 'key' attribute of the 'shortcut' element",
+      "description" : "\"\"Cmd + Enter\"\" in whatsnew21.md:392:1"
+    }, {
+      "id" : "SCT001---Cmd---I---in-native-memory-manager-md-60-1",
+      "problemId" : "SCT001",
+      "name" : "Hard-coded shortcut: consider referencing the corresponding action in the 'key' attribute of the 'shortcut' element",
+      "description" : "\"\"Cmd + I\"\" in native-memory-manager.md:60:1"
+    }, {
+      "id" : "SCT001---Cmd---S---in-native-get-started-md-85-1",
+      "problemId" : "SCT001",
+      "name" : "Hard-coded shortcut: consider referencing the corresponding action in the 'key' attribute of the 'shortcut' element",
+      "description" : "\"\"Cmd + S\"\" in native-get-started.md:85:1"
+    }, {
+      "id" : "SCT001---Ctrl---B---in-mapping-function-pointers-from-c-md-77-1--mapping-primitive-data-types-from-c-md-222-1--mapping-strings-from-c-md-104-1--mapping-struct-union-types-from-c-md-134-1",
+      "problemId" : "SCT001",
+      "name" : "Hard-coded shortcut: consider referencing the corresponding action in the 'key' attribute of the 'shortcut' element",
+      "description" : "\"\"Ctrl + B\"\" in mapping-function-pointers-from-c.md:77:1; mapping-primitive-data-types-from-c.md:222:1; mapping-strings-from-c.md:104:1; mapping-struct-union-types-from-c.md:134:1"
+    }, {
+      "id" : "SCT001---Ctrl---S---in-native-get-started-md-85-1",
+      "problemId" : "SCT001",
+      "name" : "Hard-coded shortcut: consider referencing the corresponding action in the 'key' attribute of the 'shortcut' element",
+      "description" : "\"\"Ctrl + S\"\" in native-get-started.md:85:1"
+    }, {
+      "id" : "SCT001---Shift---Cmd---R---in-native-app-with-c-and-libcurl-md-205-1",
+      "problemId" : "SCT001",
+      "name" : "Hard-coded shortcut: consider referencing the corresponding action in the 'key' attribute of the 'shortcut' element",
+      "description" : "\"\"Shift + Cmd + R\"\" in native-app-with-c-and-libcurl.md:205:1"
+    }, {
+      "id" : "SCT001---Shift---F10---in-native-app-with-c-and-libcurl-md-205-1",
+      "problemId" : "SCT001",
+      "name" : "Hard-coded shortcut: consider referencing the corresponding action in the 'key' attribute of the 'shortcut' element",
+      "description" : "\"\"Shift + F10\"\" in native-app-with-c-and-libcurl.md:205:1"
+    } ],
+    "TOC007" : [ {
+      "id" : "TOC007-In-kr-tree-139-3",
+      "problemId" : "TOC007",
+      "name" : "The 'toc-title' attribute is redundant as it matches the topic title",
+      "description" : "In kr.tree:139:3"
+    } ],
+    "VIS011" : [ {
+      "id" : "VIS011---2d-density-plot_dark-svg---in-lets-plot-md-193-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"2d-density-plot_dark.svg\"\" in lets-plot.md:193:1"
+    }, {
+      "id" : "VIS011---accessing-sourse-sets_dark-png---in-whatsnew2020-md-211-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"accessing-sourse-sets_dark.png\"\" in whatsnew2020.md:211:1"
+    }, {
+      "id" : "VIS011---add-dataframe-dependency_dark-png---in-kotlin-notebook-add-dependencies-md-78-5",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"add-dataframe-dependency_dark.png\"\" in kotlin-notebook-add-dependencies.md:78:5"
+    }, {
+      "id" : "VIS011---alert-window_dark-png---in-js-react-md-544-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"alert-window_dark.png\"\" in js-react.md:544:1"
+    }, {
+      "id" : "VIS011---any-type-class_dark-png---in-kotlin-tour-intermediate-classes-interfaces-md-36-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"any-type-class_dark.png\"\" in kotlin-tour-intermediate-classes-interfaces.md:36:1"
+    }, {
+      "id" : "VIS011---atomic-kotlin_dark-png---in-books-md-12-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"atomic-kotlin_dark.png\"\" in books.md:12:1"
+    }, {
+      "id" : "VIS011---auto-completion-data-analysis_dark-png---in-data-analysis-work-with-data-sources-md-75-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"auto-completion-data-analysis_dark.png\"\" in data-analysis-work-with-data-sources.md:75:1"
+    }, {
+      "id" : "VIS011---autocompletion-feature-notebook_dark-png---in-kotlin-notebook-add-dependencies-md-29-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"autocompletion-feature-notebook_dark.png\"\" in kotlin-notebook-add-dependencies.md:29:1"
+    }, {
+      "id" : "VIS011---big-nerd-ranch-guide_dark-jpg---in-books-md-64-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"big-nerd-ranch-guide_dark.jpg\"\" in books.md:64:1"
+    }, {
+      "id" : "VIS011---box-plot_dark-svg---in-lets-plot-md-112-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"box-plot_dark.svg\"\" in lets-plot.md:112:1"
+    }, {
+      "id" : "VIS011---browser-console-output_dark-png---in-running-kotlin-js-md-70-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"browser-console-output_dark.png\"\" in running-kotlin-js.md:70:1"
+    }, {
+      "id" : "VIS011---browser-development-run_dark-png---in-js-react-md-95-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"browser-development-run_dark.png\"\" in js-react.md:95:1"
+    }, {
+      "id" : "VIS011---browsertest-task_dark-png---in-js-running-tests-md-90-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"browsertest-task_dark.png\"\" in js-running-tests.md:90:1"
+    }, {
+      "id" : "VIS011---bsky_dark-svg---in-getting-started-md-97-226",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"bsky_dark.svg\"\" in getting-started.md:97:226"
+    }, {
+      "id" : "VIS011---bufferedimage-output_dark-png---in-data-analysis-notebooks-output-formats-md-145-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"bufferedimage-output_dark.png\"\" in data-analysis-notebooks-output-formats.md:145:1"
+    }, {
+      "id" : "VIS011---bundling-kotlin-option_dark-png---in-mixing-java-kotlin-intellij-md-61-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"bundling-kotlin-option_dark.png\"\" in mixing-java-kotlin-intellij.md:61:1"
+    }, {
+      "id" : "VIS011---choose-ios-integration_dark-svg---in-apple-framework-md-417-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"choose-ios-integration_dark.svg\"\" in apple-framework.md:417:1"
+    }, {
+      "id" : "VIS011---cli-output_dark-png---in-running-kotlin-js-md-31-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"cli-output_dark.png\"\" in running-kotlin-js.md:31:1"
+    }, {
+      "id" : "VIS011---code-formatting-diff_dark-png---in-code-style-migration-guide-md-24-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"code-formatting-diff_dark.png\"\" in code-style-migration-guide.md:24:1"
+    }, {
+      "id" : "VIS011---collections-diagram_dark-png---in-collections-overview-md-77-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"collections-diagram_dark.png\"\" in collections-overview.md:77:1"
+    }, {
+      "id" : "VIS011---comparison-of-full-and-precise-backups_dark-png---in-whatsnew1820-md-1023-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"comparison-of-full-and-precise-backups_dark.png\"\" in whatsnew1820.md:1023:1"
+    }, {
+      "id" : "VIS011---compiler-options-levels_dark-svg---in-gradle-compiler-options-md-26-1--whatsnew20-md-1265-1--whatsnew21-md-573-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"compiler-options-levels_dark.svg\"\" in gradle-compiler-options.md:26:1; whatsnew20.md:1265:1; whatsnew21.md:573:1"
+    }, {
+      "id" : "VIS011---continuous-mode_dark-png---in-js-react-md-115-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"continuous-mode_dark.png\"\" in js-react.md:115:4"
+    }, {
+      "id" : "VIS011---convert-java-to-kotlin_dark-png---in-mixing-java-kotlin-intellij-md-70-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"convert-java-to-kotlin_dark.png\"\" in mixing-java-kotlin-intellij.md:70:1"
+    }, {
+      "id" : "VIS011---coroutine-debugger-wn_dark-png---in-whatsnew14-md-330-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"coroutine-debugger-wn_dark.png\"\" in whatsnew14.md:330:1"
+    }, {
+      "id" : "VIS011---coroutines-dump-wn_dark-png---in-whatsnew14-md-342-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"coroutines-dump-wn_dark.png\"\" in whatsnew14.md:342:1"
+    }, {
+      "id" : "VIS011---create-database-schema_dark-png---in-jvm-spring-boot-add-db-support-md-173-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"create-database-schema_dark.png\"\" in jvm-spring-boot-add-db-support.md:173:4"
+    }, {
+      "id" : "VIS011---create-spring-ai-project_dark-png---in-spring-ai-guide-md-62-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"create-spring-ai-project_dark.png\"\" in spring-ai-guide.md:62:4"
+    }, {
+      "id" : "VIS011---create-spring-boot-project_dark-png---in-jvm-create-project-with-spring-boot-md-50-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"create-spring-boot-project_dark.png\"\" in jvm-create-project-with-spring-boot.md:50:4"
+    }, {
+      "id" : "VIS011---create-test_dark-png---in-jvm-test-using-junit-md-120-4--test-page-md-357-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"create-test_dark.png\"\" in jvm-test-using-junit.md:120:4; test-page.md:357:1"
+    }, {
+      "id" : "VIS011---current-layout_dark-png---in-js-react-md-361-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"current-layout_dark.png\"\" in js-react.md:361:1"
+    }, {
+      "id" : "VIS011---data-analysis-dataframe-example_dark-png---in-data-analysis-overview-md-78-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"data-analysis-dataframe-example_dark.png\"\" in data-analysis-overview.md:78:1"
+    }, {
+      "id" : "VIS011---data-analysis-kandy-example_dark-png---in-data-analysis-overview-md-88-1--kotlin-notebook-overview-md-49-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"data-analysis-kandy-example_dark.png\"\" in data-analysis-overview.md:88:1; kotlin-notebook-overview.md:49:1"
+    }, {
+      "id" : "VIS011---data-analysis-notebook_dark-gif---in-data-analysis-overview-md-30-1--kotlin-notebook-overview-md-11-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"data-analysis-notebook_dark.gif\"\" in data-analysis-overview.md:30:1; kotlin-notebook-overview.md:11:1"
+    }, {
+      "id" : "VIS011---dataframe-output_dark-png---in-data-analysis-notebooks-output-formats-md-235-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"dataframe-output_dark.png\"\" in data-analysis-notebooks-output-formats.md:235:4"
+    }, {
+      "id" : "VIS011---datalore-example_dark-png---in-kotlin-notebook-share-md-11-3",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"datalore-example_dark.png\"\" in kotlin-notebook-share.md:11:3"
+    }, {
+      "id" : "VIS011---debug-config-run_dark-png---in-js-debugging-md-60-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"debug-config-run_dark.png\"\" in js-debugging.md:60:1"
+    }, {
+      "id" : "VIS011---debug-config_dark-png---in-js-debugging-md-47-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"debug-config_dark.png\"\" in js-debugging.md:47:1"
+    }, {
+      "id" : "VIS011---default-hierarchy-example_dark-svg---in-whatsnew1820-md-778-1--whatsnew1920-md-453-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"default-hierarchy-example_dark.svg\"\" in whatsnew1820.md:778:1; whatsnew1920.md:453:1"
+    }, {
+      "id" : "VIS011---deployment-to-production_dark-png---in-js-react-md-1258-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"deployment-to-production_dark.png\"\" in js-react.md:1258:1"
+    }, {
+      "id" : "VIS011---devtools-console_dark-png---in-js-debugging-md-24-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"devtools-console_dark.png\"\" in js-debugging.md:24:1"
+    }, {
+      "id" : "VIS011---devtools-sources_dark-png---in-js-debugging-md-30-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"devtools-sources_dark.png\"\" in js-debugging.md:30:1"
+    }, {
+      "id" : "VIS011---direct-html-output_dark-png---in-data-analysis-notebooks-output-formats-md-108-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"direct-html-output_dark.png\"\" in data-analysis-notebooks-output-formats.md:108:1"
+    }, {
+      "id" : "VIS011---display-data_dark-png---in-data-analysis-work-with-data-sources-md-64-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"display-data_dark.png\"\" in data-analysis-work-with-data-sources.md:64:1"
+    }, {
+      "id" : "VIS011---edit-configurations-continuous_dark-png---in-js-react-md-111-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"edit-configurations-continuous_dark.png\"\" in js-react.md:111:4"
+    }, {
+      "id" : "VIS011---edit-configurations_dark-png---in-dev-server-continuous-compilation-md-15-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"edit-configurations_dark.png\"\" in dev-server-continuous-compilation.md:15:1"
+    }, {
+      "id" : "VIS011---embedded-images-output_dark-png---in-data-analysis-notebooks-output-formats-md-172-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"embedded-images-output_dark.png\"\" in data-analysis-notebooks-output-formats.md:172:1"
+    }, {
+      "id" : "VIS011---execute-get-requests_dark-png---in-jvm-spring-boot-add-db-support-md-248-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"execute-get-requests_dark.png\"\" in jvm-spring-boot-add-db-support.md:248:4"
+    }, {
+      "id" : "VIS011---execute-post-requests_dark-png---in-jvm-spring-boot-add-db-support-md-244-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"execute-post-requests_dark.png\"\" in jvm-spring-boot-add-db-support.md:244:4"
+    }, {
+      "id" : "VIS011---external-images-output_dark-png---in-data-analysis-notebooks-output-formats-md-160-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"external-images-output_dark.png\"\" in data-analysis-notebooks-output-formats.md:160:1"
+    }, {
+      "id" : "VIS011---failed-test_dark-png---in-js-running-tests-md-112-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"failed-test_dark.png\"\" in js-running-tests.md:112:1"
+    }, {
+      "id" : "VIS011---first-notebook_dark-png---in-kotlin-notebook-create-md-64-5",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"first-notebook_dark.png\"\" in kotlin-notebook-create.md:64:5"
+    }, {
+      "id" : "VIS011---full-template-hierarchy_dark-svg---in-whatsnew1920-md-548-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"full-template-hierarchy_dark.svg\"\" in whatsnew1920.md:548:1"
+    }, {
+      "id" : "VIS011---gaussian-distribution-output_dark-png---in-data-analysis-notebooks-output-formats-md-46-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"gaussian-distribution-output_dark.png\"\" in data-analysis-notebooks-output-formats.md:46:1"
+    }, {
+      "id" : "VIS011---generate-test_dark-png---in-jvm-test-using-junit-md-116-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"generate-test_dark.png\"\" in jvm-test-using-junit.md:116:4"
+    }, {
+      "id" : "VIS011---get-kotlin-language-map_dark-png---in-jvm-spring-boot-using-crudrepository-md-218-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"get-kotlin-language-map_dark.png\"\" in jvm-spring-boot-using-crudrepository.md:218:1"
+    }, {
+      "id" : "VIS011---github-notebook_dark-png---in-kotlin-notebook-share-md-14-3",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"github-notebook_dark.png\"\" in kotlin-notebook-share.md:14:3"
+    }, {
+      "id" : "VIS011---gradle-build-scan-k1_dark-png---in-whatsnew19-md-85-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"gradle-build-scan-k1_dark.png\"\" in whatsnew19.md:85:1"
+    }, {
+      "id" : "VIS011---gradle-build-scan-k2_dark-png---in-whatsnew19-md-87-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"gradle-build-scan-k2_dark.png\"\" in whatsnew19.md:87:1"
+    }, {
+      "id" : "VIS011---gradle-console-rich-output_dark-png---in-whatsnew-eap-md-442-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"gradle-console-rich-output_dark.png\"\" in whatsnew-eap.md:442:1"
+    }, {
+      "id" : "VIS011---gradle-kts-load-config_dark-png---in-whatsnew14-md-1010-3",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"gradle-kts-load-config_dark.png\"\" in whatsnew14.md:1010:3"
+    }, {
+      "id" : "VIS011---gradle-kts-standalone_dark-png---in-whatsnew14-md-1031-3",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"gradle-kts-standalone_dark.png\"\" in whatsnew14.md:1031:3"
+    }, {
+      "id" : "VIS011---gradle-kts_dark-png---in-whatsnew14-md-1018-3",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"gradle-kts_dark.png\"\" in whatsnew14.md:1018:3"
+    }, {
+      "id" : "VIS011---gradle-sync_dark-png---in-native-definition-file-md-56-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"gradle-sync_dark.png\"\" in native-definition-file.md:56:4"
+    }, {
+      "id" : "VIS011---head-first-kotlin_dark-jpeg---in-books-md-29-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"head-first-kotlin_dark.jpeg\"\" in books.md:29:1"
+    }, {
+      "id" : "VIS011---hello-react-js_dark-png---in-js-react-md-176-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"hello-react-js_dark.png\"\" in js-react.md:176:1"
+    }, {
+      "id" : "VIS011---icon-1-done_dark-svg---in-jvm-spring-boot-add-data-class-md-6-1--jvm-spring-boot-add-db-support-md-6-1--jvm-spring-boot-using-crudrepository-md-6-1--kotlin-notebook-add-dependencies-md-5-1--kotlin-notebook-create-md-5-1--kotlin-tour-basic-types-md-6-1--kotlin-tour-classes-md-6-1--kotlin-tour-collections-md-6-1--kotlin-tour-control-flow-md-6-1--kotlin-tour-functions-md-6-1--kotlin-tour-intermediate-classes-interfaces-md-6-1--kotlin-tour-intermediate-lambdas-receiver-md-6-1--kotlin-tour-intermediate-libraries-and-apis-md-6-1--kotlin-tour-intermediate-null-safety-md-6-1--kotlin-tour-intermediate-objects-md-6-1--kotlin-tour-intermediate-open-special-classes-md-6-1--kotlin-tour-intermediate-properties-md-6-1--kotlin-tour-intermediate-scope-functions-md-6-1--kotlin-tour-null-safety-md-6-1--mapping-function-pointers-from-c-md-5-1--mapping-strings-from-c-md-5-1--mapping-struct-union-types-from-c-md-5-1--test-page-md-8-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"icon-1-done_dark.svg\"\" in jvm-spring-boot-add-data-class.md:6:1; jvm-spring-boot-add-db-support.md:6:1; jvm-spring-boot-using-crudrepository.md:6:1; kotlin-notebook-add-dependencies.md:5:1; kotlin-notebook-create.md:5:1; kotlin-tour-basic-types.md:6:1; kotlin-tour-classes.md:6:1; kotlin-tour-collections.md:6:1; kotlin-tour-control-flow.md:6:1; kotlin-tour-functions.md:6:1; kotlin-tour-intermediate-classes-interfaces.md:6:1; kotlin-tour-intermediate-lambdas-receiver.md:6:1; kotlin-tour-intermediate-libraries-and-apis.md:6:1; kotlin-tour-intermediate-null-safety.md:6:1; kotlin-tour-intermediate-objects.md:6:1; kotlin-tour-intermediate-open-special-classes.md:6:1; kotlin-tour-intermediate-properties.md:6:1; kotlin-tour-intermediate-scope-functions.md:6:1; kotlin-tour-null-safety.md:6:1; mapping-function-pointers-from-c.md:5:1; mapping-strings-from-c.md:5:1; mapping-struct-union-types-from-c.md:5:1; test-page.md:8:1"
+    }, {
+      "id" : "VIS011---icon-1_dark-svg---in-get-started-with-kotlin-notebooks-md-9-1--jvm-create-project-with-spring-boot-md-6-1--jvm-get-started-spring-boot-md-9-1--kotlin-notebook-set-up-env-md-5-1--kotlin-tour-hello-world-md-6-1--kotlin-tour-intermediate-extension-functions-md-6-1--mapping-primitive-data-types-from-c-md-5-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"icon-1_dark.svg\"\" in get-started-with-kotlin-notebooks.md:9:1; jvm-create-project-with-spring-boot.md:6:1; jvm-get-started-spring-boot.md:9:1; kotlin-notebook-set-up-env.md:5:1; kotlin-tour-hello-world.md:6:1; kotlin-tour-intermediate-extension-functions.md:6:1; mapping-primitive-data-types-from-c.md:5:1"
+    }, {
+      "id" : "VIS011---icon-2-done_dark-svg---in-jvm-spring-boot-add-db-support-md-6-1--jvm-spring-boot-using-crudrepository-md-6-1--kotlin-notebook-add-dependencies-md-6-1--kotlin-tour-classes-md-7-1--kotlin-tour-collections-md-7-1--kotlin-tour-control-flow-md-7-1--kotlin-tour-functions-md-7-1--kotlin-tour-intermediate-classes-interfaces-md-7-1--kotlin-tour-intermediate-lambdas-receiver-md-7-1--kotlin-tour-intermediate-libraries-and-apis-md-7-1--kotlin-tour-intermediate-null-safety-md-7-1--kotlin-tour-intermediate-objects-md-7-1--kotlin-tour-intermediate-open-special-classes-md-7-1--kotlin-tour-intermediate-properties-md-7-1--kotlin-tour-null-safety-md-7-1--mapping-function-pointers-from-c-md-6-1--mapping-strings-from-c-md-6-1--test-page-md-9-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"icon-2-done_dark.svg\"\" in jvm-spring-boot-add-db-support.md:6:1; jvm-spring-boot-using-crudrepository.md:6:1; kotlin-notebook-add-dependencies.md:6:1; kotlin-tour-classes.md:7:1; kotlin-tour-collections.md:7:1; kotlin-tour-control-flow.md:7:1; kotlin-tour-functions.md:7:1; kotlin-tour-intermediate-classes-interfaces.md:7:1; kotlin-tour-intermediate-lambdas-receiver.md:7:1; kotlin-tour-intermediate-libraries-and-apis.md:7:1; kotlin-tour-intermediate-null-safety.md:7:1; kotlin-tour-intermediate-objects.md:7:1; kotlin-tour-intermediate-open-special-classes.md:7:1; kotlin-tour-intermediate-properties.md:7:1; kotlin-tour-null-safety.md:7:1; mapping-function-pointers-from-c.md:6:1; mapping-strings-from-c.md:6:1; test-page.md:9:1"
+    }, {
+      "id" : "VIS011---icon-2-todo_dark-svg---in-jvm-create-project-with-spring-boot-md-6-1--kotlin-notebook-set-up-env-md-6-1--kotlin-tour-hello-world-md-7-1--kotlin-tour-intermediate-extension-functions-md-7-1--mapping-primitive-data-types-from-c-md-6-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"icon-2-todo_dark.svg\"\" in jvm-create-project-with-spring-boot.md:6:1; kotlin-notebook-set-up-env.md:6:1; kotlin-tour-hello-world.md:7:1; kotlin-tour-intermediate-extension-functions.md:7:1; mapping-primitive-data-types-from-c.md:6:1"
+    }, {
+      "id" : "VIS011---icon-2_dark-svg---in-get-started-with-kotlin-notebooks-md-11-1--jvm-get-started-spring-boot-md-11-1--jvm-spring-boot-add-data-class-md-6-1--kotlin-notebook-create-md-6-1--kotlin-tour-basic-types-md-7-1--kotlin-tour-intermediate-scope-functions-md-7-1--mapping-struct-union-types-from-c-md-6-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"icon-2_dark.svg\"\" in get-started-with-kotlin-notebooks.md:11:1; jvm-get-started-spring-boot.md:11:1; jvm-spring-boot-add-data-class.md:6:1; kotlin-notebook-create.md:6:1; kotlin-tour-basic-types.md:7:1; kotlin-tour-intermediate-scope-functions.md:7:1; mapping-struct-union-types-from-c.md:6:1"
+    }, {
+      "id" : "VIS011---icon-3-done_dark-svg---in-jvm-spring-boot-using-crudrepository-md-6-1--kotlin-tour-classes-md-8-1--kotlin-tour-control-flow-md-8-1--kotlin-tour-functions-md-8-1--kotlin-tour-intermediate-classes-interfaces-md-8-1--kotlin-tour-intermediate-libraries-and-apis-md-8-1--kotlin-tour-intermediate-null-safety-md-8-1--kotlin-tour-intermediate-objects-md-8-1--kotlin-tour-intermediate-open-special-classes-md-8-1--kotlin-tour-intermediate-properties-md-8-1--kotlin-tour-null-safety-md-8-1--mapping-strings-from-c-md-7-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"icon-3-done_dark.svg\"\" in jvm-spring-boot-using-crudrepository.md:6:1; kotlin-tour-classes.md:8:1; kotlin-tour-control-flow.md:8:1; kotlin-tour-functions.md:8:1; kotlin-tour-intermediate-classes-interfaces.md:8:1; kotlin-tour-intermediate-libraries-and-apis.md:8:1; kotlin-tour-intermediate-null-safety.md:8:1; kotlin-tour-intermediate-objects.md:8:1; kotlin-tour-intermediate-open-special-classes.md:8:1; kotlin-tour-intermediate-properties.md:8:1; kotlin-tour-null-safety.md:8:1; mapping-strings-from-c.md:7:1"
+    }, {
+      "id" : "VIS011---icon-3-todo_dark-svg---in-jvm-create-project-with-spring-boot-md-6-1--jvm-spring-boot-add-data-class-md-6-1--kotlin-notebook-create-md-7-1--kotlin-notebook-set-up-env-md-7-1--kotlin-tour-basic-types-md-8-1--kotlin-tour-hello-world-md-8-1--kotlin-tour-intermediate-extension-functions-md-8-1--kotlin-tour-intermediate-scope-functions-md-8-1--mapping-primitive-data-types-from-c-md-7-1--mapping-struct-union-types-from-c-md-7-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"icon-3-todo_dark.svg\"\" in jvm-create-project-with-spring-boot.md:6:1; jvm-spring-boot-add-data-class.md:6:1; kotlin-notebook-create.md:7:1; kotlin-notebook-set-up-env.md:7:1; kotlin-tour-basic-types.md:8:1; kotlin-tour-hello-world.md:8:1; kotlin-tour-intermediate-extension-functions.md:8:1; kotlin-tour-intermediate-scope-functions.md:8:1; mapping-primitive-data-types-from-c.md:7:1; mapping-struct-union-types-from-c.md:7:1"
+    }, {
+      "id" : "VIS011---icon-3_dark-svg---in-get-started-with-kotlin-notebooks-md-13-1--jvm-get-started-spring-boot-md-13-1--jvm-spring-boot-add-db-support-md-6-1--kotlin-notebook-add-dependencies-md-7-1--kotlin-tour-collections-md-8-1--kotlin-tour-intermediate-lambdas-receiver-md-8-1--mapping-function-pointers-from-c-md-7-1--test-page-md-10-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"icon-3_dark.svg\"\" in get-started-with-kotlin-notebooks.md:13:1; jvm-get-started-spring-boot.md:13:1; jvm-spring-boot-add-db-support.md:6:1; kotlin-notebook-add-dependencies.md:7:1; kotlin-tour-collections.md:8:1; kotlin-tour-intermediate-lambdas-receiver.md:8:1; mapping-function-pointers-from-c.md:7:1; test-page.md:10:1"
+    }, {
+      "id" : "VIS011---icon-4-done_dark-svg---in-kotlin-tour-classes-md-9-1--kotlin-tour-functions-md-9-1--kotlin-tour-intermediate-libraries-and-apis-md-9-1--kotlin-tour-intermediate-null-safety-md-9-1--kotlin-tour-intermediate-objects-md-9-1--kotlin-tour-intermediate-open-special-classes-md-9-1--kotlin-tour-intermediate-properties-md-9-1--kotlin-tour-null-safety-md-9-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"icon-4-done_dark.svg\"\" in kotlin-tour-classes.md:9:1; kotlin-tour-functions.md:9:1; kotlin-tour-intermediate-libraries-and-apis.md:9:1; kotlin-tour-intermediate-null-safety.md:9:1; kotlin-tour-intermediate-objects.md:9:1; kotlin-tour-intermediate-open-special-classes.md:9:1; kotlin-tour-intermediate-properties.md:9:1; kotlin-tour-null-safety.md:9:1"
+    }, {
+      "id" : "VIS011---icon-4-todo_dark-svg---in-jvm-create-project-with-spring-boot-md-6-1--jvm-spring-boot-add-data-class-md-6-1--jvm-spring-boot-add-db-support-md-6-1--kotlin-tour-basic-types-md-9-1--kotlin-tour-collections-md-9-1--kotlin-tour-hello-world-md-9-1--kotlin-tour-intermediate-extension-functions-md-9-1--kotlin-tour-intermediate-lambdas-receiver-md-9-1--kotlin-tour-intermediate-scope-functions-md-9-1--mapping-function-pointers-from-c-md-8-1--mapping-primitive-data-types-from-c-md-8-1--mapping-struct-union-types-from-c-md-8-1--test-page-md-11-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"icon-4-todo_dark.svg\"\" in jvm-create-project-with-spring-boot.md:6:1; jvm-spring-boot-add-data-class.md:6:1; jvm-spring-boot-add-db-support.md:6:1; kotlin-tour-basic-types.md:9:1; kotlin-tour-collections.md:9:1; kotlin-tour-hello-world.md:9:1; kotlin-tour-intermediate-extension-functions.md:9:1; kotlin-tour-intermediate-lambdas-receiver.md:9:1; kotlin-tour-intermediate-scope-functions.md:9:1; mapping-function-pointers-from-c.md:8:1; mapping-primitive-data-types-from-c.md:8:1; mapping-struct-union-types-from-c.md:8:1; test-page.md:11:1"
+    }, {
+      "id" : "VIS011---icon-4_dark-svg---in-jvm-get-started-spring-boot-md-15-1--jvm-spring-boot-using-crudrepository-md-6-1--kotlin-tour-control-flow-md-9-1--kotlin-tour-intermediate-classes-interfaces-md-9-1--mapping-strings-from-c-md-8-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"icon-4_dark.svg\"\" in jvm-get-started-spring-boot.md:15:1; jvm-spring-boot-using-crudrepository.md:6:1; kotlin-tour-control-flow.md:9:1; kotlin-tour-intermediate-classes-interfaces.md:9:1; mapping-strings-from-c.md:8:1"
+    }, {
+      "id" : "VIS011---icon-5-done_dark-svg---in-kotlin-tour-classes-md-10-1--kotlin-tour-intermediate-libraries-and-apis-md-10-1--kotlin-tour-intermediate-null-safety-md-10-1--kotlin-tour-intermediate-open-special-classes-md-10-1--kotlin-tour-intermediate-properties-md-10-1--kotlin-tour-null-safety-md-10-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"icon-5-done_dark.svg\"\" in kotlin-tour-classes.md:10:1; kotlin-tour-intermediate-libraries-and-apis.md:10:1; kotlin-tour-intermediate-null-safety.md:10:1; kotlin-tour-intermediate-open-special-classes.md:10:1; kotlin-tour-intermediate-properties.md:10:1; kotlin-tour-null-safety.md:10:1"
+    }, {
+      "id" : "VIS011---icon-5-todo_dark-svg---in-kotlin-tour-basic-types-md-10-1--kotlin-tour-collections-md-10-1--kotlin-tour-control-flow-md-10-1--kotlin-tour-hello-world-md-10-1--kotlin-tour-intermediate-classes-interfaces-md-10-1--kotlin-tour-intermediate-extension-functions-md-10-1--kotlin-tour-intermediate-lambdas-receiver-md-10-1--kotlin-tour-intermediate-scope-functions-md-10-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"icon-5-todo_dark.svg\"\" in kotlin-tour-basic-types.md:10:1; kotlin-tour-collections.md:10:1; kotlin-tour-control-flow.md:10:1; kotlin-tour-hello-world.md:10:1; kotlin-tour-intermediate-classes-interfaces.md:10:1; kotlin-tour-intermediate-extension-functions.md:10:1; kotlin-tour-intermediate-lambdas-receiver.md:10:1; kotlin-tour-intermediate-scope-functions.md:10:1"
+    }, {
+      "id" : "VIS011---icon-5_dark-svg---in-kotlin-tour-functions-md-10-1--kotlin-tour-intermediate-objects-md-10-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"icon-5_dark.svg\"\" in kotlin-tour-functions.md:10:1; kotlin-tour-intermediate-objects.md:10:1"
+    }, {
+      "id" : "VIS011---icon-6-done_dark-svg---in-kotlin-tour-intermediate-libraries-and-apis-md-11-1--kotlin-tour-intermediate-null-safety-md-11-1--kotlin-tour-intermediate-properties-md-11-1--kotlin-tour-null-safety-md-11-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"icon-6-done_dark.svg\"\" in kotlin-tour-intermediate-libraries-and-apis.md:11:1; kotlin-tour-intermediate-null-safety.md:11:1; kotlin-tour-intermediate-properties.md:11:1; kotlin-tour-null-safety.md:11:1"
+    }, {
+      "id" : "VIS011---icon-6-todo_dark-svg---in-kotlin-tour-basic-types-md-11-1--kotlin-tour-collections-md-11-1--kotlin-tour-control-flow-md-11-1--kotlin-tour-functions-md-11-1--kotlin-tour-hello-world-md-11-1--kotlin-tour-intermediate-classes-interfaces-md-11-1--kotlin-tour-intermediate-extension-functions-md-11-1--kotlin-tour-intermediate-lambdas-receiver-md-11-1--kotlin-tour-intermediate-objects-md-11-1--kotlin-tour-intermediate-scope-functions-md-11-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"icon-6-todo_dark.svg\"\" in kotlin-tour-basic-types.md:11:1; kotlin-tour-collections.md:11:1; kotlin-tour-control-flow.md:11:1; kotlin-tour-functions.md:11:1; kotlin-tour-hello-world.md:11:1; kotlin-tour-intermediate-classes-interfaces.md:11:1; kotlin-tour-intermediate-extension-functions.md:11:1; kotlin-tour-intermediate-lambdas-receiver.md:11:1; kotlin-tour-intermediate-objects.md:11:1; kotlin-tour-intermediate-scope-functions.md:11:1"
+    }, {
+      "id" : "VIS011---icon-6_dark-svg---in-kotlin-tour-classes-md-11-1--kotlin-tour-intermediate-open-special-classes-md-11-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"icon-6_dark.svg\"\" in kotlin-tour-classes.md:11:1; kotlin-tour-intermediate-open-special-classes.md:11:1"
+    }, {
+      "id" : "VIS011---icon-7-done_dark-svg---in-kotlin-tour-intermediate-libraries-and-apis-md-12-1--kotlin-tour-intermediate-null-safety-md-12-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"icon-7-done_dark.svg\"\" in kotlin-tour-intermediate-libraries-and-apis.md:12:1; kotlin-tour-intermediate-null-safety.md:12:1"
+    }, {
+      "id" : "VIS011---icon-7-todo_dark-svg---in-kotlin-tour-basic-types-md-12-1--kotlin-tour-classes-md-12-1--kotlin-tour-collections-md-12-1--kotlin-tour-control-flow-md-12-1--kotlin-tour-functions-md-12-1--kotlin-tour-hello-world-md-12-1--kotlin-tour-intermediate-classes-interfaces-md-12-1--kotlin-tour-intermediate-extension-functions-md-12-1--kotlin-tour-intermediate-lambdas-receiver-md-12-1--kotlin-tour-intermediate-objects-md-12-1--kotlin-tour-intermediate-open-special-classes-md-12-1--kotlin-tour-intermediate-scope-functions-md-12-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"icon-7-todo_dark.svg\"\" in kotlin-tour-basic-types.md:12:1; kotlin-tour-classes.md:12:1; kotlin-tour-collections.md:12:1; kotlin-tour-control-flow.md:12:1; kotlin-tour-functions.md:12:1; kotlin-tour-hello-world.md:12:1; kotlin-tour-intermediate-classes-interfaces.md:12:1; kotlin-tour-intermediate-extension-functions.md:12:1; kotlin-tour-intermediate-lambdas-receiver.md:12:1; kotlin-tour-intermediate-objects.md:12:1; kotlin-tour-intermediate-open-special-classes.md:12:1; kotlin-tour-intermediate-scope-functions.md:12:1"
+    }, {
+      "id" : "VIS011---icon-7_dark-svg---in-kotlin-tour-intermediate-properties-md-12-1--kotlin-tour-null-safety-md-12-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"icon-7_dark.svg\"\" in kotlin-tour-intermediate-properties.md:12:1; kotlin-tour-null-safety.md:12:1"
+    }, {
+      "id" : "VIS011---icon-8-done_dark-svg---in-kotlin-tour-intermediate-libraries-and-apis-md-13-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"icon-8-done_dark.svg\"\" in kotlin-tour-intermediate-libraries-and-apis.md:13:1"
+    }, {
+      "id" : "VIS011---icon-8-todo_dark-svg---in-kotlin-tour-intermediate-classes-interfaces-md-13-1--kotlin-tour-intermediate-extension-functions-md-13-1--kotlin-tour-intermediate-lambdas-receiver-md-13-1--kotlin-tour-intermediate-objects-md-13-1--kotlin-tour-intermediate-open-special-classes-md-13-1--kotlin-tour-intermediate-properties-md-13-1--kotlin-tour-intermediate-scope-functions-md-13-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"icon-8-todo_dark.svg\"\" in kotlin-tour-intermediate-classes-interfaces.md:13:1; kotlin-tour-intermediate-extension-functions.md:13:1; kotlin-tour-intermediate-lambdas-receiver.md:13:1; kotlin-tour-intermediate-objects.md:13:1; kotlin-tour-intermediate-open-special-classes.md:13:1; kotlin-tour-intermediate-properties.md:13:1; kotlin-tour-intermediate-scope-functions.md:13:1"
+    }, {
+      "id" : "VIS011---icon-8_dark-svg---in-kotlin-tour-intermediate-null-safety-md-13-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"icon-8_dark.svg\"\" in kotlin-tour-intermediate-null-safety.md:13:1"
+    }, {
+      "id" : "VIS011---icon-9-todo_dark-svg---in-kotlin-tour-intermediate-classes-interfaces-md-14-1--kotlin-tour-intermediate-extension-functions-md-14-1--kotlin-tour-intermediate-lambdas-receiver-md-14-1--kotlin-tour-intermediate-null-safety-md-14-1--kotlin-tour-intermediate-objects-md-14-1--kotlin-tour-intermediate-open-special-classes-md-14-1--kotlin-tour-intermediate-properties-md-14-1--kotlin-tour-intermediate-scope-functions-md-14-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"icon-9-todo_dark.svg\"\" in kotlin-tour-intermediate-classes-interfaces.md:14:1; kotlin-tour-intermediate-extension-functions.md:14:1; kotlin-tour-intermediate-lambdas-receiver.md:14:1; kotlin-tour-intermediate-null-safety.md:14:1; kotlin-tour-intermediate-objects.md:14:1; kotlin-tour-intermediate-open-special-classes.md:14:1; kotlin-tour-intermediate-properties.md:14:1; kotlin-tour-intermediate-scope-functions.md:14:1"
+    }, {
+      "id" : "VIS011---icon-9_dark-svg---in-kotlin-tour-intermediate-libraries-and-apis-md-14-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"icon-9_dark.svg\"\" in kotlin-tour-intermediate-libraries-and-apis.md:14:1"
+    }, {
+      "id" : "VIS011---ide-console-output_dark-png---in-js-debugging-md-65-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"ide-console-output_dark.png\"\" in js-debugging.md:65:1"
+    }, {
+      "id" : "VIS011---ios-hierarchy-example_dark-jpg---in-whatsnew1620-md-493-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"ios-hierarchy-example_dark.jpg\"\" in whatsnew1620.md:493:1"
+    }, {
+      "id" : "VIS011---iosmain-hierarchy_dark-png---in-whatsnew14-md-840-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"iosmain-hierarchy_dark.png\"\" in whatsnew14.md:840:1"
+    }, {
+      "id" : "VIS011---java-15-multiline-output_dark-png---in-java-to-kotlin-idioms-strings-md-321-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"java-15-multiline-output_dark.png\"\" in java-to-kotlin-idioms-strings.md:321:1"
+    }, {
+      "id" : "VIS011---join-slack-channel_dark-svg---in-wasm-get-started-md-109-1--wasm-wasi-md-125-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"join-slack-channel_dark.svg\"\" in wasm-get-started.md:109:1; wasm-wasi.md:125:1"
+    }, {
+      "id" : "VIS011---joy-of-kotlin_dark-png---in-books-md-101-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"joy-of-kotlin_dark.png\"\" in books.md:101:1"
+    }, {
+      "id" : "VIS011---jvm-gradle-view-build_dark-png---in-get-started-with-jvm-gradle-project-md-97-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"jvm-gradle-view-build_dark.png\"\" in get-started-with-jvm-gradle-project.md:97:4"
+    }, {
+      "id" : "VIS011---jvm-main-kt-initial_dark-png---in-jvm-get-started-md-58-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"jvm-main-kt-initial_dark.png\"\" in jvm-get-started.md:58:4"
+    }, {
+      "id" : "VIS011---jvm-new-gradle-project-advanced_dark-png---in-get-started-with-jvm-gradle-project-md-52-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"jvm-new-gradle-project-advanced_dark.png\"\" in get-started-with-jvm-gradle-project.md:52:4"
+    }, {
+      "id" : "VIS011---jvm-new-gradle-project_dark-png---in-get-started-with-jvm-gradle-project-md-18-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"jvm-new-gradle-project_dark.png\"\" in get-started-with-jvm-gradle-project.md:18:4"
+    }, {
+      "id" : "VIS011---jvm-new-project_dark-png---in-jvm-get-started-md-18-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"jvm-new-project_dark.png\"\" in jvm-get-started.md:18:4"
+    }, {
+      "id" : "VIS011---jvm-output-1_dark-png---in-jvm-get-started-md-83-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"jvm-output-1_dark.png\"\" in jvm-get-started.md:83:1"
+    }, {
+      "id" : "VIS011---jvm-output-2_dark-png---in-jvm-get-started-md-87-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"jvm-output-2_dark.png\"\" in jvm-get-started.md:87:1"
+    }, {
+      "id" : "VIS011---jvm-output-gradle_dark-png---in-get-started-with-jvm-gradle-project-md-112-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"jvm-output-gradle_dark.png\"\" in get-started-with-jvm-gradle-project.md:112:1"
+    }, {
+      "id" : "VIS011---jvm-run-app-gradle_dark-png---in-get-started-with-jvm-gradle-project-md-108-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"jvm-run-app-gradle_dark.png\"\" in get-started-with-jvm-gradle-project.md:108:4"
+    }, {
+      "id" : "VIS011---jvm-run-app_dark-png---in-jvm-get-started-md-79-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"jvm-run-app_dark.png\"\" in jvm-get-started.md:79:1"
+    }, {
+      "id" : "VIS011---k2-compiler-architecture_dark-svg---in-k2-compiler-migration-guide-md-7-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"k2-compiler-architecture_dark.svg\"\" in k2-compiler-migration-guide.md:7:1"
+    }, {
+      "id" : "VIS011---k2-mode_dark-png---in-whatsnew20-md-652-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"k2-mode_dark.png\"\" in whatsnew20.md:652:1"
+    }, {
+      "id" : "VIS011---kandy-library_dark-png---in-kotlin-notebook-add-dependencies-md-106-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"kandy-library_dark.png\"\" in kotlin-notebook-add-dependencies.md:106:1"
+    }, {
+      "id" : "VIS011---kandy-output_dark-png---in-data-analysis-notebooks-output-formats-md-280-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"kandy-output_dark.png\"\" in data-analysis-notebooks-output-formats.md:280:4"
+    }, {
+      "id" : "VIS011---ki-shell-dependency_dark-png---in-run-code-snippets-md-180-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"ki-shell-dependency_dark.png\"\" in run-code-snippets.md:180:1"
+    }, {
+      "id" : "VIS011---ki-shell-highlight-completion_dark-png---in-run-code-snippets-md-146-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"ki-shell-highlight-completion_dark.png\"\" in run-code-snippets.md:146:1"
+    }, {
+      "id" : "VIS011---ki-shell-load_dark-png---in-run-code-snippets-md-168-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"ki-shell-load_dark.png\"\" in run-code-snippets.md:168:1"
+    }, {
+      "id" : "VIS011---ki-shell-results_dark-png---in-run-code-snippets-md-153-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"ki-shell-results_dark.png\"\" in run-code-snippets.md:153:1"
+    }, {
+      "id" : "VIS011---ki-shell-type_dark-png---in-run-code-snippets-md-160-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"ki-shell-type_dark.png\"\" in run-code-snippets.md:160:1"
+    }, {
+      "id" : "VIS011---kotlin-analysis_dark-png---in-data-analysis-work-with-api-md-211-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"kotlin-analysis_dark.png\"\" in data-analysis-work-with-api.md:211:1"
+    }, {
+      "id" : "VIS011---kotlin-in-action_dark-png---in-books-md-47-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"kotlin-in-action_dark.png\"\" in books.md:47:1"
+    }, {
+      "id" : "VIS011---kotlin-library-diagram_dark-svg---in-kotlin-tour-intermediate-libraries-and-apis-md-24-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"kotlin-library-diagram_dark.svg\"\" in kotlin-tour-intermediate-libraries-and-apis.md:24:1"
+    }, {
+      "id" : "VIS011---kotlin-logo-guidelines_dark-png---in-kotlin-brand-assets-md-15-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"kotlin-logo-guidelines_dark.png\"\" in kotlin-brand-assets.md:15:1"
+    }, {
+      "id" : "VIS011---kotlin-logo_dark-png---in-kotlin-brand-assets-md-10-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"kotlin-logo_dark.png\"\" in kotlin-brand-assets.md:10:1"
+    }, {
+      "id" : "VIS011---kotlin-multiline-output_dark-png---in-java-to-kotlin-idioms-strings-md-345-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"kotlin-multiline-output_dark.png\"\" in java-to-kotlin-idioms-strings.md:345:1"
+    }, {
+      "id" : "VIS011---kotlin-night-board_dark-svg---in-kotlin-brand-assets-md-142-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"kotlin-night-board_dark.svg\"\" in kotlin-brand-assets.md:142:1"
+    }, {
+      "id" : "VIS011---kotlin-night-cover_dark-svg---in-kotlin-brand-assets-md-115-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"kotlin-night-cover_dark.svg\"\" in kotlin-brand-assets.md:115:1"
+    }, {
+      "id" : "VIS011---kotlin-night-fb_dark-svg---in-kotlin-brand-assets-md-117-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"kotlin-night-fb_dark.svg\"\" in kotlin-brand-assets.md:117:1"
+    }, {
+      "id" : "VIS011---kotlin-night-press-wall_dark-svg---in-kotlin-brand-assets-md-132-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"kotlin-night-press-wall_dark.svg\"\" in kotlin-brand-assets.md:132:1"
+    }, {
+      "id" : "VIS011---kotlin-night-stickers_dark-svg---in-kotlin-brand-assets-md-124-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"kotlin-night-stickers_dark.svg\"\" in kotlin-brand-assets.md:124:1"
+    }, {
+      "id" : "VIS011---kotlin-night-t-shirt_dark-svg---in-kotlin-brand-assets-md-149-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"kotlin-night-t-shirt_dark.svg\"\" in kotlin-brand-assets.md:149:1"
+    }, {
+      "id" : "VIS011---kotlin-notebook-backend-development_dark-png---in-kotlin-notebook-overview-md-67-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"kotlin-notebook-backend-development_dark.png\"\" in kotlin-notebook-overview.md:67:1"
+    }, {
+      "id" : "VIS011---kotlin-notebook-documentation_dark-png---in-kotlin-notebook-overview-md-77-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"kotlin-notebook-documentation_dark.png\"\" in kotlin-notebook-overview.md:77:1"
+    }, {
+      "id" : "VIS011---kotlin-notebook-plugin_dark-png---in-kotlin-notebook-set-up-env-md-25-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"kotlin-notebook-plugin_dark.png\"\" in kotlin-notebook-set-up-env.md:25:4"
+    }, {
+      "id" : "VIS011---kotlin-notebook-prototyping_dark-png---in-kotlin-notebook-overview-md-59-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"kotlin-notebook-prototyping_dark.png\"\" in kotlin-notebook-overview.md:59:1"
+    }, {
+      "id" : "VIS011---kotlin-notebook-scratch-file_dark-png---in-kotlin-notebook-create-md-80-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"kotlin-notebook-scratch-file_dark.png\"\" in kotlin-notebook-create.md:80:4"
+    }, {
+      "id" : "VIS011---kotlin-notebook-sharing-datalore_dark-png---in-kotlin-notebook-overview-md-88-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"kotlin-notebook-sharing-datalore_dark.png\"\" in kotlin-notebook-overview.md:88:1"
+    }, {
+      "id" : "VIS011---kotlin-notebook_dark-png---in-data-analysis-overview-md-49-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"kotlin-notebook_dark.png\"\" in data-analysis-overview.md:49:1"
+    }, {
+      "id" : "VIS011---kotlin-notebooks-button_dark-svg---in-data-analysis-overview-md-24-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"kotlin-notebooks-button_dark.svg\"\" in data-analysis-overview.md:24:1"
+    }, {
+      "id" : "VIS011---kotlin-shell_dark-png---in-command-line-md-109-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"kotlin-shell_dark.png\"\" in command-line.md:109:1"
+    }, {
+      "id" : "VIS011---kotlin-user-group-avatar_dark-png---in-kotlin-brand-assets-md-77-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"kotlin-user-group-avatar_dark.png\"\" in kotlin-brand-assets.md:77:1"
+    }, {
+      "id" : "VIS011---kotlin-user-group-logo_dark-png---in-kotlin-brand-assets-md-61-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"kotlin-user-group-logo_dark.png\"\" in kotlin-brand-assets.md:61:1"
+    }, {
+      "id" : "VIS011---kotlin-user-group_dark-png---in-kotlin-brand-assets-md-100-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"kotlin-user-group_dark.png\"\" in kotlin-brand-assets.md:100:1"
+    }, {
+      "id" : "VIS011---ksp-class-diagram_dark-svg---in-ksp-additional-details-md-7-1--test-page-md-369-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"ksp-class-diagram_dark.svg\"\" in ksp-additional-details.md:7:1; test-page.md:369:1"
+    }, {
+      "id" : "VIS011---latex-output_dark-png---in-data-analysis-notebooks-output-formats-md-190-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"latex-output_dark.png\"\" in data-analysis-notebooks-output-formats.md:190:4"
+    }, {
+      "id" : "VIS011---lets-plot-overview_dark-png---in-lets-plot-md-10-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"lets-plot-overview_dark.png\"\" in lets-plot.md:10:1"
+    }, {
+      "id" : "VIS011---lets-plot-scatter_dark-svg---in-lets-plot-md-94-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"lets-plot-scatter_dark.svg\"\" in lets-plot.md:94:1"
+    }, {
+      "id" : "VIS011---list-processing_dark-svg---in-sequences-md-147-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"list-processing_dark.svg\"\" in sequences.md:147:1"
+    }, {
+      "id" : "VIS011---load-gradle-changes_dark-png---in-native-get-started-md-50-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"load-gradle-changes_dark.png\"\" in native-get-started.md:50:4"
+    }, {
+      "id" : "VIS011---manual-hierarchical-structure_dark-svg---in-whatsnew14-md-857-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"manual-hierarchical-structure_dark.svg\"\" in whatsnew14.md:857:1"
+    }, {
+      "id" : "VIS011---markdown-cells-output_dark-png---in-data-analysis-notebooks-output-formats-md-90-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"markdown-cells-output_dark.png\"\" in data-analysis-notebooks-output-formats.md:90:1"
+    }, {
+      "id" : "VIS011---mascot-body-proportions_dark-png---in-kotlin-brand-assets-md-33-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"mascot-body-proportions_dark.png\"\" in kotlin-brand-assets.md:33:1"
+    }, {
+      "id" : "VIS011---mascot-in-action_dark-png---in-kotlin-brand-assets-md-40-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"mascot-in-action_dark.png\"\" in kotlin-brand-assets.md:40:1"
+    }, {
+      "id" : "VIS011---messages-in-json-format_dark-png---in-jvm-spring-boot-add-data-class-md-171-5",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"messages-in-json-format_dark.png\"\" in jvm-spring-boot-add-data-class.md:171:5"
+    }, {
+      "id" : "VIS011---migration-inspection-wn_dark-png---in-whatsnew14-md-1518-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"migration-inspection-wn_dark.png\"\" in whatsnew14.md:1518:1"
+    }, {
+      "id" : "VIS011---multiplatform-create-project-button_dark-png---in-test-page-md-373-1--whatsnew1920-md-580-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"multiplatform-create-project-button_dark.png\"\" in test-page.md:373:1; whatsnew1920.md:580:1"
+    }, {
+      "id" : "VIS011---multiplatform-hierarchy-completion_dark-animated-gif---in-whatsnew1920-md-457-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"multiplatform-hierarchy-completion_dark.animated.gif\"\" in whatsnew1920.md:457:1"
+    }, {
+      "id" : "VIS011---multiplatform-hierarchy-completion_dark-png---in-whatsnew1920-md-457-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"multiplatform-hierarchy-completion_dark.png\"\" in whatsnew1920.md:457:1"
+    }, {
+      "id" : "VIS011---multiplatform-project-1-wn_dark-png---in-whatsnew14-md-290-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"multiplatform-project-1-wn_dark.png\"\" in whatsnew14.md:290:1"
+    }, {
+      "id" : "VIS011---multiplatform-project-2-wn_dark-png---in-whatsnew14-md-304-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"multiplatform-project-2-wn_dark.png\"\" in whatsnew14.md:304:1"
+    }, {
+      "id" : "VIS011---multiplatform-web-wizard_dark-png---in-test-page-md-353-1--whatsnew1920-md-555-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"multiplatform-web-wizard_dark.png\"\" in test-page.md:353:1; whatsnew1920.md:555:1"
+    }, {
+      "id" : "VIS011---native-gc-signposts_dark-png---in-native-memory-manager-md-66-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"native-gc-signposts_dark.png\"\" in native-memory-manager.md:66:4"
+    }, {
+      "id" : "VIS011---native-get-started-button_dark-svg---in-native-overview-md-17-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"native-get-started-button_dark.svg\"\" in native-overview.md:17:1"
+    }, {
+      "id" : "VIS011---native-output-gutter-1_dark-png---in-native-get-started-md-67-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"native-output-gutter-1_dark.png\"\" in native-get-started.md:67:1"
+    }, {
+      "id" : "VIS011---native-output-gutter-2_dark-png---in-native-get-started-md-145-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"native-output-gutter-2_dark.png\"\" in native-get-started.md:145:4"
+    }, {
+      "id" : "VIS011---native-output-gutter-3_dark-png---in-native-get-started-md-182-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"native-output-gutter-3_dark.png\"\" in native-get-started.md:182:4"
+    }, {
+      "id" : "VIS011---native-output_dark-png---in-native-app-with-c-and-libcurl-md-210-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"native-output_dark.png\"\" in native-app-with-c-and-libcurl.md:210:4"
+    }, {
+      "id" : "VIS011---native-project-structure_dark-png---in-native-app-with-c-and-libcurl-md-26-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"native-project-structure_dark.png\"\" in native-app-with-c-and-libcurl.md:26:4"
+    }, {
+      "id" : "VIS011---native-run-config_dark-png---in-native-get-started-md-71-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"native-run-config_dark.png\"\" in native-get-started.md:71:1"
+    }, {
+      "id" : "VIS011---native-run-gutter_dark-png---in-native-get-started-md-63-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"native-run-gutter_dark.png\"\" in native-get-started.md:63:1"
+    }, {
+      "id" : "VIS011---new-java-class_dark-png---in-mixing-java-kotlin-intellij-md-13-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"new-java-class_dark.png\"\" in mixing-java-kotlin-intellij.md:13:1"
+    }, {
+      "id" : "VIS011---new-kotlin-file_dark-png---in-mixing-java-kotlin-intellij-md-56-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"new-kotlin-file_dark.png\"\" in mixing-java-kotlin-intellij.md:56:1"
+    }, {
+      "id" : "VIS011---new-notebook-project_dark-png---in-kotlin-notebook-create-md-26-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"new-notebook-project_dark.png\"\" in kotlin-notebook-create.md:26:4"
+    }, {
+      "id" : "VIS011---new-notebook_dark-png---in-kotlin-notebook-create-md-42-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"new-notebook_dark.png\"\" in kotlin-notebook-create.md:42:4"
+    }, {
+      "id" : "VIS011---open-ai-chat-endpoint_dark-png---in-spring-ai-guide-md-339-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"open-ai-chat-endpoint_dark.png\"\" in spring-ai-guide.md:339:4"
+    }, {
+      "id" : "VIS011---original-dataset_dark-png---in-data-analysis-work-with-data-sources-md-128-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"original-dataset_dark.png\"\" in data-analysis-work-with-data-sources.md:128:1"
+    }, {
+      "id" : "VIS011---passing-null-to-function_dark-png---in-java-to-kotlin-nullability-guide-md-73-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"passing-null-to-function_dark.png\"\" in java-to-kotlin-nullability-guide.md:73:1"
+    }, {
+      "id" : "VIS011---plain-text-output_dark-png---in-data-analysis-notebooks-output-formats-md-63-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"plain-text-output_dark.png\"\" in data-analysis-notebooks-output-formats.md:63:1"
+    }, {
+      "id" : "VIS011---playground-completion_dark-png---in-run-code-snippets-md-84-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"playground-completion_dark.png\"\" in run-code-snippets.md:84:1"
+    }, {
+      "id" : "VIS011---playground-env-setup_dark-png---in-run-code-snippets-md-95-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"playground-env-setup_dark.png\"\" in run-code-snippets.md:95:1"
+    }, {
+      "id" : "VIS011---playground-generated-js_dark-png---in-run-code-snippets-md-99-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"playground-generated-js_dark.png\"\" in run-code-snippets.md:99:1"
+    }, {
+      "id" : "VIS011---playground-share_dark-png---in-run-code-snippets-md-108-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"playground-share_dark.png\"\" in run-code-snippets.md:108:1"
+    }, {
+      "id" : "VIS011---programming-kotlin_dark-png---in-books-md-81-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"programming-kotlin_dark.png\"\" in books.md:81:1"
+    }, {
+      "id" : "VIS011---qdrant-collections_dark-png---in-spring-ai-guide-md-131-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"qdrant-collections_dark.png\"\" in spring-ai-guide.md:131:4"
+    }, {
+      "id" : "VIS011---receiver-highlight_dark-png---in-kotlin-tour-intermediate-extension-functions-md-33-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"receiver-highlight_dark.png\"\" in kotlin-tour-intermediate-extension-functions.md:33:1"
+    }, {
+      "id" : "VIS011---red-page_dark-png---in-js-react-md-101-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"red-page_dark.png\"\" in js-react.md:101:1"
+    }, {
+      "id" : "VIS011---reddit_dark-svg---in-getting-started-md-97-328",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"reddit_dark.svg\"\" in getting-started.md:97:328"
+    }, {
+      "id" : "VIS011---refined-data_dark-png---in-data-analysis-work-with-data-sources-md-132-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"refined-data_dark.png\"\" in data-analysis-work-with-data-sources.md:132:1"
+    }, {
+      "id" : "VIS011---reformat-code_dark-png---in-code-style-migration-guide-md-73-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"reformat-code_dark.png\"\" in code-style-migration-guide.md:73:1"
+    }, {
+      "id" : "VIS011---rendering-example_dark-png---in-typesafe-html-dsl-md-47-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"rendering-example_dark.png\"\" in typesafe-html-dsl.md:47:1"
+    }, {
+      "id" : "VIS011---results-of-expanding-group-data-analysis_dark-png---in-data-analysis-work-with-api-md-187-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"results-of-expanding-group-data-analysis_dark.png\"\" in data-analysis-work-with-api.md:187:1"
+    }, {
+      "id" : "VIS011---retrieve-message-by-its-id_dark-png---in-jvm-spring-boot-add-db-support-md-494-5",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"retrieve-message-by-its-id_dark.png\"\" in jvm-spring-boot-add-db-support.md:494:5"
+    }, {
+      "id" : "VIS011---return-to-grouped-dataset_dark-png---in-data-analysis-work-with-api-md-191-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"return-to-grouped-dataset_dark.png\"\" in data-analysis-work-with-api.md:191:1"
+    }, {
+      "id" : "VIS011---run-all-button_dark-png---in-kotlin-notebook-create-md-62-75",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"run-all-button_dark.png\"\" in kotlin-notebook-create.md:62:75"
+    }, {
+      "id" : "VIS011---run-cell-and-select-below_dark-png---in-kotlin-notebook-create-md-51-64",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"run-cell-and-select-below_dark.png\"\" in kotlin-notebook-create.md:51:64"
+    }, {
+      "id" : "VIS011---run-debug-configurations_dark-png---in-dev-server-continuous-compilation-md-20-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"run-debug-configurations_dark.png\"\" in dev-server-continuous-compilation.md:20:1"
+    }, {
+      "id" : "VIS011---run-gradle-task_dark-png---in-running-kotlin-js-md-26-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"run-gradle-task_dark.png\"\" in running-kotlin-js.md:26:1"
+    }, {
+      "id" : "VIS011---run-migration-wn_dark-png---in-whatsnew14-md-1513-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"run-migration-wn_dark.png\"\" in whatsnew14.md:1513:1"
+    }, {
+      "id" : "VIS011---run-spring-boot-application_dark-png---in-jvm-create-project-with-spring-boot-md-251-5",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"run-spring-boot-application_dark.png\"\" in jvm-create-project-with-spring-boot.md:251:5"
+    }, {
+      "id" : "VIS011---run-test_dark-png---in-jvm-test-using-junit-md-154-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"run-test_dark.png\"\" in jvm-test-using-junit.md:154:4"
+    }, {
+      "id" : "VIS011---runtime-exception_dark-svg---in-exceptions-md-660-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"runtime-exception_dark.svg\"\" in exceptions.md:660:1"
+    }, {
+      "id" : "VIS011---schema-data-analysis_dark-png---in-data-analysis-work-with-data-sources-md-69-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"schema-data-analysis_dark.png\"\" in data-analysis-work-with-data-sources.md:69:1"
+    }, {
+      "id" : "VIS011---scratch-interactive_dark-png---in-run-code-snippets-md-45-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"scratch-interactive_dark.png\"\" in run-code-snippets.md:45:1"
+    }, {
+      "id" : "VIS011---scratch-repl_dark-png---in-run-code-snippets-md-68-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"scratch-repl_dark.png\"\" in run-code-snippets.md:68:1"
+    }, {
+      "id" : "VIS011---scratch-run_dark-png---in-run-code-snippets-md-38-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"scratch-run_dark.png\"\" in run-code-snippets.md:38:1"
+    }, {
+      "id" : "VIS011---scratch-select-module_dark-png---in-run-code-snippets-md-60-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"scratch-select-module_dark.png\"\" in run-code-snippets.md:60:1"
+    }, {
+      "id" : "VIS011---script-deps-create-root-project_dark-png---in-custom-script-deps-tutorial-md-77-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"script-deps-create-root-project_dark.png\"\" in custom-script-deps-tutorial.md:77:1"
+    }, {
+      "id" : "VIS011---script-deps-module-definition_dark-png---in-custom-script-deps-tutorial-md-91-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"script-deps-module-definition_dark.png\"\" in custom-script-deps-tutorial.md:91:4"
+    }, {
+      "id" : "VIS011---script-deps-project-structure_dark-png---in-custom-script-deps-tutorial-md-100-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"script-deps-project-structure_dark.png\"\" in custom-script-deps-tutorial.md:100:1"
+    }, {
+      "id" : "VIS011---script-deps-run-config_dark-png---in-custom-script-deps-tutorial-md-337-7",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"script-deps-run-config_dark.png\"\" in custom-script-deps-tutorial.md:337:7"
+    }, {
+      "id" : "VIS011---sealed-classes-interfaces_dark-svg---in-sealed-classes-md-58-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"sealed-classes-interfaces_dark.svg\"\" in sealed-classes.md:58:1"
+    }, {
+      "id" : "VIS011---sequence-processing_dark-svg---in-sequences-md-180-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"sequence-processing_dark.svg\"\" in sequences.md:180:1"
+    }, {
+      "id" : "VIS011---set-up-spring-boot-project_dark-png---in-jvm-create-project-with-spring-boot-md-60-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"set-up-spring-boot-project_dark.png\"\" in jvm-create-project-with-spring-boot.md:60:4"
+    }, {
+      "id" : "VIS011---slack_dark-svg---in-getting-started-md-95-5--jvm-get-started-spring-boot-md-31-3--wasm-debugging-md-213-3--wasm-overview-md-94-3--wasm-overview-md-99-3",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"slack_dark.svg\"\" in getting-started.md:95:5; jvm-get-started-spring-boot.md:31:3; wasm-debugging.md:213:3; wasm-overview.md:94:3; wasm-overview.md:99:3"
+    }, {
+      "id" : "VIS011---social-buttons_dark-png---in-js-react-md-1024-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"social-buttons_dark.png\"\" in js-react.md:1024:1"
+    }, {
+      "id" : "VIS011---spring-ai-dependencies_dark-png---in-spring-ai-guide-md-73-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"spring-ai-dependencies_dark.png\"\" in spring-ai-guide.md:73:4"
+    }, {
+      "id" : "VIS011---spring-ai-get-results_dark-png---in-spring-ai-guide-md-249-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"spring-ai-get-results_dark.png\"\" in spring-ai-guide.md:249:4"
+    }, {
+      "id" : "VIS011---spring-ai-project-view_dark-png---in-spring-ai-guide-md-83-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"spring-ai-project-view_dark.png\"\" in spring-ai-guide.md:83:1"
+    }, {
+      "id" : "VIS011---spring-application-response_dark-png---in-jvm-create-project-with-spring-boot-md-267-5",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"spring-application-response_dark.png\"\" in jvm-create-project-with-spring-boot.md:267:5"
+    }, {
+      "id" : "VIS011---spring-boot-project-view_dark-png---in-jvm-create-project-with-spring-boot-md-70-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"spring-boot-project-view_dark.png\"\" in jvm-create-project-with-spring-boot.md:70:4"
+    }, {
+      "id" : "VIS011---stackoverflow_dark-svg---in-getting-started-md-96-5--jvm-get-started-spring-boot-md-32-3",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"stackoverflow_dark.svg\"\" in getting-started.md:96:5; jvm-get-started-spring-boot.md:32:3"
+    }, {
+      "id" : "VIS011---start-beginner-tour_dark-svg---in-kotlin-tour-welcome-md-16-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"start-beginner-tour_dark.svg\"\" in kotlin-tour-welcome.md:16:1"
+    }, {
+      "id" : "VIS011---start-intermediate-tour_dark-svg---in-kotlin-tour-null-safety-md-212-1--kotlin-tour-welcome-md-34-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"start-intermediate-tour_dark.svg\"\" in kotlin-tour-null-safety.md:212:1; kotlin-tour-welcome.md:34:1"
+    }, {
+      "id" : "VIS011---start-kotlin-tour_dark-svg---in-getting-started-md-13-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"start-kotlin-tour_dark.svg\"\" in getting-started.md:13:1"
+    }, {
+      "id" : "VIS011---structured-layout_dark-png---in-js-react-md-366-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"structured-layout_dark.png\"\" in js-react.md:366:1"
+    }, {
+      "id" : "VIS011---teamcity-gradle_dark-png---in-kotlin-and-ci-md-12-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"teamcity-gradle_dark.png\"\" in kotlin-and-ci.md:12:1"
+    }, {
+      "id" : "VIS011---teamcity-idearunner_dark-png---in-kotlin-and-ci-md-52-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"teamcity-idearunner_dark.png\"\" in kotlin-and-ci.md:52:1"
+    }, {
+      "id" : "VIS011---teamcity-metarunner_dark-png---in-kotlin-and-ci-md-35-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"teamcity-metarunner_dark.png\"\" in kotlin-and-ci.md:35:1"
+    }, {
+      "id" : "VIS011---teamcity-setupkotlin_dark-png---in-kotlin-and-ci-md-42-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"teamcity-setupkotlin_dark.png\"\" in kotlin-and-ci.md:42:1"
+    }, {
+      "id" : "VIS011---test-failed_dark-png---in-jvm-test-using-junit-md-178-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"test-failed_dark.png\"\" in jvm-test-using-junit.md:178:4"
+    }, {
+      "id" : "VIS011---test-stacktrace-ide_dark-png---in-js-running-tests-md-101-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"test-stacktrace-ide_dark.png\"\" in js-running-tests.md:101:1"
+    }, {
+      "id" : "VIS011---test-successful_dark-png---in-jvm-test-using-junit-md-162-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"test-successful_dark.png\"\" in jvm-test-using-junit.md:162:4"
+    }, {
+      "id" : "VIS011---test-summary_dark-png---in-js-running-tests-md-106-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"test-summary_dark.png\"\" in js-running-tests.md:106:1"
+    }, {
+      "id" : "VIS011---throwable_dark-svg---in-exceptions-md-654-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"throwable_dark.svg\"\" in exceptions.md:654:1"
+    }, {
+      "id" : "VIS011---twitter_dark-svg---in-getting-started-md-97-138",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"twitter_dark.svg\"\" in getting-started.md:97:138"
+    }, {
+      "id" : "VIS011---two-videos-select_dark-png---in-js-react-md-613-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"two-videos-select_dark.png\"\" in js-react.md:613:1"
+    }, {
+      "id" : "VIS011---visualization-bar-chart_dark-svg---in-data-analysis-visualization-md-162-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"visualization-bar-chart_dark.svg\"\" in data-analysis-visualization.md:162:1"
+    }, {
+      "id" : "VIS011---visualization-dataframe-temperature_dark-png---in-data-analysis-visualization-md-69-1--lets-plot-md-68-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"visualization-dataframe-temperature_dark.png\"\" in data-analysis-visualization.md:69:1; lets-plot.md:68:1"
+    }, {
+      "id" : "VIS011---visualization-line-chart_dark-svg---in-data-analysis-visualization-md-103-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"visualization-line-chart_dark.svg\"\" in data-analysis-visualization.md:103:1"
+    }, {
+      "id" : "VIS011---visualization-points-chart_dark-svg---in-data-analysis-visualization-md-132-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"visualization-points-chart_dark.svg\"\" in data-analysis-visualization.md:132:1"
+    }, {
+      "id" : "VIS011---waiting-for-changes_dark-png---in-dev-server-continuous-compilation-md-24-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"waiting-for-changes_dark.png\"\" in dev-server-continuous-compilation.md:24:1"
+    }, {
+      "id" : "VIS011---warning-name-intention_dark-png---in-whatsnew21-md-394-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"warning-name-intention_dark.png\"\" in whatsnew21.md:394:1"
+    }, {
+      "id" : "VIS011---wasm-1-9-0-size-improvements_dark-png---in-whatsnew19-md-523-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"wasm-1-9-0-size-improvements_dark.png\"\" in whatsnew19.md:523:1"
+    }, {
+      "id" : "VIS011---wasm-breakpoints_dark-png---in-wasm-debugging-md-188-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"wasm-breakpoints_dark.png\"\" in wasm-debugging.md:188:4"
+    }, {
+      "id" : "VIS011---wasm-compose-web-wizard_dark-png---in-wasm-debugging-md-24-4--wasm-get-started-md-26-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"wasm-compose-web-wizard_dark.png\"\" in wasm-debugging.md:24:4; wasm-get-started.md:26:4"
+    }, {
+      "id" : "VIS011---wasm-composeapp-browser-clickme_dark-png---in-wasm-debugging-md-63-4--wasm-get-started-md-67-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"wasm-composeapp-browser-clickme_dark.png\"\" in wasm-debugging.md:63:4; wasm-get-started.md:67:4"
+    }, {
+      "id" : "VIS011---wasm-composeapp-browser_dark-png---in-wasm-debugging-md-67-4--wasm-get-started-md-71-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"wasm-composeapp-browser_dark.png\"\" in wasm-debugging.md:67:4; wasm-get-started.md:71:4"
+    }, {
+      "id" : "VIS011---wasm-composeapp-directory_dark-png---in-wasm-get-started-md-88-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"wasm-composeapp-directory_dark.png\"\" in wasm-get-started.md:88:1"
+    }, {
+      "id" : "VIS011---wasm-composeapp-github-clickme_dark-png---in-wasm-get-started-md-101-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"wasm-composeapp-github-clickme_dark.png\"\" in wasm-get-started.md:101:4"
+    }, {
+      "id" : "VIS011---wasm-custom-formatters-chrome_dark-png---in-wasm-debugging-md-149-3--whatsnew21-md-950-6--whatsnew2120-md-171-3",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"wasm-custom-formatters-chrome_dark.png\"\" in wasm-debugging.md:149:3; whatsnew21.md:950:6; whatsnew2120.md:171:3"
+    }, {
+      "id" : "VIS011---wasm-custom-formatters-firefox_dark-png---in-wasm-debugging-md-153-3--whatsnew21-md-954-6--whatsnew2120-md-175-3",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"wasm-custom-formatters-firefox_dark.png\"\" in wasm-debugging.md:153:3; whatsnew21.md:954:6; whatsnew2120.md:175:3"
+    }, {
+      "id" : "VIS011---wasm-debug-controls_dark-png---in-wasm-debugging-md-198-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"wasm-debug-controls_dark.png\"\" in wasm-debugging.md:198:4"
+    }, {
+      "id" : "VIS011---wasm-debug-scope_dark-png---in-wasm-debugging-md-202-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"wasm-debug-scope_dark.png\"\" in wasm-debugging.md:202:4"
+    }, {
+      "id" : "VIS011---wasm-debugger-improved_dark-png---in-whatsnew21-md-927-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"wasm-debugger-improved_dark.png\"\" in whatsnew21.md:927:1"
+    }, {
+      "id" : "VIS011---wasm-demo_dark-png---in-wasm-overview-md-39-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"wasm-demo_dark.png\"\" in wasm-overview.md:39:1"
+    }, {
+      "id" : "VIS011---wasm-get-started-button_dark-svg---in-wasm-overview-md-53-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"wasm-get-started-button_dark.svg\"\" in wasm-overview.md:53:1"
+    }, {
+      "id" : "VIS011---wasm-gradle-task-window-compose_dark-png---in-wasm-get-started-md-77-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"wasm-gradle-task-window-compose_dark.png\"\" in wasm-get-started.md:77:1"
+    }, {
+      "id" : "VIS011---wasm-gradle-task-window_dark-png---in-wasm-debugging-md-42-4--wasm-get-started-md-46-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"wasm-gradle-task-window_dark.png\"\" in wasm-debugging.md:42:4; wasm-get-started.md:46:4"
+    }, {
+      "id" : "VIS011---wasm-old-debugger_dark-png---in-whatsnew21-md-919-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"wasm-old-debugger_dark.png\"\" in whatsnew21.md:919:1"
+    }, {
+      "id" : "VIS011---wasm-performance-compose_dark-png---in-wasm-overview-md-75-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"wasm-performance-compose_dark.png\"\" in wasm-overview.md:75:1"
+    }, {
+      "id" : "VIS011---wasm-step-into_dark-png---in-wasm-debugging-md-194-6",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"wasm-step-into_dark.png\"\" in wasm-debugging.md:194:6"
+    }, {
+      "id" : "VIS011---wasm-step-out_dark-png---in-wasm-debugging-md-196-6",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"wasm-step-out_dark.png\"\" in wasm-debugging.md:196:6"
+    }, {
+      "id" : "VIS011---wasm-step-over_dark-png---in-wasm-debugging-md-195-6",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"wasm-step-over_dark.png\"\" in wasm-debugging.md:195:6"
+    }, {
+      "id" : "VIS011---wasm-wasi-app-terminal_dark-png---in-wasm-wasi-md-82-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"wasm-wasi-app-terminal_dark.png\"\" in wasm-wasi.md:82:1"
+    }, {
+      "id" : "VIS011---wasm-wasi-gradle-task_dark-png---in-wasm-wasi-md-57-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"wasm-wasi-gradle-task_dark.png\"\" in wasm-wasi.md:57:4"
+    }, {
+      "id" : "VIS011---wasm-wasi-testing-task_dark-png---in-wasm-wasi-md-94-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"wasm-wasi-testing-task_dark.png\"\" in wasm-wasi.md:94:1"
+    }, {
+      "id" : "VIS011---wasm-wasi-tests-results_dark-png---in-wasm-wasi-md-119-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"wasm-wasi-tests-results_dark.png\"\" in wasm-wasi.md:119:1"
+    }, {
+      "id" : "VIS011---website-api-data_dark-png---in-js-react-md-1172-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"website-api-data_dark.png\"\" in js-react.md:1172:1"
+    }, {
+      "id" : "VIS011---website-draft_dark-png---in-js-react-md-251-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"website-draft_dark.png\"\" in js-react.md:251:1"
+    }, {
+      "id" : "VIS011---xcode-gradle-output_dark-png---in-whatsnew1820-md-879-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"xcode-gradle-output_dark.png\"\" in whatsnew1820.md:879:1"
+    }, {
+      "id" : "VIS011---xcode-swift-export-run-script-phase_dark-png---in-whatsnew21-md-694-4",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"xcode-swift-export-run-script-phase_dark.png\"\" in whatsnew21.md:694:4"
+    }, {
+      "id" : "VIS011---youtrack-logo_dark-png---in-test-page-md-365-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"youtrack-logo_dark.png\"\" in test-page.md:365:1"
+    }, {
+      "id" : "VIS011---youtube_dark-svg---in-advent-of-code-md-104-1--advent-of-code-md-115-1--advent-of-code-md-125-1--advent-of-code-md-136-1--advent-of-code-md-145-1--advent-of-code-md-161-1--advent-of-code-md-171-1--advent-of-code-md-181-1--advent-of-code-md-191-1--advent-of-code-md-208-1--advent-of-code-md-219-1--advent-of-code-md-230-1--advent-of-code-md-241-1--advent-of-code-md-252-1--advent-of-code-md-263-1--advent-of-code-md-275-1--advent-of-code-md-287-1--advent-of-code-md-298-1--advent-of-code-md-33-1--advent-of-code-md-43-1--advent-of-code-md-55-1--advent-of-code-md-65-1--advent-of-code-md-75-1--advent-of-code-md-85-1--advent-of-code-md-94-1--getting-started-md-97-20--jvm-get-started-spring-boot-md-33-3",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"youtube_dark.svg\"\" in advent-of-code.md:104:1; advent-of-code.md:115:1; advent-of-code.md:125:1; advent-of-code.md:136:1; advent-of-code.md:145:1; advent-of-code.md:161:1; advent-of-code.md:171:1; advent-of-code.md:181:1; advent-of-code.md:191:1; advent-of-code.md:208:1; advent-of-code.md:219:1; advent-of-code.md:230:1; advent-of-code.md:241:1; advent-of-code.md:252:1; advent-of-code.md:263:1; advent-of-code.md:275:1; advent-of-code.md:287:1; advent-of-code.md:298:1; advent-of-code.md:33:1; advent-of-code.md:43:1; advent-of-code.md:55:1; advent-of-code.md:65:1; advent-of-code.md:75:1; advent-of-code.md:85:1; advent-of-code.md:94:1; getting-started.md:97:20; jvm-get-started-spring-boot.md:33:3"
+    } ]
+  },
+  "testsErrors" : {
+    "REF002" : [ {
+      "id" : "REF002---api-guidelines-introduction-md---in-coding-conventions-md-1158-99",
+      "problemId" : "REF002",
+      "name" : "Referenced topic doesn't exist",
+      "description" : "\"\"api-guidelines-introduction.md\"\" in coding-conventions.md:1158:99"
+    }, {
+      "id" : "REF002---channels-md---in-coroutines-overview-md-21-3--whatsnew15-md-747-3",
+      "problemId" : "REF002",
+      "name" : "Referenced topic doesn't exist",
+      "description" : "\"\"channels.md\"\" in coroutines-overview.md:21:3; whatsnew15.md:747:3"
+    }, {
+      "id" : "REF002---composing-suspending-functions-md---in-js-project-setup-md-95-28--whatsnew15-md-725-80--whatsnew20-md-950-15",
+      "problemId" : "REF002",
+      "name" : "Referenced topic doesn't exist",
+      "description" : "\"\"composing-suspending-functions.md\"\" in js-project-setup.md:95:28; whatsnew15.md:725:80; whatsnew20.md:950:15"
+    }, {
+      "id" : "REF002---coroutine-context-and-dispatchers-md---in-coroutines-overview-md-22-3",
+      "problemId" : "REF002",
+      "name" : "Referenced topic doesn't exist",
+      "description" : "\"\"coroutine-context-and-dispatchers.md\"\" in coroutines-overview.md:22:3"
+    }, {
+      "id" : "REF002---coroutines-and-channels-md---in-coroutines-overview-md-29-3--js-react-md-1182-85--js-react-md-1291-109--kotlin-hands-on-md-46-1--whatsnew11-md-76-98",
+      "problemId" : "REF002",
+      "name" : "Referenced topic doesn't exist",
+      "description" : "\"\"coroutines-and-channels.md\"\" in coroutines-overview.md:29:3; js-react.md:1182:85; js-react.md:1291:109; kotlin-hands-on.md:46:1; whatsnew11.md:76:98"
+    }, {
+      "id" : "REF002---coroutines-basics-md---in-coroutines-overview-md-20-3--lambdas-md-85-3--native-objc-interop-md-365-10--whatsnew11-md-26-35--whatsnew17-md-1027-47",
+      "problemId" : "REF002",
+      "name" : "Referenced topic doesn't exist",
+      "description" : "\"\"coroutines-basics.md\"\" in coroutines-overview.md:20:3; lambdas.md:85:3; native-objc-interop.md:365:10; whatsnew11.md:26:35; whatsnew17.md:1027:47"
+    }, {
+      "id" : "REF002---coroutines-guide-md---in-coroutines-overview-md-19-3--native-target-support-md-82-83--whatsnew14-md-316-25--whatsnew1620-md-847-38--whatsnew17-md-1031-36--whatsnew1820-md-615-6",
+      "problemId" : "REF002",
+      "name" : "Referenced topic doesn't exist",
+      "description" : "\"\"coroutines-guide.md\"\" in coroutines-overview.md:19:3; native-target-support.md:82:83; whatsnew14.md:316:25; whatsnew1620.md:847:38; whatsnew17.md:1031:36; whatsnew1820.md:615:6"
+    }, {
+      "id" : "REF002---debug-coroutines-with-idea-md---in-coroutines-overview-md-30-3--gsoc-2023-md-205-29",
+      "problemId" : "REF002",
+      "name" : "Referenced topic doesn't exist",
+      "description" : "\"\"debug-coroutines-with-idea.md\"\" in coroutines-overview.md:30:3; gsoc-2023.md:205:29"
+    }, {
+      "id" : "REF002---debug-flow-with-idea-md---in-coroutines-overview-md-31-3",
+      "problemId" : "REF002",
+      "name" : "Referenced topic doesn't exist",
+      "description" : "\"\"debug-flow-with-idea.md\"\" in coroutines-overview.md:31:3"
+    }, {
+      "id" : "REF002---dokka-introduction-md---in-kotlin-doc-md-152-58--kotlin-doc-md-8-34",
+      "problemId" : "REF002",
+      "name" : "Referenced topic doesn't exist",
+      "description" : "\"\"dokka-introduction.md\"\" in kotlin-doc.md:152:58; kotlin-doc.md:8:34"
+    }, {
+      "id" : "REF002---dokka-maven-md---in-maven-md-361-25",
+      "problemId" : "REF002",
+      "name" : "Referenced topic doesn't exist",
+      "description" : "\"\"dokka-maven.md\"\" in maven.md:361:25"
+    }, {
+      "id" : "REF002---dokka-migration-md---in-whatsnew21-md-1590-3",
+      "problemId" : "REF002",
+      "name" : "Referenced topic doesn't exist",
+      "description" : "\"\"dokka-migration.md\"\" in whatsnew21.md:1590:3"
+    }, {
+      "id" : "REF002---flow-md---in-coroutines-overview-md-24-3",
+      "problemId" : "REF002",
+      "name" : "Referenced topic doesn't exist",
+      "description" : "\"\"flow.md\"\" in coroutines-overview.md:24:3"
+    }, {
+      "id" : "REF002---lincheck-guide-md---in-whatsnew18-md-793-3",
+      "problemId" : "REF002",
+      "name" : "Referenced topic doesn't exist",
+      "description" : "\"\"lincheck-guide.md\"\" in whatsnew18.md:793:3"
+    }, {
+      "id" : "REF002---shared-mutable-state-and-concurrency-md---in-coroutines-overview-md-23-3--native-faq-md-127-68",
+      "problemId" : "REF002",
+      "name" : "Referenced topic doesn't exist",
+      "description" : "\"\"shared-mutable-state-and-concurrency.md\"\" in coroutines-overview.md:23:3; native-faq.md:127:68"
+    } ],
+    "REF009" : [ {
+      "id" : "REF009---api-guidelines-tree---in-kr-tree-370-4",
+      "problemId" : "REF009",
+      "name" : "Cannot include from topic that does not exist",
+      "description" : "\"\"api-guidelines.tree\"\" in kr.tree:370:4"
+    }, {
+      "id" : "REF009---dokka-tree---in-kr-tree-313-4",
+      "problemId" : "REF009",
+      "name" : "Cannot include from topic that does not exist",
+      "description" : "\"\"dokka.tree\"\" in kr.tree:313:4"
+    }, {
+      "id" : "REF009---kc-tree---in-kr-tree-273-4",
+      "problemId" : "REF009",
+      "name" : "Cannot include from topic that does not exist",
+      "description" : "\"\"kc.tree\"\" in kr.tree:273:4"
+    }, {
+      "id" : "REF009---kl-tree---in-kr-tree-278-4",
+      "problemId" : "REF009",
+      "name" : "Cannot include from topic that does not exist",
+      "description" : "\"\"kl.tree\"\" in kr.tree:278:4"
+    } ]
+  },
+  "idsAndTitles" : {
+    "CDE001" : "The <compare> element must contain exactly two code blocks",
+    "CDE002" : "The 'collapsed-title-line-number' attribute value on a 'code-block' element is not a valid number",
+    "CDE003" : "The code snippet doesn't contain the line with the number specified in the 'collapsed-title-line-number' attribute",
+    "CDE004" : "Cannot read the source code snippet from the specified location, falling back to the 'code-block' element content",
+    "CDE005" : "Cannot read the source code snippet from the specified location, and there is no fallback content in the 'code-block' element",
+    "CDE006" : "'code-block' cannot be empty",
+    "CDE007" : "The 'include-lines' attribute on a 'code-block' element must represent a line number range like 1-3, or multiple comma-separated ranges like 1-3,5-7",
+    "CDE008" : "The code snippet doesn't contain the lines specified in the 'include-lines' attribute of the corresponding 'code-block' element",
+    "CDE009" : "Cannot use both the 'include-symbol' and the 'include-lines' attributes to reference a code snippet",
+    "CDE010" : "The specified code construct is not found in the source file or the file language is not recognized",
+    "CDE011" : "Code sample contains errors",
+    "CDE012" : "Cannot validate code sample because its language is not supported",
+    "CDE013" : "Cannot validate code sample because its language is not specified",
+    "CDE014" : "Content other than text or CDATA in a code block, for example, HTML/XML-like tags",
+    "CDE015" : "Unsupported 'style' value on the <compare> element",
+    "CDE016" : "Unknown language is specified for a code block",
+    "CDE017" : "Syntax error in a code block",
+    "CDE018" : "Expected at least one closed @start...@end block, but found none.",
+    "CNF001" : "Category specified in <seealso> is not declared in c.list",
+    "CNF002" : "Topic title cannot be empty",
+    "CNF003" : "Invalid buildprofiles.xml property value",
+    "CNF005" : "The 'accepts-web-file-names' attribute contains symbols that cannot appear in a file name",
+    "CNF006" : "The 'accepts-web-file-names' attribute points to a non-existing redirection rule",
+    "CNF008" : "The 'start-page' attribute on 'instance-profile' cannot be empty",
+    "CNF009" : "Global variable name in v.list is duplicated",
+    "CNF010" : "Cannot find specified resource in the resources folder",
+    "CNF011" : "Category sort order is not a valid number",
+    "CNF012" : "Tooltip not found",
+    "CNF013" : "Cannot reference a resource as the r.list file is missing",
+    "CNF014" : "The instance version links require 'web-path' in instance declaration",
+    "CNF015" : "Cannot write the result to the specified output directory",
+    "CNF016" : "Redirect map ID is not unique",
+    "CNF017" : "Cannot read analytics script or html snippet",
+    "CNF018" : "Footer link without 'href' attribute",
+    "CNF019" : "Unknown social link type {0}",
+    "CNF020" : "Absolute images web-path was given, but images are bundled into single artifact",
+    "CNF021" : "Web filename is reserved, use a different value for the <web-file-name> tag",
+    "CNF022" : "Web filename is duplicated, ensure that web filename is unique",
+    "CNF023" : "Topic filenames must be unique, regardless of letter case",
+    "CNF024" : "The 'start-page' attribute on 'instance-profile' is empty",
+    "CNF025" : "Web filename is empty. Add letters or digits to the topic filename or specify a custom web filename",
+    "CNF026" : "Referenced file {0} does not exist or is not possible to read.",
+    "CNF027" : "Multiple values for {0} are not allowed here.",
+    "CNF028" : "Expected true or false.",
+    "CTT001" : "Inappropriate language detected",
+    "CTT002" : "The generated HTML file size exceeds 1 MB, which may lead to poor performance when rendered in the browser. Consider splitting large topics into multiple smaller ones.",
+    "CTT004" : "Undefined variable",
+    "CTT005" : "Variable depends on itself",
+    "INT001" : "Error description template is not found",
+    "INT002" : "Map ID is not unique",
+    "INT004" : "Unexpected article rendering error:",
+    "INT007" : "XML serialization error",
+    "INT008" : "Unexpected HTML rendering error: cannot produce a PDF",
+    "INT009" : "Unexpected diagram rendering error",
+    "INT010" : "Unexpected PlantUML error:",
+    "MRK001" : "The element doesn't comply with validation rules",
+    "MRK002" : "Source file syntax is corrupted",
+    "MRK003" : "Element ID is not unique",
+    "MRK004" : "Topic ID doesn't match the containing file name",
+    "MRK006" : "The 'term' attribute is missing for the <tooltip> element",
+    "MRK007" : "The 'resource-id' attribute is missing for the <res> element",
+    "MRK008" : "The 'ref' attribute is missing for the <category> element",
+    "MRK009" : "Element is not allowed in the current context",
+    "MRK011" : "Only <code>, <property>, <shortcut>, image or text with inline formatting is allowed inside an <a> element to define link text",
+    "MRK012" : "Element is unknown",
+    "MRK013" : "Starting page title is empty",
+    "MRK014" : "Section starting page description is empty",
+    "MRK015" : "Section starting page must contain exactly two links under the 'spotlight' element",
+    "MRK016" : "Section starting page link summary is empty",
+    "MRK017" : "Section starting page group title is empty",
+    "MRK018" : "Section starting page group is empty",
+    "MRK019" : "Element is not allowed on a section starting page",
+    "MRK020" : "Javascript expression specified in the 'use-when' attribute failed to execute",
+    "MRK026" : "Unknown 'type' attribute value",
+    "MRK027" : "The source file for the 'include' is corrupted",
+    "MRK028" : "Invalid 'style' attribute value on a deflist",
+    "MRK032" : "Element ID contains whitespace characters",
+    "MRK033" : "Unknown 'style' attribute value on a list",
+    "MRK034" : "The value of the 'columns' attribute on a list must be a number between 1 and 5",
+    "MRK035" : "The value of the 'start' attribute on a list must be a valid number",
+    "MRK036" : "The 'start' attribute on a list is only valid for 'alpha-lower' and 'decimal' list types",
+    "MRK037" : "Unknown 'sorted' attribute value",
+    "MRK038" : "The value of the 'level' attribute on a chapter must be a valid number between 2 and 6",
+    "MRK039" : "Unknown 'style' attribute value on a procedure",
+    "MRK040" : "Tab with an empty title",
+    "MRK041" : "Unknown 'style' attribute value on a table",
+    "MRK042" : "'colspan' and 'rowspan' attributes of a table cell must be valid numbers",
+    "MRK043" : "Cannot sort table with 'colspan' or 'rowspan'",
+    "MRK044" : "Cannot sort table with rows of different length",
+    "MRK045" : "'sorted' attribute must appear on the first row cells",
+    "MRK046" : "Element referred from 'rel' attribute does not exist or is inaccessible in the current context",
+    "MRK047" : "Summary element has both 'rel' attribute and text specified",
+    "MRK048" : "Summary element does not provide any text",
+    "MRK049" : "Unknown 'style' attribute value on a format element",
+    "MRK050" : "Unknown 'color' attribute value on a format element",
+    "MRK051" : "The topic must contain exactly one <tldr> element. All except the first one were ignored",
+    "MRK052" : "Web name is empty",
+    "MRK053" : "Element has no title",
+    "MRK054" : "Collapsible procedure title is empty",
+    "MRK055" : "Unknown 'caps' attribute value",
+    "MRK056" : "Title can not contain inline formatting",
+    "MRK057" : "Paragraph can only contain inline elements",
+    "MRK058" : "Large image in paragraph rendered as a block element by default. Put it outside the paragraph or set the 'style' attribute to indicate your intent.",
+    "MRK059" : "Nested paragraphs are not allowed. Consider unwrapping or properly breaking the paragraphs.",
+    "MRK060" : "The chapter must contain exactly one <tldr> element. All except the first one were ignored",
+    "MRK061" : "Chapter titles with level more than 6 are rendered as level 6",
+    "MRK062" : "The value of the 'depth' attribute on a <toc> must be a valid number",
+    "MRK063" : "The 'src' attribute is missing for the <resource> element",
+    "MRK064" : "The topic must contain exactly one <primary-label> element. All except the first one were ignored",
+    "MRK065" : "The chapter must contain exactly one <primary-label> element. All except the first one were ignored",
+    "MRK066" : "Unknown 'border' attribute value on a table. It should be 'false' for no border or 'true' for a border",
+    "MRK067" : "The 'height' attribute of an iframe cannot be set to 100%. Height will be set to 250px",
+    "MRK068" : "A 'card' can have only one of the following attributes: 'image', 'icon', or 'badge'",
+    "MRK069" : "Last modified date must be either a specific date in the format YYYY-MM-DD, 'git' (to get the date from Git history) or 'file' (to get the date from the file system)",
+    "PTY001" : "The <property> element must contain the 'bundle' and 'key' attributes",
+    "PTY002" : "The property bundle referenced from a <property> element cannot be found",
+    "PTY003" : "The specified property key cannot be found in the bundle specified by <property> element",
+    "PTY004" : "Product specified in the 'from-product' attribute on the <property> element is not found",
+    "PTY005" : "The specified property bundle is not available for the current product",
+    "PTY006" : "Cannot process regular expression that cleans up a property value",
+    "PTY007" : "Property content is corrupted",
+    "REF001" : "Cannot link to a topic that is not included in the current instance",
+    "REF002" : "Referenced topic doesn't exist",
+    "REF003" : "Cannot include element with the specified ID because it does not exist",
+    "REF004" : "Link uses anchor that does not exist",
+    "REF005" : "Link inside topic points to the same topic without an anchor",
+    "REF006" : "'toc-element' for the current instance references a topic file that cannot be found",
+    "REF007" : "Cannot redirect from file name that is associated with an existing article",
+    "REF008" : "Link points to a topic in a 'draft' state that is not included in the current build",
+    "REF009" : "Cannot include from topic that does not exist",
+    "REF010" : "Link in the 'seealso' section points to itself",
+    "REF012" : "Unknown 'style' attribute value on a 'seealso' section",
+    "REF013" : "Cannot include a parent element in its child element",
+    "REF014" : "Cannot include an include directly",
+    "REF015" : "Include points to multiple IDs",
+    "SCT001" : "Hard-coded shortcut: consider referencing the corresponding action in the 'key' attribute of the 'shortcut' element",
+    "SCT002" : "Shortcut is not defined for the requested keymap",
+    "SCT003" : "Shortcut is not defined for the requested platform",
+    "SCT004" : "The file containing the keymap referenced from platforms.xml cannot be found or is empty",
+    "SCT005" : "Action ID is not found in the product keymap.",
+    "SCT006" : "Shortcut is not defined for layout",
+    "SCT007" : "Shortcut is not defined for the default keymap",
+    "SCT008" : "Shortcut is not defined in the current product's keymap",
+    "SCT009" : "The requested keymap cannot be found",
+    "SCT011" : "platforms.xml file is corrupted",
+    "TOC001" : "<toc-element> points to an article that doesn't exist",
+    "TOC002" : "<toc-element> points to a library topic",
+    "TOC003" : "The nesting level for a <toc-element> is more than 3. Consider restructuring content for easier navigation.",
+    "TOC004" : "Wrapper <toc-element> cannot have the 'accepts-web-file-names' attribute as it does not produce any content, so it cannot take redirects",
+    "TOC005" : "Wrapper <toc-element> cannot have the 'help-id' attribute as it does not produce any content, so there is nothing to link from the UI",
+    "TOC006" : "<toc-element> ID is duplicated",
+    "TOC007" : "The 'toc-title' attribute is redundant as it matches the topic title",
+    "TOC010" : "<toc-element> cannot have both the 'accepts-web-file-names' and the 'accepts-web-file-names-ref' attribute. Consider moving all references to redirection-rules.xml",
+    "TOC011" : "The 'accepts-web-file-names' attribute references the same topic in several TOC elements",
+    "TOC012" : "The 'custom-title' attribute on a <toc-element> is deprecated. Move it to the topic itself.",
+    "TOC013" : "The value of the 'show-structure-depth' attribute on a <toc-element> must be a valid number",
+    "TOC016" : "<toc-element> should have one of following attributes: 'topic', 'toc-title', or 'ref'",
+    "TOC017" : "Invalid value of attribute \"for\"",
+    "VIS001" : "Image or video file cannot be found",
+    "VIS002" : "GIF animations and image thumbnails can only be block elements, do not place them inside a paragraph",
+    "VIS003" : "Logo aspect ratio H:W must be between 0.24 and 1.20",
+    "VIS004" : "Image or video must have the 'src' attribute",
+    "VIS005" : "Origin module for image cannot be found in the project",
+    "VIS006" : "Image or video 'width' and 'height' attributes must be positive integers",
+    "VIS007" : "Unable to count frames in a GIF image",
+    "VIS008" : "GIF animations cannot be rendered without a border, do not use 'border-effect=\"none\"'",
+    "VIS009" : "Unknown image 'border-effect' value",
+    "VIS010" : "Unknown image style",
+    "VIS011" : "Dark version of image or video file cannot be found",
+    "VIS012" : "Image file type is not supported, must be PNG or SVG",
+    "VIS013" : "Video file type is not supported, must be MP4",
+    "VIS014" : "Referenced file is outside the documentation project",
+    "VIS015" : "Image file type is not supported",
+    "API001" : "API documentation markup validation issue",
+    "API002" : "API Reference Generation Error",
+    "API003" : "Specification file contains features or content not supported by our generator",
+    "API004" : "API model building problem"
+  },
+  "testsPassed" : {
+    "API001" : [ {
+      "id" : "API001-",
+      "problemId" : "API001",
+      "name" : "API documentation markup validation issue",
+      "description" : ""
+    } ],
+    "API002" : [ {
+      "id" : "API002-",
+      "problemId" : "API002",
+      "name" : "API Reference Generation Error",
+      "description" : ""
+    } ],
+    "API003" : [ {
+      "id" : "API003-",
+      "problemId" : "API003",
+      "name" : "Specification file contains features or content not supported by our generator",
+      "description" : ""
+    } ],
+    "API004" : [ {
+      "id" : "API004-",
+      "problemId" : "API004",
+      "name" : "API model building problem",
+      "description" : ""
+    } ],
+    "CDE001" : [ {
+      "id" : "CDE001-",
+      "problemId" : "CDE001",
+      "name" : "The <compare> element must contain exactly two code blocks",
+      "description" : ""
+    } ],
+    "CDE002" : [ {
+      "id" : "CDE002-",
+      "problemId" : "CDE002",
+      "name" : "The 'collapsed-title-line-number' attribute value on a 'code-block' element is not a valid number",
+      "description" : ""
+    } ],
+    "CDE003" : [ {
+      "id" : "CDE003-",
+      "problemId" : "CDE003",
+      "name" : "The code snippet doesn't contain the line with the number specified in the 'collapsed-title-line-number' attribute",
+      "description" : ""
+    } ],
+    "CDE004" : [ {
+      "id" : "CDE004-",
+      "problemId" : "CDE004",
+      "name" : "Cannot read the source code snippet from the specified location, falling back to the 'code-block' element content",
+      "description" : ""
+    } ],
+    "CDE005" : [ {
+      "id" : "CDE005-",
+      "problemId" : "CDE005",
+      "name" : "Cannot read the source code snippet from the specified location, and there is no fallback content in the 'code-block' element",
+      "description" : ""
+    } ],
+    "CDE006" : [ {
+      "id" : "CDE006-",
+      "problemId" : "CDE006",
+      "name" : "'code-block' cannot be empty",
+      "description" : ""
+    } ],
+    "CDE007" : [ {
+      "id" : "CDE007-",
+      "problemId" : "CDE007",
+      "name" : "The 'include-lines' attribute on a 'code-block' element must represent a line number range like 1-3, or multiple comma-separated ranges like 1-3,5-7",
+      "description" : ""
+    } ],
+    "CDE008" : [ {
+      "id" : "CDE008-",
+      "problemId" : "CDE008",
+      "name" : "The code snippet doesn't contain the lines specified in the 'include-lines' attribute of the corresponding 'code-block' element",
+      "description" : ""
+    } ],
+    "CDE009" : [ {
+      "id" : "CDE009-",
+      "problemId" : "CDE009",
+      "name" : "Cannot use both the 'include-symbol' and the 'include-lines' attributes to reference a code snippet",
+      "description" : ""
+    } ],
+    "CDE010" : [ {
+      "id" : "CDE010-",
+      "problemId" : "CDE010",
+      "name" : "The specified code construct is not found in the source file or the file language is not recognized",
+      "description" : ""
+    } ],
+    "CDE011" : [ {
+      "id" : "CDE011-",
+      "problemId" : "CDE011",
+      "name" : "Code sample contains errors",
+      "description" : ""
+    } ],
+    "CDE012" : [ {
+      "id" : "CDE012-",
+      "problemId" : "CDE012",
+      "name" : "Cannot validate code sample because its language is not supported",
+      "description" : ""
+    } ],
+    "CDE013" : [ {
+      "id" : "CDE013-",
+      "problemId" : "CDE013",
+      "name" : "Cannot validate code sample because its language is not specified",
+      "description" : ""
+    } ],
+    "CDE014" : [ {
+      "id" : "CDE014-",
+      "problemId" : "CDE014",
+      "name" : "Content other than text or CDATA in a code block, for example, HTML/XML-like tags",
+      "description" : ""
+    } ],
+    "CDE015" : [ {
+      "id" : "CDE015-",
+      "problemId" : "CDE015",
+      "name" : "Unsupported 'style' value on the <compare> element",
+      "description" : ""
+    } ],
+    "CDE016" : [ {
+      "id" : "CDE016-",
+      "problemId" : "CDE016",
+      "name" : "Unknown language is specified for a code block",
+      "description" : ""
+    } ],
+    "CDE017" : [ {
+      "id" : "CDE017-",
+      "problemId" : "CDE017",
+      "name" : "Syntax error in a code block",
+      "description" : ""
+    } ],
+    "CDE018" : [ {
+      "id" : "CDE018-",
+      "problemId" : "CDE018",
+      "name" : "Expected at least one closed @start...@end block, but found none.",
+      "description" : ""
+    } ],
+    "CNF001" : [ {
+      "id" : "CNF001-",
+      "problemId" : "CNF001",
+      "name" : "Category specified in <seealso> is not declared in c.list",
+      "description" : ""
+    } ],
+    "CNF002" : [ {
+      "id" : "CNF002-",
+      "problemId" : "CNF002",
+      "name" : "Topic title cannot be empty",
+      "description" : ""
+    } ],
+    "CNF003" : [ {
+      "id" : "CNF003-",
+      "problemId" : "CNF003",
+      "name" : "Invalid buildprofiles.xml property value",
+      "description" : ""
+    } ],
+    "CNF005" : [ {
+      "id" : "CNF005-",
+      "problemId" : "CNF005",
+      "name" : "The 'accepts-web-file-names' attribute contains symbols that cannot appear in a file name",
+      "description" : ""
+    } ],
+    "CNF006" : [ {
+      "id" : "CNF006-",
+      "problemId" : "CNF006",
+      "name" : "The 'accepts-web-file-names' attribute points to a non-existing redirection rule",
+      "description" : ""
+    } ],
+    "CNF008" : [ {
+      "id" : "CNF008-",
+      "problemId" : "CNF008",
+      "name" : "The 'start-page' attribute on 'instance-profile' cannot be empty",
+      "description" : ""
+    } ],
+    "CNF009" : [ {
+      "id" : "CNF009-",
+      "problemId" : "CNF009",
+      "name" : "Global variable name in v.list is duplicated",
+      "description" : ""
+    } ],
+    "CNF010" : [ {
+      "id" : "CNF010-",
+      "problemId" : "CNF010",
+      "name" : "Cannot find specified resource in the resources folder",
+      "description" : ""
+    } ],
+    "CNF011" : [ {
+      "id" : "CNF011-",
+      "problemId" : "CNF011",
+      "name" : "Category sort order is not a valid number",
+      "description" : ""
+    } ],
+    "CNF012" : [ {
+      "id" : "CNF012-",
+      "problemId" : "CNF012",
+      "name" : "Tooltip not found",
+      "description" : ""
+    } ],
+    "CNF013" : [ {
+      "id" : "CNF013-",
+      "problemId" : "CNF013",
+      "name" : "Cannot reference a resource as the r.list file is missing",
+      "description" : ""
+    } ],
+    "CNF014" : [ {
+      "id" : "CNF014-",
+      "problemId" : "CNF014",
+      "name" : "The instance version links require 'web-path' in instance declaration",
+      "description" : ""
+    } ],
+    "CNF015" : [ {
+      "id" : "CNF015-",
+      "problemId" : "CNF015",
+      "name" : "Cannot write the result to the specified output directory",
+      "description" : ""
+    } ],
+    "CNF016" : [ {
+      "id" : "CNF016-",
+      "problemId" : "CNF016",
+      "name" : "Redirect map ID is not unique",
+      "description" : ""
+    } ],
+    "CNF017" : [ {
+      "id" : "CNF017-",
+      "problemId" : "CNF017",
+      "name" : "Cannot read analytics script or html snippet",
+      "description" : ""
+    } ],
+    "CNF018" : [ {
+      "id" : "CNF018-",
+      "problemId" : "CNF018",
+      "name" : "Footer link without 'href' attribute",
+      "description" : ""
+    } ],
+    "CNF019" : [ {
+      "id" : "CNF019-",
+      "problemId" : "CNF019",
+      "name" : "Unknown social link type {0}",
+      "description" : ""
+    } ],
+    "CNF020" : [ {
+      "id" : "CNF020-",
+      "problemId" : "CNF020",
+      "name" : "Absolute images web-path was given, but images are bundled into single artifact",
+      "description" : ""
+    } ],
+    "CNF021" : [ {
+      "id" : "CNF021-",
+      "problemId" : "CNF021",
+      "name" : "Web filename is reserved, use a different value for the <web-file-name> tag",
+      "description" : ""
+    } ],
+    "CNF022" : [ {
+      "id" : "CNF022-",
+      "problemId" : "CNF022",
+      "name" : "Web filename is duplicated, ensure that web filename is unique",
+      "description" : ""
+    } ],
+    "CNF023" : [ {
+      "id" : "CNF023-",
+      "problemId" : "CNF023",
+      "name" : "Topic filenames must be unique, regardless of letter case",
+      "description" : ""
+    } ],
+    "CNF024" : [ {
+      "id" : "CNF024-",
+      "problemId" : "CNF024",
+      "name" : "The 'start-page' attribute on 'instance-profile' is empty",
+      "description" : ""
+    } ],
+    "CNF025" : [ {
+      "id" : "CNF025-",
+      "problemId" : "CNF025",
+      "name" : "Web filename is empty. Add letters or digits to the topic filename or specify a custom web filename",
+      "description" : ""
+    } ],
+    "CNF026" : [ {
+      "id" : "CNF026-",
+      "problemId" : "CNF026",
+      "name" : "Referenced file {0} does not exist or is not possible to read.",
+      "description" : ""
+    } ],
+    "CNF027" : [ {
+      "id" : "CNF027-",
+      "problemId" : "CNF027",
+      "name" : "Multiple values for {0} are not allowed here.",
+      "description" : ""
+    } ],
+    "CNF028" : [ {
+      "id" : "CNF028-",
+      "problemId" : "CNF028",
+      "name" : "Expected true or false.",
+      "description" : ""
+    } ],
+    "CTT001" : [ {
+      "id" : "CTT001-",
+      "problemId" : "CTT001",
+      "name" : "Inappropriate language detected",
+      "description" : ""
+    } ],
+    "CTT002" : [ {
+      "id" : "CTT002-",
+      "problemId" : "CTT002",
+      "name" : "The generated HTML file size exceeds 1 MB, which may lead to poor performance when rendered in the browser. Consider splitting large topics into multiple smaller ones.",
+      "description" : ""
+    } ],
+    "CTT004" : [ {
+      "id" : "CTT004-",
+      "problemId" : "CTT004",
+      "name" : "Undefined variable",
+      "description" : ""
+    } ],
+    "CTT005" : [ {
+      "id" : "CTT005-",
+      "problemId" : "CTT005",
+      "name" : "Variable depends on itself",
+      "description" : ""
+    } ],
+    "INT001" : [ {
+      "id" : "INT001-",
+      "problemId" : "INT001",
+      "name" : "Error description template is not found",
+      "description" : ""
+    } ],
+    "INT004" : [ {
+      "id" : "INT004-",
+      "problemId" : "INT004",
+      "name" : "Unexpected article rendering error:",
+      "description" : ""
+    } ],
+    "INT007" : [ {
+      "id" : "INT007-",
+      "problemId" : "INT007",
+      "name" : "XML serialization error",
+      "description" : ""
+    } ],
+    "INT008" : [ {
+      "id" : "INT008-",
+      "problemId" : "INT008",
+      "name" : "Unexpected HTML rendering error: cannot produce a PDF",
+      "description" : ""
+    } ],
+    "INT009" : [ {
+      "id" : "INT009-",
+      "problemId" : "INT009",
+      "name" : "Unexpected diagram rendering error",
+      "description" : ""
+    } ],
+    "INT010" : [ {
+      "id" : "INT010-",
+      "problemId" : "INT010",
+      "name" : "Unexpected PlantUML error:",
+      "description" : ""
+    } ],
+    "MRK001" : [ {
+      "id" : "MRK001-",
+      "problemId" : "MRK001",
+      "name" : "The element doesn't comply with validation rules",
+      "description" : ""
+    } ],
+    "MRK002" : [ {
+      "id" : "MRK002-",
+      "problemId" : "MRK002",
+      "name" : "Source file syntax is corrupted",
+      "description" : ""
+    } ],
+    "MRK003" : [ {
+      "id" : "MRK003-",
+      "problemId" : "MRK003",
+      "name" : "Element ID is not unique",
+      "description" : ""
+    } ],
+    "MRK004" : [ {
+      "id" : "MRK004-",
+      "problemId" : "MRK004",
+      "name" : "Topic ID doesn't match the containing file name",
+      "description" : ""
+    } ],
+    "MRK006" : [ {
+      "id" : "MRK006-",
+      "problemId" : "MRK006",
+      "name" : "The 'term' attribute is missing for the <tooltip> element",
+      "description" : ""
+    } ],
+    "MRK007" : [ {
+      "id" : "MRK007-",
+      "problemId" : "MRK007",
+      "name" : "The 'resource-id' attribute is missing for the <res> element",
+      "description" : ""
+    } ],
+    "MRK008" : [ {
+      "id" : "MRK008-",
+      "problemId" : "MRK008",
+      "name" : "The 'ref' attribute is missing for the <category> element",
+      "description" : ""
+    } ],
+    "MRK009" : [ {
+      "id" : "MRK009-",
+      "problemId" : "MRK009",
+      "name" : "Element is not allowed in the current context",
+      "description" : ""
+    } ],
+    "MRK011" : [ {
+      "id" : "MRK011-",
+      "problemId" : "MRK011",
+      "name" : "Only <code>, <property>, <shortcut>, image or text with inline formatting is allowed inside an <a> element to define link text",
+      "description" : ""
+    } ],
+    "MRK012" : [ {
+      "id" : "MRK012-",
+      "problemId" : "MRK012",
+      "name" : "Element is unknown",
+      "description" : ""
+    } ],
+    "MRK013" : [ {
+      "id" : "MRK013-",
+      "problemId" : "MRK013",
+      "name" : "Starting page title is empty",
+      "description" : ""
+    } ],
+    "MRK014" : [ {
+      "id" : "MRK014-",
+      "problemId" : "MRK014",
+      "name" : "Section starting page description is empty",
+      "description" : ""
+    } ],
+    "MRK015" : [ {
+      "id" : "MRK015-",
+      "problemId" : "MRK015",
+      "name" : "Section starting page must contain exactly two links under the 'spotlight' element",
+      "description" : ""
+    } ],
+    "MRK016" : [ {
+      "id" : "MRK016-",
+      "problemId" : "MRK016",
+      "name" : "Section starting page link summary is empty",
+      "description" : ""
+    } ],
+    "MRK017" : [ {
+      "id" : "MRK017-",
+      "problemId" : "MRK017",
+      "name" : "Section starting page group title is empty",
+      "description" : ""
+    } ],
+    "MRK018" : [ {
+      "id" : "MRK018-",
+      "problemId" : "MRK018",
+      "name" : "Section starting page group is empty",
+      "description" : ""
+    } ],
+    "MRK019" : [ {
+      "id" : "MRK019-",
+      "problemId" : "MRK019",
+      "name" : "Element is not allowed on a section starting page",
+      "description" : ""
+    } ],
+    "MRK020" : [ {
+      "id" : "MRK020-",
+      "problemId" : "MRK020",
+      "name" : "Javascript expression specified in the 'use-when' attribute failed to execute",
+      "description" : ""
+    } ],
+    "MRK026" : [ {
+      "id" : "MRK026-",
+      "problemId" : "MRK026",
+      "name" : "Unknown 'type' attribute value",
+      "description" : ""
+    } ],
+    "MRK027" : [ {
+      "id" : "MRK027-",
+      "problemId" : "MRK027",
+      "name" : "The source file for the 'include' is corrupted",
+      "description" : ""
+    } ],
+    "MRK028" : [ {
+      "id" : "MRK028-",
+      "problemId" : "MRK028",
+      "name" : "Invalid 'style' attribute value on a deflist",
+      "description" : ""
+    } ],
+    "MRK032" : [ {
+      "id" : "MRK032-",
+      "problemId" : "MRK032",
+      "name" : "Element ID contains whitespace characters",
+      "description" : ""
+    } ],
+    "MRK033" : [ {
+      "id" : "MRK033-",
+      "problemId" : "MRK033",
+      "name" : "Unknown 'style' attribute value on a list",
+      "description" : ""
+    } ],
+    "MRK034" : [ {
+      "id" : "MRK034-",
+      "problemId" : "MRK034",
+      "name" : "The value of the 'columns' attribute on a list must be a number between 1 and 5",
+      "description" : ""
+    } ],
+    "MRK035" : [ {
+      "id" : "MRK035-",
+      "problemId" : "MRK035",
+      "name" : "The value of the 'start' attribute on a list must be a valid number",
+      "description" : ""
+    } ],
+    "MRK036" : [ {
+      "id" : "MRK036-",
+      "problemId" : "MRK036",
+      "name" : "The 'start' attribute on a list is only valid for 'alpha-lower' and 'decimal' list types",
+      "description" : ""
+    } ],
+    "MRK037" : [ {
+      "id" : "MRK037-",
+      "problemId" : "MRK037",
+      "name" : "Unknown 'sorted' attribute value",
+      "description" : ""
+    } ],
+    "MRK038" : [ {
+      "id" : "MRK038-",
+      "problemId" : "MRK038",
+      "name" : "The value of the 'level' attribute on a chapter must be a valid number between 2 and 6",
+      "description" : ""
+    } ],
+    "MRK039" : [ {
+      "id" : "MRK039-",
+      "problemId" : "MRK039",
+      "name" : "Unknown 'style' attribute value on a procedure",
+      "description" : ""
+    } ],
+    "MRK040" : [ {
+      "id" : "MRK040-",
+      "problemId" : "MRK040",
+      "name" : "Tab with an empty title",
+      "description" : ""
+    } ],
+    "MRK041" : [ {
+      "id" : "MRK041-",
+      "problemId" : "MRK041",
+      "name" : "Unknown 'style' attribute value on a table",
+      "description" : ""
+    } ],
+    "MRK042" : [ {
+      "id" : "MRK042-",
+      "problemId" : "MRK042",
+      "name" : "'colspan' and 'rowspan' attributes of a table cell must be valid numbers",
+      "description" : ""
+    } ],
+    "MRK043" : [ {
+      "id" : "MRK043-",
+      "problemId" : "MRK043",
+      "name" : "Cannot sort table with 'colspan' or 'rowspan'",
+      "description" : ""
+    } ],
+    "MRK044" : [ {
+      "id" : "MRK044-",
+      "problemId" : "MRK044",
+      "name" : "Cannot sort table with rows of different length",
+      "description" : ""
+    } ],
+    "MRK045" : [ {
+      "id" : "MRK045-",
+      "problemId" : "MRK045",
+      "name" : "'sorted' attribute must appear on the first row cells",
+      "description" : ""
+    } ],
+    "MRK046" : [ {
+      "id" : "MRK046-",
+      "problemId" : "MRK046",
+      "name" : "Element referred from 'rel' attribute does not exist or is inaccessible in the current context",
+      "description" : ""
+    } ],
+    "MRK047" : [ {
+      "id" : "MRK047-",
+      "problemId" : "MRK047",
+      "name" : "Summary element has both 'rel' attribute and text specified",
+      "description" : ""
+    } ],
+    "MRK048" : [ {
+      "id" : "MRK048-",
+      "problemId" : "MRK048",
+      "name" : "Summary element does not provide any text",
+      "description" : ""
+    } ],
+    "MRK049" : [ {
+      "id" : "MRK049-",
+      "problemId" : "MRK049",
+      "name" : "Unknown 'style' attribute value on a format element",
+      "description" : ""
+    } ],
+    "MRK050" : [ {
+      "id" : "MRK050-",
+      "problemId" : "MRK050",
+      "name" : "Unknown 'color' attribute value on a format element",
+      "description" : ""
+    } ],
+    "MRK051" : [ {
+      "id" : "MRK051-",
+      "problemId" : "MRK051",
+      "name" : "The topic must contain exactly one <tldr> element. All except the first one were ignored",
+      "description" : ""
+    } ],
+    "MRK052" : [ {
+      "id" : "MRK052-",
+      "problemId" : "MRK052",
+      "name" : "Web name is empty",
+      "description" : ""
+    } ],
+    "MRK053" : [ {
+      "id" : "MRK053-",
+      "problemId" : "MRK053",
+      "name" : "Element has no title",
+      "description" : ""
+    } ],
+    "MRK054" : [ {
+      "id" : "MRK054-",
+      "problemId" : "MRK054",
+      "name" : "Collapsible procedure title is empty",
+      "description" : ""
+    } ],
+    "MRK055" : [ {
+      "id" : "MRK055-",
+      "problemId" : "MRK055",
+      "name" : "Unknown 'caps' attribute value",
+      "description" : ""
+    } ],
+    "MRK056" : [ {
+      "id" : "MRK056-",
+      "problemId" : "MRK056",
+      "name" : "Title can not contain inline formatting",
+      "description" : ""
+    } ],
+    "MRK057" : [ {
+      "id" : "MRK057-",
+      "problemId" : "MRK057",
+      "name" : "Paragraph can only contain inline elements",
+      "description" : ""
+    } ],
+    "MRK059" : [ {
+      "id" : "MRK059-",
+      "problemId" : "MRK059",
+      "name" : "Nested paragraphs are not allowed. Consider unwrapping or properly breaking the paragraphs.",
+      "description" : ""
+    } ],
+    "MRK060" : [ {
+      "id" : "MRK060-",
+      "problemId" : "MRK060",
+      "name" : "The chapter must contain exactly one <tldr> element. All except the first one were ignored",
+      "description" : ""
+    } ],
+    "MRK061" : [ {
+      "id" : "MRK061-",
+      "problemId" : "MRK061",
+      "name" : "Chapter titles with level more than 6 are rendered as level 6",
+      "description" : ""
+    } ],
+    "MRK062" : [ {
+      "id" : "MRK062-",
+      "problemId" : "MRK062",
+      "name" : "The value of the 'depth' attribute on a <toc> must be a valid number",
+      "description" : ""
+    } ],
+    "MRK063" : [ {
+      "id" : "MRK063-",
+      "problemId" : "MRK063",
+      "name" : "The 'src' attribute is missing for the <resource> element",
+      "description" : ""
+    } ],
+    "MRK064" : [ {
+      "id" : "MRK064-",
+      "problemId" : "MRK064",
+      "name" : "The topic must contain exactly one <primary-label> element. All except the first one were ignored",
+      "description" : ""
+    } ],
+    "MRK065" : [ {
+      "id" : "MRK065-",
+      "problemId" : "MRK065",
+      "name" : "The chapter must contain exactly one <primary-label> element. All except the first one were ignored",
+      "description" : ""
+    } ],
+    "MRK066" : [ {
+      "id" : "MRK066-",
+      "problemId" : "MRK066",
+      "name" : "Unknown 'border' attribute value on a table. It should be 'false' for no border or 'true' for a border",
+      "description" : ""
+    } ],
+    "MRK067" : [ {
+      "id" : "MRK067-",
+      "problemId" : "MRK067",
+      "name" : "The 'height' attribute of an iframe cannot be set to 100%. Height will be set to 250px",
+      "description" : ""
+    } ],
+    "MRK068" : [ {
+      "id" : "MRK068-",
+      "problemId" : "MRK068",
+      "name" : "A 'card' can have only one of the following attributes: 'image', 'icon', or 'badge'",
+      "description" : ""
+    } ],
+    "MRK069" : [ {
+      "id" : "MRK069-",
+      "problemId" : "MRK069",
+      "name" : "Last modified date must be either a specific date in the format YYYY-MM-DD, 'git' (to get the date from Git history) or 'file' (to get the date from the file system)",
+      "description" : ""
+    } ],
+    "PTY001" : [ {
+      "id" : "PTY001-",
+      "problemId" : "PTY001",
+      "name" : "The <property> element must contain the 'bundle' and 'key' attributes",
+      "description" : ""
+    } ],
+    "PTY002" : [ {
+      "id" : "PTY002-",
+      "problemId" : "PTY002",
+      "name" : "The property bundle referenced from a <property> element cannot be found",
+      "description" : ""
+    } ],
+    "PTY003" : [ {
+      "id" : "PTY003-",
+      "problemId" : "PTY003",
+      "name" : "The specified property key cannot be found in the bundle specified by <property> element",
+      "description" : ""
+    } ],
+    "PTY004" : [ {
+      "id" : "PTY004-",
+      "problemId" : "PTY004",
+      "name" : "Product specified in the 'from-product' attribute on the <property> element is not found",
+      "description" : ""
+    } ],
+    "PTY005" : [ {
+      "id" : "PTY005-",
+      "problemId" : "PTY005",
+      "name" : "The specified property bundle is not available for the current product",
+      "description" : ""
+    } ],
+    "PTY006" : [ {
+      "id" : "PTY006-",
+      "problemId" : "PTY006",
+      "name" : "Cannot process regular expression that cleans up a property value",
+      "description" : ""
+    } ],
+    "PTY007" : [ {
+      "id" : "PTY007-",
+      "problemId" : "PTY007",
+      "name" : "Property content is corrupted",
+      "description" : ""
+    } ],
+    "REF001" : [ {
+      "id" : "REF001-",
+      "problemId" : "REF001",
+      "name" : "Cannot link to a topic that is not included in the current instance",
+      "description" : ""
+    } ],
+    "REF003" : [ {
+      "id" : "REF003-",
+      "problemId" : "REF003",
+      "name" : "Cannot include element with the specified ID because it does not exist",
+      "description" : ""
+    } ],
+    "REF004" : [ {
+      "id" : "REF004-",
+      "problemId" : "REF004",
+      "name" : "Link uses anchor that does not exist",
+      "description" : ""
+    } ],
+    "REF005" : [ {
+      "id" : "REF005-",
+      "problemId" : "REF005",
+      "name" : "Link inside topic points to the same topic without an anchor",
+      "description" : ""
+    } ],
+    "REF006" : [ {
+      "id" : "REF006-",
+      "problemId" : "REF006",
+      "name" : "'toc-element' for the current instance references a topic file that cannot be found",
+      "description" : ""
+    } ],
+    "REF007" : [ {
+      "id" : "REF007-",
+      "problemId" : "REF007",
+      "name" : "Cannot redirect from file name that is associated with an existing article",
+      "description" : ""
+    } ],
+    "REF008" : [ {
+      "id" : "REF008-",
+      "problemId" : "REF008",
+      "name" : "Link points to a topic in a 'draft' state that is not included in the current build",
+      "description" : ""
+    } ],
+    "REF010" : [ {
+      "id" : "REF010-",
+      "problemId" : "REF010",
+      "name" : "Link in the 'seealso' section points to itself",
+      "description" : ""
+    } ],
+    "REF012" : [ {
+      "id" : "REF012-",
+      "problemId" : "REF012",
+      "name" : "Unknown 'style' attribute value on a 'seealso' section",
+      "description" : ""
+    } ],
+    "REF013" : [ {
+      "id" : "REF013-",
+      "problemId" : "REF013",
+      "name" : "Cannot include a parent element in its child element",
+      "description" : ""
+    } ],
+    "REF014" : [ {
+      "id" : "REF014-",
+      "problemId" : "REF014",
+      "name" : "Cannot include an include directly",
+      "description" : ""
+    } ],
+    "REF015" : [ {
+      "id" : "REF015-",
+      "problemId" : "REF015",
+      "name" : "Include points to multiple IDs",
+      "description" : ""
+    } ],
+    "SCT002" : [ {
+      "id" : "SCT002-",
+      "problemId" : "SCT002",
+      "name" : "Shortcut is not defined for the requested keymap",
+      "description" : ""
+    } ],
+    "SCT003" : [ {
+      "id" : "SCT003-",
+      "problemId" : "SCT003",
+      "name" : "Shortcut is not defined for the requested platform",
+      "description" : ""
+    } ],
+    "SCT004" : [ {
+      "id" : "SCT004-",
+      "problemId" : "SCT004",
+      "name" : "The file containing the keymap referenced from platforms.xml cannot be found or is empty",
+      "description" : ""
+    } ],
+    "SCT005" : [ {
+      "id" : "SCT005-",
+      "problemId" : "SCT005",
+      "name" : "Action ID is not found in the product keymap.",
+      "description" : ""
+    } ],
+    "SCT006" : [ {
+      "id" : "SCT006-",
+      "problemId" : "SCT006",
+      "name" : "Shortcut is not defined for layout",
+      "description" : ""
+    } ],
+    "SCT007" : [ {
+      "id" : "SCT007-",
+      "problemId" : "SCT007",
+      "name" : "Shortcut is not defined for the default keymap",
+      "description" : ""
+    } ],
+    "SCT008" : [ {
+      "id" : "SCT008-",
+      "problemId" : "SCT008",
+      "name" : "Shortcut is not defined in the current product's keymap",
+      "description" : ""
+    } ],
+    "SCT009" : [ {
+      "id" : "SCT009-",
+      "problemId" : "SCT009",
+      "name" : "The requested keymap cannot be found",
+      "description" : ""
+    } ],
+    "SCT011" : [ {
+      "id" : "SCT011-",
+      "problemId" : "SCT011",
+      "name" : "platforms.xml file is corrupted",
+      "description" : ""
+    } ],
+    "TOC001" : [ {
+      "id" : "TOC001-",
+      "problemId" : "TOC001",
+      "name" : "<toc-element> points to an article that doesn't exist",
+      "description" : ""
+    } ],
+    "TOC002" : [ {
+      "id" : "TOC002-",
+      "problemId" : "TOC002",
+      "name" : "<toc-element> points to a library topic",
+      "description" : ""
+    } ],
+    "TOC003" : [ {
+      "id" : "TOC003-",
+      "problemId" : "TOC003",
+      "name" : "The nesting level for a <toc-element> is more than 3. Consider restructuring content for easier navigation.",
+      "description" : ""
+    } ],
+    "TOC004" : [ {
+      "id" : "TOC004-",
+      "problemId" : "TOC004",
+      "name" : "Wrapper <toc-element> cannot have the 'accepts-web-file-names' attribute as it does not produce any content, so it cannot take redirects",
+      "description" : ""
+    } ],
+    "TOC005" : [ {
+      "id" : "TOC005-",
+      "problemId" : "TOC005",
+      "name" : "Wrapper <toc-element> cannot have the 'help-id' attribute as it does not produce any content, so there is nothing to link from the UI",
+      "description" : ""
+    } ],
+    "TOC006" : [ {
+      "id" : "TOC006-",
+      "problemId" : "TOC006",
+      "name" : "<toc-element> ID is duplicated",
+      "description" : ""
+    } ],
+    "TOC010" : [ {
+      "id" : "TOC010-",
+      "problemId" : "TOC010",
+      "name" : "<toc-element> cannot have both the 'accepts-web-file-names' and the 'accepts-web-file-names-ref' attribute. Consider moving all references to redirection-rules.xml",
+      "description" : ""
+    } ],
+    "TOC011" : [ {
+      "id" : "TOC011-",
+      "problemId" : "TOC011",
+      "name" : "The 'accepts-web-file-names' attribute references the same topic in several TOC elements",
+      "description" : ""
+    } ],
+    "TOC012" : [ {
+      "id" : "TOC012-",
+      "problemId" : "TOC012",
+      "name" : "The 'custom-title' attribute on a <toc-element> is deprecated. Move it to the topic itself.",
+      "description" : ""
+    } ],
+    "TOC013" : [ {
+      "id" : "TOC013-",
+      "problemId" : "TOC013",
+      "name" : "The value of the 'show-structure-depth' attribute on a <toc-element> must be a valid number",
+      "description" : ""
+    } ],
+    "TOC016" : [ {
+      "id" : "TOC016-",
+      "problemId" : "TOC016",
+      "name" : "<toc-element> should have one of following attributes: 'topic', 'toc-title', or 'ref'",
+      "description" : ""
+    } ],
+    "TOC017" : [ {
+      "id" : "TOC017-",
+      "problemId" : "TOC017",
+      "name" : "Invalid value of attribute \"for\"",
+      "description" : ""
+    } ],
+    "VIS001" : [ {
+      "id" : "VIS001-",
+      "problemId" : "VIS001",
+      "name" : "Image or video file cannot be found",
+      "description" : ""
+    } ],
+    "VIS002" : [ {
+      "id" : "VIS002-",
+      "problemId" : "VIS002",
+      "name" : "GIF animations and image thumbnails can only be block elements, do not place them inside a paragraph",
+      "description" : ""
+    } ],
+    "VIS003" : [ {
+      "id" : "VIS003-",
+      "problemId" : "VIS003",
+      "name" : "Logo aspect ratio H:W must be between 0.24 and 1.20",
+      "description" : ""
+    } ],
+    "VIS004" : [ {
+      "id" : "VIS004-",
+      "problemId" : "VIS004",
+      "name" : "Image or video must have the 'src' attribute",
+      "description" : ""
+    } ],
+    "VIS005" : [ {
+      "id" : "VIS005-",
+      "problemId" : "VIS005",
+      "name" : "Origin module for image cannot be found in the project",
+      "description" : ""
+    } ],
+    "VIS006" : [ {
+      "id" : "VIS006-",
+      "problemId" : "VIS006",
+      "name" : "Image or video 'width' and 'height' attributes must be positive integers",
+      "description" : ""
+    } ],
+    "VIS007" : [ {
+      "id" : "VIS007-",
+      "problemId" : "VIS007",
+      "name" : "Unable to count frames in a GIF image",
+      "description" : ""
+    } ],
+    "VIS008" : [ {
+      "id" : "VIS008-",
+      "problemId" : "VIS008",
+      "name" : "GIF animations cannot be rendered without a border, do not use 'border-effect=\"none\"'",
+      "description" : ""
+    } ],
+    "VIS009" : [ {
+      "id" : "VIS009-",
+      "problemId" : "VIS009",
+      "name" : "Unknown image 'border-effect' value",
+      "description" : ""
+    } ],
+    "VIS010" : [ {
+      "id" : "VIS010-",
+      "problemId" : "VIS010",
+      "name" : "Unknown image style",
+      "description" : ""
+    } ],
+    "VIS012" : [ {
+      "id" : "VIS012-",
+      "problemId" : "VIS012",
+      "name" : "Image file type is not supported, must be PNG or SVG",
+      "description" : ""
+    } ],
+    "VIS013" : [ {
+      "id" : "VIS013-",
+      "problemId" : "VIS013",
+      "name" : "Video file type is not supported, must be MP4",
+      "description" : ""
+    } ],
+    "VIS014" : [ {
+      "id" : "VIS014-",
+      "problemId" : "VIS014",
+      "name" : "Referenced file is outside the documentation project",
+      "description" : ""
+    } ],
+    "VIS015" : [ {
+      "id" : "VIS015-",
+      "problemId" : "VIS015",
+      "name" : "Image file type is not supported",
+      "description" : ""
+    } ]
+  }
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-06-21T03:45:35.934411007"><link rel="canonical" href="https://kotlinlang.org/docs/lets-plot.html" data-react-helmet="true"><script>
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+        var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&amp;l=' + l : '';
+        j.async = true;
+        j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5P98');
+</script>
+<script src="https://resources.jetbrains.com/storage/help-app/v6/analytics.js"></script>
+<title>Data visualization with Lets-Plot for Kotlin | Kotlin Documentation</title><script type="application/json" id="virtual-toc-data">[{"id":"before-you-start","level":0,"title":"Before you start","anchor":"#before-you-start"},{"id":"prepare-the-data","level":0,"title":"Prepare the data","anchor":"#prepare-the-data"},{"id":"create-a-scatter-plot","level":0,"title":"Create a scatter plot","anchor":"#create-a-scatter-plot"},{"id":"create-a-box-plot","level":0,"title":"Create a box plot","anchor":"#create-a-box-plot"},{"id":"create-a-2d-density-plot","level":0,"title":"Create a 2D density plot","anchor":"#create-a-2d-density-plot"},{"id":"prepare-the-data-for-the-2d-density-plot","level":1,"title":"Prepare the data for the 2D density plot","anchor":"#prepare-the-data-for-the-2d-density-plot"},{"id":"generate-the-2d-density-plot","level":1,"title":"Generate the 2D density plot","anchor":"#generate-the-2d-density-plot"},{"id":"what-s-next","level":0,"title":"What\u0027s next","anchor":"#what-s-next"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.css" rel="stylesheet"><link rel="icon" type="image/svg" sizes="16x16" href="https://kotlinlang.org/assets/images/favicon.svg?v2"><link rel="icon" type="image/x-icon" sizes="32x32" href="https://kotlinlang.org/assets/images/favicon.ico?v2"><link rel="icon" type="image/png" sizes="96x96" href="https://kotlinlang.org/assets/images/apple-touch-icon.png?v2"><link rel="icon" type="image/png" sizes="300x300" href="https://kotlinlang.org/assets/images/apple-touch-icon-72x72.png?v2"><link rel="icon" type="image/png" sizes="500x500" href="https://kotlinlang.org/assets/images/apple-touch-icon-114x114.png?v2"><meta name="image" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><!-- Open Graph --><meta property="og:title" content="Data visualization with Lets-Plot for Kotlin | Kotlin"><meta property="og:description" content=""><meta property="og:image" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><meta property="og:site_name" content="Kotlin Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="https://kotlinlang.org/docs/lets-plot.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@kotlin"><meta name="twitter:title" content="Data visualization with Lets-Plot for Kotlin | Kotlin"><meta name="twitter:description" content=""><meta name="twitter:creator" content="@kotlin"><meta name="twitter:image:src" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "https://kotlinlang.org/docs/lets-plot.html#webpage",
+    "url": "https://kotlinlang.org/docs/lets-plot.html",
+    "name": "Data visualization with Lets-Plot for Kotlin | Kotlin",
+    "description": "",
+    "image": "https://kotlinlang.org/assets/images/open-graph/docs.png",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "https://kotlinlang.org/docs/#website",
+    "url": "https://kotlinlang.org/docs/",
+    "name": "Kotlin Help"
+}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="lets-plot" data-main-title="Data visualization with Lets-Plot for Kotlin" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Tools" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/data-analysis/lets-plot.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="lets-plot" id="lets-plot.md">Data visualization with Lets-Plot for Kotlin</h1><p id="z4ap0c3_2"><a href="https://lets-plot.org/kotlin/get-started.html" id="z4ap0c3_12" data-external="true" rel="noopener noreferrer" target="_blank">Lets-Plot for Kotlin (LPK)</a> is a multiplatform plotting library that ports the <a href="https://ggplot2.tidyverse.org/" id="z4ap0c3_13" data-external="true" rel="noopener noreferrer" target="_blank">R's ggplot2 library</a> to Kotlin. LPK brings the feature-rich ggplot2 API to the Kotlin ecosystem, making it suitable for scientists and statisticians who require sophisticated data visualization capabilities.</p><p id="z4ap0c3_3">LPK targets various platforms, including <a href="data-analysis-overview.html#notebooks" id="z4ap0c3_14">Kotlin notebooks</a>, <a href="js-overview.html" id="z4ap0c3_15">Kotlin/JS</a>, <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/swing/" id="z4ap0c3_16" data-external="true" rel="noopener noreferrer" target="_blank">JVM's Swing</a>, <a href="https://openjfx.io/" id="z4ap0c3_17" data-external="true" rel="noopener noreferrer" target="_blank">JavaFX</a>, and <a href="https://www.jetbrains.com/lp/compose-multiplatform/" id="z4ap0c3_18" data-external="true" rel="noopener noreferrer" target="_blank">Compose Multiplatform</a>. Additionally, LPK has seamless integration with <a href="https://www.jetbrains.com/idea/" id="z4ap0c3_19" data-external="true" rel="noopener noreferrer" target="_blank">IntelliJ</a>, <a href="https://www.jetbrains.com/datagrip/" id="z4ap0c3_20" data-external="true" rel="noopener noreferrer" target="_blank">DataGrip</a>, <a href="https://www.jetbrains.com/dataspell/" id="z4ap0c3_21" data-external="true" rel="noopener noreferrer" target="_blank">DataSpell</a>, and <a href="https://www.jetbrains.com/pycharm/" id="z4ap0c3_22" data-external="true" rel="noopener noreferrer" target="_blank">PyCharm</a>.</p><figure id="z4ap0c3_4"><img alt="Lets-Plot" src="images/lets-plot-overview.png" title="Lets-Plot" width="700" height="485"></figure><p id="z4ap0c3_5">This tutorial demonstrates how to create different plot types with the LPK and <a href="https://kotlin.github.io/dataframe/gettingstarted.html" id="z4ap0c3_23" data-external="true" rel="noopener noreferrer" target="_blank">Kotlin DataFrame</a> libraries using Kotlin Notebook in IntelliJ IDEA.</p><section class="chapter"><h2 id="before-you-start" data-toc="before-you-start">Before you start</h2><p id="z4ap0c3_24">Kotlin Notebook relies on the <a href="https://plugins.jetbrains.com/plugin/16340-kotlin-notebook" id="z4ap0c3_28" data-external="true" rel="noopener noreferrer" target="_blank">Kotlin Notebook plugin</a>, which is bundled and enabled in IntelliJ IDEA by default.</p><p id="z4ap0c3_25">If the Kotlin Notebook features are not available, ensure the plugin is enabled. For more information, see <a href="kotlin-notebook-set-up-env.html" id="z4ap0c3_29">Set up an environment</a>.</p><p id="z4ap0c3_26">Create a new Kotlin Notebook to work with Lets-Plot:</p><ol class="list _decimal" id="z4ap0c3_27" type="1"><li class="list__item" id="z4ap0c3_30"><p id="z4ap0c3_32">Select <span class="control" id="z4ap0c3_33">File</span> | <span class="control" id="z4ap0c3_34">New</span> | <span class="control" id="z4ap0c3_35">Kotlin Notebook</span>.</p></li><li class="list__item" id="z4ap0c3_31"><p id="z4ap0c3_36">In your notebook, import the LPK and Kotlin DataFrame libraries by running the following command:</p><div class="code-block" data-lang="kotlin">
+%use lets-plot
+%use dataframe
+</div></li></ol></section><section class="chapter"><h2 id="prepare-the-data" data-toc="prepare-the-data">Prepare the data</h2><p id="z4ap0c3_38">Let's create a DataFrame that stores simulated numbers of the monthly average temperature in three cities: Berlin, Madrid, and Caracas.</p><p id="z4ap0c3_39">Use the <a href="https://kotlin.github.io/dataframe/createdataframe.html#dataframeof" id="z4ap0c3_45" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="z4ap0c3_46">dataFrameOf()</code></a> function from the Kotlin DataFrame library to generate the DataFrame. Paste and run the following code snippet in your Kotlin Notebook:</p><div class="code-block" data-lang="kotlin">
+// The months variable stores a list with 12 months of the year
+val months = listOf(
+    &quot;January&quot;, &quot;February&quot;,
+    &quot;March&quot;, &quot;April&quot;, &quot;May&quot;,
+    &quot;June&quot;, &quot;July&quot;, &quot;August&quot;,
+    &quot;September&quot;, &quot;October&quot;, &quot;November&quot;,
+    &quot;December&quot;
+)
+// The tempBerlin, tempMadrid, and tempCaracas variables store a list with temperature values for each month
+val tempBerlin =
+    listOf(-0.5, 0.0, 4.8, 9.0, 14.3, 17.5, 19.2, 18.9, 14.5, 9.7, 4.7, 1.0)
+val tempMadrid =
+    listOf(6.3, 7.9, 11.2, 12.9, 16.7, 21.1, 24.7, 24.2, 20.3, 15.4, 9.9, 6.6)
+val tempCaracas =
+    listOf(27.5, 28.9, 29.6, 30.9, 31.7, 35.1, 33.8, 32.2, 31.3, 29.4, 28.9, 27.6)
+
+// The df variable stores a DataFrame of three columns, including monthly records, temperature, and cities
+val df = dataFrameOf(
+    &quot;Month&quot; to months + months + months,
+    &quot;Temperature&quot; to tempBerlin + tempMadrid + tempCaracas,
+    &quot;City&quot; to List(12) { &quot;Berlin&quot; } + List(12) { &quot;Madrid&quot; } + List(12) { &quot;Caracas&quot; }
+)
+df.head(4)
+</div><p id="z4ap0c3_41">You can see that the DataFrame has three columns: Month, Temperature, and City. The first four rows of the DataFrame contain records of the temperature in Berlin from January to April:</p><figure id="z4ap0c3_42"><img alt="Dataframe exploration" src="images/visualization-dataframe-temperature.png" title="Dataframe exploration" width="600" height="219"></figure><p id="z4ap0c3_43">To create a plot using the LPK library, you need to convert your data (<code class="code" id="z4ap0c3_47">df</code>) into a <code class="code" id="z4ap0c3_48">Map</code> type that stores the data in key-value pairs. You can easily convert a DataFrame into a <code class="code" id="z4ap0c3_49">Map</code> using the <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/to-map.html" id="z4ap0c3_50" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="z4ap0c3_51">.toMap()</code></a> function:</p><div class="code-block" data-lang="kotlin">
+val data = df.toMap()
+</div></section><section class="chapter"><h2 id="create-a-scatter-plot" data-toc="create-a-scatter-plot">Create a scatter plot</h2><p id="z4ap0c3_52">Let's create a scatter plot in Kotlin Notebook with the LPK library.</p><p id="z4ap0c3_53">Once you have your data in the <code class="code" id="z4ap0c3_57">Map</code> format, use the <a href="https://lets-plot.org/kotlin/api-reference/-lets--plot--kotlin/org.jetbrains.letsPlot.geom/geom-point/index.html" id="z4ap0c3_58" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="z4ap0c3_60">geomPoint()</code></a> function from the LPK library to generate the scatter plot. You can specify the values for the X and Y axes, as well as define categories and their color. Additionally, you can <a href="https://lets-plot.org/kotlin/aesthetics.html#point-shapes" id="z4ap0c3_59" data-external="true" rel="noopener noreferrer" target="_blank">customize</a> the plot's size and point shapes to suit your needs:</p><div class="code-block" data-lang="kotlin">
+// Specifies X and Y axes, categories and their color, plot size, and plot type
+val scatterPlot =
+    letsPlot(data) { x = &quot;Month&quot;; y = &quot;Temperature&quot;; color = &quot;City&quot; } + ggsize(600, 500) + geomPoint(shape = 15)
+scatterPlot
+</div><p id="z4ap0c3_55">Here's the result:</p><figure id="z4ap0c3_56"><img alt="Scatter plot" src="images/lets-plot-scatter.svg" title="Scatter plot" width="600" height="500"></figure></section><section class="chapter"><h2 id="create-a-box-plot" data-toc="create-a-box-plot">Create a box plot</h2><p id="z4ap0c3_61">Let's visualize the <a href="#prepare-the-data" id="z4ap0c3_65">data</a> in a box plot. Use the <a href="https://lets-plot.org/kotlin/api-reference/-lets--plot--kotlin/org.jetbrains.letsPlot.geom/geom-boxplot.html" id="z4ap0c3_66" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="z4ap0c3_69">geomBoxplot()</code></a> function from the LPK library to generate the plot and <a href="https://lets-plot.org/kotlin/aesthetics.html#point-shapes" id="z4ap0c3_67" data-external="true" rel="noopener noreferrer" target="_blank">customize</a> colors with the <a href="https://lets-plot.org/kotlin/api-reference/-lets--plot--kotlin/org.jetbrains.letsPlot.scale/scale-fill-manual.html" id="z4ap0c3_68" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="z4ap0c3_70">scaleFillManual()</code></a> function:</p><div class="code-block" data-lang="kotlin">
+// Specifies X and Y axes, categories, plot size, and plot type
+val boxPlot = ggplot(data) { x = &quot;City&quot;; y = &quot;Temperature&quot; } + ggsize(700, 500) + geomBoxplot { fill = &quot;City&quot; } +
+    // Customizes colors        
+    scaleFillManual(values = listOf(&quot;light_yellow&quot;, &quot;light_magenta&quot;, &quot;light_green&quot;))
+boxPlot
+</div><p id="z4ap0c3_63">Here's the result:</p><figure id="z4ap0c3_64"><img alt="Box plot" src="images/box-plot.svg" title="Box plot" width="600" height="429"></figure></section><section class="chapter"><h2 id="create-a-2d-density-plot" data-toc="create-a-2d-density-plot">Create a 2D density plot</h2><p id="z4ap0c3_71">Now, let's create a 2D density plot to visualize the distribution and concentration of some random data.</p><section class="chapter"><h3 id="prepare-the-data-for-the-2d-density-plot" data-toc="prepare-the-data-for-the-2d-density-plot">Prepare the data for the 2D density plot</h3><ol class="list _decimal" id="z4ap0c3_74" type="1"><li class="list__item" id="z4ap0c3_75"><p id="z4ap0c3_78">Import the dependencies to process the data and generate the plot:</p><div class="code-block" data-lang="kotlin">
+%use lets-plot
+
+@file:DependsOn(&quot;org.apache.commons:commons-math3:3.6.1&quot;)
+import org.apache.commons.math3.distribution.MultivariateNormalDistribution
+</div><aside class="prompt" data-type="tip" data-title="" id="z4ap0c3_80"><p id="z4ap0c3_81">For more information about importing dependencies to Kotlin Notebook, see the <a href="https://www.jetbrains.com/help/idea/kotlin-notebook.html#add-dependencies" id="z4ap0c3_82" data-external="true" rel="noopener noreferrer" target="_blank">Kotlin Notebook documentation</a>.</p></aside></li><li class="list__item" id="z4ap0c3_76"><p id="z4ap0c3_83">Paste and run the following code snippet in your Kotlin Notebook to create sets of 2D data points:</p><div class="code-block" data-lang="kotlin">
+// Defines covariance matrices for three distributions
+val cov0: Array&lt;DoubleArray&gt; = arrayOf(
+    doubleArrayOf(1.0, -.8),
+    doubleArrayOf(-.8, 1.0)
+)
+
+val cov1: Array&lt;DoubleArray&gt; = arrayOf(
+    doubleArrayOf(1.0, .8),
+    doubleArrayOf(.8, 1.0)
+)
+
+val cov2: Array&lt;DoubleArray&gt; = arrayOf(
+    doubleArrayOf(10.0, .1),
+    doubleArrayOf(.1, .1)
+)
+
+// Defines the number of samples
+val n = 400
+
+// Defines means for three distributions
+val means0: DoubleArray = doubleArrayOf(-2.0, 0.0)
+val means1: DoubleArray = doubleArrayOf(2.0, 0.0)
+val means2: DoubleArray = doubleArrayOf(0.0, 1.0)
+
+// Generates random samples from three multivariate normal distributions
+val xy0 = MultivariateNormalDistribution(means0, cov0).sample(n)
+val xy1 = MultivariateNormalDistribution(means1, cov1).sample(n)
+val xy2 = MultivariateNormalDistribution(means2, cov2).sample(n)
+</div><p id="z4ap0c3_85">From the code above, the <code class="code" id="z4ap0c3_86">xy0</code>, <code class="code" id="z4ap0c3_87">xy1</code>, and <code class="code" id="z4ap0c3_88">xy2</code> variables store arrays with 2D (<code class="code" id="z4ap0c3_89">x, y</code>) data points.</p></li><li class="list__item" id="z4ap0c3_77"><p id="z4ap0c3_90">Convert your data into a <code class="code" id="z4ap0c3_92">Map</code> type:</p><div class="code-block" data-lang="kotlin">
+val data = mapOf(
+    &quot;x&quot; to (xy0.map { it[0] } + xy1.map { it[0] } + xy2.map { it[0] }).toList(),
+    &quot;y&quot; to (xy0.map { it[1] } + xy1.map { it[1] } + xy2.map { it[1] }).toList()
+)
+</div></li></ol></section><section class="chapter"><h3 id="generate-the-2d-density-plot" data-toc="generate-the-2d-density-plot">Generate the 2D density plot</h3><p id="z4ap0c3_93">Using the <code class="code" id="z4ap0c3_97">Map</code> from the previous step, create a 2D density plot (<code class="code" id="z4ap0c3_98">geomDensity2D</code>) with a scatter plot (<code class="code" id="z4ap0c3_99">geomPoint</code>) in the background to better visualize the data points and outliers. You can use the <a href="https://lets-plot.org/kotlin/api-reference/-lets--plot--kotlin/org.jetbrains.letsPlot.scale/scale-color-gradient.html" id="z4ap0c3_100" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="z4ap0c3_101">scaleColorGradient()</code></a> function to customize the scale of colors:</p><div class="code-block" data-lang="kotlin">
+val densityPlot = letsPlot(data) { x = &quot;x&quot;; y = &quot;y&quot; } + ggsize(600, 300) + geomPoint(
+    color = &quot;black&quot;,
+    alpha = .1
+) + geomDensity2D { color = &quot;..level..&quot; } +
+        scaleColorGradient(low = &quot;dark_green&quot;, high = &quot;yellow&quot;, guide = guideColorbar(barHeight = 10, barWidth = 300)) +
+        theme().legendPositionBottom()
+densityPlot
+</div><p id="z4ap0c3_95">Here's the result:</p><figure id="z4ap0c3_96"><img alt="2D density plot" src="images/2d-density-plot.svg" title="2D density plot" width="600" height="300"></figure></section></section><section class="chapter"><h2 id="what-s-next" data-toc="what-s-next">What's next</h2><ul class="list _bullet" id="z4ap0c3_102"><li class="list__item" id="z4ap0c3_103"><p id="z4ap0c3_107">Explore more plot examples in the <a href="https://lets-plot.org/kotlin/charts.html" id="z4ap0c3_108" data-external="true" rel="noopener noreferrer" target="_blank">Lets-Plot for Kotlin's documentation</a>.</p></li><li class="list__item" id="z4ap0c3_104"><p id="z4ap0c3_109">Check the Lets-Plot for Kotlin's <a href="https://lets-plot.org/kotlin/api-reference/" id="z4ap0c3_110" data-external="true" rel="noopener noreferrer" target="_blank">API reference</a>.</p></li><li class="list__item" id="z4ap0c3_105"><p id="z4ap0c3_111">Learn about transforming and visualizing data with Kotlin in the <a href="https://kotlin.github.io/dataframe/info.html" id="z4ap0c3_112" data-external="true" rel="noopener noreferrer" target="_blank">Kotlin DataFrame</a> and <a href="https://kotlin.github.io/kandy/welcome.html" id="z4ap0c3_113" data-external="true" rel="noopener noreferrer" target="_blank">Kandy</a> library documentation.</p></li><li class="list__item" id="z4ap0c3_106"><p id="z4ap0c3_114">Find additional information about the <a href="https://www.jetbrains.com/help/idea/kotlin-notebook.html" id="z4ap0c3_115" data-external="true" rel="noopener noreferrer" target="_blank">Kotlin Notebook's usage and key features</a>.</p></li></ul></section><div class="last-modified">21 June 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="kotlin-notebook-overview.html" class="navigation-links__prev">Kotlin Notebook</a><a href="run-code-snippets.html" class="navigation-links__next">Run code snippets</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>

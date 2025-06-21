@@ -1,0 +1,408 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="robots" content="noindex"><meta name="built-on" content="2025-06-21T03:45:36.872245972"><link rel="canonical" href="https://kotlinlang.org/docs/kotlin-tour-intermediate-classes-interfaces.html" data-react-helmet="true"><script>
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+        var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&amp;l=' + l : '';
+        j.async = true;
+        j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5P98');
+</script>
+<script src="https://resources.jetbrains.com/storage/help-app/v6/analytics.js"></script>
+<title>Intermediate: Classes and interfaces | Kotlin Documentation</title><script type="application/json" id="virtual-toc-data">[{"id":"class-inheritance","level":0,"title":"Class inheritance","anchor":"#class-inheritance"},{"id":"abstract-classes","level":1,"title":"Abstract classes","anchor":"#abstract-classes"},{"id":"interfaces","level":0,"title":"Interfaces","anchor":"#interfaces"},{"id":"interface-implementation","level":1,"title":"Interface implementation","anchor":"#interface-implementation"},{"id":"delegation","level":0,"title":"Delegation","anchor":"#delegation"},{"id":"practice","level":0,"title":"Practice","anchor":"#practice"},{"id":"classes-interfaces-exercise-1","level":1,"title":"Exercise 1","anchor":"#classes-interfaces-exercise-1"},{"id":"classes-interfaces-exercise-2","level":1,"title":"Exercise 2","anchor":"#classes-interfaces-exercise-2"},{"id":"classes-interfaces-exercise-3","level":1,"title":"Exercise 3","anchor":"#classes-interfaces-exercise-3"},{"id":"classes-interfaces-exercise-4","level":1,"title":"Exercise 4","anchor":"#classes-interfaces-exercise-4"},{"id":"next-step","level":0,"title":"Next step","anchor":"#next-step"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.css" rel="stylesheet"><link rel="icon" type="image/svg" sizes="16x16" href="https://kotlinlang.org/assets/images/favicon.svg?v2"><link rel="icon" type="image/x-icon" sizes="32x32" href="https://kotlinlang.org/assets/images/favicon.ico?v2"><link rel="icon" type="image/png" sizes="96x96" href="https://kotlinlang.org/assets/images/apple-touch-icon.png?v2"><link rel="icon" type="image/png" sizes="300x300" href="https://kotlinlang.org/assets/images/apple-touch-icon-72x72.png?v2"><link rel="icon" type="image/png" sizes="500x500" href="https://kotlinlang.org/assets/images/apple-touch-icon-114x114.png?v2"><meta name="image" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><!-- Open Graph --><meta property="og:title" content="Intermediate: Classes and interfaces | Kotlin"><meta property="og:description" content=""><meta property="og:image" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><meta property="og:site_name" content="Kotlin Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="https://kotlinlang.org/docs/kotlin-tour-intermediate-classes-interfaces.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@kotlin"><meta name="twitter:title" content="Intermediate: Classes and interfaces | Kotlin"><meta name="twitter:description" content=""><meta name="twitter:creator" content="@kotlin"><meta name="twitter:image:src" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "https://kotlinlang.org/docs/kotlin-tour-intermediate-classes-interfaces.html#webpage",
+    "url": "https://kotlinlang.org/docs/kotlin-tour-intermediate-classes-interfaces.html",
+    "name": "Intermediate: Classes and interfaces | Kotlin",
+    "description": "",
+    "image": "https://kotlinlang.org/assets/images/open-graph/docs.png",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "https://kotlinlang.org/docs/#website",
+    "url": "https://kotlinlang.org/docs/",
+    "name": "Kotlin Help"
+}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="kotlin-tour-intermediate-classes-interfaces" data-main-title="Intermediate: Classes and interfaces" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="kotlin-tour-welcome.md|Take Kotlin tour" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/tour/kotlin-tour-intermediate-classes-interfaces.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="kotlin-tour-intermediate-classes-interfaces" id="kotlin-tour-intermediate-classes-interfaces.md">Intermediate: Classes and interfaces</h1><div class="micro-format" data-content="{&quot;microFormat&quot;:[&quot;\u003cp id\u003d\&quot;-m27hj7_10\&quot;\u003e\u003cimg alt\u003d\&quot;First step\&quot; src\u003d\&quot;images/icon-1-done.svg\&quot; class\u003d\&quot;inline-icon-\&quot; title\u003d\&quot;First step\&quot; id\u003d\&quot;-m27hj7_11\&quot; width\u003d\&quot;20\&quot; height\u003d\&quot;20\&quot;\u003e \u003ca href\u003d\&quot;kotlin-tour-intermediate-extension-functions.html\&quot; id\u003d\&quot;-m27hj7_12\&quot;\u003eExtension functions\u003c/a\u003e\u003cbr\u003e \u003cimg alt\u003d\&quot;Second step\&quot; src\u003d\&quot;images/icon-2-done.svg\&quot; class\u003d\&quot;inline-icon-\&quot; title\u003d\&quot;Second step\&quot; id\u003d\&quot;-m27hj7_14\&quot; width\u003d\&quot;20\&quot; height\u003d\&quot;20\&quot;\u003e \u003ca href\u003d\&quot;kotlin-tour-intermediate-scope-functions.html\&quot; id\u003d\&quot;-m27hj7_15\&quot;\u003eScope functions\u003c/a\u003e\u003cbr\u003e \u003cimg alt\u003d\&quot;Third step\&quot; src\u003d\&quot;images/icon-3-done.svg\&quot; class\u003d\&quot;inline-icon-\&quot; title\u003d\&quot;Third step\&quot; id\u003d\&quot;-m27hj7_17\&quot; width\u003d\&quot;20\&quot; height\u003d\&quot;20\&quot;\u003e \u003ca href\u003d\&quot;kotlin-tour-intermediate-lambdas-receiver.html\&quot; id\u003d\&quot;-m27hj7_18\&quot;\u003eLambda expressions with receiver\u003c/a\u003e\u003cbr\u003e \u003cimg alt\u003d\&quot;Fourth step\&quot; src\u003d\&quot;images/icon-4.svg\&quot; class\u003d\&quot;inline-icon-\&quot; title\u003d\&quot;Fourth step\&quot; id\u003d\&quot;-m27hj7_20\&quot; width\u003d\&quot;20\&quot; height\u003d\&quot;20\&quot;\u003e \u003cb id\u003d\&quot;-m27hj7_21\&quot;\u003eClasses and interfaces\u003c/b\u003e\u003cbr\u003e \u003cimg alt\u003d\&quot;Fifth step\&quot; src\u003d\&quot;images/icon-5-todo.svg\&quot; class\u003d\&quot;inline-icon-\&quot; title\u003d\&quot;Fifth step\&quot; id\u003d\&quot;-m27hj7_23\&quot; width\u003d\&quot;20\&quot; height\u003d\&quot;20\&quot;\u003e \u003ca href\u003d\&quot;kotlin-tour-intermediate-objects.html\&quot; id\u003d\&quot;-m27hj7_24\&quot;\u003eObjects\u003c/a\u003e\u003cbr\u003e \u003cimg alt\u003d\&quot;Sixth step\&quot; src\u003d\&quot;images/icon-6-todo.svg\&quot; class\u003d\&quot;inline-icon-\&quot; title\u003d\&quot;Sixth step\&quot; id\u003d\&quot;-m27hj7_26\&quot; width\u003d\&quot;20\&quot; height\u003d\&quot;20\&quot;\u003e \u003ca href\u003d\&quot;kotlin-tour-intermediate-open-special-classes.html\&quot; id\u003d\&quot;-m27hj7_27\&quot;\u003eOpen and special classes\u003c/a\u003e\u003cbr\u003e \u003cimg alt\u003d\&quot;Seventh step\&quot; src\u003d\&quot;images/icon-7-todo.svg\&quot; class\u003d\&quot;inline-icon-\&quot; title\u003d\&quot;Seventh step\&quot; id\u003d\&quot;-m27hj7_29\&quot; width\u003d\&quot;20\&quot; height\u003d\&quot;20\&quot;\u003e \u003ca href\u003d\&quot;kotlin-tour-intermediate-properties.html\&quot; id\u003d\&quot;-m27hj7_30\&quot;\u003eProperties\u003c/a\u003e\u003cbr\u003e \u003cimg alt\u003d\&quot;Eighth step\&quot; src\u003d\&quot;images/icon-8-todo.svg\&quot; class\u003d\&quot;inline-icon-\&quot; title\u003d\&quot;Eighth step\&quot; id\u003d\&quot;-m27hj7_32\&quot; width\u003d\&quot;20\&quot; height\u003d\&quot;20\&quot;\u003e \u003ca href\u003d\&quot;kotlin-tour-intermediate-null-safety.html\&quot; id\u003d\&quot;-m27hj7_33\&quot;\u003eNull safety\u003c/a\u003e\u003cbr\u003e \u003cimg alt\u003d\&quot;Ninth step\&quot; src\u003d\&quot;images/icon-9-todo.svg\&quot; class\u003d\&quot;inline-icon-\&quot; title\u003d\&quot;Ninth step\&quot; id\u003d\&quot;-m27hj7_35\&quot; width\u003d\&quot;20\&quot; height\u003d\&quot;20\&quot;\u003e \u003ca href\u003d\&quot;kotlin-tour-intermediate-libraries-and-apis.html\&quot; id\u003d\&quot;-m27hj7_36\&quot;\u003eLibraries and APIs\u003c/a\u003e\u003c/p\u003e&quot;]}"></div><p id="-m27hj7_4">In the beginner tour, you learned how to use classes and data classes to store data and maintain a collection of characteristics that can be shared in your code. Eventually, you will want to create a hierarchy to efficiently share code within your projects. This chapter explains the options Kotlin provides for sharing code and how they can make your code safer and easier to maintain.</p><section class="chapter"><h2 id="class-inheritance" data-toc="class-inheritance">Class inheritance</h2><p id="-m27hj7_37">In a previous chapter, we covered how you can use extension functions to extend classes without modifying the original source code. But what if you are working on something complex where sharing code <span class="control" id="-m27hj7_46">between</span> classes would be useful? In such cases, you can use class inheritance.</p><p id="-m27hj7_38">By default, classes in Kotlin can't be inherited. Kotlin is designed this way to prevent unintended inheritance and make your classes easier to maintain.</p><p id="-m27hj7_39">Kotlin classes only support <span class="control" id="-m27hj7_47">single inheritance</span>, meaning it is only possible to inherit from <span class="control" id="-m27hj7_48">one class at a time</span>. This class is called the <span class="control" id="-m27hj7_49">parent</span>.</p><p id="-m27hj7_40">The parent of a class inherits from another class (the grandparent), forming a hierarchy. At the top of Kotlin's class hierarchy is the common parent class: <code class="code" id="-m27hj7_50">Any</code>. All classes ultimately inherit from the <code class="code" id="-m27hj7_51">Any</code> class:</p><figure id="-m27hj7_41"><img alt="An example of the class hierarchy with Any type" src="images/any-type-class.png" title="An example of the class hierarchy with Any type" width="200" height="210"></figure><p id="-m27hj7_42">The <code class="code" id="-m27hj7_52">Any</code> class provides the <code class="code" id="-m27hj7_53">toString()</code> function as a member function automatically. Therefore, you can use this inherited function in any of your classes. For example:</p><div class="code-block" data-lang="kotlin" data-runnable="true" id="kotlin-tour-any-class">
+class Car(val make: String, val model: String, val numberOfDoors: Int)
+
+fun main() {
+    //sampleStart
+    val car1 = Car(&quot;Toyota&quot;, &quot;Corolla&quot;, 4)
+
+    // Uses the .toString() function via string templates to print class properties
+    println(&quot;Car1: make=${car1.make}, model=${car1.model}, numberOfDoors=${car1.numberOfDoors}&quot;)
+    // Car1: make=Toyota, model=Corolla, numberOfDoors=4
+    //sampleEnd
+}
+</div><p id="-m27hj7_44">If you want to use inheritance to share some code between classes, first consider using abstract classes.</p><section class="chapter"><h3 id="abstract-classes" data-toc="abstract-classes">Abstract classes</h3><p id="-m27hj7_54">Abstract classes can be inherited by default. The purpose of abstract classes is to provide members that other classes inherit or implement. As a result, they have a constructor, but you can't create instances from them. Within the child class, you define the behavior of the parent's properties and functions with the <code class="code" id="-m27hj7_72">override</code> keyword. In this way, you can say that the child class &quot;overrides&quot; the members of the parent class.</p><aside class="prompt" data-type="tip" data-title="" id="-m27hj7_55"><p id="-m27hj7_73">When you define the behavior of an inherited function or property, we call that an <span class="control" id="-m27hj7_74">implementation</span>.</p></aside><p id="-m27hj7_56">Abstract classes can contain both functions and properties <span class="control" id="-m27hj7_75">with</span> implementation as well as functions and properties <span class="control" id="-m27hj7_76">without</span> implementation, known as abstract functions and properties.</p><p id="-m27hj7_57">To create an abstract class, use the <code class="code" id="-m27hj7_77">abstract</code> keyword:</p><div class="code-block" data-lang="kotlin">
+abstract class Animal
+</div><p id="-m27hj7_59">To declare a function or a property <span class="control" id="-m27hj7_78">without</span> an implementation, you also use the <code class="code" id="-m27hj7_79">abstract</code> keyword:</p><div class="code-block" data-lang="kotlin">
+abstract fun makeSound()
+abstract val sound: String
+</div><p id="-m27hj7_61">For example, let's say that you want to create an abstract class called <code class="code" id="-m27hj7_80">Product</code> that you can create child classes from to define different product categories:</p><div class="code-block" data-lang="kotlin">
+abstract class Product(val name: String, var price: Double) {
+    // Abstract property for the product category
+    abstract val category: String
+
+    // A function that can be shared by all products
+    fun productInfo(): String {
+        return &quot;Product: $name, Category: $category, Price: $price&quot;
+    }
+}
+</div><p id="-m27hj7_63">In the abstract class:</p><ul class="list _bullet" id="-m27hj7_64"><li class="list__item" id="-m27hj7_81"><p id="-m27hj7_84">The constructor has two parameters for the product's <code class="code" id="-m27hj7_85">name</code> and <code class="code" id="-m27hj7_86">price</code>.</p></li><li class="list__item" id="-m27hj7_82"><p id="-m27hj7_87">There is an abstract property that contains the product category as a string.</p></li><li class="list__item" id="-m27hj7_83"><p id="-m27hj7_88">There is a function that prints information about the product.</p></li></ul><p id="-m27hj7_65">Let's create a child class for electronics. Before you define an implementation for the <code class="code" id="-m27hj7_89">category</code> property in the child class, you must use the <code class="code" id="-m27hj7_90">override</code> keyword:</p><div class="code-block" data-lang="kotlin">
+class Electronic(name: String, price: Double, val warranty: Int) : Product(name, price) {
+    override val category = &quot;Electronic&quot;
+}
+</div><p id="-m27hj7_67">The <code class="code" id="-m27hj7_91">Electronic</code> class:</p><ul class="list _bullet" id="-m27hj7_68"><li class="list__item" id="-m27hj7_92"><p id="-m27hj7_95">Inherits from the <code class="code" id="-m27hj7_96">Product</code> abstract class.</p></li><li class="list__item" id="-m27hj7_93"><p id="-m27hj7_97">Has an additional parameter in the constructor: <code class="code" id="-m27hj7_98">warranty</code>, which is specific to electronics.</p></li><li class="list__item" id="-m27hj7_94"><p id="-m27hj7_99">Overrides the <code class="code" id="-m27hj7_100">category</code> property to contain the string <code class="code" id="-m27hj7_101">&quot;Electronic&quot;</code>.</p></li></ul><p id="-m27hj7_69">Now, you can use these classes like this:</p><div class="code-block" data-lang="kotlin" data-runnable="true" id="kotlin-tour-abstract-class">
+abstract class Product(val name: String, var price: Double) {
+    // Abstract property for the product category
+    abstract val category: String
+
+    // A function that can be shared by all products
+    fun productInfo(): String {
+        return &quot;Product: $name, Category: $category, Price: $price&quot;
+    }
+}
+
+class Electronic(name: String, price: Double, val warranty: Int) : Product(name, price) {
+    override val category = &quot;Electronic&quot;
+}
+
+//sampleStart
+fun main() {
+    // Creates an instance of the Electronic class
+    val laptop = Electronic(name = &quot;Laptop&quot;, price = 1000.0, warranty = 2)
+
+    println(laptop.productInfo())
+    // Product: Laptop, Category: Electronic, Price: 1000.0
+}
+//sampleEnd
+</div><p id="-m27hj7_71">Although abstract classes are great for sharing code in this way, they are restricted because classes in Kotlin only support single inheritance. If you need to inherit from multiple sources, consider using interfaces.</p></section></section><section class="chapter"><h2 id="interfaces" data-toc="interfaces">Interfaces</h2><p id="-m27hj7_102">Interfaces are similar to classes, but they have some differences:</p><ul class="list _bullet" id="-m27hj7_103"><li class="list__item" id="-m27hj7_109"><p id="-m27hj7_112">You can't create an instance of an interface. They don't have a constructor or header.</p></li><li class="list__item" id="-m27hj7_110"><p id="-m27hj7_113">Their functions and properties are implicitly inheritable by default. In Kotlin, we say that they are &quot;open&quot;.</p></li><li class="list__item" id="-m27hj7_111"><p id="-m27hj7_114">You don't need to mark their functions as <code class="code" id="-m27hj7_115">abstract</code> if you don't give them an implementation.</p></li></ul><p id="-m27hj7_104">Similar to abstract classes, you use interfaces to define a set of functions and properties that classes can inherit and implement later. This approach helps you focus on the abstraction described by the interface, rather than the specific implementation details. Using interfaces makes your code:</p><ul class="list _bullet" id="-m27hj7_105"><li class="list__item" id="-m27hj7_116"><p id="-m27hj7_119">More modular, as it isolates different parts, allowing them to evolve independently.</p></li><li class="list__item" id="-m27hj7_117"><p id="-m27hj7_120">Easier to understand by grouping related functions into a cohesive set.</p></li><li class="list__item" id="-m27hj7_118"><p id="-m27hj7_121">Easier to test, as you can quickly swap an implementation with a mock for testing.</p></li></ul><p id="-m27hj7_106">To declare an interface, use the <code class="code" id="-m27hj7_122">interface</code> keyword:</p><div class="code-block" data-lang="kotlin">
+interface PaymentMethod
+</div><section class="chapter"><h3 id="interface-implementation" data-toc="interface-implementation">Interface implementation</h3><p id="-m27hj7_123">Interfaces support multiple inheritance so a class can implement multiple interfaces at once. First, let's consider the scenario where a class implements <span class="control" id="-m27hj7_137">one</span> interface.</p><p id="-m27hj7_124">To create a class that implements an interface, add a colon after your class header, followed by the interface name that you want to implement. You don't use parentheses <code class="code" id="-m27hj7_138">()</code> after the interface name because interfaces don't have a constructor:</p><div class="code-block" data-lang="kotlin">
+class CreditCardPayment : PaymentMethod
+</div><p id="-m27hj7_126">For example:</p><div class="code-block" data-lang="kotlin" data-runnable="true" id="kotlin-tour-interface-inheritance">
+interface PaymentMethod {
+    // Functions are inheritable by default
+    fun initiatePayment(amount: Double): String
+}
+
+class CreditCardPayment(val cardNumber: String, val cardHolderName: String, val expiryDate: String) : PaymentMethod {
+    override fun initiatePayment(amount: Double): String {
+        // Simulate processing payment with credit card
+        return &quot;Payment of $$amount initiated using Credit Card ending in ${cardNumber.takeLast(4)}.&quot;
+    }
+}
+
+fun main() {
+    val paymentMethod = CreditCardPayment(&quot;1234 5678 9012 3456&quot;, &quot;John Doe&quot;, &quot;12/25&quot;)
+    println(paymentMethod.initiatePayment(100.0))
+    // Payment of $100.0 initiated using Credit Card ending in 3456.
+}
+</div><p id="-m27hj7_128">In the example:</p><ul class="list _bullet" id="-m27hj7_129"><li class="list__item" id="-m27hj7_139"><p id="-m27hj7_144"><code class="code" id="-m27hj7_145">PaymentMethod</code> is an interface that has an <code class="code" id="-m27hj7_146">initiatePayment()</code> function without an implementation.</p></li><li class="list__item" id="-m27hj7_140"><p id="-m27hj7_147"><code class="code" id="-m27hj7_148">CreditCardPayment</code> is a class that implements the <code class="code" id="-m27hj7_149">PaymentMethod</code> interface.</p></li><li class="list__item" id="-m27hj7_141"><p id="-m27hj7_150">The <code class="code" id="-m27hj7_151">CreditCardPayment</code> class overrides the inherited <code class="code" id="-m27hj7_152">initiatePayment()</code> function.</p></li><li class="list__item" id="-m27hj7_142"><p id="-m27hj7_153"><code class="code" id="-m27hj7_154">paymentMethod</code> is an instance of the <code class="code" id="-m27hj7_155">CreditCardPayment</code> class.</p></li><li class="list__item" id="-m27hj7_143"><p id="-m27hj7_156">The overridden <code class="code" id="-m27hj7_157">initiatePayment()</code> function is called on the <code class="code" id="-m27hj7_158">paymentMethod</code> instance with a parameter of <code class="code" id="-m27hj7_159">100.0</code>.</p></li></ul><p id="-m27hj7_130">To create a class that implements <span class="control" id="-m27hj7_160">multiple</span> interfaces, add a colon after your class header followed by the name of the interfaces that you want to implement separated by a comma:</p><div class="code-block" data-lang="kotlin">
+class CreditCardPayment : PaymentMethod, PaymentType
+</div><p id="-m27hj7_132">For example:</p><div class="code-block" data-lang="kotlin" data-runnable="true" id="kotlin-tour-interface-multiple-inheritance">
+interface PaymentMethod {
+    fun initiatePayment(amount: Double): String
+}
+
+interface PaymentType {
+    val paymentType: String
+}
+
+class CreditCardPayment(val cardNumber: String, val cardHolderName: String, val expiryDate: String) : PaymentMethod,
+    PaymentType {
+    override fun initiatePayment(amount: Double): String {
+        // Simulate processing payment with credit card
+        return &quot;Payment of $$amount initiated using Credit Card ending in ${cardNumber.takeLast(4)}.&quot;
+    }
+
+    override val paymentType: String = &quot;Credit Card&quot;
+}
+
+fun main() {
+    val paymentMethod = CreditCardPayment(&quot;1234 5678 9012 3456&quot;, &quot;John Doe&quot;, &quot;12/25&quot;)
+    println(paymentMethod.initiatePayment(100.0))
+    // Payment of $100.0 initiated using Credit Card ending in 3456.
+
+    println(&quot;Payment is by ${paymentMethod.paymentType}&quot;)
+    // Payment is by Credit Card
+}
+</div><p id="-m27hj7_134">In the example:</p><ul class="list _bullet" id="-m27hj7_135"><li class="list__item" id="-m27hj7_161"><p id="-m27hj7_168"><code class="code" id="-m27hj7_169">PaymentMethod</code> is an interface that has the <code class="code" id="-m27hj7_170">initiatePayment()</code> function without an implementation.</p></li><li class="list__item" id="-m27hj7_162"><p id="-m27hj7_171"><code class="code" id="-m27hj7_172">PaymentType</code> is an interface that has the <code class="code" id="-m27hj7_173">paymentType</code> property that isn't initialized.</p></li><li class="list__item" id="-m27hj7_163"><p id="-m27hj7_174"><code class="code" id="-m27hj7_175">CreditCardPayment</code> is a class that implements the <code class="code" id="-m27hj7_176">PaymentMethod</code> and <code class="code" id="-m27hj7_177">PaymentType</code> interfaces.</p></li><li class="list__item" id="-m27hj7_164"><p id="-m27hj7_178">The <code class="code" id="-m27hj7_179">CreditCardPayment</code> class overrides the inherited <code class="code" id="-m27hj7_180">initiatePayment()</code> function and the <code class="code" id="-m27hj7_181">paymentType</code> property.</p></li><li class="list__item" id="-m27hj7_165"><p id="-m27hj7_182"><code class="code" id="-m27hj7_183">paymentMethod</code> is an instance of the <code class="code" id="-m27hj7_184">CreditCardPayment</code> class.</p></li><li class="list__item" id="-m27hj7_166"><p id="-m27hj7_185">The overridden <code class="code" id="-m27hj7_186">initiatePayment()</code> function is called on the <code class="code" id="-m27hj7_187">paymentMethod</code> instance with a parameter of <code class="code" id="-m27hj7_188">100.0</code>.</p></li><li class="list__item" id="-m27hj7_167"><p id="-m27hj7_189">The overridden <code class="code" id="-m27hj7_190">paymentType</code> property is accessed on the <code class="code" id="-m27hj7_191">paymentMethod</code> instance.</p></li></ul><p id="-m27hj7_136">For more information about interfaces and interface inheritance, see <a href="interfaces.html" id="-m27hj7_192">Interfaces</a>.</p></section></section><section class="chapter"><h2 id="delegation" data-toc="delegation">Delegation</h2><p id="-m27hj7_193">Interfaces are useful, but if your interface contains many functions, child classes may end up with a lot of boilerplate code. When you only want to override a small part of your parent's behavior, you need to repeat yourself a lot.</p><aside class="prompt" data-type="tip" data-title="" id="-m27hj7_194"><p id="-m27hj7_210">Boilerplate code is a chunk of code that is reused with little or no alteration in multiple parts of a software project.</p></aside><p id="-m27hj7_195">For example, let's say that you have an interface called <code class="code" id="-m27hj7_211">Drawable</code> that contains a number of functions and one property called <code class="code" id="-m27hj7_212">color</code>:</p><div class="code-block" data-lang="kotlin">
+interface Drawable {
+    fun draw()
+    fun resize()
+    val color: String?
+}
+</div><p id="-m27hj7_197">You create a class called <code class="code" id="-m27hj7_213">Circle</code> which implements the <code class="code" id="-m27hj7_214">Drawable</code> interface and provides implementations for all of its members:</p><div class="code-block" data-lang="kotlin">
+class Circle : Drawable {
+    override fun draw() {
+        TODO(&quot;An example implementation&quot;)
+    }
+    
+    override fun resize() {
+        TODO(&quot;An example implementation&quot;)
+    }
+   override val color = null
+}
+</div><p id="-m27hj7_199">If you wanted to create a child class of the <code class="code" id="-m27hj7_215">Circle</code> class which had the same behavior <span class="control" id="-m27hj7_216">except</span> for the value of the <code class="code" id="-m27hj7_217">color</code> property, you still need to add implementations for each member function of the <code class="code" id="-m27hj7_218">Circle</code> class:</p><div class="code-block" data-lang="kotlin">
+class RedCircle(val circle: Circle) : Circle {
+
+    // Start of boilerplate code
+    override fun draw() {
+        circle.draw()
+    }
+
+    override fun resize() {
+        circle.resize()
+    }
+
+    // End of boilerplate code
+    override val color = &quot;red&quot;
+}
+</div><p id="-m27hj7_201">You can see that if you have a large number of member functions in the <code class="code" id="-m27hj7_219">Drawable</code> interface, the amount of boilerplate code in the <code class="code" id="-m27hj7_220">RedCircle</code> class can be very large. However, there is an alternative.</p><p id="-m27hj7_202">In Kotlin, you can use delegation to delegate the interface implementation to an instance of a class. For example, you can create an instance of the <code class="code" id="-m27hj7_221">Circle</code> class and delegate the implementations of the member functions of the <code class="code" id="-m27hj7_222">Circle</code> class to this instance. To do this, use the <code class="code" id="-m27hj7_223">by</code> keyword. For example:</p><div class="code-block" data-lang="kotlin">
+class RedCircle(param: Circle) : Drawable by param
+</div><p id="-m27hj7_204">Here, <code class="code" id="-m27hj7_224">param</code> is the name of the instance of the <code class="code" id="-m27hj7_225">Circle</code> class that the implementations of member functions are delegated to.</p><p id="-m27hj7_205">Now you don't have to add implementations for the member functions in the <code class="code" id="-m27hj7_226">RedCircle</code> class. The compiler does this for you automatically from the <code class="code" id="-m27hj7_227">Circle</code> class. This saves you from having to write a lot of boilerplate code. Instead, you add code only for the behavior you want to change for your child class.</p><p id="-m27hj7_206">For example, if you want to change the value of the <code class="code" id="-m27hj7_228">color</code> property:</p><div class="code-block" data-lang="kotlin">
+class RedCircle(param : Circle) : Drawable by param {
+    // No boilerplate code!
+    override val color = &quot;red&quot;
+}
+</div><p id="-m27hj7_208">If you want to, you can also override the behavior of an inherited member function in the <code class="code" id="-m27hj7_229">RedCircle</code> class, but now you don't have to add new lines of code for every inherited member function.</p><p id="-m27hj7_209">For more information, see <a href="delegation.html" id="-m27hj7_230">Delegation</a>.</p></section><section class="chapter"><h2 id="practice" data-toc="practice">Practice</h2><section class="chapter"><div class="collapse"><div class="collapse__title"><h3 id="classes-interfaces-exercise-1" data-toc="classes-interfaces-exercise-1">Exercise 1</h3></div><div class="collapse__content"><p id="-m27hj7_235">Imagine you're working on a smart home system. A smart home typically has different types of devices that all have some basic features but also unique behaviors. In the code sample below, complete the <code class="code" id="-m27hj7_242">abstract</code> class called <code class="code" id="-m27hj7_243">SmartDevice</code> so that the child class <code class="code" id="-m27hj7_244">SmartLight</code> can compile successfully.</p><p id="-m27hj7_236">Then, create another child class called <code class="code" id="-m27hj7_245">SmartThermostat</code> that inherits from the <code class="code" id="-m27hj7_246">SmartDevice</code> class and implements <code class="code" id="-m27hj7_247">turnOn()</code> and <code class="code" id="-m27hj7_248">turnOff()</code> functions that return print statements describing which thermostat is heating or turned off. Finally, add another function called <code class="code" id="-m27hj7_249">adjustTemperature()</code> that accepts a temperature measurement as an input and prints: <code class="code" id="-m27hj7_250">$name thermostat set to $temperature&deg;C.</code></p><dl id="-m27hj7_237" data-style="title-top"><dt id="-m27hj7_251" data-expandable="true" data-expanded="false">Hint</dt><dd><p>In the <code class="code" id="-m27hj7_252">SmartDevice</code> class, add the <code class="code" id="-m27hj7_253">turnOn()</code> and <code class="code" id="-m27hj7_254">turnOff()</code> functions so that you can override their behavior later in the <code class="code" id="-m27hj7_255">SmartThermostat</code> class.</p></dd></dl><div class="table-wrapper"><table class="" id="-m27hj7_238"><tbody></tbody></table></div><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-tour-classes-interfaces-exercise-1">
+abstract class // Write your code here
+
+class SmartLight(name: String) : SmartDevice(name) {
+    override fun turnOn() {
+        println(&quot;$name is now ON.&quot;)
+    }
+
+    override fun turnOff() {
+        println(&quot;$name is now OFF.&quot;)
+    }
+
+   fun adjustBrightness(level: Int) {
+        println(&quot;Adjusting $name brightness to $level%.&quot;)
+    }
+}
+
+class SmartThermostat // Write your code here
+
+fun main() {
+    val livingRoomLight = SmartLight(&quot;Living Room Light&quot;)
+    val bedroomThermostat = SmartThermostat(&quot;Bedroom Thermostat&quot;)
+    
+    livingRoomLight.turnOn()
+    // Living Room Light is now ON.
+    livingRoomLight.adjustBrightness(10)
+    // Adjusting Living Room Light brightness to 10%.
+    livingRoomLight.turnOff()
+    // Living Room Light is now OFF.
+
+    bedroomThermostat.turnOn()
+    // Bedroom Thermostat thermostat is now heating.
+    bedroomThermostat.adjustTemperature(5)
+    // Bedroom Thermostat thermostat set to 5°C.
+    bedroomThermostat.turnOff()
+    // Bedroom Thermostat thermostat is now off.
+}
+</div><div class="table-wrapper"><table class="" id="-m27hj7_240"><tbody></tbody></table></div><div class="code-collapse" data-lang="kotlin" id="kotlin-tour-classes-interfaces-solution-1" data-is-expanded="false" data-synopsis="Example solution">
+abstract class SmartDevice(val name: String) {
+    abstract fun turnOn()
+    abstract fun turnOff()
+}
+
+class SmartLight(name: String) : SmartDevice(name) {
+    override fun turnOn() {
+        println(&quot;$name is now ON.&quot;)
+    }
+
+    override fun turnOff() {
+        println(&quot;$name is now OFF.&quot;)
+    }
+
+   fun adjustBrightness(level: Int) {
+        println(&quot;Adjusting $name brightness to $level%.&quot;)
+    }
+}
+
+class SmartThermostat(name: String) : SmartDevice(name) {
+    override fun turnOn() {
+        println(&quot;$name thermostat is now heating.&quot;)
+    }
+
+    override fun turnOff() {
+        println(&quot;$name thermostat is now off.&quot;)
+    }
+
+   fun adjustTemperature(temperature: Int) {
+        println(&quot;$name thermostat set to $temperature°C.&quot;)
+    }
+}
+
+
+fun main() {
+    val livingRoomLight = SmartLight(&quot;Living Room Light&quot;)
+    val bedroomThermostat = SmartThermostat(&quot;Bedroom Thermostat&quot;)
+    
+    livingRoomLight.turnOn()
+    // Living Room Light is now ON.
+    livingRoomLight.adjustBrightness(10)
+    // Adjusting Living Room Light brightness to 10%.
+    livingRoomLight.turnOff()
+    // Living Room Light is now OFF.
+
+    bedroomThermostat.turnOn()
+    // Bedroom Thermostat thermostat is now heating.
+    bedroomThermostat.adjustTemperature(5)
+    // Bedroom Thermostat thermostat set to 5°C.
+    bedroomThermostat.turnOff()
+    // Bedroom Thermostat thermostat is now off.
+}
+</div></div></div></section><section class="chapter"><div class="collapse"><div class="collapse__title"><h3 id="classes-interfaces-exercise-2" data-toc="classes-interfaces-exercise-2">Exercise 2</h3></div><div class="collapse__content"><p id="-m27hj7_256">Create an interface called <code class="code" id="-m27hj7_264">Media</code> that you can use to implement specific media classes like <code class="code" id="-m27hj7_265">Audio</code>, <code class="code" id="-m27hj7_266">Video</code>, or <code class="code" id="-m27hj7_267">Podcast</code>. Your interface must include:</p><ul class="list _bullet" id="-m27hj7_257"><li class="list__item" id="-m27hj7_268"><p id="-m27hj7_270">A property called <code class="code" id="-m27hj7_271">title</code> to represent the title of the media.</p></li><li class="list__item" id="-m27hj7_269"><p id="-m27hj7_272">A function called <code class="code" id="-m27hj7_273">play()</code> to play the media.</p></li></ul><p id="-m27hj7_258">Then, create a class called <code class="code" id="-m27hj7_274">Audio</code> that implements the <code class="code" id="-m27hj7_275">Media</code> interface. The <code class="code" id="-m27hj7_276">Audio</code> class must use the <code class="code" id="-m27hj7_277">title</code> property in its constructor as well as have an additional property called <code class="code" id="-m27hj7_278">composer</code> that has <code class="code" id="-m27hj7_279">String</code> type. In the class, implement the <code class="code" id="-m27hj7_280">play()</code> function to print the following: <code class="code" id="-m27hj7_281">&quot;Playing audio: $title, composed by $composer&quot;</code>.</p><dl id="-m27hj7_259" data-style="title-top"><dt id="-m27hj7_282" data-expandable="true" data-expanded="false">Hint</dt><dd><p>You can use the <code class="code" id="-m27hj7_283">override</code> keyword in class headers to implement a property from an interface in the constructor.</p></dd></dl><div class="table-wrapper"><table class="" id="-m27hj7_260"><tbody></tbody></table></div><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-tour-classes-interfaces-exercise-2">
+interface // Write your code here
+
+class // Write your code here
+
+fun main() {
+    val audio = Audio(&quot;Symphony No. 5&quot;, &quot;Beethoven&quot;)
+    audio.play()
+   // Playing audio: Symphony No. 5, composed by Beethoven
+}
+</div><div class="table-wrapper"><table class="" id="-m27hj7_262"><tbody></tbody></table></div><div class="code-collapse" data-lang="kotlin" id="kotlin-tour-classes-interfaces-solution-2" data-is-expanded="false" data-synopsis="Example solution">
+interface Media {
+    val title: String
+    fun play()
+}
+
+class Audio(override val title: String, val composer: String) : Media {
+    override fun play() {
+        println(&quot;Playing audio: $title, composed by $composer&quot;)
+    }
+}
+
+fun main() {
+    val audio = Audio(&quot;Symphony No. 5&quot;, &quot;Beethoven&quot;)
+    audio.play()
+   // Playing audio: Symphony No. 5, composed by Beethoven
+}
+</div></div></div></section><section class="chapter"><div class="collapse"><div class="collapse__title"><h3 id="classes-interfaces-exercise-3" data-toc="classes-interfaces-exercise-3">Exercise 3</h3></div><div class="collapse__content"><p id="-m27hj7_284">You're building a payment processing system for an e-commerce application. Each payment method needs to be able to authorize a payment and process a transaction. Some payments also need to be able to process refunds.</p><ol class="list _decimal" id="-m27hj7_285" type="1"><li class="list__item" id="-m27hj7_290"><p id="-m27hj7_293">In the <code class="code" id="-m27hj7_294">Refundable</code> interface, add a function called <code class="code" id="-m27hj7_295">refund()</code> to process refunds.</p></li><li class="list__item" id="-m27hj7_291"><p id="-m27hj7_296">In the <code class="code" id="-m27hj7_298">PaymentMethod</code> abstract class:</p><ul class="list _bullet" id="-m27hj7_297"><li class="list__item" id="-m27hj7_299"><p id="-m27hj7_301">Add a function called <code class="code" id="-m27hj7_302">authorize()</code> that takes an amount and prints a message containing the amount.</p></li><li class="list__item" id="-m27hj7_300"><p id="-m27hj7_303">Add an abstract function called <code class="code" id="-m27hj7_304">processPayment()</code> that also takes an amount.</p></li></ul></li><li class="list__item" id="-m27hj7_292"><p id="-m27hj7_305">Create a class called <code class="code" id="-m27hj7_307">CreditCard</code> that implements the <code class="code" id="-m27hj7_308">Refundable</code> interface and <code class="code" id="-m27hj7_309">PaymentMethod</code> abstract class. In this class, add implementations for the <code class="code" id="-m27hj7_310">refund()</code> and <code class="code" id="-m27hj7_311">processPayment()</code> functions so that they print the following statements:</p><ul class="list _bullet" id="-m27hj7_306"><li class="list__item" id="-m27hj7_312"><p id="-m27hj7_314"><code class="code" id="-m27hj7_315">&quot;Refunding $amount to the credit card.&quot;</code></p></li><li class="list__item" id="-m27hj7_313"><p id="-m27hj7_316"><code class="code" id="-m27hj7_317">&quot;Processing credit card payment of $amount.&quot;</code></p></li></ul></li></ol><div class="table-wrapper"><table class="" id="-m27hj7_286"><tbody></tbody></table></div><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-tour-classes-interfaces-exercise-3">
+interface Refundable {
+    // Write your code here
+}
+
+abstract class PaymentMethod(val name: String) {
+    // Write your code here
+}
+
+class CreditCard // Write your code here
+
+fun main() {
+    val visa = CreditCard(&quot;Visa&quot;)
+    
+    visa.authorize(100.0)
+    // Authorizing payment of $100.0.
+    visa.processPayment(100.0)
+    // Processing credit card payment of $100.0.
+    visa.refund(50.0)
+    // Refunding $50.0 to the credit card.
+}
+</div><div class="table-wrapper"><table class="" id="-m27hj7_288"><tbody></tbody></table></div><div class="code-collapse" data-lang="kotlin" id="kotlin-tour-classes-interfaces-solution-3" data-is-expanded="false" data-synopsis="Example solution">
+interface Refundable {
+    fun refund(amount: Double)
+}
+
+abstract class PaymentMethod(val name: String) {
+    fun authorize(amount: Double) {
+        println(&quot;Authorizing payment of $$amount.&quot;)
+    }
+
+    abstract fun processPayment(amount: Double)
+}
+
+class CreditCard(name: String) : PaymentMethod(name), Refundable {
+    override fun processPayment(amount: Double) {
+        println(&quot;Processing credit card payment of $$amount.&quot;)
+    }
+
+    override fun refund(amount: Double) {
+        println(&quot;Refunding $$amount to the credit card.&quot;)
+    }
+}
+
+fun main() {
+    val visa = CreditCard(&quot;Visa&quot;)
+    
+    visa.authorize(100.0)
+    // Authorizing payment of $100.0.
+    visa.processPayment(100.0)
+    // Processing credit card payment of $100.0.
+    visa.refund(50.0)
+    // Refunding $50.0 to the credit card.
+}
+</div></div></div></section><section class="chapter"><div class="collapse"><div class="collapse__title"><h3 id="classes-interfaces-exercise-4" data-toc="classes-interfaces-exercise-4">Exercise 4</h3></div><div class="collapse__content"><p id="-m27hj7_318">You have a simple messaging app that has some basic functionality, but you want to add some functionality for <span class="emphasis" id="-m27hj7_326">smart</span> messages without significantly duplicating your code.</p><p id="-m27hj7_319">In the code below, define a class called <code class="code" id="-m27hj7_327">SmartMessenger</code> that inherits from the <code class="code" id="-m27hj7_328">BasicMessenger</code> class but delegates the implementation to an instance of the <code class="code" id="-m27hj7_329">BasicMessenger</code> class.</p><p id="-m27hj7_320">In the <code class="code" id="-m27hj7_330">SmartMessenger</code> class, override the <code class="code" id="-m27hj7_331">sendMessage()</code> function to send smart messages. The function must accept a <code class="code" id="-m27hj7_332">message</code> as an input and return a printed statement: <code class="code" id="-m27hj7_333">&quot;Sending a smart message: $message&quot;</code>. In addition, call the <code class="code" id="-m27hj7_334">sendMessage()</code> function from the <code class="code" id="-m27hj7_335">BasicMessenger</code> class and prefix the message with <code class="code" id="-m27hj7_336">[smart]</code>.</p><aside class="prompt" data-type="note" data-title="" id="-m27hj7_321"><p id="-m27hj7_337">You don't need to rewrite the <code class="code" id="-m27hj7_338">receiveMessage()</code> function in the <code class="code" id="-m27hj7_339">SmartMessenger</code> class.</p></aside><div class="table-wrapper"><table class="" id="-m27hj7_322"><tbody></tbody></table></div><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-tour-classes-interfaces-exercise-4">
+interface Messenger {
+    fun sendMessage(message: String)
+    fun receiveMessage(): String
+}
+
+class BasicMessenger : Messenger {
+    override fun sendMessage(message: String) {
+        println(&quot;Sending message: $message&quot;)
+    }
+
+    override fun receiveMessage(): String {
+        return &quot;You've got a new message!&quot;
+    }
+}
+
+class SmartMessenger // Write your code here
+
+fun main() {
+    val basicMessenger = BasicMessenger()
+    val smartMessenger = SmartMessenger(basicMessenger)
+    
+    basicMessenger.sendMessage(&quot;Hello!&quot;)
+    // Sending message: Hello!
+    println(smartMessenger.receiveMessage())
+    // You've got a new message!
+    smartMessenger.sendMessage(&quot;Hello from SmartMessenger!&quot;)
+    // Sending a smart message: Hello from SmartMessenger!
+    // Sending message: [smart] Hello from SmartMessenger!
+}
+</div><div class="table-wrapper"><table class="" id="-m27hj7_324"><tbody></tbody></table></div><div class="code-collapse" data-lang="kotlin" id="kotlin-tour-classes-interfaces-solution-4" data-is-expanded="false" data-synopsis="Example solution">
+interface Messenger {
+    fun sendMessage(message: String)
+    fun receiveMessage(): String
+}
+
+class BasicMessenger : Messenger {
+    override fun sendMessage(message: String) {
+        println(&quot;Sending message: $message&quot;)
+    }
+
+    override fun receiveMessage(): String {
+        return &quot;You've got a new message!&quot;
+    }
+}
+
+class SmartMessenger(val basicMessenger: BasicMessenger) : Messenger by basicMessenger {
+    override fun sendMessage(message: String) {
+        println(&quot;Sending a smart message: $message&quot;)
+        basicMessenger.sendMessage(&quot;[smart] $message&quot;)
+    }
+}
+
+fun main() {
+    val basicMessenger = BasicMessenger()
+    val smartMessenger = SmartMessenger(basicMessenger)
+    
+    basicMessenger.sendMessage(&quot;Hello!&quot;)
+    // Sending message: Hello!
+    println(smartMessenger.receiveMessage())
+    // You've got a new message!
+    smartMessenger.sendMessage(&quot;Hello from SmartMessenger!&quot;)
+    // Sending a smart message: Hello from SmartMessenger!
+    // Sending message: [smart] Hello from SmartMessenger!
+}
+</div></div></div></section></section><section class="chapter"><h2 id="next-step" data-toc="next-step">Next step</h2><p id="-m27hj7_340"><a href="kotlin-tour-intermediate-objects.html" id="-m27hj7_341">Intermediate: Objects</a></p></section><div class="last-modified">21 June 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="kotlin-tour-intermediate-lambdas-receiver.html" class="navigation-links__prev">Intermediate: Lambda expressions with receiver</a><a href="kotlin-tour-intermediate-objects.html" class="navigation-links__next">Intermediate: Objects</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>

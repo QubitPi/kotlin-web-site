@@ -1,0 +1,57 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-06-21T03:45:37.989079862"><link rel="canonical" href="https://kotlinlang.org/docs/typesafe-html-dsl.html" data-react-helmet="true"><script>
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+        var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&amp;l=' + l : '';
+        j.async = true;
+        j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5P98');
+</script>
+<script src="https://resources.jetbrains.com/storage/help-app/v6/analytics.js"></script>
+<title>Typesafe HTML DSL | Kotlin Documentation</title><script type="application/json" id="virtual-toc-data">[]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.css" rel="stylesheet"><link rel="icon" type="image/svg" sizes="16x16" href="https://kotlinlang.org/assets/images/favicon.svg?v2"><link rel="icon" type="image/x-icon" sizes="32x32" href="https://kotlinlang.org/assets/images/favicon.ico?v2"><link rel="icon" type="image/png" sizes="96x96" href="https://kotlinlang.org/assets/images/apple-touch-icon.png?v2"><link rel="icon" type="image/png" sizes="300x300" href="https://kotlinlang.org/assets/images/apple-touch-icon-72x72.png?v2"><link rel="icon" type="image/png" sizes="500x500" href="https://kotlinlang.org/assets/images/apple-touch-icon-114x114.png?v2"><meta name="image" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><!-- Open Graph --><meta property="og:title" content="Typesafe HTML DSL | Kotlin"><meta property="og:description" content=""><meta property="og:image" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><meta property="og:site_name" content="Kotlin Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="https://kotlinlang.org/docs/typesafe-html-dsl.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@kotlin"><meta name="twitter:title" content="Typesafe HTML DSL | Kotlin"><meta name="twitter:description" content=""><meta name="twitter:creator" content="@kotlin"><meta name="twitter:image:src" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "https://kotlinlang.org/docs/typesafe-html-dsl.html#webpage",
+    "url": "https://kotlinlang.org/docs/typesafe-html-dsl.html",
+    "name": "Typesafe HTML DSL | Kotlin",
+    "description": "",
+    "image": "https://kotlinlang.org/assets/images/open-graph/docs.png",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "https://kotlinlang.org/docs/#website",
+    "url": "https://kotlinlang.org/docs/",
+    "name": "Kotlin Help"
+}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="typesafe-html-dsl" data-main-title="Typesafe HTML DSL" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Platforms///JavaScript///Kotlin for the JS platform" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/js/typesafe-html-dsl.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="typesafe-html-dsl" id="typesafe-html-dsl.md">Typesafe HTML DSL</h1><p id="z9z7i14_2">The <a href="https://www.github.com/kotlin/kotlinx.html" id="z9z7i14_9" data-external="true" rel="noopener noreferrer" target="_blank">kotlinx.html library</a> provides the ability to generate DOM elements using statically typed HTML builders (and besides JavaScript, it is even available on the JVM target!) To use the library, include the corresponding repository and dependency to our <code class="code" id="z9z7i14_10">build.gradle.kts</code> file:</p><div class="code-block" data-lang="kotlin">
+repositories {
+    // ...
+    mavenCentral()
+}
+
+dependencies {
+    implementation(kotlin(&quot;stdlib-js&quot;))
+    implementation(&quot;org.jetbrains.kotlinx:kotlinx-html-js:0.8.0&quot;)
+    // ...
+}
+</div><p id="z9z7i14_4">Once the dependency is included, you can access the different interfaces provided to generate the DOM. To render a headline, some text, and a link, the following snippet would be sufficient, for example:</p><div class="code-block" data-lang="kotlin">
+import kotlinx.browser.*
+import kotlinx.html.*
+import kotlinx.html.dom.*
+
+fun main() {
+    document.body!!.append.div {
+        h1 {
+            +&quot;Welcome to Kotlin/JS!&quot;
+        }
+        p {
+            +&quot;Fancy joining this year's &quot;
+            a(&quot;https://kotlinconf.com/&quot;) {
+                +&quot;KotlinConf&quot;
+            }
+            +&quot;?&quot;
+        }
+    }
+}
+</div><p id="z9z7i14_6">When running this example in the browser, the DOM will be assembled in a straightforward way. This is easily confirmed by checking the Elements of the website using the developer tools of our browser:</p><figure id="z9z7i14_7"><img alt="Rendering a website from kotlinx.html" src="images/rendering-example.png" title="Rendering a website from kotlinx.html" width="700" height="339"></figure><p id="z9z7i14_8">To learn more about the <code class="code" id="z9z7i14_11">kotlinx.html</code> library, check out the <a href="https://github.com/Kotlin/kotlinx.html/wiki/Getting-started" id="z9z7i14_12" data-external="true" rel="noopener noreferrer" target="_blank">GitHub Wiki</a>, where you can find more information about how to <a href="https://github.com/Kotlin/kotlinx.html/wiki/DOM-trees" id="z9z7i14_13" data-external="true" rel="noopener noreferrer" target="_blank">create elements</a> without adding them to the DOM, <a href="https://github.com/Kotlin/kotlinx.html/wiki/Events" id="z9z7i14_14" data-external="true" rel="noopener noreferrer" target="_blank">binding to events</a> like <code class="code" id="z9z7i14_15">onClick</code>, and examples on how to <a href="https://github.com/Kotlin/kotlinx.html/wiki/Elements-CSS-classes" id="z9z7i14_16" data-external="true" rel="noopener noreferrer" target="_blank">apply CSS classes</a> to your HTML elements, to name just a few.</p><div class="last-modified">21 June 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="js-reflection.html" class="navigation-links__prev">Kotlin/JS reflection</a><a href="js-react.html" class="navigation-links__next">Build a web application with React and Kotlin/JS &mdash; tutorial</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>
