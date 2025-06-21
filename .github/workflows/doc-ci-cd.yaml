@@ -1,0 +1,79 @@
+# Copyright 2025 Jiaqi Liu. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+---
+name: Documentation
+
+"on":
+  pull_request:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: 22
+
+jobs:
+  ci-cd:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 #v4.2.2
+        with:
+          persist-credentials: true
+      - name: Setup Node ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Setup yarn
+        run: |
+          corepack enable
+          yarn set version latest
+      - name: Install dependencies
+        run: yarn
+      - name: Build landing page (docs not included in build process)
+        run: yarn build
+      - name: Build docs using Writerside
+        uses: JetBrains/writerside-github-action@73f8f377e7c6a64cce73ca73fe07bbba9a34d556 # v4
+        with:
+          instance: kotlin-reference/kr
+          docker-version: '2025.04.8412'
+      - name: Unzip docs and move them into landing page deployable under 'docs' folder
+        run: |
+          cd artifacts
+          mkdir images
+          cd images
+          mv ../webHelpImages.zip .
+          unzip webHelpImages.zip
+          cd ../
+          unzip webHelpKR2.zip
+          cd ../
+          mv artifacts out/docs
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e # v4.0.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: out
+          enable_jekyll: false
+          user_name: QubitPi
+          user_email: jack20220723@gmail.com
+          cname: kotlin.qubitpi.org
