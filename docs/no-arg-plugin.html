@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-06-21T03:45:37.117358903"><link rel="canonical" href="https://kotlinlang.org/docs/no-arg-plugin.html" data-react-helmet="true"><script>
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-06-21T03:58:57.436315913"><link rel="canonical" href="https://kotlinlang.org/docs/no-arg-plugin.html" data-react-helmet="true"><script>
     (function (w, d, s, l, i) {
         w[l] = w[l] || [];
         w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
@@ -24,23 +24,23 @@
     "@id": "https://kotlinlang.org/docs/#website",
     "url": "https://kotlinlang.org/docs/",
     "name": "Kotlin Help"
-}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="no-arg-plugin" data-main-title="No-arg compiler plugin" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Compiler and plugins///Kotlin compiler plugins" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/no-arg-plugin.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="no-arg-plugin" id="no-arg-plugin.md">No-arg compiler plugin</h1><p id="-iskvgt_2">The <span class="emphasis" id="-iskvgt_10">no-arg</span> compiler plugin generates an additional zero-argument constructor for classes with a specific annotation.</p><p id="-iskvgt_3">The generated constructor is synthetic, so it can't be directly called from Java or Kotlin, but it can be called using reflection.</p><p id="-iskvgt_4">This allows the Java Persistence API (JPA) to instantiate a class although it doesn't have the zero-parameter constructor from Kotlin or Java point of view (see the description of <code class="code" id="-iskvgt_11">kotlin-jpa</code> plugin <a href="#jpa-support" id="-iskvgt_12">below</a>).</p><section class="chapter"><h2 id="in-your-kotlin-file" data-toc="in-your-kotlin-file">In your Kotlin file</h2><p id="-iskvgt_13">Add new annotations to mark the code that needs a zero-argument constructor:</p><div class="code-block" data-lang="kotlin">
+}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="no-arg-plugin" data-main-title="No-arg compiler plugin" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Compiler and plugins///Kotlin compiler plugins" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/no-arg-plugin.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="no-arg-plugin" id="no-arg-plugin.md">No-arg compiler plugin</h1><p id="-hx7nc3_2">The <span class="emphasis" id="-hx7nc3_10">no-arg</span> compiler plugin generates an additional zero-argument constructor for classes with a specific annotation.</p><p id="-hx7nc3_3">The generated constructor is synthetic, so it can't be directly called from Java or Kotlin, but it can be called using reflection.</p><p id="-hx7nc3_4">This allows the Java Persistence API (JPA) to instantiate a class although it doesn't have the zero-parameter constructor from Kotlin or Java point of view (see the description of <code class="code" id="-hx7nc3_11">kotlin-jpa</code> plugin <a href="#jpa-support" id="-hx7nc3_12">below</a>).</p><section class="chapter"><h2 id="in-your-kotlin-file" data-toc="in-your-kotlin-file">In your Kotlin file</h2><p id="-hx7nc3_13">Add new annotations to mark the code that needs a zero-argument constructor:</p><div class="code-block" data-lang="kotlin">
 package com.my
 
 annotation class Annotation
-</div></section><section class="chapter"><h2 id="gradle" data-toc="gradle">Gradle</h2><p id="-iskvgt_15">Add the plugin using Gradle's plugins DSL:</p><div class="tabs" id="-iskvgt_16" data-group="build-script" data-anchors="[-iskvgt_21,-iskvgt_22]"><div class="tabs__content" data-gtm="tab" id="-iskvgt_21" data-sync-tabs="kotlin" data-title="Kotlin"><div class="code-block" data-lang="kotlin" data-title="Kotlin">
+</div></section><section class="chapter"><h2 id="gradle" data-toc="gradle">Gradle</h2><p id="-hx7nc3_15">Add the plugin using Gradle's plugins DSL:</p><div class="tabs" id="-hx7nc3_16" data-group="build-script" data-anchors="[-hx7nc3_21,-hx7nc3_22]"><div class="tabs__content" data-gtm="tab" id="-hx7nc3_21" data-sync-tabs="kotlin" data-title="Kotlin"><div class="code-block" data-lang="kotlin" data-title="Kotlin">
 plugins {
     kotlin(&quot;plugin.noarg&quot;) version &quot;2.1.21&quot;
 }
-</div></div><div class="tabs__content" data-gtm="tab" id="-iskvgt_22" data-sync-tabs="groovy" data-title="Groovy"><div class="code-block" data-lang="groovy" data-title="Groovy">
+</div></div><div class="tabs__content" data-gtm="tab" id="-hx7nc3_22" data-sync-tabs="groovy" data-title="Groovy"><div class="code-block" data-lang="groovy" data-title="Groovy">
 plugins {
     id &quot;org.jetbrains.kotlin.plugin.noarg&quot; version &quot;2.1.21&quot;
 }
-</div></div></div><p id="-iskvgt_17">Then specify the list of no-arg annotations that must lead to generating a no-arg constructor for the annotated classes:</p><div class="code-block" data-lang="groovy">
+</div></div></div><p id="-hx7nc3_17">Then specify the list of no-arg annotations that must lead to generating a no-arg constructor for the annotated classes:</p><div class="code-block" data-lang="groovy">
 noArg {
     annotation(&quot;com.my.Annotation&quot;)
 }
-</div><p id="-iskvgt_19">Enable <code class="code" id="-iskvgt_25">invokeInitializers</code> option if you want the plugin to run the initialization logic from the synthetic constructor. By default, it is disabled.</p><div class="code-block" data-lang="groovy">
+</div><p id="-hx7nc3_19">Enable <code class="code" id="-hx7nc3_25">invokeInitializers</code> option if you want the plugin to run the initialization logic from the synthetic constructor. By default, it is disabled.</p><div class="code-block" data-lang="groovy">
 noArg {
     invokeInitializers = true
 }
@@ -71,19 +71,19 @@ noArg {
         &lt;/dependency&gt;
     &lt;/dependencies&gt;
 &lt;/plugin&gt;
-</div></section><section class="chapter"><h2 id="jpa-support" data-toc="jpa-support">JPA support</h2><p id="-iskvgt_27">As with the <code class="code" id="-iskvgt_32">kotlin-spring</code> plugin wrapped on top of <code class="code" id="-iskvgt_33">all-open</code>, <code class="code" id="-iskvgt_34">kotlin-jpa</code> is wrapped on top of <code class="code" id="-iskvgt_35">no-arg</code>. The plugin specifies <a href="https://docs.oracle.com/javaee/7/api/javax/persistence/Entity.html" id="-iskvgt_36" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="-iskvgt_40">@Entity</code></a>, <a href="https://docs.oracle.com/javaee/7/api/javax/persistence/Embeddable.html" id="-iskvgt_37" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="-iskvgt_41">@Embeddable</code></a>, and <a href="https://docs.oracle.com/javaee/7/api/javax/persistence/MappedSuperclass.html" id="-iskvgt_38" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="-iskvgt_42">@MappedSuperclass</code></a> <span class="emphasis" id="-iskvgt_39">no-arg</span> annotations automatically.</p><p id="-iskvgt_28">Add the plugin using the Gradle plugins DSL:</p><div class="tabs" id="-iskvgt_29" data-group="build-script" data-anchors="[-iskvgt_43,-iskvgt_44]"><div class="tabs__content" data-gtm="tab" id="-iskvgt_43" data-sync-tabs="kotlin" data-title="Kotlin"><div class="code-block" data-lang="kotlin" data-title="Kotlin">
+</div></section><section class="chapter"><h2 id="jpa-support" data-toc="jpa-support">JPA support</h2><p id="-hx7nc3_27">As with the <code class="code" id="-hx7nc3_32">kotlin-spring</code> plugin wrapped on top of <code class="code" id="-hx7nc3_33">all-open</code>, <code class="code" id="-hx7nc3_34">kotlin-jpa</code> is wrapped on top of <code class="code" id="-hx7nc3_35">no-arg</code>. The plugin specifies <a href="https://docs.oracle.com/javaee/7/api/javax/persistence/Entity.html" id="-hx7nc3_36" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="-hx7nc3_40">@Entity</code></a>, <a href="https://docs.oracle.com/javaee/7/api/javax/persistence/Embeddable.html" id="-hx7nc3_37" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="-hx7nc3_41">@Embeddable</code></a>, and <a href="https://docs.oracle.com/javaee/7/api/javax/persistence/MappedSuperclass.html" id="-hx7nc3_38" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="-hx7nc3_42">@MappedSuperclass</code></a> <span class="emphasis" id="-hx7nc3_39">no-arg</span> annotations automatically.</p><p id="-hx7nc3_28">Add the plugin using the Gradle plugins DSL:</p><div class="tabs" id="-hx7nc3_29" data-group="build-script" data-anchors="[-hx7nc3_43,-hx7nc3_44]"><div class="tabs__content" data-gtm="tab" id="-hx7nc3_43" data-sync-tabs="kotlin" data-title="Kotlin"><div class="code-block" data-lang="kotlin" data-title="Kotlin">
 plugins {
     kotlin(&quot;plugin.jpa&quot;) version &quot;2.1.21&quot;
 }
-</div></div><div class="tabs__content" data-gtm="tab" id="-iskvgt_44" data-sync-tabs="groovy" data-title="Groovy"><div class="code-block" data-lang="groovy" data-title="Groovy">
+</div></div><div class="tabs__content" data-gtm="tab" id="-hx7nc3_44" data-sync-tabs="groovy" data-title="Groovy"><div class="code-block" data-lang="groovy" data-title="Groovy">
 plugins {
     id &quot;org.jetbrains.kotlin.plugin.jpa&quot; version &quot;2.1.21&quot;
 }
-</div></div></div><p id="-iskvgt_30">In Maven, enable the <code class="code" id="-iskvgt_47">jpa</code> plugin:</p><div class="code-block" data-lang="markup">
+</div></div></div><p id="-hx7nc3_30">In Maven, enable the <code class="code" id="-hx7nc3_47">jpa</code> plugin:</p><div class="code-block" data-lang="markup">
 &lt;compilerPlugins&gt;
     &lt;plugin&gt;jpa&lt;/plugin&gt;
 &lt;/compilerPlugins&gt;
-</div></section><section class="chapter"><h2 id="command-line-compiler" data-toc="command-line-compiler">Command-line compiler</h2><p id="-iskvgt_48">Add the plugin JAR file to the compiler plugin classpath and specify annotations or presets:</p><div class="code-block" data-lang="bash">
+</div></section><section class="chapter"><h2 id="command-line-compiler" data-toc="command-line-compiler">Command-line compiler</h2><p id="-hx7nc3_48">Add the plugin JAR file to the compiler plugin classpath and specify annotations or presets:</p><div class="code-block" data-lang="bash">
 -Xplugin=$KOTLIN_HOME/lib/noarg-compiler-plugin.jar
 -P plugin:org.jetbrains.kotlin.noarg:annotation=com.my.Annotation
 -P plugin:org.jetbrains.kotlin.noarg:preset=jpa

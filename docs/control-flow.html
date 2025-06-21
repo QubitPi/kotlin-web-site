@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-06-21T03:45:41.39812035"><link rel="canonical" href="https://kotlinlang.org/docs/control-flow.html" data-react-helmet="true"><script>
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-06-21T03:59:01.952380748"><link rel="canonical" href="https://kotlinlang.org/docs/control-flow.html" data-react-helmet="true"><script>
     (function (w, d, s, l, i) {
         w[l] = w[l] || [];
         w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
@@ -24,7 +24,7 @@
     "@id": "https://kotlinlang.org/docs/#website",
     "url": "https://kotlinlang.org/docs/",
     "name": "Kotlin Help"
-}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="control-flow" data-main-title="Conditions and loops" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Concepts///Control flow" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/control-flow.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="control-flow" id="control-flow.md">Conditions and loops</h1><section class="chapter"><h2 id="if-expression" data-toc="if-expression">If expression</h2><p id="hx64o3_7">In Kotlin, <code class="code" id="hx64o3_12">if</code> is an expression: it returns a value. Therefore, there is no ternary operator (<code class="code" id="hx64o3_13">condition ? then : else</code>) because ordinary <code class="code" id="hx64o3_14">if</code> works fine in this role.</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="if-else-if-kotlin">
+}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="control-flow" data-main-title="Conditions and loops" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Concepts///Control flow" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/control-flow.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="control-flow" id="control-flow.md">Conditions and loops</h1><section class="chapter"><h2 id="if-expression" data-toc="if-expression">If expression</h2><p id="temb21_7">In Kotlin, <code class="code" id="temb21_12">if</code> is an expression: it returns a value. Therefore, there is no ternary operator (<code class="code" id="temb21_13">condition ? then : else</code>) because ordinary <code class="code" id="temb21_14">if</code> works fine in this role.</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="if-else-if-kotlin">
 fun main() {
     val a = 2
     val b = 3
@@ -53,7 +53,7 @@ fun main() {
     // maxOrLimit is 3
     //sampleEnd
 }
-</div><p id="hx64o3_9">Branches of an <code class="code" id="hx64o3_15">if</code> expression can be blocks. In this case, the last expression is the value of a block:</p><div class="code-block" data-lang="kotlin">
+</div><p id="temb21_9">Branches of an <code class="code" id="temb21_15">if</code> expression can be blocks. In this case, the last expression is the value of a block:</p><div class="code-block" data-lang="kotlin">
 val max = if (a &gt; b) {
     print(&quot;Choose a&quot;)
     a
@@ -61,7 +61,7 @@ val max = if (a &gt; b) {
     print(&quot;Choose b&quot;)
     b
 }
-</div><p id="hx64o3_11">If you're using <code class="code" id="hx64o3_16">if</code> as an expression, for example, for returning its value or assigning it to a variable, the <code class="code" id="hx64o3_17">else</code> branch is mandatory.</p></section><section class="chapter"><h2 id="when-expressions-and-statements" data-toc="when-expressions-and-statements">When expressions and statements</h2><p id="hx64o3_18"><code class="code" id="hx64o3_49">when</code> is a conditional expression that runs code based on multiple possible values or conditions. It is similar to the <code class="code" id="hx64o3_50">switch</code> statement in Java, C, and similar languages. For example:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-conditions-when-statement">
+</div><p id="temb21_11">If you're using <code class="code" id="temb21_16">if</code> as an expression, for example, for returning its value or assigning it to a variable, the <code class="code" id="temb21_17">else</code> branch is mandatory.</p></section><section class="chapter"><h2 id="when-expressions-and-statements" data-toc="when-expressions-and-statements">When expressions and statements</h2><p id="temb21_18"><code class="code" id="temb21_49">when</code> is a conditional expression that runs code based on multiple possible values or conditions. It is similar to the <code class="code" id="temb21_50">switch</code> statement in Java, C, and similar languages. For example:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-conditions-when-statement">
 fun main() {
     //sampleStart
     val x = 2
@@ -73,7 +73,7 @@ fun main() {
     // x == 2
     //sampleEnd
 }
-</div><p id="hx64o3_20"><code class="code" id="hx64o3_51">when</code> matches its argument against all branches sequentially until some branch condition is satisfied.</p><p id="hx64o3_21">You can use <code class="code" id="hx64o3_52">when</code> in a few different ways. Firstly, you can use <code class="code" id="hx64o3_53">when</code> either as an <span class="control" id="hx64o3_54">expression</span> or as a <span class="control" id="hx64o3_55">statement</span>. As an expression, <code class="code" id="hx64o3_56">when</code> returns a value for later use in your code. As a statement, <code class="code" id="hx64o3_57">when</code> completes an action without returning anything of further use:</p><div class="table-wrapper"><table class="wide" id="hx64o3_22"><thead><tr class="ijRowHead" id="hx64o3_58"><th id="hx64o3_60"><p>Expression</p></th><th id="hx64o3_61"><p>Statement</p></th></tr></thead><tbody><tr id="hx64o3_59"><td id="hx64o3_62"><div class="code-block" data-lang="kotlin">
+</div><p id="temb21_20"><code class="code" id="temb21_51">when</code> matches its argument against all branches sequentially until some branch condition is satisfied.</p><p id="temb21_21">You can use <code class="code" id="temb21_52">when</code> in a few different ways. Firstly, you can use <code class="code" id="temb21_53">when</code> either as an <span class="control" id="temb21_54">expression</span> or as a <span class="control" id="temb21_55">statement</span>. As an expression, <code class="code" id="temb21_56">when</code> returns a value for later use in your code. As a statement, <code class="code" id="temb21_57">when</code> completes an action without returning anything of further use:</p><div class="table-wrapper"><table class="wide" id="temb21_22"><thead><tr class="ijRowHead" id="temb21_58"><th id="temb21_60"><p>Expression</p></th><th id="temb21_61"><p>Statement</p></th></tr></thead><tbody><tr id="temb21_59"><td id="temb21_62"><div class="code-block" data-lang="kotlin">
 // Returns a string assigned to the 
 // text variable
 val text = when (x) {
@@ -81,7 +81,7 @@ val text = when (x) {
     2 -&gt; &quot;x == 2&quot;
     else -&gt; &quot;x is neither 1 nor 2&quot;
 }
-</div></td><td id="hx64o3_63"><div class="code-block" data-lang="kotlin">
+</div></td><td id="temb21_63"><div class="code-block" data-lang="kotlin">
 // Returns nothing but triggers a 
 // print statement
 when (x) {
@@ -89,11 +89,11 @@ when (x) {
     2 -&gt; print(&quot;x == 2&quot;)
     else -&gt; print(&quot;x is neither 1 nor 2&quot;)
 }
-</div></td></tr></tbody></table></div><p id="hx64o3_23">Secondly, you can use <code class="code" id="hx64o3_66">when</code> with or without a subject. Whether you use a subject with <code class="code" id="hx64o3_67">when</code> or not, your expression or statement behaves the same. We recommend using <code class="code" id="hx64o3_68">when</code> with a subject when possible, as it makes your code easier to read and maintain by clearly showing what you're checking.</p><div class="table-wrapper"><table class="wide" id="hx64o3_24"><thead><tr class="ijRowHead" id="hx64o3_69"><th id="hx64o3_71"><p>With subject <code class="code" id="hx64o3_73">x</code></p></th><th id="hx64o3_72"><p>Without subject</p></th></tr></thead><tbody><tr id="hx64o3_70"><td id="hx64o3_74"><div class="code-block" data-lang="kotlin">
+</div></td></tr></tbody></table></div><p id="temb21_23">Secondly, you can use <code class="code" id="temb21_66">when</code> with or without a subject. Whether you use a subject with <code class="code" id="temb21_67">when</code> or not, your expression or statement behaves the same. We recommend using <code class="code" id="temb21_68">when</code> with a subject when possible, as it makes your code easier to read and maintain by clearly showing what you're checking.</p><div class="table-wrapper"><table class="wide" id="temb21_24"><thead><tr class="ijRowHead" id="temb21_69"><th id="temb21_71"><p>With subject <code class="code" id="temb21_73">x</code></p></th><th id="temb21_72"><p>Without subject</p></th></tr></thead><tbody><tr id="temb21_70"><td id="temb21_74"><div class="code-block" data-lang="kotlin">
 when(x) { ... }
-</div></td><td id="hx64o3_75"><div class="code-block" data-lang="kotlin">
+</div></td><td id="temb21_75"><div class="code-block" data-lang="kotlin">
 when { ... }
-</div></td></tr></tbody></table></div><p id="hx64o3_25">Depending on how you use <code class="code" id="hx64o3_78">when</code>, there are different requirements for whether you need to cover all possible cases in your branches.</p><p id="hx64o3_26">If you use <code class="code" id="hx64o3_79">when</code> as a statement, you don't have to cover all possible cases. In this example, some cases aren't covered, so nothing happens. However, no error occurs:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-when-statement">
+</div></td></tr></tbody></table></div><p id="temb21_25">Depending on how you use <code class="code" id="temb21_78">when</code>, there are different requirements for whether you need to cover all possible cases in your branches.</p><p id="temb21_26">If you use <code class="code" id="temb21_79">when</code> as a statement, you don't have to cover all possible cases. In this example, some cases aren't covered, so nothing happens. However, no error occurs:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-when-statement">
 fun main() {
     //sampleStart
     val x = 3
@@ -104,7 +104,7 @@ fun main() {
     }
     //sampleEnd
 }
-</div><p id="hx64o3_28">In a <code class="code" id="hx64o3_80">when</code> statement, the values of individual branches are ignored. Just like with <code class="code" id="hx64o3_81">if</code>, each branch can be a block, and its value is the value of the last expression in the block.</p><p id="hx64o3_29">If you use <code class="code" id="hx64o3_82">when</code> as an expression, you have to cover all possible cases. In other words, it must be <span class="emphasis" id="hx64o3_83">exhaustive</span>. The value of the first matching branch becomes the value of the overall expression. If you don't cover all cases, the compiler throws an error.</p><p id="hx64o3_30">If your <code class="code" id="hx64o3_84">when</code> expression has a subject, you can use an <code class="code" id="hx64o3_85">else</code> branch to make sure that all possible cases are covered, but it isn't mandatory. For example, if your subject is a <code class="code" id="hx64o3_86">Boolean</code>, <a href="enum-classes.html" id="hx64o3_87"><code class="code" id="hx64o3_90">enum</code> class</a>, <a href="sealed-classes.html" id="hx64o3_88"><code class="code" id="hx64o3_91">sealed</code> class</a>, or one of their nullable counterparts, you can cover all cases without an <code class="code" id="hx64o3_89">else</code> branch:</p><div class="code-block" data-lang="kotlin">
+</div><p id="temb21_28">In a <code class="code" id="temb21_80">when</code> statement, the values of individual branches are ignored. Just like with <code class="code" id="temb21_81">if</code>, each branch can be a block, and its value is the value of the last expression in the block.</p><p id="temb21_29">If you use <code class="code" id="temb21_82">when</code> as an expression, you have to cover all possible cases. In other words, it must be <span class="emphasis" id="temb21_83">exhaustive</span>. The value of the first matching branch becomes the value of the overall expression. If you don't cover all cases, the compiler throws an error.</p><p id="temb21_30">If your <code class="code" id="temb21_84">when</code> expression has a subject, you can use an <code class="code" id="temb21_85">else</code> branch to make sure that all possible cases are covered, but it isn't mandatory. For example, if your subject is a <code class="code" id="temb21_86">Boolean</code>, <a href="enum-classes.html" id="temb21_87"><code class="code" id="temb21_90">enum</code> class</a>, <a href="sealed-classes.html" id="temb21_88"><code class="code" id="temb21_91">sealed</code> class</a>, or one of their nullable counterparts, you can cover all cases without an <code class="code" id="temb21_89">else</code> branch:</p><div class="code-block" data-lang="kotlin">
 enum class Bit {
     ZERO, ONE
 }
@@ -114,47 +114,47 @@ val numericValue = when (getRandomBit()) {
     Bit.ZERO -&gt; 0
     Bit.ONE -&gt; 1
 }
-</div><p id="hx64o3_32">If your <code class="code" id="hx64o3_92">when</code> expression <span class="control" id="hx64o3_93">doesn't</span> have a subject, you <span class="control" id="hx64o3_94">must</span> have an <code class="code" id="hx64o3_95">else</code> branch or the compiler throws an error. The <code class="code" id="hx64o3_96">else</code> branch is evaluated when none of the other branch conditions are satisfied:</p><div class="code-block" data-lang="kotlin">
+</div><p id="temb21_32">If your <code class="code" id="temb21_92">when</code> expression <span class="control" id="temb21_93">doesn't</span> have a subject, you <span class="control" id="temb21_94">must</span> have an <code class="code" id="temb21_95">else</code> branch or the compiler throws an error. The <code class="code" id="temb21_96">else</code> branch is evaluated when none of the other branch conditions are satisfied:</p><div class="code-block" data-lang="kotlin">
 val message = when {
     a &gt; b -&gt; &quot;a is greater than b&quot;
     a &lt; b -&gt; &quot;a is less than b&quot;
     else -&gt; &quot;a is equal to b&quot;
 }
-</div><p id="hx64o3_34"><code class="code" id="hx64o3_97">when</code> expressions and statements offer different ways to simplify your code, handle multiple conditions, and perform type checks.</p><p id="hx64o3_35">You can define a common behavior for multiple cases by combining their conditions in a single line with a comma:</p><div class="code-block" data-lang="kotlin">
+</div><p id="temb21_34"><code class="code" id="temb21_97">when</code> expressions and statements offer different ways to simplify your code, handle multiple conditions, and perform type checks.</p><p id="temb21_35">You can define a common behavior for multiple cases by combining their conditions in a single line with a comma:</p><div class="code-block" data-lang="kotlin">
 when (x) {
     0, 1 -&gt; print(&quot;x == 0 or x == 1&quot;)
     else -&gt; print(&quot;otherwise&quot;)
 }
-</div><p id="hx64o3_37">You can use arbitrary expressions (not only constants) as branch conditions:</p><div class="code-block" data-lang="kotlin">
+</div><p id="temb21_37">You can use arbitrary expressions (not only constants) as branch conditions:</p><div class="code-block" data-lang="kotlin">
 when (x) {
     s.toInt() -&gt; print(&quot;s encodes x&quot;)
     else -&gt; print(&quot;s does not encode x&quot;)
 }
-</div><p id="hx64o3_39">You can also check whether a value is or isn't contained in a <a href="ranges.html" id="hx64o3_98">range</a> or collection via the <code class="code" id="hx64o3_99">in</code> or <code class="code" id="hx64o3_100">!in</code> keywords:</p><div class="code-block" data-lang="kotlin">
+</div><p id="temb21_39">You can also check whether a value is or isn't contained in a <a href="ranges.html" id="temb21_98">range</a> or collection via the <code class="code" id="temb21_99">in</code> or <code class="code" id="temb21_100">!in</code> keywords:</p><div class="code-block" data-lang="kotlin">
 when (x) {
     in 1..10 -&gt; print(&quot;x is in the range&quot;)
     in validNumbers -&gt; print(&quot;x is valid&quot;)
     !in 10..20 -&gt; print(&quot;x is outside the range&quot;)
     else -&gt; print(&quot;none of the above&quot;)
 }
-</div><p id="hx64o3_41">Additionally, you can check that a value is or isn't a particular type via the <code class="code" id="hx64o3_101">is</code> or <code class="code" id="hx64o3_102">!is</code> keywords. Note that, due to <a href="typecasts.html#smart-casts" id="hx64o3_103">smart casts</a>, you can access the member functions and properties of the type without any additional checks.</p><div class="code-block" data-lang="kotlin">
+</div><p id="temb21_41">Additionally, you can check that a value is or isn't a particular type via the <code class="code" id="temb21_101">is</code> or <code class="code" id="temb21_102">!is</code> keywords. Note that, due to <a href="typecasts.html#smart-casts" id="temb21_103">smart casts</a>, you can access the member functions and properties of the type without any additional checks.</p><div class="code-block" data-lang="kotlin">
 fun hasPrefix(x: Any) = when(x) {
     is String -&gt; x.startsWith(&quot;prefix&quot;)
     else -&gt; false
 }
-</div><p id="hx64o3_43">You can use <code class="code" id="hx64o3_104">when</code> as a replacement for an <code class="code" id="hx64o3_105">if</code>-<code class="code" id="hx64o3_106">else</code> <code class="code" id="hx64o3_107">if</code> chain. If there's no subject, the branch conditions are simply boolean expressions. The first branch with a <code class="code" id="hx64o3_108">true</code> condition runs:</p><div class="code-block" data-lang="kotlin">
+</div><p id="temb21_43">You can use <code class="code" id="temb21_104">when</code> as a replacement for an <code class="code" id="temb21_105">if</code>-<code class="code" id="temb21_106">else</code> <code class="code" id="temb21_107">if</code> chain. If there's no subject, the branch conditions are simply boolean expressions. The first branch with a <code class="code" id="temb21_108">true</code> condition runs:</p><div class="code-block" data-lang="kotlin">
 when {
     x.isOdd() -&gt; print(&quot;x is odd&quot;)
     y.isEven() -&gt; print(&quot;y is even&quot;)
     else -&gt; print(&quot;x+y is odd&quot;)
 }
-</div><p id="hx64o3_45">You can capture the subject in a variable by using the following syntax:</p><div class="code-block" data-lang="kotlin">
+</div><p id="temb21_45">You can capture the subject in a variable by using the following syntax:</p><div class="code-block" data-lang="kotlin">
 fun Request.getBody() =
     when (val response = executeRequest()) {
         is Success -&gt; response.body
         is HttpError -&gt; throw HttpException(response.status)
     }
-</div><p id="hx64o3_47">The scope of a variable introduced as the subject is restricted to the body of the <code class="code" id="hx64o3_109">when</code> expression or statement.</p><section class="chapter"><h3 id="guard-conditions-in-when-expressions" data-toc="guard-conditions-in-when-expressions">Guard conditions in when expressions</h3><aside class="prompt" data-type="warning" data-title="" id="hx64o3_110"><p id="hx64o3_123">Guard conditions are an <a href="components-stability.html#stability-levels-explained" id="hx64o3_124">experimental feature</a> that may be changed at any time. We would appreciate your feedback in <a href="https://youtrack.jetbrains.com/issue/KT-71140/Guard-conditions-in-when-expressions-feedback" id="hx64o3_125" data-external="true" rel="noopener noreferrer" target="_blank">YouTrack</a>.</p></aside><p id="hx64o3_111">Guard conditions allow you to include more than one condition to the branches of a <code class="code" id="hx64o3_126">when</code> expression, making complex control flow more explicit and concise. You can use guard conditions in <code class="code" id="hx64o3_127">when</code> expressions or statements with a subject.</p><p id="hx64o3_112">To include a guard condition in a branch, place it after the primary condition, separated by <code class="code" id="hx64o3_128">if</code>:</p><div class="code-block" data-lang="kotlin">
+</div><p id="temb21_47">The scope of a variable introduced as the subject is restricted to the body of the <code class="code" id="temb21_109">when</code> expression or statement.</p><section class="chapter"><h3 id="guard-conditions-in-when-expressions" data-toc="guard-conditions-in-when-expressions">Guard conditions in when expressions</h3><aside class="prompt" data-type="warning" data-title="" id="temb21_110"><p id="temb21_123">Guard conditions are an <a href="components-stability.html#stability-levels-explained" id="temb21_124">experimental feature</a> that may be changed at any time. We would appreciate your feedback in <a href="https://youtrack.jetbrains.com/issue/KT-71140/Guard-conditions-in-when-expressions-feedback" id="temb21_125" data-external="true" rel="noopener noreferrer" target="_blank">YouTrack</a>.</p></aside><p id="temb21_111">Guard conditions allow you to include more than one condition to the branches of a <code class="code" id="temb21_126">when</code> expression, making complex control flow more explicit and concise. You can use guard conditions in <code class="code" id="temb21_127">when</code> expressions or statements with a subject.</p><p id="temb21_112">To include a guard condition in a branch, place it after the primary condition, separated by <code class="code" id="temb21_128">if</code>:</p><div class="code-block" data-lang="kotlin">
 sealed interface Animal {
     data class Cat(val mouseHunter: Boolean) : Animal
     data class Dog(val breed: String) : Animal
@@ -170,7 +170,7 @@ fun feedAnimal(animal: Animal) {
         else -&gt; println(&quot;Unknown animal&quot;)
     }
 }
-</div><p id="hx64o3_114">In a single <code class="code" id="hx64o3_129">when</code> expression, you can combine branches with and without guard conditions. The code in a branch with a guard condition runs only if both the primary condition and the guard condition evaluate to true. If the primary condition does not match, the guard condition is not evaluated.</p><p id="hx64o3_115">If you use guard conditions in <code class="code" id="hx64o3_130">when</code> statements without an <code class="code" id="hx64o3_131">else</code> branch, and none of the conditions matches, none of the branches is executed.</p><p id="hx64o3_116">Otherwise, if you use guard conditions in <code class="code" id="hx64o3_132">when</code> expressions without an <code class="code" id="hx64o3_133">else</code> branch, the compiler requires you to declare all the possible cases to avoid runtime errors.</p><p id="hx64o3_117">Additionally, guard conditions support <code class="code" id="hx64o3_134">else if</code>:</p><div class="code-block" data-lang="kotlin">
+</div><p id="temb21_114">In a single <code class="code" id="temb21_129">when</code> expression, you can combine branches with and without guard conditions. The code in a branch with a guard condition runs only if both the primary condition and the guard condition evaluate to true. If the primary condition does not match, the guard condition is not evaluated.</p><p id="temb21_115">If you use guard conditions in <code class="code" id="temb21_130">when</code> statements without an <code class="code" id="temb21_131">else</code> branch, and none of the conditions matches, none of the branches is executed.</p><p id="temb21_116">Otherwise, if you use guard conditions in <code class="code" id="temb21_132">when</code> expressions without an <code class="code" id="temb21_133">else</code> branch, the compiler requires you to declare all the possible cases to avoid runtime errors.</p><p id="temb21_117">Additionally, guard conditions support <code class="code" id="temb21_134">else if</code>:</p><div class="code-block" data-lang="kotlin">
 when (animal) {
     // Checks if `animal` is `Dog`
     is Animal.Dog -&gt; feedDog()
@@ -181,17 +181,17 @@ when (animal) {
     // Prints &quot;Unknown animal&quot; if none of the above conditions match
     else -&gt; println(&quot;Unknown animal&quot;)
 }
-</div><p id="hx64o3_119">Combine multiple guard conditions within a single branch using the boolean operators <code class="code" id="hx64o3_135">&amp;&amp;</code> (AND) or <code class="code" id="hx64o3_136">||</code> (OR). Use parentheses around the boolean expressions to <a href="coding-conventions.html#guard-conditions-in-when-expression" id="hx64o3_137">avoid confusion</a>:</p><div class="code-block" data-lang="kotlin">
+</div><p id="temb21_119">Combine multiple guard conditions within a single branch using the boolean operators <code class="code" id="temb21_135">&amp;&amp;</code> (AND) or <code class="code" id="temb21_136">||</code> (OR). Use parentheses around the boolean expressions to <a href="coding-conventions.html#guard-conditions-in-when-expression" id="temb21_137">avoid confusion</a>:</p><div class="code-block" data-lang="kotlin">
 when (animal) {
     is Animal.Cat if (!animal.mouseHunter &amp;&amp; animal.hungry) -&gt; feedCat()
 }
-</div><p id="hx64o3_121">You can use guard conditions in any <code class="code" id="hx64o3_138">when</code> expression or statement with a subject, except the case when you have multiple conditions separated by a comma. For example, <code class="code" id="hx64o3_139">0, 1 -&gt; print(&quot;x == 0 or x == 1&quot;)</code>.</p><aside class="prompt" data-type="note" data-title="" id="hx64o3_122"><p id="hx64o3_140">To enable guard conditions in CLI, run the following command:</p><p id="hx64o3_141"><code class="code" id="hx64o3_144">kotlinc -Xwhen-guards main.kt</code></p><p id="hx64o3_142">To enable guard conditions in Gradle, add the following line to the <code class="code" id="hx64o3_145">build.gradle.kts</code> file:</p><p id="hx64o3_143"><code class="code" id="hx64o3_146">kotlin.compilerOptions.freeCompilerArgs.add(&quot;-Xwhen-guards&quot;)</code></p></aside></section></section><section class="chapter"><h2 id="for-loops" data-toc="for-loops">For loops</h2><p id="hx64o3_147">The <code class="code" id="hx64o3_161">for</code> loop iterates through anything that provides an iterator. This is equivalent to the <code class="code" id="hx64o3_162">foreach</code> loop in languages like C#. The syntax of <code class="code" id="hx64o3_163">for</code> is the following:</p><div class="code-block" data-lang="kotlin">
+</div><p id="temb21_121">You can use guard conditions in any <code class="code" id="temb21_138">when</code> expression or statement with a subject, except the case when you have multiple conditions separated by a comma. For example, <code class="code" id="temb21_139">0, 1 -&gt; print(&quot;x == 0 or x == 1&quot;)</code>.</p><aside class="prompt" data-type="note" data-title="" id="temb21_122"><p id="temb21_140">To enable guard conditions in CLI, run the following command:</p><p id="temb21_141"><code class="code" id="temb21_144">kotlinc -Xwhen-guards main.kt</code></p><p id="temb21_142">To enable guard conditions in Gradle, add the following line to the <code class="code" id="temb21_145">build.gradle.kts</code> file:</p><p id="temb21_143"><code class="code" id="temb21_146">kotlin.compilerOptions.freeCompilerArgs.add(&quot;-Xwhen-guards&quot;)</code></p></aside></section></section><section class="chapter"><h2 id="for-loops" data-toc="for-loops">For loops</h2><p id="temb21_147">The <code class="code" id="temb21_161">for</code> loop iterates through anything that provides an iterator. This is equivalent to the <code class="code" id="temb21_162">foreach</code> loop in languages like C#. The syntax of <code class="code" id="temb21_163">for</code> is the following:</p><div class="code-block" data-lang="kotlin">
 for (item in collection) print(item)
-</div><p id="hx64o3_149">The body of <code class="code" id="hx64o3_164">for</code> can be a block.</p><div class="code-block" data-lang="kotlin">
+</div><p id="temb21_149">The body of <code class="code" id="temb21_164">for</code> can be a block.</p><div class="code-block" data-lang="kotlin">
 for (item: Int in ints) {
     // ...
 }
-</div><p id="hx64o3_151">As mentioned before, <code class="code" id="hx64o3_165">for</code> iterates through anything that provides an iterator. This means that it:</p><ul class="list _bullet" id="hx64o3_152"><li class="list__item" id="hx64o3_166"><p id="hx64o3_167">has a member or an extension function <code class="code" id="hx64o3_169">iterator()</code> that returns <code class="code" id="hx64o3_170">Iterator&lt;&gt;</code>, which:</p><ul class="list _bullet" id="hx64o3_168"><li class="list__item" id="hx64o3_171"><p id="hx64o3_173">has a member or an extension function <code class="code" id="hx64o3_174">next()</code></p></li><li class="list__item" id="hx64o3_172"><p id="hx64o3_175">has a member or an extension function <code class="code" id="hx64o3_176">hasNext()</code> that returns <code class="code" id="hx64o3_177">Boolean</code>.</p></li></ul></li></ul><p id="hx64o3_153">All of these three functions need to be marked as <code class="code" id="hx64o3_178">operator</code>.</p><p id="hx64o3_154">To iterate over a range of numbers, use a <a href="ranges.html" id="hx64o3_179">range expression</a>:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
+</div><p id="temb21_151">As mentioned before, <code class="code" id="temb21_165">for</code> iterates through anything that provides an iterator. This means that it:</p><ul class="list _bullet" id="temb21_152"><li class="list__item" id="temb21_166"><p id="temb21_167">has a member or an extension function <code class="code" id="temb21_169">iterator()</code> that returns <code class="code" id="temb21_170">Iterator&lt;&gt;</code>, which:</p><ul class="list _bullet" id="temb21_168"><li class="list__item" id="temb21_171"><p id="temb21_173">has a member or an extension function <code class="code" id="temb21_174">next()</code></p></li><li class="list__item" id="temb21_172"><p id="temb21_175">has a member or an extension function <code class="code" id="temb21_176">hasNext()</code> that returns <code class="code" id="temb21_177">Boolean</code>.</p></li></ul></li></ul><p id="temb21_153">All of these three functions need to be marked as <code class="code" id="temb21_178">operator</code>.</p><p id="temb21_154">To iterate over a range of numbers, use a <a href="ranges.html" id="temb21_179">range expression</a>:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
 fun main() {
 //sampleStart
     for (i in 1..3) {
@@ -203,7 +203,7 @@ fun main() {
     // 1236420
 //sampleEnd
 }
-</div><p id="hx64o3_156">A <code class="code" id="hx64o3_180">for</code> loop over a range or an array is compiled to an index-based loop that does not create an iterator object.</p><p id="hx64o3_157">If you want to iterate through an array or a list with an index, you can do it this way:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
+</div><p id="temb21_156">A <code class="code" id="temb21_180">for</code> loop over a range or an array is compiled to an index-based loop that does not create an iterator object.</p><p id="temb21_157">If you want to iterate through an array or a list with an index, you can do it this way:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
 fun main() {
 val array = arrayOf(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)
 //sampleStart
@@ -213,7 +213,7 @@ val array = arrayOf(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)
     // abc
 //sampleEnd
 }
-</div><p id="hx64o3_159">Alternatively, you can use the <code class="code" id="hx64o3_181">withIndex</code> library function:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
+</div><p id="temb21_159">Alternatively, you can use the <code class="code" id="temb21_181">withIndex</code> library function:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
 fun main() {
     val array = arrayOf(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)
 //sampleStart
@@ -225,7 +225,7 @@ fun main() {
     // the element at 2 is c
 //sampleEnd
 }
-</div></section><section class="chapter"><h2 id="while-loops" data-toc="while-loops">While loops</h2><p id="hx64o3_182"><code class="code" id="hx64o3_185">while</code> and <code class="code" id="hx64o3_186">do-while</code> loops process their body continuously while their condition is satisfied. The difference between them is the condition checking time:</p><ul class="list _bullet" id="hx64o3_183"><li class="list__item" id="hx64o3_187"><p id="hx64o3_189"><code class="code" id="hx64o3_190">while</code> checks the condition and, if it's satisfied, processes the body and then returns to the condition check.</p></li><li class="list__item" id="hx64o3_188"><p id="hx64o3_191"><code class="code" id="hx64o3_192">do-while</code> processes the body and then checks the condition. If it's satisfied, the loop repeats. So, the body of <code class="code" id="hx64o3_193">do-while</code> runs at least once regardless of the condition.</p></li></ul><div class="code-block" data-lang="kotlin">
+</div></section><section class="chapter"><h2 id="while-loops" data-toc="while-loops">While loops</h2><p id="temb21_182"><code class="code" id="temb21_185">while</code> and <code class="code" id="temb21_186">do-while</code> loops process their body continuously while their condition is satisfied. The difference between them is the condition checking time:</p><ul class="list _bullet" id="temb21_183"><li class="list__item" id="temb21_187"><p id="temb21_189"><code class="code" id="temb21_190">while</code> checks the condition and, if it's satisfied, processes the body and then returns to the condition check.</p></li><li class="list__item" id="temb21_188"><p id="temb21_191"><code class="code" id="temb21_192">do-while</code> processes the body and then checks the condition. If it's satisfied, the loop repeats. So, the body of <code class="code" id="temb21_193">do-while</code> runs at least once regardless of the condition.</p></li></ul><div class="code-block" data-lang="kotlin">
 while (x &gt; 0) {
     x--
 }
@@ -233,4 +233,4 @@ while (x &gt; 0) {
 do {
     val y = retrieveData()
 } while (y != null) // y is visible here!
-</div></section><section class="chapter"><h2 id="break-and-continue-in-loops" data-toc="break-and-continue-in-loops">Break and continue in loops</h2><p id="hx64o3_194">Kotlin supports traditional <code class="code" id="hx64o3_195">break</code> and <code class="code" id="hx64o3_196">continue</code> operators in loops. See <a href="returns.html" id="hx64o3_197">Returns and jumps</a>.</p></section><div class="last-modified">21 June 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="typecasts.html" class="navigation-links__prev">Type checks and casts</a><a href="returns.html" class="navigation-links__next">Returns and jumps</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>
+</div></section><section class="chapter"><h2 id="break-and-continue-in-loops" data-toc="break-and-continue-in-loops">Break and continue in loops</h2><p id="temb21_194">Kotlin supports traditional <code class="code" id="temb21_195">break</code> and <code class="code" id="temb21_196">continue</code> operators in loops. See <a href="returns.html" id="temb21_197">Returns and jumps</a>.</p></section><div class="last-modified">21 June 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="typecasts.html" class="navigation-links__prev">Type checks and casts</a><a href="returns.html" class="navigation-links__next">Returns and jumps</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>
