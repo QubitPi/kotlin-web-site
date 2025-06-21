@@ -1,0 +1,199 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-06-21T03:20:49.219441534"><link rel="canonical" href="https://kotlinlang.org/docs/spring-ai-guide.html" data-react-helmet="true"><script>
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+        var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&amp;l=' + l : '';
+        j.async = true;
+        j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5P98');
+</script>
+<script src="https://resources.jetbrains.com/storage/help-app/v6/analytics.js"></script>
+<title>Build a Kotlin app that uses Spring AI to answer questions based on documents stored in Qdrant &mdash; tutorial | Kotlin Documentation</title><script type="application/json" id="virtual-toc-data">[{"id":"before-you-start","level":0,"title":"Before you start","anchor":"#before-you-start"},{"id":"create-the-project","level":0,"title":"Create the project","anchor":"#create-the-project"},{"id":"update-the-project-configuration","level":0,"title":"Update the project configuration","anchor":"#update-the-project-configuration"},{"id":"create-a-controller-to-load-and-search-documents","level":0,"title":"Create a controller to load and search documents","anchor":"#create-a-controller-to-load-and-search-documents"},{"id":"implement-an-ai-chat-endpoint","level":0,"title":"Implement an AI chat endpoint","anchor":"#implement-an-ai-chat-endpoint"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.css" rel="stylesheet"><link rel="icon" type="image/svg" sizes="16x16" href="https://kotlinlang.org/assets/images/favicon.svg?v2"><link rel="icon" type="image/x-icon" sizes="32x32" href="https://kotlinlang.org/assets/images/favicon.ico?v2"><link rel="icon" type="image/png" sizes="96x96" href="https://kotlinlang.org/assets/images/apple-touch-icon.png?v2"><link rel="icon" type="image/png" sizes="300x300" href="https://kotlinlang.org/assets/images/apple-touch-icon-72x72.png?v2"><link rel="icon" type="image/png" sizes="500x500" href="https://kotlinlang.org/assets/images/apple-touch-icon-114x114.png?v2"><meta name="image" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><!-- Open Graph --><meta property="og:title" content="Build a Kotlin app that uses Spring AI to answer questions based on documents stored in Qdrant &mdash; tutorial | Kotlin"><meta property="og:description" content=""><meta property="og:image" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><meta property="og:site_name" content="Kotlin Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="https://kotlinlang.org/docs/spring-ai-guide.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@kotlin"><meta name="twitter:title" content="Build a Kotlin app that uses Spring AI to answer questions based on documents stored in Qdrant &mdash; tutorial | Kotlin"><meta name="twitter:description" content=""><meta name="twitter:creator" content="@kotlin"><meta name="twitter:image:src" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "https://kotlinlang.org/docs/spring-ai-guide.html#webpage",
+    "url": "https://kotlinlang.org/docs/spring-ai-guide.html",
+    "name": "Build a Kotlin app that uses Spring AI to answer questions based on documents stored in Qdrant &mdash; tutorial | Kotlin",
+    "description": "",
+    "image": "https://kotlinlang.org/assets/images/open-graph/docs.png",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "https://kotlinlang.org/docs/#website",
+    "url": "https://kotlinlang.org/docs/",
+    "name": "Kotlin Help"
+}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="spring-ai-guide" data-main-title="Build a Kotlin app that uses Spring AI to answer questions based on documents stored in Qdrant — tutorial" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Platforms///JVM///Spring" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/spring-ai-guide.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="spring-ai-guide" id="spring-ai-guide.md">Build a Kotlin app that uses Spring AI to answer questions based on documents stored in Qdrant — tutorial</h1><p id="ttmwen_2">In this tutorial, you'll learn how to build a Kotlin app that uses <a href="https://spring.io/projects/spring-ai" id="ttmwen_10" data-external="true" rel="noopener noreferrer" target="_blank">Spring AI</a> to connect to an LLM, store documents in a vector database, and answer questions using context from those documents.</p><p id="ttmwen_3">You will use the following tools during this tutorial:</p><ul class="list _bullet" id="ttmwen_4"><li class="list__item" id="ttmwen_11"><p id="ttmwen_17"><a href="https://spring.io/projects/spring-boot" id="ttmwen_18" data-external="true" rel="noopener noreferrer" target="_blank">Spring Boot</a> as the base to configure and run the web application.</p></li><li class="list__item" id="ttmwen_12"><p id="ttmwen_19"><a href="https://spring.io/projects/spring-ai" id="ttmwen_20" data-external="true" rel="noopener noreferrer" target="_blank">Spring AI</a> to interact with the LLM and perform context-based retrieval.</p></li><li class="list__item" id="ttmwen_13"><p id="ttmwen_21"><a href="https://www.jetbrains.com/idea/" id="ttmwen_22" data-external="true" rel="noopener noreferrer" target="_blank">IntelliJ IDEA</a> to generate the project and implement the application logic.</p></li><li class="list__item" id="ttmwen_14"><p id="ttmwen_23"><a href="https://qdrant.tech/" id="ttmwen_24" data-external="true" rel="noopener noreferrer" target="_blank">Qdrant</a> as the vector database for similarity search.</p></li><li class="list__item" id="ttmwen_15"><p id="ttmwen_25"><a href="https://www.docker.com/" id="ttmwen_26" data-external="true" rel="noopener noreferrer" target="_blank">Docker</a> to run Qdrant locally.</p></li><li class="list__item" id="ttmwen_16"><p id="ttmwen_27"><a href="https://platform.openai.com" id="ttmwen_28" data-external="true" rel="noopener noreferrer" target="_blank">OpenAI</a> as the LLM provider.</p></li></ul><section class="chapter"><h2 id="before-you-start" data-toc="before-you-start">Before you start</h2><ol class="list _decimal" id="ttmwen_29" type="1"><li class="list__item" id="ttmwen_30"><p id="ttmwen_34">Download and install the latest version of <a href="https://www.jetbrains.com/idea/download/index.html" id="ttmwen_37" data-external="true" rel="noopener noreferrer" target="_blank">IntelliJ IDEA Ultimate Edition</a>.</p><aside class="prompt" data-type="tip" data-title="" id="ttmwen_35"><p id="ttmwen_38">If you use IntelliJ IDEA Community Edition or another IDE, you can generate a Spring Boot project using a <a href="https://start.spring.io/#!language=kotlin&amp;type=gradle-project-kotlin" id="ttmwen_39" data-external="true" rel="noopener noreferrer" target="_blank">web-based project generator</a>.</p></aside><p id="ttmwen_36"></p></li><li class="list__item" id="ttmwen_31"><p id="ttmwen_40">Create an OpenAI API key on the <a href="https://platform.openai.com/api-keys" id="ttmwen_41" data-external="true" rel="noopener noreferrer" target="_blank">OpenAI platform</a> to access the API.</p></li><li class="list__item" id="ttmwen_32"><p id="ttmwen_42">Install <a href="https://www.docker.com/" id="ttmwen_43" data-external="true" rel="noopener noreferrer" target="_blank">Docker</a> to run the Qdrant vector database locally.</p></li><li class="list__item" id="ttmwen_33"><p id="ttmwen_44">After installing Docker, open your terminal and run the following command to start the container:</p><div class="code-block" data-lang="bash">
+docker run -p 6333:6333 -p 6334:6334 qdrant/qdrant
+</div></li></ol></section><section class="chapter"><h2 id="create-the-project" data-toc="create-the-project">Create the project</h2><aside class="prompt" data-type="note" data-title="" id="ttmwen_46"><p id="ttmwen_53">You can use <a href="https://start.spring.io/" id="ttmwen_54" data-external="true" rel="noopener noreferrer" target="_blank">Spring Boot web-based project generator</a> as an alternative to generate your project.</p></aside><p id="ttmwen_47">Create a new Spring Boot project in IntelliJ IDEA Ultimate Edition:</p><ol class="list _decimal" id="ttmwen_48" type="1"><li class="list__item" id="ttmwen_55"><p id="ttmwen_62">In IntelliJ IDEA, select <span class="control" id="ttmwen_63">File</span> | <span class="control" id="ttmwen_64">New</span> | <span class="control" id="ttmwen_65">Project</span>.</p></li><li class="list__item" id="ttmwen_56"><p id="ttmwen_66">In the panel on the left, select <span class="control" id="ttmwen_67">New Project</span> | <span class="control" id="ttmwen_68">Spring Boot</span>.</p></li><li class="list__item" id="ttmwen_57"><p id="ttmwen_69">Specify the following fields and options in the <span class="control" id="ttmwen_72">New Project</span> window:</p><ul class="list _bullet" id="ttmwen_70"><li class="list__item" id="ttmwen_73"><p id="ttmwen_79"><span class="control" id="ttmwen_80">Name</span>: springAIDemo</p></li><li class="list__item" id="ttmwen_74"><p id="ttmwen_81"><span class="control" id="ttmwen_82">Language</span>: Kotlin</p></li><li class="list__item" id="ttmwen_75"><p id="ttmwen_83"><span class="control" id="ttmwen_86">Type</span>: Gradle - Kotlin</p><aside class="prompt" data-type="tip" data-title="" id="ttmwen_84"><p id="ttmwen_87">This option specifies the build system and the DSL.</p></aside><p id="ttmwen_85"></p></li><li class="list__item" id="ttmwen_76"><p id="ttmwen_88"><span class="control" id="ttmwen_89">Package name</span>: com.example.springaidemo</p></li><li class="list__item" id="ttmwen_77"><p id="ttmwen_90"><span class="control" id="ttmwen_93">JDK</span>: Java JDK</p><aside class="prompt" data-type="note" data-title="" id="ttmwen_91"><p id="ttmwen_94">This tutorial uses <span class="control" id="ttmwen_95">Oracle OpenJDK version 21.0.1</span>. If you don't have a JDK installed, you can download it from the dropdown list.</p></aside><p id="ttmwen_92"></p></li><li class="list__item" id="ttmwen_78"><p id="ttmwen_96"><span class="control" id="ttmwen_97">Java</span>: 17</p></li></ul><figure id="ttmwen_71"><img alt="Create Spring Boot project" src="images/create-spring-ai-project.png" title="Create Spring Boot project" width="800" height="710"></figure></li><li class="list__item" id="ttmwen_58"><p id="ttmwen_98">Make sure that you have specified all the fields and click <span class="control" id="ttmwen_99">Next</span>.</p></li><li class="list__item" id="ttmwen_59"><p id="ttmwen_100">Select the latest stable Spring Boot version in the <span class="control" id="ttmwen_101">Spring Boot</span> field.</p></li><li class="list__item" id="ttmwen_60"><p id="ttmwen_102">Select the following dependencies required for this tutorial:</p><ul class="list _bullet" id="ttmwen_103"><li class="list__item" id="ttmwen_105"><p id="ttmwen_108"><span class="control" id="ttmwen_109">Web | Spring Web</span></p></li><li class="list__item" id="ttmwen_106"><p id="ttmwen_110"><span class="control" id="ttmwen_111">AI | OpenAI</span></p></li><li class="list__item" id="ttmwen_107"><p id="ttmwen_112"><span class="control" id="ttmwen_113">SQL | Qdrant Vector Database</span></p></li></ul><figure id="ttmwen_104"><img alt="Set up Spring Boot project" src="images/spring-ai-dependencies.png" title="Set up Spring Boot project" width="800" height="713"></figure></li><li class="list__item" id="ttmwen_61"><p id="ttmwen_114">Click <span class="control" id="ttmwen_117">Create</span> to generate and set up the project.</p><aside class="prompt" data-type="tip" data-title="" id="ttmwen_115"><p id="ttmwen_118">The IDE will generate and open a new project. It may take some time to download and import the project dependencies.</p></aside><p id="ttmwen_116"></p></li></ol><p id="ttmwen_49">After this, you can see the following structure in the <span class="control" id="ttmwen_119">Project view</span>:</p><figure id="ttmwen_50"><img alt="Spring Boot project view" src="images/spring-ai-project-view.png" title="Spring Boot project view" width="400" height="438"></figure><p id="ttmwen_51">The generated Gradle project corresponds to the Maven's standard directory layout:</p><ul class="list _bullet" id="ttmwen_52"><li class="list__item" id="ttmwen_120"><p id="ttmwen_122">There are packages and classes under the <code class="code" id="ttmwen_123">main/kotlin</code> folder that belong to the application.</p></li><li class="list__item" id="ttmwen_121"><p id="ttmwen_124">The entry point to the application is the <code class="code" id="ttmwen_125">main()</code> method of the <code class="code" id="ttmwen_126">SpringAiDemoApplication.kt</code> file.</p></li></ul></section><section class="chapter"><h2 id="update-the-project-configuration" data-toc="update-the-project-configuration">Update the project configuration</h2><ol class="list _decimal" id="ttmwen_127" type="1"><li class="list__item" id="ttmwen_128"><p id="ttmwen_133">Update your <code class="code" id="ttmwen_135">build.gradle.kts</code> Gradle build file with the following:</p><div class="code-block" data-lang="kotlin">
+plugins {
+    kotlin(&quot;jvm&quot;) version &quot;2.1.21&quot;
+    kotlin(&quot;plugin.spring&quot;) version &quot;2.1.21&quot;
+    // Rest of the plugins
+}
+</div></li><li class="list__item" id="ttmwen_129"><p id="ttmwen_136">Update your <code class="code" id="ttmwen_138">springAiVersion</code> to <code class="code" id="ttmwen_139">1.0.0-M6</code>:</p><div class="code-block" data-lang="kotlin">
+extra[&quot;springAiVersion&quot;] = &quot;1.0.0-M6&quot;
+</div></li><li class="list__item" id="ttmwen_130"><p id="ttmwen_140">Click the <span class="control" id="ttmwen_141">Sync Gradle Changes</span> button to synchronize the Gradle files.</p></li><li class="list__item" id="ttmwen_131"><p id="ttmwen_142">Update your <code class="code" id="ttmwen_146">src/main/resources/application.properties</code> file with the following:</p><div class="code-block" data-lang="none">
+# OpenAI
+spring.ai.openai.api-key=YOUR_OPENAI_API_KEY
+spring.ai.openai.chat.options.model=gpt-4o-mini
+spring.ai.openai.embedding.options.model=text-embedding-ada-002
+# Qdrant
+spring.ai.vectorstore.qdrant.host=localhost
+spring.ai.vectorstore.qdrant.port=6334
+spring.ai.vectorstore.qdrant.collection-name=kotlinDocs
+spring.ai.vectorstore.qdrant.initialize-schema=true
+</div><aside class="prompt" data-type="note" data-title="" id="ttmwen_144"><p id="ttmwen_147">Set your OpenAI API key to the <code class="code" id="ttmwen_148">spring.ai.openai.api-key</code> property.</p></aside><p id="ttmwen_145"></p></li><li class="list__item" id="ttmwen_132"><p id="ttmwen_149">Run the <code class="code" id="ttmwen_151">SpringAiDemoApplication.kt</code> file to start the Spring Boot application. Once it's running, open the <a href="http://localhost:6333/dashboard#/collections" id="ttmwen_152" data-external="true" rel="noopener noreferrer" target="_blank">Qdrant collections</a> page in your browser to see the result:</p><figure id="ttmwen_150"><img alt="Qdrant collections" src="images/qdrant-collections.png" title="Qdrant collections" width="700" height="400"></figure></li></ol></section><section class="chapter"><h2 id="create-a-controller-to-load-and-search-documents" data-toc="create-a-controller-to-load-and-search-documents">Create a controller to load and search documents</h2><p id="ttmwen_153">Create a Spring <code class="code" id="ttmwen_156">@RestController</code> to search documents and store them in the Qdrant collection:</p><ol class="list _decimal" id="ttmwen_154" type="1"><li class="list__item" id="ttmwen_157"><p id="ttmwen_162">In the <code class="code" id="ttmwen_165">src/main/kotlin/org/example/springaidemo</code> directory, create a new file named <code class="code" id="ttmwen_166">KotlinSTDController.kt</code>, and add the following code:</p><div class="code-collapse" data-lang="kotlin" data-is-expanded="false" data-synopsis="package org.example.springaidemo">
+package org.example.springaidemo
+
+// Imports the required Spring and utility classes
+import org.slf4j.LoggerFactory
+import org.springframework.ai.document.Document
+import org.springframework.ai.vectorstore.SearchRequest
+import org.springframework.ai.vectorstore.VectorStore
+import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RequestParam
+import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.client.RestTemplate
+import kotlin.uuid.ExperimentalUuidApi
+import kotlin.uuid.Uuid
+
+// Data class representing the chat request payload
+data class ChatRequest(val query: String, val topK: Int = 3)
+
+@RestController
+@RequestMapping(&quot;/kotlin&quot;)
+class KotlinSTDController(
+private val restTemplate: RestTemplate,
+private val vectorStore: VectorStore,
+) {
+private val logger = LoggerFactory.getLogger(this::class.java)
+
+    @OptIn(ExperimentalUuidApi::class)
+    @PostMapping(&quot;/load-docs&quot;)
+    fun load() {
+        // Loads a list of documents from the Kotlin documentation
+        val kotlinStdTopics = listOf(
+            &quot;collections-overview&quot;, &quot;constructing-collections&quot;, &quot;iterators&quot;, &quot;ranges&quot;, &quot;sequences&quot;,
+            &quot;collection-operations&quot;, &quot;collection-transformations&quot;, &quot;collection-filtering&quot;, &quot;collection-plus-minus&quot;,
+            &quot;collection-grouping&quot;, &quot;collection-parts&quot;, &quot;collection-elements&quot;, &quot;collection-ordering&quot;,
+            &quot;collection-aggregate&quot;, &quot;collection-write&quot;, &quot;list-operations&quot;, &quot;set-operations&quot;,
+            &quot;map-operations&quot;, &quot;read-standard-input&quot;, &quot;opt-in-requirements&quot;, &quot;scope-functions&quot;, &quot;time-measurement&quot;,
+        )
+        // Base URL for the documents
+        val url = &quot;https://raw.githubusercontent.com/JetBrains/kotlin-web-site/refs/heads/master/docs/topics/&quot;
+        // Retrieves each document from the URL and adds it to the vector store
+        kotlinStdTopics.forEach { topic -&gt;
+            val data = restTemplate.getForObject(&quot;$url$topic.md&quot;, String::class.java)
+            data?.let { it -&gt;
+                val doc = Document.builder()
+                    // Builds a document with a random UUID
+                    .id(Uuid.random().toString())
+                    .text(it)
+                    .metadata(&quot;topic&quot;, topic)
+                    .build()
+                vectorStore.add(listOf(doc))
+                logger.info(&quot;Document $topic loaded.&quot;)
+            } ?: logger.warn(&quot;Failed to load document for topic: $topic&quot;)
+        }
+    }
+
+    @GetMapping(&quot;docs&quot;)
+    fun query(
+        @RequestParam query: String = &quot;operations, filtering, and transformations&quot;,
+        @RequestParam topK: Int = 2
+    ): List&lt;Document&gt;? {
+        val searchRequest = SearchRequest.builder()
+            .query(query)
+            .topK(topK)
+            .build()
+        val results = vectorStore.similaritySearch(searchRequest)
+        logger.info(&quot;Found ${results?.size ?: 0} documents for query: '$query'&quot;)
+        return results
+    }
+}
+</div><p id="ttmwen_164"></p></li><li class="list__item" id="ttmwen_158"><p id="ttmwen_167">Update the <code class="code" id="ttmwen_170">SpringAiDemoApplication.kt</code> file to declare a <code class="code" id="ttmwen_171">RestTemplate</code> bean:</p><div class="code-collapse" data-lang="kotlin" data-is-expanded="false" data-synopsis="package org.example.springaidemo">
+package org.example.springaidemo
+
+import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.boot.runApplication
+import org.springframework.context.annotation.Bean
+import org.springframework.web.client.RestTemplate
+
+@SpringBootApplication
+class SpringAiDemoApplication {
+
+    @Bean
+    fun restTemplate(): RestTemplate = RestTemplate()
+}
+
+fun main(args: Array&lt;String&gt;) {
+    runApplication&lt;SpringAiDemoApplication&gt;(*args)
+}
+</div><p id="ttmwen_169"></p></li><li class="list__item" id="ttmwen_159"><p id="ttmwen_172">Run the application.</p></li><li class="list__item" id="ttmwen_160"><p id="ttmwen_173">In the terminal, send a POST request to the <code class="code" id="ttmwen_175">/kotlin/load-docs</code> endpoint to load the documents:</p><div class="code-block" data-lang="bash">
+curl -X POST http://localhost:8080/kotlin/load-docs
+</div></li><li class="list__item" id="ttmwen_161"><p id="ttmwen_176">Once the documents are loaded, you can search for them with a GET request:</p><div class="code-block" data-lang="bash">
+curl -X GET http://localhost:8080/kotlin/docs
+</div><figure id="ttmwen_178"><img alt="GET request results" src="images/spring-ai-get-results.png" title="GET request results" width="700" height="172"></figure></li></ol><aside class="prompt" data-type="tip" data-title="" id="ttmwen_155"><p id="ttmwen_179">You can also view the results on the <a href="http://localhost:6333/dashboard#/collections" id="ttmwen_180" data-external="true" rel="noopener noreferrer" target="_blank">Qdrant collections</a> page.</p></aside></section><section class="chapter"><h2 id="implement-an-ai-chat-endpoint" data-toc="implement-an-ai-chat-endpoint">Implement an AI chat endpoint</h2><p id="ttmwen_181">Once the documents are loaded, the final step is to add an endpoint that answers questions using the documents in Qdrant through Spring AI's Retrieval-Augmented Generation (RAG) support:</p><ol class="list _decimal" id="ttmwen_182" type="1"><li class="list__item" id="ttmwen_185"><p id="ttmwen_191">Open the <code class="code" id="ttmwen_193">KotlinSTDController.kt</code> file, and import the following classes:</p><div class="code-block" data-lang="kotlin">
+import org.springframework.ai.chat.client.ChatClient
+import org.springframework.ai.chat.client.advisor.RetrievalAugmentationAdvisor
+import org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor
+import org.springframework.ai.chat.prompt.Prompt
+import org.springframework.ai.chat.prompt.PromptTemplate
+import org.springframework.ai.rag.preretrieval.query.transformation.RewriteQueryTransformer
+import org.springframework.ai.rag.retrieval.search.VectorStoreDocumentRetriever
+import org.springframework.web.bind.annotation.RequestBody
+</div></li><li class="list__item" id="ttmwen_186"><p id="ttmwen_194">Add <code class="code" id="ttmwen_196">ChatClient.Builder</code> to the controller's constructor parameters:</p><div class="code-block" data-lang="kotlin">
+class KotlinSTDController(
+    private val chatClientBuilder: ChatClient.Builder,
+    private val restTemplate: RestTemplate,
+    private val vectorStore: VectorStore,
+)
+</div></li><li class="list__item" id="ttmwen_187"><p id="ttmwen_197">Inside the controller class, create a <code class="code" id="ttmwen_199">ChatClient</code> instance and a query transformer:</p><div class="code-block" data-lang="kotlin">
+// Builds the chat client with a simple logging advisor
+private val chatClient = chatClientBuilder.defaultAdvisors(SimpleLoggerAdvisor()).build()
+// Builds the query transformer used to rewrite the input query
+private val rqtBuilder = RewriteQueryTransformer.builder().chatClientBuilder(chatClientBuilder)
+</div></li><li class="list__item" id="ttmwen_188"><p id="ttmwen_200">At the bottom of your <code class="code" id="ttmwen_202">KotlinSTDController.kt</code> file, add a new <code class="code" id="ttmwen_203">chatAsk()</code> endpoint, with the following logic:</p><div class="code-block" data-lang="kotlin">
+    @PostMapping(&quot;/chat/ask&quot;)
+    fun chatAsk(@RequestBody request: ChatRequest): String? {
+        // Defines the prompt template with placeholders
+        val promptTemplate = PromptTemplate(
+            &quot;&quot;&quot;
+            {query}.
+            Please provide a concise answer based on the {target} documentation.
+        &quot;&quot;&quot;.trimIndent()
+        )
+
+        // Creates the prompt by substituting placeholders with actual values
+        val prompt: Prompt =
+            promptTemplate.create(mapOf(&quot;query&quot; to request.query, &quot;target&quot; to &quot;Kotlin standard library&quot;))
+
+        // Configures the retrieval advisor to augment the query with relevant documents
+        val retrievalAdvisor = RetrievalAugmentationAdvisor.builder()
+            .documentRetriever(
+                VectorStoreDocumentRetriever.builder()
+                    .similarityThreshold(0.7)
+                    .topK(request.topK)
+                    .vectorStore(vectorStore)
+                    .build()
+            )
+            .queryTransformers(rqtBuilder.promptTemplate(promptTemplate).build())
+            .build()
+
+        // Sends the prompt to the LLM with the retrieval advisor and get the response
+        val response = chatClient.prompt(prompt)
+            .advisors(retrievalAdvisor)
+            .call()
+            .content()
+        logger.info(&quot;Chat response generated for query: '${request.query}'&quot;)
+        return response
+    }
+</div></li><li class="list__item" id="ttmwen_189"><p id="ttmwen_204">Run the application.</p></li><li class="list__item" id="ttmwen_190"><p id="ttmwen_205">In the terminal, send a POST request to the new endpoint to see the results:</p><div class="code-block" data-lang="bash">
+curl -X POST &quot;http://localhost:8080/kotlin/chat/ask&quot; \
+     -H &quot;Content-Type: application/json&quot; \
+     -d '{&quot;query&quot;: &quot;What are the performance implications of using lazy sequences in Kotlin for large datasets?&quot;, &quot;topK&quot;: 3}'
+</div><figure id="ttmwen_207"><img alt="OpenAI answer to chat request" src="images/open-ai-chat-endpoint.png" title="OpenAI answer to chat request" width="700" height="113"></figure></li></ol><p id="ttmwen_183">Congratulations! You now have a Kotlin app that connects to OpenAI and answers questions using context retrieved from documentation stored in Qdrant. Try experimenting with different queries or importing other documents to explore more possibilities.</p><p id="ttmwen_184">You can view the completed project in the <a href="https://github.com/Kotlin/Kotlin-AI-Examples/tree/master/projects/spring-ai/springAI-demo" id="ttmwen_208" data-external="true" rel="noopener noreferrer" target="_blank">Spring AI demo GitHub repository</a>, or explore other Spring AI examples in <a href="https://github.com/Kotlin/Kotlin-AI-Examples/tree/master" id="ttmwen_209" data-external="true" rel="noopener noreferrer" target="_blank">Kotlin AI Examples</a>.</p></section><div class="last-modified">20 May 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="jvm-spring-boot-using-crudrepository.html" class="navigation-links__prev">Use Spring Data CrudRepository for database access</a><a href="jvm-test-using-junit.html" class="navigation-links__next">Test code using JUnit in JVM &ndash; tutorial</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>

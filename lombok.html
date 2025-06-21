@@ -1,0 +1,100 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-06-21T03:20:46.930291562"><link rel="canonical" href="https://kotlinlang.org/docs/lombok.html" data-react-helmet="true"><script>
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+        var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&amp;l=' + l : '';
+        j.async = true;
+        j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5P98');
+</script>
+<script src="https://resources.jetbrains.com/storage/help-app/v6/analytics.js"></script>
+<title>Lombok compiler plugin | Kotlin Documentation</title><script type="application/json" id="virtual-toc-data">[{"id":"supported-annotations","level":0,"title":"Supported annotations","anchor":"#supported-annotations"},{"id":"gradle","level":0,"title":"Gradle","anchor":"#gradle"},{"id":"using-the-lombok-configuration-file","level":1,"title":"Using the Lombok configuration file","anchor":"#using-the-lombok-configuration-file"},{"id":"maven","level":0,"title":"Maven","anchor":"#maven"},{"id":"using-with-kapt","level":0,"title":"Using with kapt","anchor":"#using-with-kapt"},{"id":"command-line-compiler","level":0,"title":"Command-line compiler","anchor":"#command-line-compiler"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.css" rel="stylesheet"><link rel="icon" type="image/svg" sizes="16x16" href="https://kotlinlang.org/assets/images/favicon.svg?v2"><link rel="icon" type="image/x-icon" sizes="32x32" href="https://kotlinlang.org/assets/images/favicon.ico?v2"><link rel="icon" type="image/png" sizes="96x96" href="https://kotlinlang.org/assets/images/apple-touch-icon.png?v2"><link rel="icon" type="image/png" sizes="300x300" href="https://kotlinlang.org/assets/images/apple-touch-icon-72x72.png?v2"><link rel="icon" type="image/png" sizes="500x500" href="https://kotlinlang.org/assets/images/apple-touch-icon-114x114.png?v2"><meta name="image" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><!-- Open Graph --><meta property="og:title" content="Lombok compiler plugin | Kotlin"><meta property="og:description" content=""><meta property="og:image" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><meta property="og:site_name" content="Kotlin Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="https://kotlinlang.org/docs/lombok.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@kotlin"><meta name="twitter:title" content="Lombok compiler plugin | Kotlin"><meta name="twitter:description" content=""><meta name="twitter:creator" content="@kotlin"><meta name="twitter:image:src" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "https://kotlinlang.org/docs/lombok.html#webpage",
+    "url": "https://kotlinlang.org/docs/lombok.html",
+    "name": "Lombok compiler plugin | Kotlin",
+    "description": "",
+    "image": "https://kotlinlang.org/assets/images/open-graph/docs.png",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "https://kotlinlang.org/docs/#website",
+    "url": "https://kotlinlang.org/docs/",
+    "name": "Kotlin Help"
+}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="lombok" data-main-title="Lombok compiler plugin" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Compiler and plugins///Kotlin compiler plugins" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/lombok.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="lombok" id="lombok.md">Lombok compiler plugin</h1><aside class="prompt" data-type="warning" data-title="" id="c553hs_2"><p id="c553hs_10">The Lombok compiler plugin is <a href="components-stability.html" id="c553hs_11">Experimental</a>. It may be dropped or changed at any time. Use it only for evaluation purposes. We would appreciate your feedback on it in <a href="https://youtrack.jetbrains.com/issue/KT-7112" id="c553hs_12" data-external="true" rel="noopener noreferrer" target="_blank">YouTrack</a>.</p></aside><p id="c553hs_3">The Kotlin Lombok compiler plugin allows the generation and use of Java's Lombok declarations by Kotlin code in the same mixed Java/Kotlin module. If you call such declarations from another module, then you don't need to use this plugin for the compilation of that module.</p><p id="c553hs_4">The Lombok compiler plugin cannot replace <a href="https://projectlombok.org/" id="c553hs_13" data-external="true" rel="noopener noreferrer" target="_blank">Lombok</a>, but it helps Lombok work in mixed Java/Kotlin modules. Thus, you still need to configure Lombok as usual when using this plugin. Learn more about <a href="#using-the-lombok-configuration-file" id="c553hs_14">how to configure the Lombok compiler plugin</a>.</p><section class="chapter"><h2 id="supported-annotations" data-toc="supported-annotations">Supported annotations</h2><p id="c553hs_15">The plugin supports the following annotations:</p><ul class="list _bullet" id="c553hs_16"><li class="list__item" id="c553hs_20"><p id="c553hs_26"><code class="code" id="c553hs_27">@Getter</code>, <code class="code" id="c553hs_28">@Setter</code></p></li><li class="list__item" id="c553hs_21"><p id="c553hs_29"><code class="code" id="c553hs_30">@Builder</code>, <code class="code" id="c553hs_31">@SuperBuilder</code></p></li><li class="list__item" id="c553hs_22"><p id="c553hs_32"><code class="code" id="c553hs_33">@NoArgsConstructor</code>, <code class="code" id="c553hs_34">@RequiredArgsConstructor</code>, and <code class="code" id="c553hs_35">@AllArgsConstructor</code></p></li><li class="list__item" id="c553hs_23"><p id="c553hs_36"><code class="code" id="c553hs_37">@Data</code></p></li><li class="list__item" id="c553hs_24"><p id="c553hs_38"><code class="code" id="c553hs_39">@With</code></p></li><li class="list__item" id="c553hs_25"><p id="c553hs_40"><code class="code" id="c553hs_41">@Value</code></p></li></ul><p id="c553hs_17">We're continuing to work on this plugin. To find out the detailed current state, visit the <a href="https://github.com/JetBrains/kotlin/tree/master/plugins/lombok" id="c553hs_42" data-external="true" rel="noopener noreferrer" target="_blank">Lombok compiler plugin's README</a>.</p><p id="c553hs_18">Currently, we don't have plans to support the <code class="code" id="c553hs_43">@Tolerate</code> annotation. However, we can consider this if you vote for the <a href="https://youtrack.jetbrains.com/issue/KT-53564/Kotlin-Lombok-Support-Tolerate" id="c553hs_44" data-external="true" rel="noopener noreferrer" target="_blank">@Tolerate issue</a> in YouTrack.</p><aside class="prompt" data-type="note" data-title="" id="c553hs_19"><p id="c553hs_45">Kotlin compiler ignores Lombok annotations if you use them in Kotlin code.</p></aside></section><section class="chapter"><h2 id="gradle" data-toc="gradle">Gradle</h2><p id="c553hs_46">Apply the <code class="code" id="c553hs_50">kotlin-plugin-lombok</code> Gradle plugin in the <code class="code" id="c553hs_51">build.gradle(.kts)</code> file:</p><div class="tabs" id="c553hs_47" data-group="build-script" data-anchors="[c553hs_52,c553hs_53]"><div class="tabs__content" data-gtm="tab" id="c553hs_52" data-sync-tabs="kotlin" data-title="Kotlin"><div class="code-block" data-lang="kotlin" data-title="Kotlin">
+plugins {
+    kotlin(&quot;plugin.lombok&quot;) version &quot;2.1.21&quot;
+    id(&quot;io.freefair.lombok&quot;) version &quot;8.13&quot;
+}
+</div></div><div class="tabs__content" data-gtm="tab" id="c553hs_53" data-sync-tabs="groovy" data-title="Groovy"><div class="code-block" data-lang="groovy" data-title="Groovy">
+plugins {
+    id 'org.jetbrains.kotlin.plugin.lombok' version '2.1.21'
+    id 'io.freefair.lombok' version '8.13'
+}
+</div></div></div><p id="c553hs_48">See this <a href="https://github.com/kotlin-hands-on/kotlin-lombok-examples/tree/master/kotlin_lombok_gradle/nokapt" id="c553hs_56" data-external="true" rel="noopener noreferrer" target="_blank">test project with examples of the Lombok compiler plugin in use</a>.</p><section class="chapter"><h3 id="using-the-lombok-configuration-file" data-toc="using-the-lombok-configuration-file">Using the Lombok configuration file</h3><p id="c553hs_57">If you use a <a href="https://projectlombok.org/features/configuration" id="c553hs_60" data-external="true" rel="noopener noreferrer" target="_blank">Lombok configuration file</a> <code class="code" id="c553hs_61">lombok.config</code>, you need to set the file's path so that the plugin can find it. The path must be relative to the module's directory. For example, add the following code to your <code class="code" id="c553hs_62">build.gradle(.kts)</code> file:</p><div class="tabs" id="c553hs_58" data-group="build-script" data-anchors="[c553hs_63,c553hs_64]"><div class="tabs__content" data-gtm="tab" id="c553hs_63" data-sync-tabs="kotlin" data-title="Kotlin"><div class="code-block" data-lang="kotlin" data-title="Kotlin">
+kotlinLombok {
+    lombokConfigurationFile(file(&quot;lombok.config&quot;))
+}
+</div></div><div class="tabs__content" data-gtm="tab" id="c553hs_64" data-sync-tabs="groovy" data-title="Groovy"><div class="code-block" data-lang="groovy" data-title="Groovy">
+kotlinLombok {
+    lombokConfigurationFile file(&quot;lombok.config&quot;)
+}
+</div></div></div><p id="c553hs_59">See this <a href="https://github.com/kotlin-hands-on/kotlin-lombok-examples/tree/master/kotlin_lombok_gradle/withconfig" id="c553hs_67" data-external="true" rel="noopener noreferrer" target="_blank">test project with examples of the Lombok compiler plugin and <code class="code" id="c553hs_68">lombok.config</code> in use</a>.</p></section></section><section class="chapter"><h2 id="maven" data-toc="maven">Maven</h2><p id="c553hs_69">To use the Lombok compiler plugin, add the plugin <code class="code" id="c553hs_72">lombok</code> to the <code class="code" id="c553hs_73">compilerPlugins</code> section and the dependency <code class="code" id="c553hs_74">kotlin-maven-lombok</code> to the <code class="code" id="c553hs_75">dependencies</code> section. If you use a <a href="https://projectlombok.org/features/configuration" id="c553hs_76" data-external="true" rel="noopener noreferrer" target="_blank">Lombok configuration file</a> <code class="code" id="c553hs_77">lombok.config</code>, provide a path to it to the plugin in the <code class="code" id="c553hs_78">pluginOptions</code>. Add the following lines to the <code class="code" id="c553hs_79">pom.xml</code> file:</p><div class="code-block" data-lang="markup">
+&lt;plugin&gt;
+    &lt;groupId&gt;org.jetbrains.kotlin&lt;/groupId&gt;
+    &lt;artifactId&gt;kotlin-maven-plugin&lt;/artifactId&gt;
+    &lt;version&gt;${kotlin.version}&lt;/version&gt;
+    &lt;configuration&gt;
+        &lt;compilerPlugins&gt;
+            &lt;plugin&gt;lombok&lt;/plugin&gt;
+        &lt;/compilerPlugins&gt;
+        &lt;pluginOptions&gt;
+            &lt;option&gt;lombok:config=${project.basedir}/lombok.config&lt;/option&gt;
+        &lt;/pluginOptions&gt;
+    &lt;/configuration&gt;
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.jetbrains.kotlin&lt;/groupId&gt;
+            &lt;artifactId&gt;kotlin-maven-lombok&lt;/artifactId&gt;
+            &lt;version&gt;${kotlin.version}&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
+            &lt;artifactId&gt;lombok&lt;/artifactId&gt;
+            &lt;version&gt;1.18.20&lt;/version&gt;
+            &lt;scope&gt;provided&lt;/scope&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+&lt;/plugin&gt;
+</div><p id="c553hs_71">See this <a href="https://github.com/kotlin-hands-on/kotlin-lombok-examples/tree/master/kotlin_lombok_maven/nokapt" id="c553hs_80" data-external="true" rel="noopener noreferrer" target="_blank">test project example of the Lombok compiler plugin and <code class="code" id="c553hs_81">lombok.config</code> in use</a>.</p></section><section class="chapter"><h2 id="using-with-kapt" data-toc="using-with-kapt">Using with kapt</h2><p id="c553hs_82">By default, the <a href="kapt.html" id="c553hs_90">kapt</a> compiler plugin runs all annotation processors and disables annotation processing by javac. To run <a href="https://projectlombok.org/" id="c553hs_91" data-external="true" rel="noopener noreferrer" target="_blank">Lombok</a> along with kapt, set up kapt to keep javac's annotation processors working.</p><p id="c553hs_83">If you use Gradle, add the option to the <code class="code" id="c553hs_92">build.gradle(.kts)</code> file:</p><div class="code-block" data-lang="groovy">
+kapt {
+    keepJavacAnnotationProcessors = true
+}
+</div><p id="c553hs_85">In Maven, use the following settings to launch Lombok with Java's compiler:</p><div class="code-block" data-lang="markup">
+&lt;plugin&gt;
+    &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+    &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+    &lt;version&gt;3.5.1&lt;/version&gt;
+    &lt;configuration&gt;
+        &lt;source&gt;1.8&lt;/source&gt;
+        &lt;target&gt;1.8&lt;/target&gt;
+        &lt;annotationProcessorPaths&gt;
+            &lt;annotationProcessorPath&gt;
+                &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
+                &lt;artifactId&gt;lombok&lt;/artifactId&gt;
+                &lt;version&gt;${lombok.version}&lt;/version&gt;
+            &lt;/annotationProcessorPath&gt;
+        &lt;/annotationProcessorPaths&gt;
+    &lt;/configuration&gt;
+&lt;/plugin&gt;    
+</div><p id="c553hs_87">The Lombok compiler plugin works correctly with <a href="kapt.html" id="c553hs_93">kapt</a> if annotation processors don't depend on the code generated by Lombok.</p><p id="c553hs_88">Look through the test project examples of kapt and the Lombok compiler plugin in use:</p><ul class="list _bullet" id="c553hs_89"><li class="list__item" id="c553hs_94"><p id="c553hs_96">Using <a href="https://github.com/JetBrains/kotlin/tree/master/libraries/tools/kotlin-gradle-plugin-integration-tests/src/test/resources/testProject/lombokProject/yeskapt" id="c553hs_97" data-external="true" rel="noopener noreferrer" target="_blank">Gradle</a>.</p></li><li class="list__item" id="c553hs_95"><p id="c553hs_98">Using <a href="https://github.com/kotlin-hands-on/kotlin-lombok-examples/tree/master/kotlin_lombok_maven/yeskapt" id="c553hs_99" data-external="true" rel="noopener noreferrer" target="_blank">Maven</a></p></li></ul></section><section class="chapter"><h2 id="command-line-compiler" data-toc="command-line-compiler">Command-line compiler</h2><p id="c553hs_100">Lombok compiler plugin JAR is available in the binary distribution of the Kotlin compiler. You can attach the plugin by providing the path to its JAR file using the <code class="code" id="c553hs_104">Xplugin</code> kotlinc option:</p><div class="code-block" data-lang="bash">
+-Xplugin=$KOTLIN_HOME/lib/lombok-compiler-plugin.jar
+</div><p id="c553hs_102">If you want to use the <code class="code" id="c553hs_105">lombok.config</code> file, replace <code class="code" id="c553hs_106">&lt;PATH_TO_CONFIG_FILE&gt;</code> with a path to your <code class="code" id="c553hs_107">lombok.config</code>:</p><div class="code-block" data-lang="bash">
+# The plugin option format is: &quot;-P plugin:&lt;plugin id&gt;:&lt;key&gt;=&lt;value&gt;&quot;. 
+# Options can be repeated.
+
+-P plugin:org.jetbrains.kotlin.lombok:config=&lt;PATH_TO_CONFIG_FILE&gt;
+</div></section><div class="last-modified">18 March 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="kapt.html" class="navigation-links__prev">kapt compiler plugin</a><a href="power-assert.html" class="navigation-links__next">Power-assert compiler plugin</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>

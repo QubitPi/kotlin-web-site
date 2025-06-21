@@ -1,0 +1,132 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-06-21T03:20:45.02403081"><link rel="canonical" href="https://kotlinlang.org/docs/classes.html" data-react-helmet="true"><script>
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+        var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&amp;l=' + l : '';
+        j.async = true;
+        j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5P98');
+</script>
+<script src="https://resources.jetbrains.com/storage/help-app/v6/analytics.js"></script>
+<title>Classes | Kotlin Documentation</title><script type="application/json" id="virtual-toc-data">[{"id":"constructors","level":0,"title":"Constructors","anchor":"#constructors"},{"id":"secondary-constructors","level":1,"title":"Secondary constructors","anchor":"#secondary-constructors"},{"id":"creating-instances-of-classes","level":0,"title":"Creating instances of classes","anchor":"#creating-instances-of-classes"},{"id":"class-members","level":0,"title":"Class members","anchor":"#class-members"},{"id":"inheritance","level":0,"title":"Inheritance","anchor":"#inheritance"},{"id":"abstract-classes","level":0,"title":"Abstract classes","anchor":"#abstract-classes"},{"id":"companion-objects","level":0,"title":"Companion objects","anchor":"#companion-objects"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.css" rel="stylesheet"><link rel="icon" type="image/svg" sizes="16x16" href="https://kotlinlang.org/assets/images/favicon.svg?v2"><link rel="icon" type="image/x-icon" sizes="32x32" href="https://kotlinlang.org/assets/images/favicon.ico?v2"><link rel="icon" type="image/png" sizes="96x96" href="https://kotlinlang.org/assets/images/apple-touch-icon.png?v2"><link rel="icon" type="image/png" sizes="300x300" href="https://kotlinlang.org/assets/images/apple-touch-icon-72x72.png?v2"><link rel="icon" type="image/png" sizes="500x500" href="https://kotlinlang.org/assets/images/apple-touch-icon-114x114.png?v2"><meta name="image" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><!-- Open Graph --><meta property="og:title" content="Classes | Kotlin"><meta property="og:description" content=""><meta property="og:image" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><meta property="og:site_name" content="Kotlin Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="https://kotlinlang.org/docs/classes.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@kotlin"><meta name="twitter:title" content="Classes | Kotlin"><meta name="twitter:description" content=""><meta name="twitter:creator" content="@kotlin"><meta name="twitter:image:src" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "https://kotlinlang.org/docs/classes.html#webpage",
+    "url": "https://kotlinlang.org/docs/classes.html",
+    "name": "Classes | Kotlin",
+    "description": "",
+    "image": "https://kotlinlang.org/assets/images/open-graph/docs.png",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "https://kotlinlang.org/docs/#website",
+    "url": "https://kotlinlang.org/docs/",
+    "name": "Kotlin Help"
+}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="classes" data-main-title="Classes" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Concepts///Classes and objects" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/classes.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="classes" id="classes.md">Classes</h1><p id="-pcmxb4_2">Classes in Kotlin are declared using the keyword <code class="code" id="-pcmxb4_12">class</code>:</p><div class="code-block" data-lang="kotlin">
+class Person { /*...*/ }
+</div><p id="-pcmxb4_4">The class declaration consists of the class name, the class header (specifying its type parameters, the primary constructor, and some other things), and the class body surrounded by curly braces. Both the header and the body are optional; if the class has no body, the curly braces can be omitted.</p><div class="code-block" data-lang="kotlin">
+class Empty
+</div><section class="chapter"><h2 id="constructors" data-toc="constructors">Constructors</h2><p id="-pcmxb4_13">A class in Kotlin has a <span class="emphasis" id="-pcmxb4_33">primary constructor</span> and possibly one or more <span class="emphasis" id="-pcmxb4_34">secondary constructors</span>. The primary constructor is declared in the class header, and it goes after the class name and optional type parameters.</p><div class="code-block" data-lang="kotlin">
+class Person constructor(firstName: String) { /*...*/ }
+</div><p id="-pcmxb4_15">If the primary constructor does not have any annotations or visibility modifiers, the <code class="code" id="-pcmxb4_35">constructor</code> keyword can be omitted:</p><div class="code-block" data-lang="kotlin">
+class Person(firstName: String) { /*...*/ }
+</div><p id="-pcmxb4_17">The primary constructor initializes a class instance and its properties in the class header. The class header can't contain any runnable code. If you want to run some code during object creation, use <span class="emphasis" id="-pcmxb4_36">initializer blocks</span> inside the class body. Initializer blocks are declared with the <code class="code" id="-pcmxb4_37">init</code> keyword followed by curly braces. Write any code that you want to run within the curly braces.</p><p id="-pcmxb4_18">During the initialization of an instance, the initializer blocks are executed in the same order as they appear in the class body, interleaved with the property initializers:</p><div class="code-block" data-lang="kotlin" data-runnable="true">
+//sampleStart
+class InitOrderDemo(name: String) {
+    val firstProperty = &quot;First property: $name&quot;.also(::println)
+    
+    init {
+        println(&quot;First initializer block that prints $name&quot;)
+    }
+    
+    val secondProperty = &quot;Second property: ${name.length}&quot;.also(::println)
+    
+    init {
+        println(&quot;Second initializer block that prints ${name.length}&quot;)
+    }
+}
+//sampleEnd
+
+fun main() {
+    InitOrderDemo(&quot;hello&quot;)
+}
+</div><p id="-pcmxb4_20">Primary constructor parameters can be used in the initializer blocks. They can also be used in property initializers declared in the class body:</p><div class="code-block" data-lang="kotlin">
+class Customer(name: String) {
+    val customerKey = name.uppercase()
+}
+</div><p id="-pcmxb4_22">Kotlin has a concise syntax for declaring properties and initializing them from the primary constructor:</p><div class="code-block" data-lang="kotlin">
+class Person(val firstName: String, val lastName: String, var age: Int)
+</div><p id="-pcmxb4_24">Such declarations can also include default values of the class properties:</p><div class="code-block" data-lang="kotlin">
+class Person(val firstName: String, val lastName: String, var isEmployed: Boolean = true)
+</div><p id="-pcmxb4_26">You can use a <a href="coding-conventions.html#trailing-commas" id="-pcmxb4_38">trailing comma</a> when you declare class properties:</p><div class="code-block" data-lang="kotlin">
+class Person(
+    val firstName: String,
+    val lastName: String,
+    var age: Int, // trailing comma
+) { /*...*/ }
+</div><p id="-pcmxb4_28">Much like regular properties, properties declared in the primary constructor can be mutable (<code class="code" id="-pcmxb4_39">var</code>) or read-only (<code class="code" id="-pcmxb4_40">val</code>).</p><p id="-pcmxb4_29">If the constructor has annotations or visibility modifiers, the <code class="code" id="-pcmxb4_41">constructor</code> keyword is required and the modifiers go before it:</p><div class="code-block" data-lang="kotlin">
+class Customer public @Inject constructor(name: String) { /*...*/ }
+</div><p id="-pcmxb4_31">Learn more about <a href="visibility-modifiers.html#constructors" id="-pcmxb4_42">visibility modifiers</a>.</p><section class="chapter"><h3 id="secondary-constructors" data-toc="secondary-constructors">Secondary constructors</h3><p id="-pcmxb4_43">A class can also declare <span class="emphasis" id="-pcmxb4_54">secondary constructors</span>, which are prefixed with <code class="code" id="-pcmxb4_55">constructor</code>:</p><div class="code-block" data-lang="kotlin">
+class Person(val pets: MutableList&lt;Pet&gt; = mutableListOf())
+
+class Pet {
+    constructor(owner: Person) {
+        owner.pets.add(this) // adds this pet to the list of its owner's pets
+    }
+}
+</div><p id="-pcmxb4_45">If the class has a primary constructor, each secondary constructor needs to delegate to the primary constructor, either directly or indirectly through another secondary constructor(s). Delegation to another constructor of the same class is done using the <code class="code" id="-pcmxb4_56">this</code> keyword:</p><div class="code-block" data-lang="kotlin">
+class Person(val name: String) {
+    val children: MutableList&lt;Person&gt; = mutableListOf()
+    constructor(name: String, parent: Person) : this(name) {
+        parent.children.add(this)
+    }
+}
+</div><p id="-pcmxb4_47">Code in initializer blocks effectively becomes part of the primary constructor. Delegation to the primary constructor happens at the moment of access to the first statement of a secondary constructor, so the code in all initializer blocks and property initializers is executed before the body of the secondary constructor.</p><p id="-pcmxb4_48">Even if the class has no primary constructor, the delegation still happens implicitly, and the initializer blocks are still executed:</p><div class="code-block" data-lang="kotlin" data-runnable="true">
+//sampleStart
+class Constructors {
+    init {
+        println(&quot;Init block&quot;)
+    }
+
+    constructor(i: Int) {
+        println(&quot;Constructor $i&quot;)
+    }
+}
+//sampleEnd
+
+fun main() {
+    Constructors(1)
+}
+</div><p id="-pcmxb4_50">If a non-abstract class does not declare any constructors (primary or secondary), it will have a generated primary constructor with no arguments. The visibility of the constructor will be public.</p><p id="-pcmxb4_51">If you don't want your class to have a public constructor, declare an empty primary constructor with non-default visibility:</p><div class="code-block" data-lang="kotlin">
+class DontCreateMe private constructor() { /*...*/ }
+</div><aside class="prompt" data-type="note" data-title="" id="-pcmxb4_53"><p id="-pcmxb4_57">On the JVM, if all of the primary constructor parameters have default values, the compiler will generate an additional parameterless constructor which will use the default values. This makes it easier to use Kotlin with libraries such as Jackson or JPA that create class instances through parameterless constructors.</p><div class="code-block" data-lang="kotlin">
+class Customer(val customerName: String = &quot;&quot;)
+</div></aside></section></section><section class="chapter"><h2 id="creating-instances-of-classes" data-toc="creating-instances-of-classes">Creating instances of classes</h2><p id="-pcmxb4_59">To create an instance of a class, call the constructor as if it were a regular function. You can assign the created instance to a <a href="basic-syntax.html#variables" id="-pcmxb4_63">variable</a>:</p><div class="code-block" data-lang="kotlin">
+val invoice = Invoice()
+
+val customer = Customer(&quot;Joe Smith&quot;)
+</div><aside class="prompt" data-type="note" data-title="" id="-pcmxb4_61"><p id="-pcmxb4_64">Kotlin does not have a <code class="code" id="-pcmxb4_65">new</code> keyword.</p></aside><p id="-pcmxb4_62">The process of creating instances of nested, inner, and anonymous inner classes is described in <a href="nested-classes.html" id="-pcmxb4_66">Nested classes</a>.</p></section><section class="chapter"><h2 id="class-members" data-toc="class-members">Class members</h2><p id="-pcmxb4_67">Classes can contain:</p><ul class="list _bullet" id="-pcmxb4_68"><li class="list__item" id="-pcmxb4_69"><p id="-pcmxb4_74"><a href="#constructors" id="-pcmxb4_75">Constructors and initializer blocks</a></p></li><li class="list__item" id="-pcmxb4_70"><p id="-pcmxb4_76"><a href="functions.html" id="-pcmxb4_77">Functions</a></p></li><li class="list__item" id="-pcmxb4_71"><p id="-pcmxb4_78"><a href="properties.html" id="-pcmxb4_79">Properties</a></p></li><li class="list__item" id="-pcmxb4_72"><p id="-pcmxb4_80"><a href="nested-classes.html" id="-pcmxb4_81">Nested and inner classes</a></p></li><li class="list__item" id="-pcmxb4_73"><p id="-pcmxb4_82"><a href="object-declarations.html" id="-pcmxb4_83">Object declarations</a></p></li></ul></section><section class="chapter"><h2 id="inheritance" data-toc="inheritance">Inheritance</h2><p id="-pcmxb4_84">Classes can be derived from each other and form inheritance hierarchies. <a href="inheritance.html" id="-pcmxb4_85">Learn more about inheritance in Kotlin</a>.</p></section><section class="chapter"><h2 id="abstract-classes" data-toc="abstract-classes">Abstract classes</h2><p id="-pcmxb4_86">A class may be declared <code class="code" id="-pcmxb4_90">abstract</code>, along with some or all of its members. An abstract member does not have an implementation in its class. You don't need to annotate abstract classes or functions with <code class="code" id="-pcmxb4_91">open</code>.</p><div class="code-block" data-lang="kotlin">
+abstract class Polygon {
+    abstract fun draw()
+}
+
+class Rectangle : Polygon() {
+    override fun draw() {
+        // draw the rectangle
+    }
+}
+</div><p id="-pcmxb4_88">You can override a non-abstract <code class="code" id="-pcmxb4_92">open</code> member with an abstract one.</p><div class="code-block" data-lang="kotlin">
+open class Polygon {
+    open fun draw() {
+        // some default polygon drawing method
+    }
+}
+
+abstract class WildShape : Polygon() {
+    // Classes that inherit WildShape need to provide their own
+    // draw method instead of using the default on Polygon
+    abstract override fun draw()
+}
+</div></section><section class="chapter"><h2 id="companion-objects" data-toc="companion-objects">Companion objects</h2><p id="-pcmxb4_93">If you need to write a function that can be called without having a class instance but that needs access to the internals of a class (such as a factory method), you can write it as a member of an <a href="object-declarations.html" id="-pcmxb4_95">object declaration</a> inside that class.</p><p id="-pcmxb4_94">Even more specifically, if you declare a <a href="object-declarations.html#companion-objects" id="-pcmxb4_96">companion object</a> inside your class, you can access its members using only the class name as a qualifier.</p></section><div class="last-modified">24 April 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="packages.html" class="navigation-links__prev">Packages and imports</a><a href="inheritance.html" class="navigation-links__next">Inheritance</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>

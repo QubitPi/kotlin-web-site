@@ -1,0 +1,159 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-06-21T03:20:49.936193487"><link rel="canonical" href="https://kotlinlang.org/docs/map-operations.html" data-react-helmet="true"><script>
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+        var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&amp;l=' + l : '';
+        j.async = true;
+        j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5P98');
+</script>
+<script src="https://resources.jetbrains.com/storage/help-app/v6/analytics.js"></script>
+<title>Map-specific operations | Kotlin Documentation</title><script type="application/json" id="virtual-toc-data">[{"id":"retrieve-keys-and-values","level":0,"title":"Retrieve keys and values","anchor":"#retrieve-keys-and-values"},{"id":"filter","level":0,"title":"Filter","anchor":"#filter"},{"id":"plus-and-minus-operators","level":0,"title":"Plus and minus operators","anchor":"#plus-and-minus-operators"},{"id":"map-write-operations","level":0,"title":"Map write operations","anchor":"#map-write-operations"},{"id":"add-and-update-entries","level":1,"title":"Add and update entries","anchor":"#add-and-update-entries"},{"id":"remove-entries","level":1,"title":"Remove entries","anchor":"#remove-entries"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.css" rel="stylesheet"><link rel="icon" type="image/svg" sizes="16x16" href="https://kotlinlang.org/assets/images/favicon.svg?v2"><link rel="icon" type="image/x-icon" sizes="32x32" href="https://kotlinlang.org/assets/images/favicon.ico?v2"><link rel="icon" type="image/png" sizes="96x96" href="https://kotlinlang.org/assets/images/apple-touch-icon.png?v2"><link rel="icon" type="image/png" sizes="300x300" href="https://kotlinlang.org/assets/images/apple-touch-icon-72x72.png?v2"><link rel="icon" type="image/png" sizes="500x500" href="https://kotlinlang.org/assets/images/apple-touch-icon-114x114.png?v2"><meta name="image" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><!-- Open Graph --><meta property="og:title" content="Map-specific operations | Kotlin"><meta property="og:description" content=""><meta property="og:image" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><meta property="og:site_name" content="Kotlin Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="https://kotlinlang.org/docs/map-operations.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@kotlin"><meta name="twitter:title" content="Map-specific operations | Kotlin"><meta name="twitter:description" content=""><meta name="twitter:creator" content="@kotlin"><meta name="twitter:image:src" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "https://kotlinlang.org/docs/map-operations.html#webpage",
+    "url": "https://kotlinlang.org/docs/map-operations.html",
+    "name": "Map-specific operations | Kotlin",
+    "description": "",
+    "image": "https://kotlinlang.org/assets/images/open-graph/docs.png",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "https://kotlinlang.org/docs/#website",
+    "url": "https://kotlinlang.org/docs/",
+    "name": "Kotlin Help"
+}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="map-operations" data-main-title="Map-specific operations" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Standard library///Collections" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/map-operations.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="map-operations" id="map-operations.md">Map-specific operations</h1><p id="-1u95yx_2">In <a href="collections-overview.html#map" id="-1u95yx_7">maps</a>, types of both keys and values are user-defined. Key-based access to map entries enables various map-specific processing capabilities from getting a value by key to separate filtering of keys and values. On this page, we provide descriptions of the map processing functions from the standard library.</p><section class="chapter"><h2 id="retrieve-keys-and-values" data-toc="retrieve-keys-and-values">Retrieve keys and values</h2><p id="-1u95yx_8">For retrieving a value from a map, you must provide its key as an argument of the <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/get.html" id="-1u95yx_13" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="-1u95yx_17">get()</code></a> function. The shorthand <code class="code" id="-1u95yx_14">[key]</code> syntax is also supported. If the given key is not found, it returns <code class="code" id="-1u95yx_15">null</code>. There is also the function <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/get-value.html" id="-1u95yx_16" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="-1u95yx_18">getValue()</code></a> which has slightly different behavior: it throws an exception if the key is not found in the map. Additionally, you have two more options to handle the key absence:</p><ul class="list _bullet" id="-1u95yx_9"><li class="list__item" id="-1u95yx_19"><p id="-1u95yx_21"><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/get-or-else.html" id="-1u95yx_22" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="-1u95yx_23">getOrElse()</code></a> works the same way as for lists: the values for non-existent keys are returned from the given lambda function.</p></li><li class="list__item" id="-1u95yx_20"><p id="-1u95yx_24"><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/get-or-default.html" id="-1u95yx_25" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="-1u95yx_26">getOrDefault()</code></a> returns the specified default value if the key is not found.</p></li></ul><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
+
+fun main() {
+//sampleStart
+    val numbersMap = mapOf(&quot;one&quot; to 1, &quot;two&quot; to 2, &quot;three&quot; to 3)
+    println(numbersMap.get(&quot;one&quot;))
+    println(numbersMap[&quot;one&quot;])
+    println(numbersMap.getOrDefault(&quot;four&quot;, 10))
+    println(numbersMap[&quot;five&quot;])               // null
+    //numbersMap.getValue(&quot;six&quot;)      // exception!
+//sampleEnd
+}
+</div><p id="-1u95yx_11">To perform operations on all keys or all values of a map, you can retrieve them from the properties <code class="code" id="-1u95yx_27">keys</code> and <code class="code" id="-1u95yx_28">values</code> accordingly. <code class="code" id="-1u95yx_29">keys</code> is a set of all map keys and <code class="code" id="-1u95yx_30">values</code> is a collection of all map values.</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
+
+fun main() {
+//sampleStart
+    val numbersMap = mapOf(&quot;one&quot; to 1, &quot;two&quot; to 2, &quot;three&quot; to 3)
+    println(numbersMap.keys)
+    println(numbersMap.values)
+//sampleEnd
+}
+</div></section><section class="chapter"><h2 id="filter" data-toc="filter">Filter</h2><p id="-1u95yx_31">You can <a href="collection-filtering.html" id="-1u95yx_35">filter</a> maps with the <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/filter.html" id="-1u95yx_36" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="-1u95yx_39">filter()</code></a> function as well as other collections. When calling <code class="code" id="-1u95yx_37">filter()</code> on a map, pass to it a predicate with a <code class="code" id="-1u95yx_38">Pair</code> as an argument. This enables you to use both the key and the value in the filtering predicate.</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
+
+fun main() {
+//sampleStart
+    val numbersMap = mapOf(&quot;key1&quot; to 1, &quot;key2&quot; to 2, &quot;key3&quot; to 3, &quot;key11&quot; to 11)
+    val filteredMap = numbersMap.filter { (key, value) -&gt; key.endsWith(&quot;1&quot;) &amp;&amp; value &gt; 10}
+    println(filteredMap)
+//sampleEnd
+}
+</div><p id="-1u95yx_33">There are also two specific ways for filtering maps: by keys and by values. For each way, there is a function: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/filter-keys.html" id="-1u95yx_40" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="-1u95yx_44">filterKeys()</code></a> and <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/filter-values.html" id="-1u95yx_41" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="-1u95yx_45">filterValues()</code></a>. Both return a new map of entries which match the given predicate. The predicate for <code class="code" id="-1u95yx_42">filterKeys()</code> checks only the element keys, the one for <code class="code" id="-1u95yx_43">filterValues()</code> checks only values.</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
+
+fun main() {
+//sampleStart
+    val numbersMap = mapOf(&quot;key1&quot; to 1, &quot;key2&quot; to 2, &quot;key3&quot; to 3, &quot;key11&quot; to 11)
+    val filteredKeysMap = numbersMap.filterKeys { it.endsWith(&quot;1&quot;) }
+    val filteredValuesMap = numbersMap.filterValues { it &lt; 10 }
+
+    println(filteredKeysMap)
+    println(filteredValuesMap)
+//sampleEnd
+}
+</div></section><section class="chapter"><h2 id="plus-and-minus-operators" data-toc="plus-and-minus-operators">Plus and minus operators</h2><p id="-1u95yx_46">Due to the key access to elements, <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/plus.html" id="-1u95yx_51" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="-1u95yx_61">plus</code></a> (<code class="code" id="-1u95yx_52">+</code>) and <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/minus.html" id="-1u95yx_53" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="-1u95yx_62">minus</code></a> (<code class="code" id="-1u95yx_54">-</code>) operators work for maps differently than for other collections. <code class="code" id="-1u95yx_55">plus</code> returns a <code class="code" id="-1u95yx_56">Map</code> that contains elements of its both operands: a <code class="code" id="-1u95yx_57">Map</code> on the left and a <code class="code" id="-1u95yx_58">Pair</code> or another <code class="code" id="-1u95yx_59">Map</code> on the right. When the right-hand side operand contains entries with keys present in the left-hand side <code class="code" id="-1u95yx_60">Map</code>, the result map contains the entries from the right side.</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
+
+fun main() {
+//sampleStart
+    val numbersMap = mapOf(&quot;one&quot; to 1, &quot;two&quot; to 2, &quot;three&quot; to 3)
+    println(numbersMap + Pair(&quot;four&quot;, 4))
+    println(numbersMap + Pair(&quot;one&quot;, 10))
+    println(numbersMap + mapOf(&quot;five&quot; to 5, &quot;one&quot; to 11))
+//sampleEnd
+}
+</div><p id="-1u95yx_48"><code class="code" id="-1u95yx_63">minus</code> creates a <code class="code" id="-1u95yx_64">Map</code> from entries of a <code class="code" id="-1u95yx_65">Map</code> on the left except those with keys from the right-hand side operand. So, the right-hand side operand can be either a single key or a collection of keys: list, set, and so on.</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
+
+fun main() {
+//sampleStart
+    val numbersMap = mapOf(&quot;one&quot; to 1, &quot;two&quot; to 2, &quot;three&quot; to 3)
+    println(numbersMap - &quot;one&quot;)
+    println(numbersMap - listOf(&quot;two&quot;, &quot;four&quot;))
+//sampleEnd
+}
+</div><p id="-1u95yx_50">For details on using <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/plus-assign.html" id="-1u95yx_66" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="-1u95yx_71">plusAssign</code></a> (<code class="code" id="-1u95yx_67">+=</code>) and <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/minus-assign.html" id="-1u95yx_68" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="-1u95yx_72">minusAssign</code></a> (<code class="code" id="-1u95yx_69">-=</code>) operators on mutable maps, see <a href="#map-write-operations" id="-1u95yx_70">Map write operations</a> below.</p></section><section class="chapter"><h2 id="map-write-operations" data-toc="map-write-operations">Map write operations</h2><p id="-1u95yx_73"><a href="collections-overview.html#collection-types" id="-1u95yx_79">Mutable</a> maps offer map-specific write operations. These operations let you change the map content using the key-based access to the values.</p><p id="-1u95yx_74">There are certain rules that define write operations on maps:</p><ul class="list _bullet" id="-1u95yx_75"><li class="list__item" id="-1u95yx_80"><p id="-1u95yx_82">Values can be updated. In turn, keys never change: once you add an entry, its key is constant.</p></li><li class="list__item" id="-1u95yx_81"><p id="-1u95yx_83">For each key, there is always a single value associated with it. You can add and remove whole entries.</p></li></ul><p id="-1u95yx_76">Below are descriptions of the standard library functions for write operations available on mutable maps.</p><section class="chapter"><h3 id="add-and-update-entries" data-toc="add-and-update-entries">Add and update entries</h3><p id="-1u95yx_84">To add a new key-value pair to a mutable map, use <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/put.html" id="-1u95yx_94" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="-1u95yx_96">put()</code></a>. When a new entry is put into a <code class="code" id="-1u95yx_95">LinkedHashMap</code> (the default map implementation), it is added so that it comes last when iterating the map. In sorted maps, the positions of new elements are defined by the order of their keys.</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
+
+fun main() {
+//sampleStart
+    val numbersMap = mutableMapOf(&quot;one&quot; to 1, &quot;two&quot; to 2)
+    numbersMap.put(&quot;three&quot;, 3)
+    println(numbersMap)
+//sampleEnd
+}
+</div><p id="-1u95yx_86">To add multiple entries at a time, use <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/put-all.html" id="-1u95yx_97" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="-1u95yx_103">putAll()</code></a>. Its argument can be a <code class="code" id="-1u95yx_98">Map</code> or a group of <code class="code" id="-1u95yx_99">Pair</code>s: <code class="code" id="-1u95yx_100">Iterable</code>, <code class="code" id="-1u95yx_101">Sequence</code>, or <code class="code" id="-1u95yx_102">Array</code>.</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
+
+fun main() {
+//sampleStart
+    val numbersMap = mutableMapOf(&quot;one&quot; to 1, &quot;two&quot; to 2, &quot;three&quot; to 3)
+    numbersMap.putAll(setOf(&quot;four&quot; to 4, &quot;five&quot; to 5))
+    println(numbersMap)
+//sampleEnd
+}
+</div><p id="-1u95yx_88">Both <code class="code" id="-1u95yx_104">put()</code> and <code class="code" id="-1u95yx_105">putAll()</code> overwrite the values if the given keys already exist in the map. Thus, you can use them to update values of map entries.</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
+
+fun main() {
+//sampleStart
+    val numbersMap = mutableMapOf(&quot;one&quot; to 1, &quot;two&quot; to 2)
+    val previousValue = numbersMap.put(&quot;one&quot;, 11)
+    println(&quot;value associated with 'one', before: $previousValue, after: ${numbersMap[&quot;one&quot;]}&quot;)
+    println(numbersMap)
+//sampleEnd
+}
+</div><p id="-1u95yx_90">You can also add new entries to maps using the shorthand operator form. There are two ways:</p><ul class="list _bullet" id="-1u95yx_91"><li class="list__item" id="-1u95yx_106"><p id="-1u95yx_108"><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/plus-assign.html" id="-1u95yx_109" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="-1u95yx_111">plusAssign</code></a> (<code class="code" id="-1u95yx_110">+=</code>) operator.</p></li><li class="list__item" id="-1u95yx_107"><p id="-1u95yx_112">the <code class="code" id="-1u95yx_113">[]</code> operator alias for <code class="code" id="-1u95yx_114">set()</code>.</p></li></ul><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
+
+fun main() {
+//sampleStart
+    val numbersMap = mutableMapOf(&quot;one&quot; to 1, &quot;two&quot; to 2)
+    numbersMap[&quot;three&quot;] = 3     // calls numbersMap.put(&quot;three&quot;, 3)
+    numbersMap += mapOf(&quot;four&quot; to 4, &quot;five&quot; to 5)
+    println(numbersMap)
+//sampleEnd
+}
+</div><p id="-1u95yx_93">When called with the key present in the map, operators overwrite the values of the corresponding entries.</p></section><section class="chapter"><h3 id="remove-entries" data-toc="remove-entries">Remove entries</h3><p id="-1u95yx_115">To remove an entry from a mutable map, use the <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/remove.html" id="-1u95yx_121" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="-1u95yx_123">remove()</code></a> function. When calling <code class="code" id="-1u95yx_122">remove()</code>, you can pass either a key or a whole key-value-pair. If you specify both the key and value, the element with this key will be removed only if its value matches the second argument.</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
+
+fun main() {
+//sampleStart
+    val numbersMap = mutableMapOf(&quot;one&quot; to 1, &quot;two&quot; to 2, &quot;three&quot; to 3)
+    numbersMap.remove(&quot;one&quot;)
+    println(numbersMap)
+    numbersMap.remove(&quot;three&quot;, 4)            //doesn't remove anything
+    println(numbersMap)
+//sampleEnd
+}
+</div><p id="-1u95yx_117">You can also remove entries from a mutable map by their keys or values. To do this, call <code class="code" id="-1u95yx_124">remove()</code> on the map's keys or values providing the key or the value of an entry. When called on values, <code class="code" id="-1u95yx_125">remove()</code> removes only the first entry with the given value.</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
+
+fun main() {
+//sampleStart
+    val numbersMap = mutableMapOf(&quot;one&quot; to 1, &quot;two&quot; to 2, &quot;three&quot; to 3, &quot;threeAgain&quot; to 3)
+    numbersMap.keys.remove(&quot;one&quot;)
+    println(numbersMap)
+    numbersMap.values.remove(3)
+    println(numbersMap)
+//sampleEnd
+}
+</div><p id="-1u95yx_119">The <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/minus-assign.html" id="-1u95yx_126" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="-1u95yx_128">minusAssign</code></a> (<code class="code" id="-1u95yx_127">-=</code>) operator is also available for mutable maps.</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
+
+fun main() {
+//sampleStart
+    val numbersMap = mutableMapOf(&quot;one&quot; to 1, &quot;two&quot; to 2, &quot;three&quot; to 3)
+    numbersMap -= &quot;two&quot;
+    println(numbersMap)
+    numbersMap -= &quot;five&quot;             //doesn't remove anything
+    println(numbersMap)
+//sampleEnd
+}
+</div></section></section><div class="last-modified">11 February 2021</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="set-operations.html" class="navigation-links__prev">Set-specific operations</a><a href="read-standard-input.html" class="navigation-links__next">Read standard input</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>

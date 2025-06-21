@@ -1,0 +1,119 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-06-21T03:20:48.708261559"><link rel="canonical" href="https://kotlinlang.org/docs/iterators.html" data-react-helmet="true"><script>
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+        var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&amp;l=' + l : '';
+        j.async = true;
+        j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5P98');
+</script>
+<script src="https://resources.jetbrains.com/storage/help-app/v6/analytics.js"></script>
+<title>Iterators | Kotlin Documentation</title><script type="application/json" id="virtual-toc-data">[{"id":"list-iterators","level":0,"title":"List iterators","anchor":"#list-iterators"},{"id":"mutable-iterators","level":0,"title":"Mutable iterators","anchor":"#mutable-iterators"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.css" rel="stylesheet"><link rel="icon" type="image/svg" sizes="16x16" href="https://kotlinlang.org/assets/images/favicon.svg?v2"><link rel="icon" type="image/x-icon" sizes="32x32" href="https://kotlinlang.org/assets/images/favicon.ico?v2"><link rel="icon" type="image/png" sizes="96x96" href="https://kotlinlang.org/assets/images/apple-touch-icon.png?v2"><link rel="icon" type="image/png" sizes="300x300" href="https://kotlinlang.org/assets/images/apple-touch-icon-72x72.png?v2"><link rel="icon" type="image/png" sizes="500x500" href="https://kotlinlang.org/assets/images/apple-touch-icon-114x114.png?v2"><meta name="image" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><!-- Open Graph --><meta property="og:title" content="Iterators | Kotlin"><meta property="og:description" content=""><meta property="og:image" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><meta property="og:site_name" content="Kotlin Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="https://kotlinlang.org/docs/iterators.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@kotlin"><meta name="twitter:title" content="Iterators | Kotlin"><meta name="twitter:description" content=""><meta name="twitter:creator" content="@kotlin"><meta name="twitter:image:src" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "https://kotlinlang.org/docs/iterators.html#webpage",
+    "url": "https://kotlinlang.org/docs/iterators.html",
+    "name": "Iterators | Kotlin",
+    "description": "",
+    "image": "https://kotlinlang.org/assets/images/open-graph/docs.png",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "https://kotlinlang.org/docs/#website",
+    "url": "https://kotlinlang.org/docs/",
+    "name": "Kotlin Help"
+}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="iterators" data-main-title="Iterators" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Standard library///Collections" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/iterators.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="iterators" id="iterators.md">Iterators</h1><p id="-926u73_2">For traversing collection elements, the Kotlin standard library supports the commonly used mechanism of <span class="emphasis" id="-926u73_13">iterators</span> &ndash; objects that provide access to the elements sequentially without exposing the underlying structure of the collection. Iterators are useful when you need to process all the elements of a collection one-by-one, for example, print values or make similar updates to them.</p><p id="-926u73_3">Iterators can be obtained for inheritors of the <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html" id="-926u73_14" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="-926u73_18">Iterable&lt;T&gt;</code></a> interface, including <code class="code" id="-926u73_15">Set</code> and <code class="code" id="-926u73_16">List</code>, by calling the <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/iterator.html" id="-926u73_17" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="-926u73_19">iterator()</code></a> function.</p><p id="-926u73_4">Once you obtain an iterator, it points to the first element of a collection; calling the <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterator/next.html" id="-926u73_20" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="-926u73_21">next()</code></a> function returns this element and moves the iterator position to the following element if it exists.</p><p id="-926u73_5">Once the iterator passes through the last element, it can no longer be used for retrieving elements; neither can it be reset to any previous position. To iterate through the collection again, create a new iterator.</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
+
+fun main() {
+//sampleStart
+    val numbers = listOf(&quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;)
+    val numbersIterator = numbers.iterator()
+    while (numbersIterator.hasNext()) {
+        println(numbersIterator.next())
+        // one
+        // two
+        // three
+        // four
+    }
+//sampleEnd
+}
+</div><p id="-926u73_7">Another way to go through an <code class="code" id="-926u73_22">Iterable</code> collection is the well-known <code class="code" id="-926u73_23">for</code> loop. When using <code class="code" id="-926u73_24">for</code> on a collection, you obtain the iterator implicitly. So, the following code is equivalent to the example above:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
+
+fun main() {
+//sampleStart
+    val numbers = listOf(&quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;)
+    for (item in numbers) {
+        println(item)
+        // one
+        // two
+        // three
+        // four
+    }
+//sampleEnd
+}
+</div><p id="-926u73_9">Finally, there is a useful <code class="code" id="-926u73_25">forEach()</code> function that lets you automatically iterate a collection and execute the given code for each element. So, the same example would look like this:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
+
+fun main() {
+//sampleStart
+    val numbers = listOf(&quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;)
+    numbers.forEach {
+        println(it)
+        // one
+        // two
+        // three
+        // four
+    }
+//sampleEnd
+}
+</div><section class="chapter"><h2 id="list-iterators" data-toc="list-iterators">List iterators</h2><p id="-926u73_26">For lists, there is a special iterator implementation: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list-iterator/index.html" id="-926u73_30" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="-926u73_31">ListIterator</code></a>. It supports iterating lists in both directions: forwards and backwards.</p><p id="-926u73_27">Backward iteration is implemented by the functions <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list-iterator/has-previous.html" id="-926u73_32" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="-926u73_37">hasPrevious()</code></a> and <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list-iterator/previous.html" id="-926u73_33" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="-926u73_38">previous()</code></a>. Additionally, the <code class="code" id="-926u73_34">ListIterator</code> provides information about the element indices with the functions <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list-iterator/next-index.html" id="-926u73_35" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="-926u73_39">nextIndex()</code></a> and <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list-iterator/previous-index.html" id="-926u73_36" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="-926u73_40">previousIndex()</code></a>.</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
+
+fun main() {
+//sampleStart
+    val numbers = listOf(&quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;)
+    val listIterator = numbers.listIterator()
+    while (listIterator.hasNext()) listIterator.next()
+    println(&quot;Iterating backwards:&quot;)
+    // Iterating backwards:
+    while (listIterator.hasPrevious()) {
+        print(&quot;Index: ${listIterator.previousIndex()}&quot;)
+        println(&quot;, value: ${listIterator.previous()}&quot;)
+        // Index: 3, value: four
+        // Index: 2, value: three
+        // Index: 1, value: two
+        // Index: 0, value: one
+    }
+//sampleEnd
+}
+</div><p id="-926u73_29">Having the ability to iterate in both directions, means the <code class="code" id="-926u73_41">ListIterator</code> can still be used after it reaches the last element.</p></section><section class="chapter"><h2 id="mutable-iterators" data-toc="mutable-iterators">Mutable iterators</h2><p id="-926u73_42">For iterating mutable collections, there is <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterator/index.html" id="-926u73_46" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="-926u73_49">MutableIterator</code></a> that extends <code class="code" id="-926u73_47">Iterator</code> with the element removal function <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterator/remove.html" id="-926u73_48" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="-926u73_50">remove()</code></a>. So, you can remove elements from a collection while iterating it.</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
+
+fun main() {
+//sampleStart
+    val numbers = mutableListOf(&quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;) 
+    val mutableIterator = numbers.iterator()
+    
+    mutableIterator.next()
+    mutableIterator.remove()    
+    println(&quot;After removal: $numbers&quot;)
+    // After removal: [two, three, four]
+//sampleEnd
+}
+</div><p id="-926u73_44">In addition to removing elements, the <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list-iterator/index.html" id="-926u73_51" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="-926u73_54">MutableListIterator</code></a> can also insert and replace elements while iterating the list by using the <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list-iterator/add.html" id="-926u73_52" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="-926u73_55">add()</code></a> and <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list-iterator/set.html" id="-926u73_53" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="-926u73_56">set()</code></a> functions.</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
+
+fun main() {
+//sampleStart
+    val numbers = mutableListOf(&quot;one&quot;, &quot;four&quot;, &quot;four&quot;) 
+    val mutableListIterator = numbers.listIterator()
+    
+    mutableListIterator.next()
+    mutableListIterator.add(&quot;two&quot;)
+    println(numbers)
+    // [one, two, four, four]
+    mutableListIterator.next()
+    mutableListIterator.set(&quot;three&quot;)   
+    println(numbers)
+    // [one, two, three, four]
+//sampleEnd
+}
+</div></section><div class="last-modified">12 March 2024</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="constructing-collections.html" class="navigation-links__prev">Constructing collections</a><a href="ranges.html" class="navigation-links__next">Ranges and progressions</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>

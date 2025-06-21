@@ -1,0 +1,123 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="robots" content="noindex"><meta name="built-on" content="2025-06-21T03:20:45.727279051"><link rel="canonical" href="https://kotlinlang.org/docs/kotlin-tour-null-safety.html" data-react-helmet="true"><script>
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+        var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&amp;l=' + l : '';
+        j.async = true;
+        j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5P98');
+</script>
+<script src="https://resources.jetbrains.com/storage/help-app/v6/analytics.js"></script>
+<title>Null safety | Kotlin Documentation</title><script type="application/json" id="virtual-toc-data">[{"id":"nullable-types","level":0,"title":"Nullable types","anchor":"#nullable-types"},{"id":"check-for-null-values","level":0,"title":"Check for null values","anchor":"#check-for-null-values"},{"id":"use-safe-calls","level":0,"title":"Use safe calls","anchor":"#use-safe-calls"},{"id":"use-elvis-operator","level":0,"title":"Use Elvis operator","anchor":"#use-elvis-operator"},{"id":"practice","level":0,"title":"Practice","anchor":"#practice"},{"id":"exercise","level":1,"title":"Exercise","anchor":"#exercise"},{"id":"what-s-next","level":0,"title":"What\u0027s next?","anchor":"#what-s-next"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.css" rel="stylesheet"><link rel="icon" type="image/svg" sizes="16x16" href="https://kotlinlang.org/assets/images/favicon.svg?v2"><link rel="icon" type="image/x-icon" sizes="32x32" href="https://kotlinlang.org/assets/images/favicon.ico?v2"><link rel="icon" type="image/png" sizes="96x96" href="https://kotlinlang.org/assets/images/apple-touch-icon.png?v2"><link rel="icon" type="image/png" sizes="300x300" href="https://kotlinlang.org/assets/images/apple-touch-icon-72x72.png?v2"><link rel="icon" type="image/png" sizes="500x500" href="https://kotlinlang.org/assets/images/apple-touch-icon-114x114.png?v2"><meta name="image" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><!-- Open Graph --><meta property="og:title" content="Null safety | Kotlin"><meta property="og:description" content=""><meta property="og:image" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><meta property="og:site_name" content="Kotlin Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="https://kotlinlang.org/docs/kotlin-tour-null-safety.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@kotlin"><meta name="twitter:title" content="Null safety | Kotlin"><meta name="twitter:description" content=""><meta name="twitter:creator" content="@kotlin"><meta name="twitter:image:src" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "https://kotlinlang.org/docs/kotlin-tour-null-safety.html#webpage",
+    "url": "https://kotlinlang.org/docs/kotlin-tour-null-safety.html",
+    "name": "Null safety | Kotlin",
+    "description": "",
+    "image": "https://kotlinlang.org/assets/images/open-graph/docs.png",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "https://kotlinlang.org/docs/#website",
+    "url": "https://kotlinlang.org/docs/",
+    "name": "Kotlin Help"
+}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="kotlin-tour-null-safety" data-main-title="Null safety" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="kotlin-tour-welcome.md|Take Kotlin tour" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/tour/kotlin-tour-null-safety.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="kotlin-tour-null-safety" id="kotlin-tour-null-safety.md">Null safety</h1><div class="micro-format" data-content="{&quot;microFormat&quot;:[&quot;\u003cp id\u003d\&quot;idl2rb_14\&quot;\u003e\u003cimg alt\u003d\&quot;First step\&quot; src\u003d\&quot;images/icon-1-done.svg\&quot; class\u003d\&quot;inline-icon-\&quot; title\u003d\&quot;First step\&quot; id\u003d\&quot;idl2rb_15\&quot; width\u003d\&quot;20\&quot; height\u003d\&quot;20\&quot;\u003e \u003ca href\u003d\&quot;kotlin-tour-hello-world.html\&quot; id\u003d\&quot;idl2rb_16\&quot;\u003eHello world\u003c/a\u003e\u003cbr\u003e \u003cimg alt\u003d\&quot;Second step\&quot; src\u003d\&quot;images/icon-2-done.svg\&quot; class\u003d\&quot;inline-icon-\&quot; title\u003d\&quot;Second step\&quot; id\u003d\&quot;idl2rb_18\&quot; width\u003d\&quot;20\&quot; height\u003d\&quot;20\&quot;\u003e \u003ca href\u003d\&quot;kotlin-tour-basic-types.html\&quot; id\u003d\&quot;idl2rb_19\&quot;\u003eBasic types\u003c/a\u003e\u003cbr\u003e \u003cimg alt\u003d\&quot;Third step\&quot; src\u003d\&quot;images/icon-3-done.svg\&quot; class\u003d\&quot;inline-icon-\&quot; title\u003d\&quot;Third step\&quot; id\u003d\&quot;idl2rb_21\&quot; width\u003d\&quot;20\&quot; height\u003d\&quot;20\&quot;\u003e \u003ca href\u003d\&quot;kotlin-tour-collections.html\&quot; id\u003d\&quot;idl2rb_22\&quot;\u003eCollections\u003c/a\u003e\u003cbr\u003e \u003cimg alt\u003d\&quot;Fourth step\&quot; src\u003d\&quot;images/icon-4-done.svg\&quot; class\u003d\&quot;inline-icon-\&quot; title\u003d\&quot;Fourth step\&quot; id\u003d\&quot;idl2rb_24\&quot; width\u003d\&quot;20\&quot; height\u003d\&quot;20\&quot;\u003e \u003ca href\u003d\&quot;kotlin-tour-control-flow.html\&quot; id\u003d\&quot;idl2rb_25\&quot;\u003eControl flow\u003c/a\u003e\u003cbr\u003e \u003cimg alt\u003d\&quot;Fifth step\&quot; src\u003d\&quot;images/icon-5-done.svg\&quot; class\u003d\&quot;inline-icon-\&quot; title\u003d\&quot;Fifth step\&quot; id\u003d\&quot;idl2rb_27\&quot; width\u003d\&quot;20\&quot; height\u003d\&quot;20\&quot;\u003e \u003ca href\u003d\&quot;kotlin-tour-functions.html\&quot; id\u003d\&quot;idl2rb_28\&quot;\u003eFunctions\u003c/a\u003e\u003cbr\u003e \u003cimg alt\u003d\&quot;Sixth step\&quot; src\u003d\&quot;images/icon-6-done.svg\&quot; class\u003d\&quot;inline-icon-\&quot; title\u003d\&quot;Sixth step\&quot; id\u003d\&quot;idl2rb_30\&quot; width\u003d\&quot;20\&quot; height\u003d\&quot;20\&quot;\u003e \u003ca href\u003d\&quot;kotlin-tour-classes.html\&quot; id\u003d\&quot;idl2rb_31\&quot;\u003eClasses\u003c/a\u003e\u003cbr\u003e \u003cimg alt\u003d\&quot;Final step\&quot; src\u003d\&quot;images/icon-7.svg\&quot; class\u003d\&quot;inline-icon-\&quot; title\u003d\&quot;Final step\&quot; id\u003d\&quot;idl2rb_33\&quot; width\u003d\&quot;20\&quot; height\u003d\&quot;20\&quot;\u003e \u003cb id\u003d\&quot;idl2rb_34\&quot;\u003eNull safety\u003c/b\u003e\u003cbr\u003e\u003c/p\u003e&quot;]}"></div><p id="idl2rb_4">In Kotlin, it's possible to have a <code class="code" id="idl2rb_36">null</code> value. Kotlin uses <code class="code" id="idl2rb_37">null</code> values when something is missing or not yet set. You've already seen an example of Kotlin returning a <code class="code" id="idl2rb_38">null</code> value in the <a href="kotlin-tour-collections.html#kotlin-tour-map-no-key" id="idl2rb_39">Collections</a> chapter when you tried to access a key-value pair with a key that doesn't exist in the map. Although it's useful to use <code class="code" id="idl2rb_40">null</code> values in this way, you might run into problems if your code isn't prepared to handle them.</p><p id="idl2rb_5">To help prevent issues with <code class="code" id="idl2rb_41">null</code> values in your programs, Kotlin has null safety in place. Null safety detects potential problems with <code class="code" id="idl2rb_42">null</code> values at compile time, rather than at run time.</p><p id="idl2rb_6">Null safety is a combination of features that allow you to:</p><ul class="list _bullet" id="idl2rb_7"><li class="list__item" id="idl2rb_43"><p id="idl2rb_47">Explicitly declare when <code class="code" id="idl2rb_48">null</code> values are allowed in your program.</p></li><li class="list__item" id="idl2rb_44"><p id="idl2rb_49">Check for <code class="code" id="idl2rb_50">null</code> values.</p></li><li class="list__item" id="idl2rb_45"><p id="idl2rb_51">Use safe calls to properties or functions that may contain <code class="code" id="idl2rb_52">null</code> values.</p></li><li class="list__item" id="idl2rb_46"><p id="idl2rb_53">Declare actions to take if <code class="code" id="idl2rb_54">null</code> values are detected.</p></li></ul><section class="chapter"><h2 id="nullable-types" data-toc="nullable-types">Nullable types</h2><p id="idl2rb_55">Kotlin supports nullable types which allows the possibility for the declared type to have <code class="code" id="idl2rb_59">null</code> values. By default, a type is <span class="control" id="idl2rb_60">not</span> allowed to accept <code class="code" id="idl2rb_61">null</code> values. Nullable types are declared by explicitly adding <code class="code" id="idl2rb_62">?</code> after the type declaration.</p><p id="idl2rb_56">For example:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-tour-nullable-type">
+fun main() {
+    // neverNull has String type
+    var neverNull: String = &quot;This can't be null&quot;
+
+    // Throws a compiler error
+    neverNull = null
+
+    // nullable has nullable String type
+    var nullable: String? = &quot;You can keep a null here&quot;
+
+    // This is OK
+    nullable = null
+
+    // By default, null values aren't accepted
+    var inferredNonNull = &quot;The compiler assumes non-nullable&quot;
+
+    // Throws a compiler error
+    inferredNonNull = null
+
+    // notNull doesn't accept null values
+    fun strLength(notNull: String): Int {                 
+        return notNull.length
+    }
+
+    println(strLength(neverNull)) // 18
+    println(strLength(nullable))  // Throws a compiler error
+}
+</div><aside class="prompt" data-type="tip" data-title="" id="idl2rb_58"><p id="idl2rb_63"><code class="code" id="idl2rb_64">length</code> is a property of the <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/" id="idl2rb_65" data-external="true" rel="noopener noreferrer" target="_blank">String</a> class that contains the number of characters within a string.</p></aside></section><section class="chapter"><h2 id="check-for-null-values" data-toc="check-for-null-values">Check for null values</h2><p id="idl2rb_66">You can check for the presence of <code class="code" id="idl2rb_68">null</code> values within conditional expressions. In the following example, the <code class="code" id="idl2rb_69">describeString()</code> function has an <code class="code" id="idl2rb_70">if</code> statement that checks whether <code class="code" id="idl2rb_71">maybeString</code> is <span class="control" id="idl2rb_72">not</span> <code class="code" id="idl2rb_73">null</code> and if its <code class="code" id="idl2rb_74">length</code> is greater than zero:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-tour-check-nulls">
+fun describeString(maybeString: String?): String {
+    if (maybeString != null &amp;&amp; maybeString.length &gt; 0) {
+        return &quot;String of length ${maybeString.length}&quot;
+    } else {
+        return &quot;Empty or null string&quot;
+    }
+}
+
+fun main() {
+    val nullString: String? = null
+    println(describeString(nullString))
+    // Empty or null string
+}
+</div></section><section class="chapter"><h2 id="use-safe-calls" data-toc="use-safe-calls">Use safe calls</h2><p id="idl2rb_75">To safely access properties of an object that might contain a <code class="code" id="idl2rb_82">null</code> value, use the safe call operator <code class="code" id="idl2rb_83">?.</code>. The safe call operator returns <code class="code" id="idl2rb_84">null</code> if either the object or one of its accessed properties is <code class="code" id="idl2rb_85">null</code>. This is useful if you want to avoid the presence of <code class="code" id="idl2rb_86">null</code> values triggering errors in your code.</p><p id="idl2rb_76">In the following example, the <code class="code" id="idl2rb_87">lengthString()</code> function uses a safe call to return either the length of the string or <code class="code" id="idl2rb_88">null</code>:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-tour-safe-call-property">
+fun lengthString(maybeString: String?): Int? = maybeString?.length
+
+fun main() { 
+    val nullString: String? = null
+    println(lengthString(nullString))
+    // null
+}
+</div><aside class="prompt" data-type="tip" data-title="" id="idl2rb_78"><p id="idl2rb_89">Safe calls can be chained so that if any property of an object contains a <code class="code" id="idl2rb_91">null</code> value, then <code class="code" id="idl2rb_92">null</code> is returned without an error being thrown. For example:</p><div class="code-block" data-lang="kotlin">
+  person.company?.address?.country
+</div></aside><p id="idl2rb_79">The safe call operator can also be used to safely call an extension or member function. In this case, a null check is performed before the function is called. If the check detects a <code class="code" id="idl2rb_93">null</code> value, then the call is skipped and <code class="code" id="idl2rb_94">null</code> is returned.</p><p id="idl2rb_80">In the following example, <code class="code" id="idl2rb_95">nullString</code> is <code class="code" id="idl2rb_96">null</code> so the invocation of <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/uppercase.html" id="idl2rb_97" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="idl2rb_99">.uppercase()</code></a> is skipped and <code class="code" id="idl2rb_98">null</code> is returned:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-tour-safe-call-function">
+fun main() {
+    val nullString: String? = null
+    println(nullString?.uppercase())
+    // null
+}
+</div></section><section class="chapter"><h2 id="use-elvis-operator" data-toc="use-elvis-operator">Use Elvis operator</h2><p id="idl2rb_100">You can provide a default value to return if a <code class="code" id="idl2rb_105">null</code> value is detected by using the <span class="control" id="idl2rb_106">Elvis operator</span> <code class="code" id="idl2rb_107">?:</code>.</p><p id="idl2rb_101">Write on the left-hand side of the Elvis operator what should be checked for a <code class="code" id="idl2rb_108">null</code> value. Write on the right-hand side of the Elvis operator what should be returned if a <code class="code" id="idl2rb_109">null</code> value is detected.</p><p id="idl2rb_102">In the following example, <code class="code" id="idl2rb_110">nullString</code> is <code class="code" id="idl2rb_111">null</code> so the safe call to access the <code class="code" id="idl2rb_112">length</code> property returns a <code class="code" id="idl2rb_113">null</code> value. As a result, the Elvis operator returns <code class="code" id="idl2rb_114">0</code>:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-tour-elvis-operator">
+fun main() {
+    val nullString: String? = null
+    println(nullString?.length ?: 0)
+    // 0
+}
+</div><p id="idl2rb_104">For more information about null safety in Kotlin, see <a href="null-safety.html" id="idl2rb_115">Null safety</a>.</p></section><section class="chapter"><h2 id="practice" data-toc="practice">Practice</h2><section class="chapter"><div class="collapse"><div class="collapse__title"><h3 id="exercise" data-toc="exercise">Exercise</h3></div><div class="collapse__content"><p id="idl2rb_117">You have the <code class="code" id="idl2rb_122">employeeById</code> function that gives you access to a database of employees of a company. Unfortunately, this function returns a value of the <code class="code" id="idl2rb_123">Employee?</code> type, so the result can be <code class="code" id="idl2rb_124">null</code>. Your goal is to write a function that returns the salary of an employee when their <code class="code" id="idl2rb_125">id</code> is provided, or <code class="code" id="idl2rb_126">0</code> if the employee is missing from the database.</p><div class="table-wrapper"><table class="" id="idl2rb_118"><tbody></tbody></table></div><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-tour-null-safety-exercise">
+data class Employee (val name: String, var salary: Int)
+
+fun employeeById(id: Int) = when(id) {
+    1 -&gt; Employee(&quot;Mary&quot;, 20)
+    2 -&gt; null
+    3 -&gt; Employee(&quot;John&quot;, 21)
+    4 -&gt; Employee(&quot;Ann&quot;, 23)
+    else -&gt; null
+}
+
+fun salaryById(id: Int) = // Write your code here
+
+fun main() {
+    println((1..5).sumOf { id -&gt; salaryById(id) })
+}
+</div><div class="table-wrapper"><table class="" id="idl2rb_120"><tbody></tbody></table></div><div class="code-collapse" data-lang="kotlin" id="kotlin-tour-null-safety-solution" data-is-expanded="false" data-synopsis="Example solution">
+data class Employee (val name: String, var salary: Int)
+
+fun employeeById(id: Int) = when(id) {
+    1 -&gt; Employee(&quot;Mary&quot;, 20)
+    2 -&gt; null
+    3 -&gt; Employee(&quot;John&quot;, 21)
+    4 -&gt; Employee(&quot;Ann&quot;, 23)
+    else -&gt; null
+}
+
+fun salaryById(id: Int) = employeeById(id)?.salary ?: 0
+
+fun main() {
+    println((1..5).sumOf { id -&gt; salaryById(id) })
+}
+</div></div></div></section></section><section class="chapter"><h2 id="what-s-next" data-toc="what-s-next">What's next?</h2><p id="idl2rb_127">Congratulations! Now that you have completed the beginner tour, take your understanding of Kotlin to the next level with our intermediate tour:</p><p id="idl2rb_128"><a href="kotlin-tour-intermediate-extension-functions.html" id="idl2rb_129"><figure id="idl2rb_130"><img alt="Start the intermediate Kotlin tour" src="images/start-intermediate-tour.svg" title="Start the intermediate Kotlin tour" width="700" height="700"></figure></a></p></section><div class="last-modified">28 April 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="kotlin-tour-classes.html" class="navigation-links__prev">Classes</a><a href="kotlin-tour-intermediate-extension-functions.html" class="navigation-links__next">Intermediate: Extension functions</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>

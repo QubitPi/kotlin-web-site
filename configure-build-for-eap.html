@@ -1,0 +1,92 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-06-21T03:20:48.953151157"><link rel="canonical" href="https://kotlinlang.org/docs/configure-build-for-eap.html" data-react-helmet="true"><script>
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+        var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&amp;l=' + l : '';
+        j.async = true;
+        j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5P98');
+</script>
+<script src="https://resources.jetbrains.com/storage/help-app/v6/analytics.js"></script>
+<title>Configure your build for EAP | Kotlin Documentation</title><script type="application/json" id="virtual-toc-data">[{"id":"configure-in-gradle","level":0,"title":"Configure in Gradle","anchor":"#configure-in-gradle"},{"id":"adjust-the-kotlin-version","level":1,"title":"Adjust the Kotlin version","anchor":"#adjust-the-kotlin-version"},{"id":"adjust-versions-in-dependencies","level":1,"title":"Adjust versions in dependencies","anchor":"#adjust-versions-in-dependencies"},{"id":"configure-in-maven","level":0,"title":"Configure in Maven","anchor":"#configure-in-maven"},{"id":"if-you-run-into-any-problems","level":0,"title":"If you run into any problems","anchor":"#if-you-run-into-any-problems"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.css" rel="stylesheet"><link rel="icon" type="image/svg" sizes="16x16" href="https://kotlinlang.org/assets/images/favicon.svg?v2"><link rel="icon" type="image/x-icon" sizes="32x32" href="https://kotlinlang.org/assets/images/favicon.ico?v2"><link rel="icon" type="image/png" sizes="96x96" href="https://kotlinlang.org/assets/images/apple-touch-icon.png?v2"><link rel="icon" type="image/png" sizes="300x300" href="https://kotlinlang.org/assets/images/apple-touch-icon-72x72.png?v2"><link rel="icon" type="image/png" sizes="500x500" href="https://kotlinlang.org/assets/images/apple-touch-icon-114x114.png?v2"><meta name="image" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><!-- Open Graph --><meta property="og:title" content="Configure your build for EAP | Kotlin"><meta property="og:description" content=""><meta property="og:image" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><meta property="og:site_name" content="Kotlin Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="https://kotlinlang.org/docs/configure-build-for-eap.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@kotlin"><meta name="twitter:title" content="Configure your build for EAP | Kotlin"><meta name="twitter:description" content=""><meta name="twitter:creator" content="@kotlin"><meta name="twitter:image:src" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "https://kotlinlang.org/docs/configure-build-for-eap.html#webpage",
+    "url": "https://kotlinlang.org/docs/configure-build-for-eap.html",
+    "name": "Configure your build for EAP | Kotlin",
+    "description": "",
+    "image": "https://kotlinlang.org/assets/images/open-graph/docs.png",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "https://kotlinlang.org/docs/#website",
+    "url": "https://kotlinlang.org/docs/",
+    "name": "Kotlin Help"
+}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="configure-build-for-eap" data-main-title="Configure your build for EAP" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Early access preview (EAP)" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/configure-build-for-eap.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="configure-build-for-eap" id="configure-build-for-eap.md">Configure your build for EAP</h1><div class="micro-format" data-content="{&quot;microFormat&quot;:[&quot;\u003cp id\u003d\&quot;z54v1a4_10\&quot;\u003eLatest Kotlin EAP release: \u003cb id\u003d\&quot;z54v1a4_12\&quot;\u003e2.2.0-RC3\u003c/b\u003e\u003c/p\u003e&quot;,&quot;\u003cp id\u003d\&quot;z54v1a4_11\&quot;\u003e\u003ca href\u003d\&quot;eap.html#build-details\&quot; id\u003d\&quot;z54v1a4_13\&quot;\u003eExplore Kotlin EAP release details\u003c/a\u003e\u003c/p\u003e&quot;]}"></div><p id="z54v1a4_3">To configure your build to use the EAP version of Kotlin, you need to:</p><ul class="list _bullet" id="z54v1a4_4"><li class="list__item" id="z54v1a4_14"><p id="z54v1a4_16">Specify the EAP version of Kotlin. <a href="eap.html#build-details" id="z54v1a4_17">Available EAP versions are listed here</a>.</p></li><li class="list__item" id="z54v1a4_15"><p id="z54v1a4_18">Change the versions of dependencies to EAP ones. The EAP version of Kotlin may not work with the libraries of the previously released version.</p></li></ul><p id="z54v1a4_5">The following procedures describe how to configure your build in Gradle and Maven:</p><ul class="list _bullet" id="z54v1a4_6"><li class="list__item" id="z54v1a4_19"><p id="z54v1a4_21"><a href="#configure-in-gradle" id="z54v1a4_22">Configure in Gradle</a></p></li><li class="list__item" id="z54v1a4_20"><p id="z54v1a4_23"><a href="#configure-in-maven" id="z54v1a4_24">Configure in Maven</a></p></li></ul><section class="chapter"><h2 id="configure-in-gradle" data-toc="configure-in-gradle">Configure in Gradle</h2><p id="z54v1a4_25">This section describes how you can:</p><ul class="list _bullet" id="z54v1a4_26"><li class="list__item" id="z54v1a4_29"><p id="z54v1a4_31"><a href="#adjust-the-kotlin-version" id="z54v1a4_32">Adjust the Kotlin version</a></p></li><li class="list__item" id="z54v1a4_30"><p id="z54v1a4_33"><a href="#adjust-versions-in-dependencies" id="z54v1a4_34">Adjust versions in dependencies</a></p></li></ul><section class="chapter"><h3 id="adjust-the-kotlin-version" data-toc="adjust-the-kotlin-version">Adjust the Kotlin version</h3><p id="z54v1a4_35">In the <code class="code" id="z54v1a4_39">plugins</code> block within <code class="code" id="z54v1a4_40">build.gradle(.kts)</code>, change the <code class="code" id="z54v1a4_41">KOTLIN-EAP-VERSION</code> to the actual EAP version, such as <code class="code" id="z54v1a4_42">2.2.0-RC3</code>. <a href="eap.html#build-details" id="z54v1a4_43">Available EAP versions are listed here</a>.</p><p id="z54v1a4_36">Alternatively, you can specify the EAP version in the <code class="code" id="z54v1a4_44">pluginManagement</code> block in <code class="code" id="z54v1a4_45">settings.gradle(.kts)</code> &ndash; see <a href="https://docs.gradle.org/current/userguide/plugins.html#sec:plugin_version_management" id="z54v1a4_46" data-external="true" rel="noopener noreferrer" target="_blank">Gradle documentation</a> for details.</p><p id="z54v1a4_37">Here is an example for the Multiplatform project.</p><div class="tabs" id="z54v1a4_38" data-group="build-script" data-anchors="[z54v1a4_47,z54v1a4_48]"><div class="tabs__content" data-gtm="tab" id="z54v1a4_47" data-sync-tabs="kotlin" data-title="Kotlin"><div class="code-block" data-lang="kotlin" data-title="Kotlin">
+plugins {
+    java
+    kotlin(&quot;multiplatform&quot;) version &quot;KOTLIN-EAP-VERSION&quot;
+}
+
+repositories {
+    mavenCentral()
+}
+</div></div><div class="tabs__content" data-gtm="tab" id="z54v1a4_48" data-sync-tabs="groovy" data-title="Groovy"><div class="code-block" data-lang="groovy" data-title="Groovy">
+plugins {
+    id 'java'
+    id 'org.jetbrains.kotlin.multiplatform' version 'KOTLIN-EAP-VERSION'
+}
+
+repositories {
+    mavenCentral()
+}
+</div></div></div></section><section class="chapter"><h3 id="adjust-versions-in-dependencies" data-toc="adjust-versions-in-dependencies">Adjust versions in dependencies</h3><p id="z54v1a4_51">If you use kotlinx libraries in your project, your versions of the libraries may not be compatible with the EAP version of Kotlin.</p><p id="z54v1a4_52">To resolve this issue, you need to specify the version of a compatible library in dependencies. For a list of compatible libraries, see <a href="eap.html#build-details" id="z54v1a4_57">EAP build details</a>.</p><aside class="prompt" data-type="note" data-title="" id="z54v1a4_53"><p id="z54v1a4_58">In most cases we create libraries only for the first EAP version of a specific release and these libraries work with the subsequent EAP versions for this release.</p><p id="z54v1a4_59">If there are incompatible changes in next EAP versions, we release a new version of the library.</p></aside><p id="z54v1a4_54">Here is an example.</p><p id="z54v1a4_55">For the <span class="control" id="z54v1a4_60">kotlinx.coroutines</span> library, add the version number &ndash; <code class="code" id="z54v1a4_61">1.10.2</code> &ndash; that is compatible with <code class="code" id="z54v1a4_62">2.2.0-RC3</code>.</p><div class="tabs" id="z54v1a4_56" data-group="build-script" data-anchors="[z54v1a4_63,z54v1a4_64]"><div class="tabs__content" data-gtm="tab" id="z54v1a4_63" data-sync-tabs="kotlin" data-title="Kotlin"><div class="code-block" data-lang="kotlin" data-title="Kotlin">
+dependencies {
+    implementation(&quot;org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2&quot;)
+}
+</div></div><div class="tabs__content" data-gtm="tab" id="z54v1a4_64" data-sync-tabs="groovy" data-title="Groovy"><div class="code-block" data-lang="groovy" data-title="Groovy">
+dependencies {
+    implementation &quot;org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2&quot;
+}
+</div></div></div></section></section><section class="chapter"><h2 id="configure-in-maven" data-toc="configure-in-maven">Configure in Maven</h2><p id="z54v1a4_67">In the sample Maven project definition, replace <code class="code" id="z54v1a4_69">KOTLIN-EAP-VERSION</code> with the actual version, such as <code class="code" id="z54v1a4_70">2.2.0-RC3</code>. <a href="eap.html#build-details" id="z54v1a4_71">Available EAP versions are listed here</a>.</p><div class="code-block" data-lang="markup">
+&lt;project ...&gt;
+    &lt;properties&gt;
+        &lt;kotlin.version&gt;KOTLIN-EAP-VERSION&lt;/kotlin.version&gt;
+    &lt;/properties&gt;
+
+    &lt;repositories&gt;
+        &lt;repository&gt;
+           &lt;id&gt;mavenCentral&lt;/id&gt;
+           &lt;url&gt;https://repo1.maven.org/maven2/&lt;/url&gt;
+        &lt;/repository&gt;
+    &lt;/repositories&gt;
+
+    &lt;pluginRepositories&gt;
+       &lt;pluginRepository&gt;
+          &lt;id&gt;mavenCentral&lt;/id&gt;
+          &lt;url&gt;https://repo1.maven.org/maven2/&lt;/url&gt;
+       &lt;/pluginRepository&gt;
+    &lt;/pluginRepositories&gt;
+
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.jetbrains.kotlin&lt;/groupId&gt;
+            &lt;artifactId&gt;kotlin-stdlib&lt;/artifactId&gt;
+            &lt;version&gt;${kotlin.version}&lt;/version&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+
+    &lt;build&gt;
+        &lt;plugins&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.jetbrains.kotlin&lt;/groupId&gt;
+                &lt;artifactId&gt;kotlin-maven-plugin&lt;/artifactId&gt;
+                &lt;version&gt;${kotlin.version}&lt;/version&gt;
+                ...
+            &lt;/plugin&gt;
+        &lt;/plugins&gt;
+    &lt;/build&gt;
+&lt;/project&gt;
+</div></section><section class="chapter"><h2 id="if-you-run-into-any-problems" data-toc="if-you-run-into-any-problems">If you run into any problems</h2><ul class="list _bullet" id="z54v1a4_72"><li class="list__item" id="z54v1a4_73"><p id="z54v1a4_76">Report an issue to <a href="https://kotl.in/issue" id="z54v1a4_77" data-external="true" rel="noopener noreferrer" target="_blank">our issue tracker, YouTrack</a>.</p></li><li class="list__item" id="z54v1a4_74"><p id="z54v1a4_78">Find help in the <a href="https://app.slack.com/client/T09229ZC6/C0KLZSCHF" id="z54v1a4_79" data-external="true" rel="noopener noreferrer" target="_blank">#eap channel in Kotlin Slack</a> (<a href="https://surveys.jetbrains.com/s3/kotlin-slack-sign-up" id="z54v1a4_80" data-external="true" rel="noopener noreferrer" target="_blank">get an invite</a>).</p></li><li class="list__item" id="z54v1a4_75"><p id="z54v1a4_81">Roll back to the latest stable version: <a href="#adjust-the-kotlin-version" id="z54v1a4_82">change it in your build script file</a>.</p></li></ul></section><div class="last-modified">16 May 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="eap.html" class="navigation-links__prev">Participate in the Kotlin Early Access Preview</a><a href="faq.html" class="navigation-links__next">FAQ</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>
