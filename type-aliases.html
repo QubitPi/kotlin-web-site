@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-06-21T03:20:46.511842458"><link rel="canonical" href="https://kotlinlang.org/docs/type-aliases.html" data-react-helmet="true"><script>
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-06-21T03:37:43.073595739"><link rel="canonical" href="https://kotlinlang.org/docs/type-aliases.html" data-react-helmet="true"><script>
     (function (w, d, s, l, i) {
         w[l] = w[l] || [];
         w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
@@ -24,15 +24,15 @@
     "@id": "https://kotlinlang.org/docs/#website",
     "url": "https://kotlinlang.org/docs/",
     "name": "Kotlin Help"
-}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="type-aliases" data-main-title="Type aliases" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Concepts///Classes and objects" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/type-aliases.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="type-aliases" id="type-aliases.md">Type aliases</h1><p id="-6cooh3_2">Type aliases provide alternative names for existing types. If the type name is too long you can introduce a different shorter name and use the new one instead.</p><p id="-6cooh3_3">It's useful to shorten long generic types. For instance, it's often tempting to shrink collection types:</p><div class="code-block" data-lang="kotlin">
+}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="type-aliases" data-main-title="Type aliases" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Concepts///Classes and objects" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/type-aliases.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="type-aliases" id="type-aliases.md">Type aliases</h1><p id="z3bgp6z_2">Type aliases provide alternative names for existing types. If the type name is too long you can introduce a different shorter name and use the new one instead.</p><p id="z3bgp6z_3">It's useful to shorten long generic types. For instance, it's often tempting to shrink collection types:</p><div class="code-block" data-lang="kotlin">
 typealias NodeSet = Set&lt;Network.Node&gt;
 
 typealias FileTable&lt;K&gt; = MutableMap&lt;K, MutableList&lt;File&gt;&gt;
-</div><p id="-6cooh3_5">You can provide different aliases for function types:</p><div class="code-block" data-lang="kotlin">
+</div><p id="z3bgp6z_5">You can provide different aliases for function types:</p><div class="code-block" data-lang="kotlin">
 typealias MyHandler = (Int, String, Any) -&gt; Unit
 
 typealias Predicate&lt;T&gt; = (T) -&gt; Boolean
-</div><p id="-6cooh3_7">You can have new names for inner and nested classes:</p><div class="code-block" data-lang="kotlin">
+</div><p id="z3bgp6z_7">You can have new names for inner and nested classes:</p><div class="code-block" data-lang="kotlin">
 class A {
     inner class Inner
 }
@@ -42,7 +42,7 @@ class B {
 
 typealias AInner = A.Inner
 typealias BInner = B.Inner
-</div><p id="-6cooh3_9">Type aliases do not introduce new types. They are equivalent to the corresponding underlying types. When you add <code class="code" id="-6cooh3_11">typealias Predicate&lt;T&gt;</code> and use <code class="code" id="-6cooh3_12">Predicate&lt;Int&gt;</code> in your code, the Kotlin compiler always expands it to <code class="code" id="-6cooh3_13">(Int) -&gt; Boolean</code>. Thus you can pass a variable of your type whenever a general function type is required and vice versa:</p><div class="code-block" data-lang="kotlin" data-runnable="true">
+</div><p id="z3bgp6z_9">Type aliases do not introduce new types. They are equivalent to the corresponding underlying types. When you add <code class="code" id="z3bgp6z_11">typealias Predicate&lt;T&gt;</code> and use <code class="code" id="z3bgp6z_12">Predicate&lt;Int&gt;</code> in your code, the Kotlin compiler always expands it to <code class="code" id="z3bgp6z_13">(Int) -&gt; Boolean</code>. Thus you can pass a variable of your type whenever a general function type is required and vice versa:</p><div class="code-block" data-lang="kotlin" data-runnable="true">
 typealias Predicate&lt;T&gt; = (T) -&gt; Boolean
 
 fun foo(p: Predicate&lt;Int&gt;) = p(42)
