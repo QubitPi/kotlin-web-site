@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-06-21T03:59:01.736034727"><link rel="canonical" href="https://kotlinlang.org/docs/basic-syntax.html" data-react-helmet="true"><script>
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-06-21T04:05:51.219681751"><link rel="canonical" href="https://kotlinlang.org/docs/basic-syntax.html" data-react-helmet="true"><script>
     (function (w, d, s, l, i) {
         w[l] = w[l] || [];
         w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
@@ -24,35 +24,35 @@
     "@id": "https://kotlinlang.org/docs/#website",
     "url": "https://kotlinlang.org/docs/",
     "name": "Kotlin Help"
-}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="basic-syntax" data-main-title="Basic syntax" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Basics" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/basic-syntax.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="basic-syntax" id="basic-syntax.md">Basic syntax</h1><p id="-4vyjez_2">This is a collection of basic syntax elements with examples. At the end of every section, you'll find a link to a detailed description of the related topic.</p><p id="-4vyjez_3">You can also learn all the Kotlin essentials with the free <a href="https://hyperskill.org/tracks?category=4&amp;utm_source=jbkotlin_hs&amp;utm_medium=referral&amp;utm_campaign=kotlinlang-docs&amp;utm_content=button_1&amp;utm_term=22.03.23" id="-4vyjez_21" data-external="true" rel="noopener noreferrer" target="_blank">Kotlin Core track</a> by JetBrains Academy.</p><section class="chapter"><h2 id="package-definition-and-imports" data-toc="package-definition-and-imports">Package definition and imports</h2><p id="-4vyjez_22">Package specification should be at the top of the source file:</p><div class="code-block" data-lang="kotlin">
+}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="basic-syntax" data-main-title="Basic syntax" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Basics" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/basic-syntax.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="basic-syntax" id="basic-syntax.md">Basic syntax</h1><p id="mssw6t_2">This is a collection of basic syntax elements with examples. At the end of every section, you'll find a link to a detailed description of the related topic.</p><p id="mssw6t_3">You can also learn all the Kotlin essentials with the free <a href="https://hyperskill.org/tracks?category=4&amp;utm_source=jbkotlin_hs&amp;utm_medium=referral&amp;utm_campaign=kotlinlang-docs&amp;utm_content=button_1&amp;utm_term=22.03.23" id="mssw6t_21" data-external="true" rel="noopener noreferrer" target="_blank">Kotlin Core track</a> by JetBrains Academy.</p><section class="chapter"><h2 id="package-definition-and-imports" data-toc="package-definition-and-imports">Package definition and imports</h2><p id="mssw6t_22">Package specification should be at the top of the source file:</p><div class="code-block" data-lang="kotlin">
 package my.demo
 
 import kotlin.text.*
 
 // ...
-</div><p id="-4vyjez_24">It is not required to match directories and packages: source files can be placed arbitrarily in the file system.</p><p id="-4vyjez_25">See <a href="packages.html" id="-4vyjez_26">Packages</a>.</p></section><section class="chapter"><h2 id="program-entry-point" data-toc="program-entry-point">Program entry point</h2><p id="-4vyjez_27">An entry point of a Kotlin application is the <code class="code" id="-4vyjez_31">main</code> function:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-hello-world">
+</div><p id="mssw6t_24">It is not required to match directories and packages: source files can be placed arbitrarily in the file system.</p><p id="mssw6t_25">See <a href="packages.html" id="mssw6t_26">Packages</a>.</p></section><section class="chapter"><h2 id="program-entry-point" data-toc="program-entry-point">Program entry point</h2><p id="mssw6t_27">An entry point of a Kotlin application is the <code class="code" id="mssw6t_31">main</code> function:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-hello-world">
 fun main() {
     println(&quot;Hello world!&quot;)
 }
-</div><p id="-4vyjez_29">Another form of <code class="code" id="-4vyjez_32">main</code> accepts a variable number of <code class="code" id="-4vyjez_33">String</code> arguments:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
+</div><p id="mssw6t_29">Another form of <code class="code" id="mssw6t_32">main</code> accepts a variable number of <code class="code" id="mssw6t_33">String</code> arguments:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
 fun main(args: Array&lt;String&gt;) {
     println(args.contentToString())
 }
-</div></section><section class="chapter"><h2 id="print-to-the-standard-output" data-toc="print-to-the-standard-output">Print to the standard output</h2><p id="-4vyjez_34"><code class="code" id="-4vyjez_38">print</code> prints its argument to the standard output:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-print">
+</div></section><section class="chapter"><h2 id="print-to-the-standard-output" data-toc="print-to-the-standard-output">Print to the standard output</h2><p id="mssw6t_34"><code class="code" id="mssw6t_38">print</code> prints its argument to the standard output:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-print">
 fun main() {
 //sampleStart
     print(&quot;Hello &quot;)
     print(&quot;world!&quot;)
 //sampleEnd
 }
-</div><p id="-4vyjez_36"><code class="code" id="-4vyjez_39">println</code> prints its arguments and adds a line break, so that the next thing you print appears on the next line:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-println">
+</div><p id="mssw6t_36"><code class="code" id="mssw6t_39">println</code> prints its arguments and adds a line break, so that the next thing you print appears on the next line:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-println">
 fun main() {
 //sampleStart
     println(&quot;Hello world!&quot;)
     println(42)
 //sampleEnd
 }
-</div></section><section class="chapter"><h2 id="read-from-the-standard-input" data-toc="read-from-the-standard-input">Read from the standard input</h2><p id="-4vyjez_40">The <code class="code" id="-4vyjez_44">readln()</code> function reads from the standard input. This function reads the entire line the user enters as a string.</p><p id="-4vyjez_41">You can use the <code class="code" id="-4vyjez_45">println()</code>, <code class="code" id="-4vyjez_46">readln()</code>, and <code class="code" id="-4vyjez_47">print()</code> functions together to print messages requesting and showing user input:</p><div class="code-block" data-lang="kotlin">
+</div></section><section class="chapter"><h2 id="read-from-the-standard-input" data-toc="read-from-the-standard-input">Read from the standard input</h2><p id="mssw6t_40">The <code class="code" id="mssw6t_44">readln()</code> function reads from the standard input. This function reads the entire line the user enters as a string.</p><p id="mssw6t_41">You can use the <code class="code" id="mssw6t_45">println()</code>, <code class="code" id="mssw6t_46">readln()</code>, and <code class="code" id="mssw6t_47">print()</code> functions together to print messages requesting and showing user input:</p><div class="code-block" data-lang="kotlin">
 // Prints a message to request input
 println(&quot;Enter any word: &quot;)
 
@@ -63,7 +63,7 @@ val yourWord = readln()
 print(&quot;You entered the word: &quot;)
 print(yourWord)
 // You entered the word: Happiness
-</div><p id="-4vyjez_43">For more information, see <a href="read-standard-input.html" id="-4vyjez_48">Read standard input</a>.</p></section><section class="chapter"><h2 id="functions" data-toc="functions">Functions</h2><p id="-4vyjez_49">A function with two <code class="code" id="-4vyjez_58">Int</code> parameters and <code class="code" id="-4vyjez_59">Int</code> return type:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-return-int">
+</div><p id="mssw6t_43">For more information, see <a href="read-standard-input.html" id="mssw6t_48">Read standard input</a>.</p></section><section class="chapter"><h2 id="functions" data-toc="functions">Functions</h2><p id="mssw6t_49">A function with two <code class="code" id="mssw6t_58">Int</code> parameters and <code class="code" id="mssw6t_59">Int</code> return type:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-return-int">
 //sampleStart
 fun sum(a: Int, b: Int): Int {
     return a + b
@@ -74,7 +74,7 @@ fun main() {
     print(&quot;sum of 3 and 5 is &quot;)
     println(sum(3, 5))
 }
-</div><p id="-4vyjez_51">A function body can be an expression. Its return type is inferred:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-function-expression">
+</div><p id="mssw6t_51">A function body can be an expression. Its return type is inferred:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-function-expression">
 //sampleStart
 fun sum(a: Int, b: Int) = a + b
 //sampleEnd
@@ -82,7 +82,7 @@ fun sum(a: Int, b: Int) = a + b
 fun main() {
     println(&quot;sum of 19 and 23 is ${sum(19, 23)}&quot;)
 }
-</div><p id="-4vyjez_53">A function that returns no meaningful value:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-return-unit">
+</div><p id="mssw6t_53">A function that returns no meaningful value:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-return-unit">
 //sampleStart
 fun printSum(a: Int, b: Int): Unit {
     println(&quot;sum of $a and $b is ${a + b}&quot;)
@@ -92,7 +92,7 @@ fun printSum(a: Int, b: Int): Unit {
 fun main() {
     printSum(-1, 8)
 }
-</div><p id="-4vyjez_55"><code class="code" id="-4vyjez_60">Unit</code> return type can be omitted:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-function-omit-unit">
+</div><p id="mssw6t_55"><code class="code" id="mssw6t_60">Unit</code> return type can be omitted:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-function-omit-unit">
 //sampleStart
 fun printSum(a: Int, b: Int) {
     println(&quot;sum of $a and $b is ${a + b}&quot;)
@@ -102,7 +102,7 @@ fun printSum(a: Int, b: Int) {
 fun main() {
     printSum(-1, 8)
 }
-</div><p id="-4vyjez_57">See <a href="functions.html" id="-4vyjez_61">Functions</a>.</p></section><section class="chapter"><h2 id="variables" data-toc="variables">Variables</h2><p id="-4vyjez_62">In Kotlin, you declare a variable starting with a keyword, <code class="code" id="-4vyjez_74">val</code> or <code class="code" id="-4vyjez_75">var</code>, followed by the name of the variable.</p><p id="-4vyjez_63">Use the <code class="code" id="-4vyjez_76">val</code> keyword to declare variables that are assigned a value only once. These are immutable, read-only local variables that can&rsquo;t be reassigned a different value after initialization:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-val">
+</div><p id="mssw6t_57">See <a href="functions.html" id="mssw6t_61">Functions</a>.</p></section><section class="chapter"><h2 id="variables" data-toc="variables">Variables</h2><p id="mssw6t_62">In Kotlin, you declare a variable starting with a keyword, <code class="code" id="mssw6t_74">val</code> or <code class="code" id="mssw6t_75">var</code>, followed by the name of the variable.</p><p id="mssw6t_63">Use the <code class="code" id="mssw6t_76">val</code> keyword to declare variables that are assigned a value only once. These are immutable, read-only local variables that can&rsquo;t be reassigned a different value after initialization:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-val">
 fun main() {
 //sampleStart
     // Declares the variable x and initializes it with the value of 5
@@ -111,7 +111,7 @@ fun main() {
 //sampleEnd
     println(x)
 }
-</div><p id="-4vyjez_65">Use the <code class="code" id="-4vyjez_77">var</code> keyword to declare variables that can be reassigned. These are mutable variables, and you can change their values after initialization:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-var">
+</div><p id="mssw6t_65">Use the <code class="code" id="mssw6t_77">var</code> keyword to declare variables that can be reassigned. These are mutable variables, and you can change their values after initialization:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-var">
 fun main() {
 //sampleStart
     // Declares the variable x and initializes it with the value of 5
@@ -122,7 +122,7 @@ fun main() {
 //sampleEnd
     println(x)
 }
-</div><p id="-4vyjez_67">Kotlin supports type inference and automatically identifies the data type of a declared variable. When declaring a variable, you can omit the type after the variable name:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-inference">
+</div><p id="mssw6t_67">Kotlin supports type inference and automatically identifies the data type of a declared variable. When declaring a variable, you can omit the type after the variable name:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-inference">
 fun main() {
 //sampleStart
     // Declares the variable x with the value of 5;`Int` type is inferred
@@ -131,7 +131,7 @@ fun main() {
 //sampleEnd
     println(x)
 }
-</div><p id="-4vyjez_69">You can use variables only after initializing them. You can either initialize a variable at the moment of declaration or declare a variable first and initialize it later. In the second case, you must specify the data type:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-initialize">
+</div><p id="mssw6t_69">You can use variables only after initializing them. You can either initialize a variable at the moment of declaration or declare a variable first and initialize it later. In the second case, you must specify the data type:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-initialize">
 fun main() {
 //sampleStart
     // Initializes the variable x at the moment of declaration; type is not required
@@ -146,7 +146,7 @@ fun main() {
     println(x)
     println(c)
 }
-</div><p id="-4vyjez_71">You can declare variables at the top level:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-variable-top-level">
+</div><p id="mssw6t_71">You can declare variables at the top level:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-variable-top-level">
 //sampleStart
 val PI = 3.14
 var x = 0
@@ -165,13 +165,13 @@ fun main() {
     println(&quot;incrementX()&quot;)
     println(&quot;x = $x; PI = $PI&quot;)
 }
-</div><p id="-4vyjez_73">For information about declaring properties, see <a href="properties.html" id="-4vyjez_78">Properties</a>.</p></section><section class="chapter"><h2 id="creating-classes-and-instances" data-toc="creating-classes-and-instances">Creating classes and instances</h2><p id="-4vyjez_79">To define a class, use the <code class="code" id="-4vyjez_88">class</code> keyword:</p><div class="code-block" data-lang="kotlin">
+</div><p id="mssw6t_73">For information about declaring properties, see <a href="properties.html" id="mssw6t_78">Properties</a>.</p></section><section class="chapter"><h2 id="creating-classes-and-instances" data-toc="creating-classes-and-instances">Creating classes and instances</h2><p id="mssw6t_79">To define a class, use the <code class="code" id="mssw6t_88">class</code> keyword:</p><div class="code-block" data-lang="kotlin">
 class Shape
-</div><p id="-4vyjez_81">Properties of a class can be listed in its declaration or body:</p><div class="code-block" data-lang="kotlin">
+</div><p id="mssw6t_81">Properties of a class can be listed in its declaration or body:</p><div class="code-block" data-lang="kotlin">
 class Rectangle(val height: Double, val length: Double) {
     val perimeter = (height + length) * 2 
 }
-</div><p id="-4vyjez_83">The default constructor with parameters listed in the class declaration is available automatically:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-class-constructor">
+</div><p id="mssw6t_83">The default constructor with parameters listed in the class declaration is available automatically:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-class-constructor">
 class Rectangle(val height: Double, val length: Double) {
     val perimeter = (height + length) * 2 
 }
@@ -179,22 +179,22 @@ fun main() {
     val rectangle = Rectangle(5.0, 2.0)
     println(&quot;The perimeter is ${rectangle.perimeter}&quot;)
 }
-</div><p id="-4vyjez_85">Inheritance between classes is declared by a colon (<code class="code" id="-4vyjez_89">:</code>). Classes are <code class="code" id="-4vyjez_90">final</code> by default; to make a class inheritable, mark it as <code class="code" id="-4vyjez_91">open</code>:</p><div class="code-block" data-lang="kotlin">
+</div><p id="mssw6t_85">Inheritance between classes is declared by a colon (<code class="code" id="mssw6t_89">:</code>). Classes are <code class="code" id="mssw6t_90">final</code> by default; to make a class inheritable, mark it as <code class="code" id="mssw6t_91">open</code>:</p><div class="code-block" data-lang="kotlin">
 open class Shape
 
 class Rectangle(val height: Double, val length: Double): Shape() {
     val perimeter = (height + length) * 2 
 }
-</div><p id="-4vyjez_87">For more information about constructors and inheritance, see <a href="classes.html" id="-4vyjez_92">Classes</a> and <a href="object-declarations.html" id="-4vyjez_93">Objects and instances</a>.</p></section><section class="chapter"><h2 id="comments" data-toc="comments">Comments</h2><p id="-4vyjez_94">Just like most modern languages, Kotlin supports single-line (or <span class="emphasis" id="-4vyjez_99">end-of-line</span>) and multi-line (<span class="emphasis" id="-4vyjez_100">block</span>) comments:</p><div class="code-block" data-lang="kotlin">
+</div><p id="mssw6t_87">For more information about constructors and inheritance, see <a href="classes.html" id="mssw6t_92">Classes</a> and <a href="object-declarations.html" id="mssw6t_93">Objects and instances</a>.</p></section><section class="chapter"><h2 id="comments" data-toc="comments">Comments</h2><p id="mssw6t_94">Just like most modern languages, Kotlin supports single-line (or <span class="emphasis" id="mssw6t_99">end-of-line</span>) and multi-line (<span class="emphasis" id="mssw6t_100">block</span>) comments:</p><div class="code-block" data-lang="kotlin">
 // This is an end-of-line comment
 
 /* This is a block comment
    on multiple lines. */
-</div><p id="-4vyjez_96">Block comments in Kotlin can be nested:</p><div class="code-block" data-lang="kotlin">
+</div><p id="mssw6t_96">Block comments in Kotlin can be nested:</p><div class="code-block" data-lang="kotlin">
 /* The comment starts here
 /* contains a nested comment */     
 and ends here. */
-</div><p id="-4vyjez_98">See <a href="kotlin-doc.html" id="-4vyjez_101">Documenting Kotlin Code</a> for information on the documentation comment syntax.</p></section><section class="chapter"><h2 id="string-templates" data-toc="string-templates">String templates</h2><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-string-templates">
+</div><p id="mssw6t_98">See <a href="kotlin-doc.html" id="mssw6t_101">Documenting Kotlin Code</a> for information on the documentation comment syntax.</p></section><section class="chapter"><h2 id="string-templates" data-toc="string-templates">String templates</h2><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-string-templates">
 fun main() {
 //sampleStart
     var a = 1
@@ -207,7 +207,7 @@ fun main() {
 //sampleEnd
     println(s2)
 }
-</div><p id="-4vyjez_103">See <a href="strings.html#string-templates" id="-4vyjez_104">String templates</a> for details.</p></section><section class="chapter"><h2 id="conditional-expressions" data-toc="conditional-expressions">Conditional expressions</h2><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-conditional-expressions">
+</div><p id="mssw6t_103">See <a href="strings.html#string-templates" id="mssw6t_104">String templates</a> for details.</p></section><section class="chapter"><h2 id="conditional-expressions" data-toc="conditional-expressions">Conditional expressions</h2><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-conditional-expressions">
 //sampleStart
 fun maxOf(a: Int, b: Int): Int {
     if (a &gt; b) {
@@ -221,7 +221,7 @@ fun maxOf(a: Int, b: Int): Int {
 fun main() {
     println(&quot;max of 0 and 42 is ${maxOf(0, 42)}&quot;)
 }
-</div><p id="-4vyjez_106">In Kotlin, <code class="code" id="-4vyjez_109">if</code> can also be used as an expression:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-if-expression">
+</div><p id="mssw6t_106">In Kotlin, <code class="code" id="mssw6t_109">if</code> can also be used as an expression:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-if-expression">
 //sampleStart
 fun maxOf(a: Int, b: Int) = if (a &gt; b) a else b
 //sampleEnd
@@ -229,7 +229,7 @@ fun maxOf(a: Int, b: Int) = if (a &gt; b) a else b
 fun main() {
     println(&quot;max of 0 and 42 is ${maxOf(0, 42)}&quot;)
 }
-</div><p id="-4vyjez_108">See <a href="control-flow.html#if-expression" id="-4vyjez_110"><code class="code" id="-4vyjez_111">if</code>-expressions</a>.</p></section><section class="chapter"><h2 id="for-loop" data-toc="for-loop">for loop</h2><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-for-loop">
+</div><p id="mssw6t_108">See <a href="control-flow.html#if-expression" id="mssw6t_110"><code class="code" id="mssw6t_111">if</code>-expressions</a>.</p></section><section class="chapter"><h2 id="for-loop" data-toc="for-loop">for loop</h2><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-for-loop">
 fun main() {
 //sampleStart
     val items = listOf(&quot;apple&quot;, &quot;banana&quot;, &quot;kiwifruit&quot;)
@@ -238,7 +238,7 @@ fun main() {
     }
 //sampleEnd
 }
-</div><p id="-4vyjez_113">or:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-for-loop-indices">
+</div><p id="mssw6t_113">or:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-for-loop-indices">
 fun main() {
 //sampleStart
     val items = listOf(&quot;apple&quot;, &quot;banana&quot;, &quot;kiwifruit&quot;)
@@ -247,7 +247,7 @@ fun main() {
     }
 //sampleEnd
 }
-</div><p id="-4vyjez_115">See <a href="control-flow.html#for-loops" id="-4vyjez_116">for loop</a>.</p></section><section class="chapter"><h2 id="while-loop" data-toc="while-loop">while loop</h2><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-while-loop">
+</div><p id="mssw6t_115">See <a href="control-flow.html#for-loops" id="mssw6t_116">for loop</a>.</p></section><section class="chapter"><h2 id="while-loop" data-toc="while-loop">while loop</h2><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-while-loop">
 fun main() {
 //sampleStart
     val items = listOf(&quot;apple&quot;, &quot;banana&quot;, &quot;kiwifruit&quot;)
@@ -258,7 +258,7 @@ fun main() {
     }
 //sampleEnd
 }
-</div><p id="-4vyjez_118">See <a href="control-flow.html#while-loops" id="-4vyjez_119">while loop</a>.</p></section><section class="chapter"><h2 id="when-expression" data-toc="when-expression">when expression</h2><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-when-expression">
+</div><p id="mssw6t_118">See <a href="control-flow.html#while-loops" id="mssw6t_119">while loop</a>.</p></section><section class="chapter"><h2 id="when-expression" data-toc="when-expression">when expression</h2><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-when-expression">
 //sampleStart
 fun describe(obj: Any): String =
     when (obj) {
@@ -277,7 +277,7 @@ fun main() {
     println(describe(2))
     println(describe(&quot;other&quot;))
 }
-</div><p id="-4vyjez_121">See <a href="control-flow.html#when-expressions-and-statements" id="-4vyjez_122">when expressions and statements</a>.</p></section><section class="chapter"><h2 id="ranges" data-toc="ranges">Ranges</h2><p id="-4vyjez_123">Check if a number is within a range using <code class="code" id="-4vyjez_132">in</code> operator:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-range-in">
+</div><p id="mssw6t_121">See <a href="control-flow.html#when-expressions-and-statements" id="mssw6t_122">when expressions and statements</a>.</p></section><section class="chapter"><h2 id="ranges" data-toc="ranges">Ranges</h2><p id="mssw6t_123">Check if a number is within a range using <code class="code" id="mssw6t_132">in</code> operator:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-range-in">
 fun main() {
 //sampleStart
     val x = 10
@@ -287,7 +287,7 @@ fun main() {
     }
 //sampleEnd
 }
-</div><p id="-4vyjez_125">Check if a number is out of range:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-out-of-range">
+</div><p id="mssw6t_125">Check if a number is out of range:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-out-of-range">
 fun main() {
 //sampleStart
     val list = listOf(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)
@@ -300,7 +300,7 @@ fun main() {
     }
 //sampleEnd
 }
-</div><p id="-4vyjez_127">Iterate over a range:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-iterate-range">
+</div><p id="mssw6t_127">Iterate over a range:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-iterate-range">
 fun main() {
 //sampleStart
     for (x in 1..5) {
@@ -308,7 +308,7 @@ fun main() {
     }
 //sampleEnd
 }
-</div><p id="-4vyjez_129">Or over a progression:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-iterate-progression">
+</div><p id="mssw6t_129">Or over a progression:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-iterate-progression">
 fun main() {
 //sampleStart
     for (x in 1..10 step 2) {
@@ -320,7 +320,7 @@ fun main() {
     }
 //sampleEnd
 }
-</div><p id="-4vyjez_131">See <a href="ranges.html" id="-4vyjez_133">Ranges and progressions</a>.</p></section><section class="chapter"><h2 id="collections" data-toc="collections">Collections</h2><p id="-4vyjez_134">Iterate over a collection:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-iterate-collection">
+</div><p id="mssw6t_131">See <a href="ranges.html" id="mssw6t_133">Ranges and progressions</a>.</p></section><section class="chapter"><h2 id="collections" data-toc="collections">Collections</h2><p id="mssw6t_134">Iterate over a collection:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-iterate-collection">
 fun main() {
     val items = listOf(&quot;apple&quot;, &quot;banana&quot;, &quot;kiwifruit&quot;)
 //sampleStart
@@ -329,7 +329,7 @@ fun main() {
     }
 //sampleEnd
 }
-</div><p id="-4vyjez_136">Check if a collection contains an object using <code class="code" id="-4vyjez_141">in</code> operator:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-collection-in">
+</div><p id="mssw6t_136">Check if a collection contains an object using <code class="code" id="mssw6t_141">in</code> operator:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-collection-in">
 fun main() {
     val items = setOf(&quot;apple&quot;, &quot;banana&quot;, &quot;kiwifruit&quot;)
 //sampleStart
@@ -339,7 +339,7 @@ fun main() {
     }
 //sampleEnd
 }
-</div><p id="-4vyjez_138">Use <a href="lambdas.html" id="-4vyjez_142">lambda expressions</a> to filter and map collections:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-collection-filter-map">
+</div><p id="mssw6t_138">Use <a href="lambdas.html" id="mssw6t_142">lambda expressions</a> to filter and map collections:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-collection-filter-map">
 fun main() {
 //sampleStart
     val fruits = listOf(&quot;banana&quot;, &quot;avocado&quot;, &quot;apple&quot;, &quot;kiwifruit&quot;)
@@ -350,11 +350,11 @@ fun main() {
       .forEach { println(it) }
 //sampleEnd
 }
-</div><p id="-4vyjez_140">See <a href="collections-overview.html" id="-4vyjez_143">Collections overview</a>.</p></section><section class="chapter"><h2 id="nullable-values-and-null-checks" data-toc="nullable-values-and-null-checks">Nullable values and null checks</h2><p id="-4vyjez_144">A reference must be explicitly marked as nullable when <code class="code" id="-4vyjez_152">null</code> value is possible. Nullable type names have <code class="code" id="-4vyjez_153">?</code> at the end.</p><p id="-4vyjez_145">Return <code class="code" id="-4vyjez_154">null</code> if <code class="code" id="-4vyjez_155">str</code> does not hold an integer:</p><div class="code-block" data-lang="kotlin">
+</div><p id="mssw6t_140">See <a href="collections-overview.html" id="mssw6t_143">Collections overview</a>.</p></section><section class="chapter"><h2 id="nullable-values-and-null-checks" data-toc="nullable-values-and-null-checks">Nullable values and null checks</h2><p id="mssw6t_144">A reference must be explicitly marked as nullable when <code class="code" id="mssw6t_152">null</code> value is possible. Nullable type names have <code class="code" id="mssw6t_153">?</code> at the end.</p><p id="mssw6t_145">Return <code class="code" id="mssw6t_154">null</code> if <code class="code" id="mssw6t_155">str</code> does not hold an integer:</p><div class="code-block" data-lang="kotlin">
 fun parseInt(str: String): Int? {
     // ...
 }
-</div><p id="-4vyjez_147">Use a function returning nullable value:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-function-nullable-value">
+</div><p id="mssw6t_147">Use a function returning nullable value:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-function-nullable-value">
 fun parseInt(str: String): Int? {
     return str.toIntOrNull()
 }
@@ -380,7 +380,7 @@ fun main() {
     printProduct(&quot;a&quot;, &quot;7&quot;)
     printProduct(&quot;a&quot;, &quot;b&quot;)
 }
-</div><p id="-4vyjez_149">or:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-function-null-check">
+</div><p id="mssw6t_149">or:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-function-null-check">
 fun parseInt(str: String): Int? {
     return str.toIntOrNull()
 }
@@ -410,7 +410,7 @@ fun main() {
     printProduct(&quot;a&quot;, &quot;7&quot;)
     printProduct(&quot;99&quot;, &quot;b&quot;)
 }
-</div><p id="-4vyjez_151">See <a href="null-safety.html" id="-4vyjez_156">Null-safety</a>.</p></section><section class="chapter"><h2 id="type-checks-and-automatic-casts" data-toc="type-checks-and-automatic-casts">Type checks and automatic casts</h2><p id="-4vyjez_157">The <code class="code" id="-4vyjez_164">is</code> operator checks if an expression is an instance of a type. If an immutable local variable or property is checked for a specific type, there's no need to cast it explicitly:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-is-operator">
+</div><p id="mssw6t_151">See <a href="null-safety.html" id="mssw6t_156">Null-safety</a>.</p></section><section class="chapter"><h2 id="type-checks-and-automatic-casts" data-toc="type-checks-and-automatic-casts">Type checks and automatic casts</h2><p id="mssw6t_157">The <code class="code" id="mssw6t_164">is</code> operator checks if an expression is an instance of a type. If an immutable local variable or property is checked for a specific type, there's no need to cast it explicitly:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-is-operator">
 //sampleStart
 fun getStringLength(obj: Any): Int? {
     if (obj is String) {
@@ -431,7 +431,7 @@ fun main() {
     printLength(1000)
     printLength(listOf(Any()))
 }
-</div><p id="-4vyjez_159">or:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-is-operator-expression">
+</div><p id="mssw6t_159">or:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-is-operator-expression">
 //sampleStart
 fun getStringLength(obj: Any): Int? {
     if (obj !is String) return null
@@ -449,7 +449,7 @@ fun main() {
     printLength(1000)
     printLength(listOf(Any()))
 }
-</div><p id="-4vyjez_161">or even:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-is-operator-logic">
+</div><p id="mssw6t_161">or even:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3" id="kotlin-basic-syntax-is-operator-logic">
 //sampleStart
 fun getStringLength(obj: Any): Int? {
     // `obj` is automatically cast to `String` on the right-hand side of `&amp;&amp;`
@@ -469,4 +469,4 @@ fun main() {
     printLength(&quot;&quot;)
     printLength(1000)
 }
-</div><p id="-4vyjez_163">See <a href="classes.html" id="-4vyjez_165">Classes</a> and <a href="typecasts.html" id="-4vyjez_166">Type casts</a>.</p></section><div class="last-modified">21 June 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="releases.html" class="navigation-links__prev">Kotlin releases</a><a href="idioms.html" class="navigation-links__next">Idioms</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>
+</div><p id="mssw6t_163">See <a href="classes.html" id="mssw6t_165">Classes</a> and <a href="typecasts.html" id="mssw6t_166">Type casts</a>.</p></section><div class="last-modified">21 June 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="releases.html" class="navigation-links__prev">Kotlin releases</a><a href="idioms.html" class="navigation-links__next">Idioms</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>
