@@ -1,0 +1,95 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-06-24T01:09:12.028247368"><link rel="canonical" href="https://kotlinlang.org/docs/gradle-binary-compatibility-validation.html" data-react-helmet="true"><script>
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+        var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&amp;l=' + l : '';
+        j.async = true;
+        j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5P98');
+</script>
+<script src="https://resources.jetbrains.com/storage/help-app/v6/analytics.js"></script>
+<title>Binary compatibility validation in the Kotlin Gradle plugin | Kotlin Documentation</title><script type="application/json" id="virtual-toc-data">[{"id":"how-to-enable","level":0,"title":"How to enable","anchor":"#how-to-enable"},{"id":"check-for-binary-compatibility-issues","level":0,"title":"Check for binary compatibility issues","anchor":"#check-for-binary-compatibility-issues"},{"id":"update-reference-abi-dump","level":0,"title":"Update reference ABI dump","anchor":"#update-reference-abi-dump"},{"id":"configure-filters","level":0,"title":"Configure filters","anchor":"#configure-filters"},{"id":"prevent-inferred-changes-for-unsupported-targets","level":0,"title":"Prevent inferred changes for unsupported targets","anchor":"#prevent-inferred-changes-for-unsupported-targets"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.css" rel="stylesheet"><link rel="icon" type="image/svg" sizes="16x16" href="https://kotlinlang.org/assets/images/favicon.svg?v2"><link rel="icon" type="image/x-icon" sizes="32x32" href="https://kotlinlang.org/assets/images/favicon.ico?v2"><link rel="icon" type="image/png" sizes="96x96" href="https://kotlinlang.org/assets/images/apple-touch-icon.png?v2"><link rel="icon" type="image/png" sizes="300x300" href="https://kotlinlang.org/assets/images/apple-touch-icon-72x72.png?v2"><link rel="icon" type="image/png" sizes="500x500" href="https://kotlinlang.org/assets/images/apple-touch-icon-114x114.png?v2"><meta name="image" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><!-- Open Graph --><meta property="og:title" content="Binary compatibility validation in the Kotlin Gradle plugin | Kotlin"><meta property="og:description" content=""><meta property="og:image" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><meta property="og:site_name" content="Kotlin Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="https://kotlinlang.org/docs/gradle-binary-compatibility-validation.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@kotlin"><meta name="twitter:title" content="Binary compatibility validation in the Kotlin Gradle plugin | Kotlin"><meta name="twitter:description" content=""><meta name="twitter:creator" content="@kotlin"><meta name="twitter:image:src" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "https://kotlinlang.org/docs/gradle-binary-compatibility-validation.html#webpage",
+    "url": "https://kotlinlang.org/docs/gradle-binary-compatibility-validation.html",
+    "name": "Binary compatibility validation in the Kotlin Gradle plugin | Kotlin",
+    "description": "",
+    "image": "https://kotlinlang.org/assets/images/open-graph/docs.png",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "https://kotlinlang.org/docs/#website",
+    "url": "https://kotlinlang.org/docs/",
+    "name": "Kotlin Help"
+}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="gradle-binary-compatibility-validation" data-main-title="Binary compatibility validation in the Kotlin Gradle plugin" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Tools///Build tools///Gradle" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/gradle/gradle-binary-compatibility-validation.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="gradle-binary-compatibility-validation" data-label-id="experimental-general" id="gradle-binary-compatibility-validation.md">Binary compatibility validation in the Kotlin Gradle plugin</h1><p id="-uo0bgy_3">Binary compatibility validation helps library authors ensure that users don't break their code when upgrading to newer versions. It's important not only for delivering a smooth upgrade experience, but also for building long-term trust with users and encouraging continued adoption of the library.</p><aside class="prompt" data-type="tip" data-title="" id="-uo0bgy_4"><p id="-uo0bgy_11">Binary compatibility means that the compiled bytecode of two versions of a library can run interchangeably without needing recompilation.</p></aside><p id="-uo0bgy_5">Starting with version 2.2.0, the Kotlin Gradle plugin supports binary compatibility validation. When enabled, it generates Application Binary Interface (ABI) dumps from the current code and compares them with previous dumps to highlight differences. You can review these changes to find any potentially binary-incompatible modifications and take action to address them.</p><section class="chapter"><h2 id="how-to-enable" data-toc="how-to-enable">How to enable</h2><p id="-uo0bgy_12">To enable binary compatibility validation, add the following to the <code class="code" id="-uo0bgy_15">kotlin{}</code> block in your <code class="code" id="-uo0bgy_16">build.gradle.kts</code> file:</p><div class="tabs" id="-uo0bgy_13" data-group="build-script" data-anchors="[-uo0bgy_17,-uo0bgy_18]"><div class="tabs__content" data-gtm="tab" id="-uo0bgy_17" data-sync-tabs="kotlin" data-title="Kotlin"><div class="code-block" data-lang="kotlin" data-title="Kotlin">
+kotlin {
+    @OptIn(org.jetbrains.kotlin.gradle.dsl.abi.ExperimentalAbiValidation::class)
+    abiValidation {
+        // Use the set() function to ensure compatibility with older Gradle versions
+        enabled.set(true)
+    }
+}
+</div></div><div class="tabs__content" data-gtm="tab" id="-uo0bgy_18" data-sync-tabs="groovy" data-title="Groovy"><div class="code-block" data-lang="kotlin" data-title="Kotlin">
+kotlin {
+    abiValidation {
+        enabled = true
+    }
+}
+</div></div></div><p id="-uo0bgy_14">If your project has multiple modules where you want to check for binary compatibility, configure each module separately.</p></section><section class="chapter"><h2 id="check-for-binary-compatibility-issues" data-toc="check-for-binary-compatibility-issues">Check for binary compatibility issues</h2><p id="-uo0bgy_21">To check for potentially binary incompatible issues after making changes to your code, run the <code class="code" id="-uo0bgy_24">checkLegacyAbi</code> Gradle task in IntelliJ IDEA or use the following command in your project directory:</p><div class="code-block" data-lang="kotlin">
+./gradlew checkLegacyAbi
+</div><p id="-uo0bgy_23">The task compares ABI dumps and prints any detected differences as errors. Check the output carefully to see if you need to make changes to your code to preserve binary compatibility.</p></section><section class="chapter"><h2 id="update-reference-abi-dump" data-toc="update-reference-abi-dump">Update reference ABI dump</h2><p id="-uo0bgy_25">To update the reference ABI dump that Gradle uses to check your latest changes, run the <code class="code" id="-uo0bgy_28">updateLegacyAbi</code> task in IntelliJ IDEA or use the following command in your project directory:</p><div class="code-block" data-lang="kotlin">
+./gradlew updateLegacyAbi
+</div><p id="-uo0bgy_27">Only update the reference dump when you're confident your changes maintain binary compatibility with the previous version.</p></section><section class="chapter"><h2 id="configure-filters" data-toc="configure-filters">Configure filters</h2><p id="-uo0bgy_29">You can define filters to control which classes, properties, and functions the ABI dump includes. Use the <code class="code" id="-uo0bgy_39">filters {}</code> block to add exclusion and inclusion rules with <code class="code" id="-uo0bgy_40">excluded {}</code> and <code class="code" id="-uo0bgy_41">included {}</code> blocks respectively.</p><p id="-uo0bgy_30">Gradle includes a declaration in the ABI dump only if it doesn't match any exclusion rule. When inclusion rules are defined, the declaration must either match one of them or have at least one member that does.</p><p id="-uo0bgy_31">A rule can be based on:</p><ul class="list _bullet" id="-uo0bgy_32"><li class="list__item" id="-uo0bgy_42"><p id="-uo0bgy_44">The fully qualified name of a class, property, or function (<code class="code" id="-uo0bgy_45">byNames</code>).</p></li><li class="list__item" id="-uo0bgy_43"><p id="-uo0bgy_46">The name of an annotation that has BINARY or RUNTIME <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.annotation/-retention/" id="-uo0bgy_47" data-external="true" rel="noopener noreferrer" target="_blank">retention</a> (<code class="code" id="-uo0bgy_48">annotatedWith</code>).</p></li></ul><aside class="prompt" data-type="tip" data-title="" id="-uo0bgy_33"><p id="-uo0bgy_49">You can use wildcards <code class="code" id="-uo0bgy_51">**</code>, <code class="code" id="-uo0bgy_52">*</code>, and <code class="code" id="-uo0bgy_53">?</code> in your rules for names:</p><ul class="list _bullet" id="-uo0bgy_50"><li class="list__item" id="-uo0bgy_54"><p id="-uo0bgy_57"><code class="code" id="-uo0bgy_58">**</code> matches zero or more characters, including periods.</p></li><li class="list__item" id="-uo0bgy_55"><p id="-uo0bgy_59"><code class="code" id="-uo0bgy_60">*</code> matches zero or more characters excluding periods. Use this to specify a single class name.</p></li><li class="list__item" id="-uo0bgy_56"><p id="-uo0bgy_61"><code class="code" id="-uo0bgy_62">?</code> matches exactly one character.</p></li></ul></aside><p id="-uo0bgy_34">For example:</p><div class="tabs" id="-uo0bgy_35" data-group="build-script" data-anchors="[-uo0bgy_63,-uo0bgy_64]"><div class="tabs__content" data-gtm="tab" id="-uo0bgy_63" data-sync-tabs="kotlin" data-title="Kotlin"><div class="code-block" data-lang="kotlin" data-title="Kotlin">
+kotlin {
+    @OptIn(org.jetbrains.kotlin.gradle.dsl.abi.ExperimentalAbiValidation::class)
+    abiValidation {
+        filters {
+            excluded {
+                byNames.add(&quot;**.InternalUtils&quot;)
+                annotatedWith.add(&quot;com.example.annotations.InternalApi&quot;)
+            }
+
+            included {
+                byNames.add(&quot;com.example.api.**&quot;)
+                annotatedWith.add(&quot;com.example.annotations.PublicApi&quot;)
+            }
+        }
+    }
+}
+</div></div><div class="tabs__content" data-gtm="tab" id="-uo0bgy_64" data-sync-tabs="groovy" data-title="Groovy"><div class="code-block" data-lang="kotlin" data-title="Kotlin">
+kotlin {
+    abiValidation {
+        filters {
+            excluded {
+                byNames.add(&quot;**.InternalUtils&quot;)
+                annotatedWith.add(&quot;com.example.annotations.InternalApi&quot;)
+            }
+
+            included {
+                byNames.add(&quot;com.example.api.**&quot;)
+                annotatedWith.add(&quot;com.example.annotations.PublicApi&quot;)
+            }
+        }
+    }
+}
+</div></div></div><p id="-uo0bgy_36">This example:</p><ul class="list _bullet" id="-uo0bgy_37"><li class="list__item" id="-uo0bgy_67"><p id="-uo0bgy_69">Excludes:</p><ul class="list _bullet" id="-uo0bgy_70"><li class="list__item" id="-uo0bgy_71"><p id="-uo0bgy_73">The <code class="code" id="-uo0bgy_74">InternalUtils</code> class.</p></li><li class="list__item" id="-uo0bgy_72"><p id="-uo0bgy_75">Declarations annotated with <code class="code" id="-uo0bgy_76">@InternalApi</code>.</p></li></ul></li><li class="list__item" id="-uo0bgy_68"><p id="-uo0bgy_77">Includes:</p><ul class="list _bullet" id="-uo0bgy_78"><li class="list__item" id="-uo0bgy_79"><p id="-uo0bgy_81">Everything in the <code class="code" id="-uo0bgy_82">com.example.api</code> package.</p></li><li class="list__item" id="-uo0bgy_80"><p id="-uo0bgy_83">Declarations annotated with <code class="code" id="-uo0bgy_84">@PublicApi</code>.</p></li></ul></li></ul><p id="-uo0bgy_38">To learn more about filtering, see the <a href="https://kotlinlang.org/api/kotlin-gradle-plugin/kotlin-gradle-plugin-api/org.jetbrains.kotlin.gradle.dsl.abi/-abi-filters-spec/" id="-uo0bgy_85" data-external="true" rel="noopener noreferrer" target="_blank">Kotlin Gradle plugin API reference</a>.</p></section><section class="chapter"><h2 id="prevent-inferred-changes-for-unsupported-targets" data-toc="prevent-inferred-changes-for-unsupported-targets">Prevent inferred changes for unsupported targets</h2><p id="-uo0bgy_86">In multiplatform projects, if your host system can't compile all targets, the Kotlin Gradle plugin tries to infer ABI changes from the available targets. This helps avoid false failures when you later switch to a host that supports more targets.</p><p id="-uo0bgy_87">To disable this behavior, add the following to your <code class="code" id="-uo0bgy_90">build.gradle.kts</code> file:</p><div class="tabs" id="-uo0bgy_88" data-group="build-script" data-anchors="[-uo0bgy_91,-uo0bgy_92]"><div class="tabs__content" data-gtm="tab" id="-uo0bgy_91" data-sync-tabs="kotlin" data-title="Kotlin"><div class="code-block" data-lang="kotlin" data-title="Kotlin">
+kotlin {
+    @OptIn(org.jetbrains.kotlin.gradle.dsl.abi.ExperimentalAbiValidation::class)
+    abiValidation {
+        klib {
+            keepUnsupportedTargets.set(false)
+        }
+    }
+}
+</div></div><div class="tabs__content" data-gtm="tab" id="-uo0bgy_92" data-sync-tabs="groovy" data-title="Groovy"><div class="code-block" data-lang="kotlin" data-title="Kotlin">
+kotlin {
+    abiValidation {
+        klib {
+            keepUnsupportedTargets = false
+        }
+    }
+}
+</div></div></div><p id="-uo0bgy_89">If a target is unsupported and inference is disabled, the <code class="code" id="-uo0bgy_95">checkLegacyAbi</code> task fails because it can't generate a complete ABI dump. This behavior may be useful if you'd prefer the task to fail rather than risk missing a binary-incompatible change.</p></section><div class="last-modified">24 June 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="gradle-compilation-and-caches.html" class="navigation-links__prev">Compilation and caches in the Kotlin Gradle plugin</a><a href="gradle-plugin-variants.html" class="navigation-links__next">Support for Gradle plugin variants</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>

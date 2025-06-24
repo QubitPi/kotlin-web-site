@@ -1,0 +1,91 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-06-24T01:09:09.118560632"><link rel="canonical" href="https://kotlinlang.org/docs/context-parameters.html" data-react-helmet="true"><script>
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+        var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&amp;l=' + l : '';
+        j.async = true;
+        j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5P98');
+</script>
+<script src="https://resources.jetbrains.com/storage/help-app/v6/analytics.js"></script>
+<title>Context parameters | Kotlin Documentation</title><script type="application/json" id="virtual-toc-data">[{"id":"context-parameters-resolution","level":0,"title":"Context parameters resolution","anchor":"#context-parameters-resolution"},{"id":"restrictions","level":0,"title":"Restrictions","anchor":"#restrictions"},{"id":"how-to-enable-context-parameters","level":0,"title":"How to enable context parameters","anchor":"#how-to-enable-context-parameters"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.css" rel="stylesheet"><link rel="icon" type="image/svg" sizes="16x16" href="https://kotlinlang.org/assets/images/favicon.svg?v2"><link rel="icon" type="image/x-icon" sizes="32x32" href="https://kotlinlang.org/assets/images/favicon.ico?v2"><link rel="icon" type="image/png" sizes="96x96" href="https://kotlinlang.org/assets/images/apple-touch-icon.png?v2"><link rel="icon" type="image/png" sizes="300x300" href="https://kotlinlang.org/assets/images/apple-touch-icon-72x72.png?v2"><link rel="icon" type="image/png" sizes="500x500" href="https://kotlinlang.org/assets/images/apple-touch-icon-114x114.png?v2"><meta name="image" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><!-- Open Graph --><meta property="og:title" content="Context parameters | Kotlin"><meta property="og:description" content=""><meta property="og:image" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><meta property="og:site_name" content="Kotlin Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="https://kotlinlang.org/docs/context-parameters.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@kotlin"><meta name="twitter:title" content="Context parameters | Kotlin"><meta name="twitter:description" content=""><meta name="twitter:creator" content="@kotlin"><meta name="twitter:image:src" content="https://kotlinlang.org/assets/images/open-graph/docs.png"><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "https://kotlinlang.org/docs/context-parameters.html#webpage",
+    "url": "https://kotlinlang.org/docs/context-parameters.html",
+    "name": "Context parameters | Kotlin",
+    "description": "",
+    "image": "https://kotlinlang.org/assets/images/open-graph/docs.png",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "https://kotlinlang.org/docs/#website",
+    "url": "https://kotlinlang.org/docs/",
+    "name": "Kotlin Help"
+}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="context-parameters" data-main-title="Context parameters" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Concepts///Functions" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/context-parameters.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="context-parameters" data-label-id="experimental-general" id="context-parameters.md">Context parameters</h1><aside class="prompt" data-type="tip" data-title="" id="tsgr8i_3"><p id="tsgr8i_13">Context parameters replace an older experimental feature called <a href="whatsnew1620.html#prototype-of-context-receivers-for-kotlin-jvm" id="tsgr8i_14">context receivers</a>. You can find their main differences in the <a href="https://github.com/Kotlin/KEEP/blob/master/proposals/context-parameters.md#summary-of-changes-from-the-previous-proposal" id="tsgr8i_15" data-external="true" rel="noopener noreferrer" target="_blank">design document for context parameters</a>. To migrate from context receivers to context parameters, you can use assisted support in IntelliJ IDEA, as described in the related <a href="https://blog.jetbrains.com/kotlin/2025/04/update-on-context-parameters/" id="tsgr8i_16" data-external="true" rel="noopener noreferrer" target="_blank">blog post</a>.</p></aside><p id="tsgr8i_4">Context parameters allow functions and properties to declare dependencies that are implicitly available in the surrounding context.</p><p id="tsgr8i_5">With context parameters, you don't need to manually pass around values, such as services or dependencies, that are shared and rarely change across sets of function calls.</p><p id="tsgr8i_6">To declare context parameters for properties and functions, use the <code class="code" id="tsgr8i_17">context</code> keyword followed by a list of parameters, with each parameter declared as <code class="code" id="tsgr8i_18">name: Type</code>. Here is an example with a dependency on the <code class="code" id="tsgr8i_19">UserService</code> interface:</p><div class="code-block" data-lang="kotlin">
+// UserService defines the dependency required in context 
+interface UserService {
+    fun log(message: String)
+    fun findUserById(id: Int): String
+}
+
+// Declares a function with a context parameter
+context(users: UserService)
+fun outputMessage(message: String) {
+    // Uses log from the context
+    users.log(&quot;Log: $message&quot;)
+}
+
+// Declares a property with a context parameter
+context(users: UserService)
+val firstUser: String
+    // Uses findUserById from the context    
+    get() = users.findUserById(1)
+</div><p id="tsgr8i_8">You can use <code class="code" id="tsgr8i_20">_</code> as a context parameter name. In this case, the parameter's value is available for resolution but is not accessible by name inside the block:</p><div class="code-block" data-lang="kotlin">
+// Uses &quot;_&quot; as context parameter name
+context(_: UserService)
+fun logWelcome() {
+    // Resolution still finds the appropriate log function from UserService
+    outputMessage(&quot;Welcome!&quot;)
+}
+</div><section class="chapter"><h2 id="context-parameters-resolution" data-toc="context-parameters-resolution">Context parameters resolution</h2><p id="tsgr8i_21">Kotlin resolves context parameters at the call site by searching for matching context values in the current scope. Kotlin matches them by their type. If multiple compatible values exist at the same scope level, the compiler reports an ambiguity:</p><div class="code-block" data-lang="kotlin">
+// UserService defines the dependency required in context
+interface UserService {
+    fun log(message: String)
+}
+
+// Declares a function with a context parameter
+context(users: UserService)
+fun outputMessage(message: String) {
+    users.log(&quot;Log: $message&quot;)
+}
+
+fun main() {
+    // Implements UserService 
+    val serviceA = object : UserService {
+        override fun log(message: String) = println(&quot;A: $message&quot;)
+    }
+
+    // Implements UserService
+    val serviceB = object : UserService {
+        override fun log(message: String) = println(&quot;B: $message&quot;)
+    }
+
+    // Both serviceA and serviceB match the expected UserService type at the call site
+    context(serviceA, serviceB) {
+        // This results in an ambiguity error
+        outputMessage(&quot;This will not compile&quot;)
+    }
+}
+</div></section><section class="chapter"><h2 id="restrictions" data-toc="restrictions">Restrictions</h2><p id="tsgr8i_23">Context parameters are in continuous improvement, and some of the current restrictions include:</p><ul class="list _bullet" id="tsgr8i_24"><li class="list__item" id="tsgr8i_26"><p id="tsgr8i_29">Constructors can't declare context parameters.</p></li><li class="list__item" id="tsgr8i_27"><p id="tsgr8i_30">Properties with context parameters can't have backing fields or initializers.</p></li><li class="list__item" id="tsgr8i_28"><p id="tsgr8i_31">Properties with context parameters can't use delegation.</p></li></ul><p id="tsgr8i_25">Despite these restrictions, context parameters simplify managing dependencies through simplified dependency injection, improved DSL design, and scoped operations.</p></section><section class="chapter"><h2 id="how-to-enable-context-parameters" data-toc="how-to-enable-context-parameters">How to enable context parameters</h2><p id="tsgr8i_32">To enable context parameters in your project, use the following compiler option in the command line:</p><div class="code-block" data-lang="bash">
+-Xcontext-parameters
+</div><p id="tsgr8i_34">Or add it to the <code class="code" id="tsgr8i_38">compilerOptions {}</code> block of your Gradle build file:</p><div class="code-block" data-lang="kotlin">
+// build.gradle.kts
+kotlin {
+    compilerOptions {
+        freeCompilerArgs.add(&quot;-Xcontext-parameters&quot;)
+    }
+}
+</div><aside class="prompt" data-type="warning" data-title="" id="tsgr8i_36"><p id="tsgr8i_39">Specifying both <code class="code" id="tsgr8i_40">-Xcontext-receivers</code> and <code class="code" id="tsgr8i_41">-Xcontext-parameters</code> compiler options simultaneously leads to an error.</p></aside><p id="tsgr8i_37">This feature is planned to be <a href="components-stability.html#stability-levels-explained" id="tsgr8i_42">stabilized</a> and improved in future Kotlin releases. We would appreciate your feedback in our issue tracker <a href="https://youtrack.jetbrains.com/issue/KT-10468/Context-Parameters-expanding-extension-receivers-to-work-with-scopes" id="tsgr8i_43" data-external="true" rel="noopener noreferrer" target="_blank">YouTrack</a>.</p></section><div class="last-modified">24 June 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="using-builders-with-builder-inference.html" class="navigation-links__prev">Using builders with builder type inference</a><a href="null-safety.html" class="navigation-links__next">Null safety</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>

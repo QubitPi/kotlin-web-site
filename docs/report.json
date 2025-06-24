@@ -5,35 +5,35 @@
   "testsPassedCount" : 170,
   "testsWarnings" : {
     "INT002" : [ {
-      "id" : "INT002---Basic-types---in-kr-tree-78-5--kr-tree-8-3",
+      "id" : "INT002---Basic-types---in-kr-tree-79-5--kr-tree-8-3",
       "problemId" : "INT002",
       "name" : "Map ID is not unique",
-      "description" : "\"\"Basic types\"\" in kr.tree:78:5; kr.tree:8:3"
+      "description" : "\"\"Basic types\"\" in kr.tree:79:5; kr.tree:8:3"
     }, {
-      "id" : "INT002---Basic-types---in-kr-tree-78-5--kr-tree-8-3",
+      "id" : "INT002---Basic-types---in-kr-tree-79-5--kr-tree-8-3",
       "problemId" : "INT002",
       "name" : "Map ID is not unique",
-      "description" : "\"\"Basic+types\"\" in kr.tree:78:5; kr.tree:8:3"
+      "description" : "\"\"Basic+types\"\" in kr.tree:79:5; kr.tree:8:3"
     }, {
-      "id" : "INT002---Classes---in-kr-tree-12-3--kr-tree-95-4",
+      "id" : "INT002---Classes---in-kr-tree-12-3--kr-tree-96-4",
       "problemId" : "INT002",
       "name" : "Map ID is not unique",
-      "description" : "\"\"Classes\"\" in kr.tree:12:3; kr.tree:95:4"
+      "description" : "\"\"Classes\"\" in kr.tree:12:3; kr.tree:96:4"
     }, {
-      "id" : "INT002---Functions---in-kr-tree-114-4--kr-tree-11-3",
+      "id" : "INT002---Functions---in-kr-tree-115-4--kr-tree-11-3",
       "problemId" : "INT002",
       "name" : "Map ID is not unique",
-      "description" : "\"\"Functions\"\" in kr.tree:114:4; kr.tree:11:3"
+      "description" : "\"\"Functions\"\" in kr.tree:115:4; kr.tree:11:3"
     }, {
-      "id" : "INT002---Null-safety---in-kr-tree-123-3--kr-tree-13-3",
+      "id" : "INT002---Null-safety---in-kr-tree-125-3--kr-tree-13-3",
       "problemId" : "INT002",
       "name" : "Map ID is not unique",
-      "description" : "\"\"Null safety\"\" in kr.tree:123:3; kr.tree:13:3"
+      "description" : "\"\"Null safety\"\" in kr.tree:125:3; kr.tree:13:3"
     }, {
-      "id" : "INT002---Null-safety---in-kr-tree-123-3--kr-tree-13-3",
+      "id" : "INT002---Null-safety---in-kr-tree-125-3--kr-tree-13-3",
       "problemId" : "INT002",
       "name" : "Map ID is not unique",
-      "description" : "\"\"Null+safety\"\" in kr.tree:123:3; kr.tree:13:3"
+      "description" : "\"\"Null+safety\"\" in kr.tree:125:3; kr.tree:13:3"
     } ],
     "MRK058" : [ {
       "id" : "MRK058-In-kotlin-notebook-share-md-11-3",
@@ -93,10 +93,10 @@
       "description" : "\"\"Shift + F10\"\" in native-app-with-c-and-libcurl.md:205:1"
     } ],
     "TOC007" : [ {
-      "id" : "TOC007-In-kr-tree-139-3",
+      "id" : "TOC007-In-kr-tree-141-3",
       "problemId" : "TOC007",
       "name" : "The 'toc-title' attribute is redundant as it matches the topic title",
-      "description" : "In kr.tree:139:3"
+      "description" : "In kr.tree:141:3"
     } ],
     "VIS011" : [ {
       "id" : "VIS011---2d-density-plot_dark-svg---in-lets-plot-md-193-1",
@@ -399,10 +399,10 @@
       "name" : "Dark version of image or video file cannot be found",
       "description" : "\"\"gradle-build-scan-k2_dark.png\"\" in whatsnew19.md:87:1"
     }, {
-      "id" : "VIS011---gradle-console-rich-output_dark-png---in-whatsnew-eap-md-442-1",
+      "id" : "VIS011---gradle-console-rich-output_dark-png---in-whatsnew-eap-md-442-1--whatsnew22-md-1028-1",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"gradle-console-rich-output_dark.png\"\" in whatsnew-eap.md:442:1"
+      "description" : "\"\"gradle-console-rich-output_dark.png\"\" in whatsnew-eap.md:442:1; whatsnew22.md:1028:1"
     }, {
       "id" : "VIS011---gradle-kts-load-config_dark-png---in-whatsnew14-md-1010-3",
       "problemId" : "VIS011",
@@ -783,11 +783,6 @@
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
       "description" : "\"\"kotlin-notebooks-button_dark.svg\"\" in data-analysis-overview.md:24:1"
-    }, {
-      "id" : "VIS011---kotlin-shell_dark-png---in-command-line-md-109-1",
-      "problemId" : "VIS011",
-      "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"kotlin-shell_dark.png\"\" in command-line.md:109:1"
     }, {
       "id" : "VIS011---kotlin-user-group-avatar_dark-png---in-kotlin-brand-assets-md-77-1",
       "problemId" : "VIS011",
@@ -1543,25 +1538,25 @@
       "description" : "\"\"shared-mutable-state-and-concurrency.md\"\" in native-faq.md:127:68"
     } ],
     "REF009" : [ {
-      "id" : "REF009---api-guidelines-tree---in-kr-tree-370-4",
+      "id" : "REF009---api-guidelines-tree---in-kr-tree-373-4",
       "problemId" : "REF009",
       "name" : "Cannot include from topic that does not exist",
-      "description" : "\"\"api-guidelines.tree\"\" in kr.tree:370:4"
+      "description" : "\"\"api-guidelines.tree\"\" in kr.tree:373:4"
     }, {
-      "id" : "REF009---dokka-tree---in-kr-tree-313-4",
+      "id" : "REF009---dokka-tree---in-kr-tree-316-4",
       "problemId" : "REF009",
       "name" : "Cannot include from topic that does not exist",
-      "description" : "\"\"dokka.tree\"\" in kr.tree:313:4"
+      "description" : "\"\"dokka.tree\"\" in kr.tree:316:4"
     }, {
-      "id" : "REF009---kc-tree---in-kr-tree-273-4",
+      "id" : "REF009---kc-tree---in-kr-tree-274-4",
       "problemId" : "REF009",
       "name" : "Cannot include from topic that does not exist",
-      "description" : "\"\"kc.tree\"\" in kr.tree:273:4"
+      "description" : "\"\"kc.tree\"\" in kr.tree:274:4"
     }, {
-      "id" : "REF009---kl-tree---in-kr-tree-278-4",
+      "id" : "REF009---kl-tree---in-kr-tree-279-4",
       "problemId" : "REF009",
       "name" : "Cannot include from topic that does not exist",
-      "description" : "\"\"kl.tree\"\" in kr.tree:278:4"
+      "description" : "\"\"kl.tree\"\" in kr.tree:279:4"
     } ]
   },
   "idsAndTitles" : {
