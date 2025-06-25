@@ -234,15 +234,15 @@
       "name" : "Dark version of image or video file cannot be found",
       "description" : "\"\"create-database-schema_dark.png\"\" in jvm-spring-boot-add-db-support.md:173:4"
     }, {
-      "id" : "VIS011---create-spring-ai-project_dark-png---in-spring-ai-guide-md-62-4",
+      "id" : "VIS011---create-spring-ai-project_dark-png---in-spring-ai-guide-md-66-4",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"create-spring-ai-project_dark.png\"\" in spring-ai-guide.md:62:4"
+      "description" : "\"\"create-spring-ai-project_dark.png\"\" in spring-ai-guide.md:66:4"
     }, {
-      "id" : "VIS011---create-spring-boot-project_dark-png---in-jvm-create-project-with-spring-boot-md-50-4",
+      "id" : "VIS011---create-spring-boot-project_dark-png---in-jvm-create-project-with-spring-boot-md-54-4",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"create-spring-boot-project_dark.png\"\" in jvm-create-project-with-spring-boot.md:50:4"
+      "description" : "\"\"create-spring-boot-project_dark.png\"\" in jvm-create-project-with-spring-boot.md:54:4"
     }, {
       "id" : "VIS011---create-test_dark-png---in-jvm-test-using-junit-md-120-4--test-page-md-357-1",
       "problemId" : "VIS011",
@@ -594,10 +594,10 @@
       "name" : "Dark version of image or video file cannot be found",
       "description" : "\"\"jvm-gradle-view-build_dark.png\"\" in get-started-with-jvm-gradle-project.md:97:4"
     }, {
-      "id" : "VIS011---jvm-main-kt-initial_dark-png---in-jvm-get-started-md-58-4",
+      "id" : "VIS011---jvm-main-kt-initial_dark-png---in-jvm-get-started-md-74-4",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"jvm-main-kt-initial_dark.png\"\" in jvm-get-started.md:58:4"
+      "description" : "\"\"jvm-main-kt-initial_dark.png\"\" in jvm-get-started.md:74:4"
     }, {
       "id" : "VIS011---jvm-new-gradle-project-advanced_dark-png---in-get-started-with-jvm-gradle-project-md-52-4",
       "problemId" : "VIS011",
@@ -614,15 +614,15 @@
       "name" : "Dark version of image or video file cannot be found",
       "description" : "\"\"jvm-new-project_dark.png\"\" in jvm-get-started.md:18:4"
     }, {
-      "id" : "VIS011---jvm-output-1_dark-png---in-jvm-get-started-md-83-1",
+      "id" : "VIS011---jvm-output-1_dark-png---in-jvm-get-started-md-99-1",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"jvm-output-1_dark.png\"\" in jvm-get-started.md:83:1"
+      "description" : "\"\"jvm-output-1_dark.png\"\" in jvm-get-started.md:99:1"
     }, {
-      "id" : "VIS011---jvm-output-2_dark-png---in-jvm-get-started-md-87-1",
+      "id" : "VIS011---jvm-output-2_dark-png---in-jvm-get-started-md-103-1",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"jvm-output-2_dark.png\"\" in jvm-get-started.md:87:1"
+      "description" : "\"\"jvm-output-2_dark.png\"\" in jvm-get-started.md:103:1"
     }, {
       "id" : "VIS011---jvm-output-gradle_dark-png---in-get-started-with-jvm-gradle-project-md-112-1",
       "problemId" : "VIS011",
@@ -634,10 +634,10 @@
       "name" : "Dark version of image or video file cannot be found",
       "description" : "\"\"jvm-run-app-gradle_dark.png\"\" in get-started-with-jvm-gradle-project.md:108:4"
     }, {
-      "id" : "VIS011---jvm-run-app_dark-png---in-jvm-get-started-md-79-1",
+      "id" : "VIS011---jvm-run-app_dark-png---in-jvm-get-started-md-95-1",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"jvm-run-app_dark.png\"\" in jvm-get-started.md:79:1"
+      "description" : "\"\"jvm-run-app_dark.png\"\" in jvm-get-started.md:95:1"
     }, {
       "id" : "VIS011---k2-compiler-architecture_dark-svg---in-k2-compiler-migration-guide-md-7-1",
       "problemId" : "VIS011",
@@ -954,10 +954,10 @@
       "name" : "Dark version of image or video file cannot be found",
       "description" : "\"\"new-notebook_dark.png\"\" in kotlin-notebook-create.md:42:4"
     }, {
-      "id" : "VIS011---open-ai-chat-endpoint_dark-png---in-spring-ai-guide-md-339-4",
+      "id" : "VIS011---open-ai-chat-endpoint_dark-png---in-spring-ai-guide-md-342-4",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"open-ai-chat-endpoint_dark.png\"\" in spring-ai-guide.md:339:4"
+      "description" : "\"\"open-ai-chat-endpoint_dark.png\"\" in spring-ai-guide.md:342:4"
     }, {
       "id" : "VIS011---original-dataset_dark-png---in-data-analysis-work-with-data-sources-md-128-1",
       "problemId" : "VIS011",
@@ -999,10 +999,10 @@
       "name" : "Dark version of image or video file cannot be found",
       "description" : "\"\"programming-kotlin_dark.png\"\" in books.md:81:1"
     }, {
-      "id" : "VIS011---qdrant-collections_dark-png---in-spring-ai-guide-md-131-4",
+      "id" : "VIS011---qdrant-collections_dark-png---in-spring-ai-guide-md-135-4",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"qdrant-collections_dark.png\"\" in spring-ai-guide.md:131:4"
+      "description" : "\"\"qdrant-collections_dark.png\"\" in spring-ai-guide.md:135:4"
     }, {
       "id" : "VIS011---receiver-highlight_dark-png---in-kotlin-tour-intermediate-extension-functions-md-33-1",
       "problemId" : "VIS011",
@@ -1074,10 +1074,10 @@
       "name" : "Dark version of image or video file cannot be found",
       "description" : "\"\"run-migration-wn_dark.png\"\" in whatsnew14.md:1513:1"
     }, {
-      "id" : "VIS011---run-spring-boot-application_dark-png---in-jvm-create-project-with-spring-boot-md-251-5",
+      "id" : "VIS011---run-spring-boot-application_dark-png---in-jvm-create-project-with-spring-boot-md-255-5",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"run-spring-boot-application_dark.png\"\" in jvm-create-project-with-spring-boot.md:251:5"
+      "description" : "\"\"run-spring-boot-application_dark.png\"\" in jvm-create-project-with-spring-boot.md:255:5"
     }, {
       "id" : "VIS011---run-test_dark-png---in-jvm-test-using-junit-md-154-4",
       "problemId" : "VIS011",
@@ -1144,10 +1144,10 @@
       "name" : "Dark version of image or video file cannot be found",
       "description" : "\"\"sequence-processing_dark.svg\"\" in sequences.md:180:1"
     }, {
-      "id" : "VIS011---set-up-spring-boot-project_dark-png---in-jvm-create-project-with-spring-boot-md-60-4",
+      "id" : "VIS011---set-up-spring-boot-project_dark-png---in-jvm-create-project-with-spring-boot-md-64-4",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"set-up-spring-boot-project_dark.png\"\" in jvm-create-project-with-spring-boot.md:60:4"
+      "description" : "\"\"set-up-spring-boot-project_dark.png\"\" in jvm-create-project-with-spring-boot.md:64:4"
     }, {
       "id" : "VIS011---slack_dark-svg---in-getting-started-md-95-5--jvm-get-started-spring-boot-md-31-3--wasm-debugging-md-213-3--wasm-overview-md-94-3--wasm-overview-md-99-3",
       "problemId" : "VIS011",
@@ -1159,30 +1159,30 @@
       "name" : "Dark version of image or video file cannot be found",
       "description" : "\"\"social-buttons_dark.png\"\" in js-react.md:1024:1"
     }, {
-      "id" : "VIS011---spring-ai-dependencies_dark-png---in-spring-ai-guide-md-73-4",
+      "id" : "VIS011---spring-ai-dependencies_dark-png---in-spring-ai-guide-md-77-4",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"spring-ai-dependencies_dark.png\"\" in spring-ai-guide.md:73:4"
+      "description" : "\"\"spring-ai-dependencies_dark.png\"\" in spring-ai-guide.md:77:4"
     }, {
-      "id" : "VIS011---spring-ai-get-results_dark-png---in-spring-ai-guide-md-249-4",
+      "id" : "VIS011---spring-ai-get-results_dark-png---in-spring-ai-guide-md-250-4",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"spring-ai-get-results_dark.png\"\" in spring-ai-guide.md:249:4"
+      "description" : "\"\"spring-ai-get-results_dark.png\"\" in spring-ai-guide.md:250:4"
     }, {
-      "id" : "VIS011---spring-ai-project-view_dark-png---in-spring-ai-guide-md-83-1",
+      "id" : "VIS011---spring-ai-project-view_dark-png---in-spring-ai-guide-md-87-1",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"spring-ai-project-view_dark.png\"\" in spring-ai-guide.md:83:1"
+      "description" : "\"\"spring-ai-project-view_dark.png\"\" in spring-ai-guide.md:87:1"
     }, {
-      "id" : "VIS011---spring-application-response_dark-png---in-jvm-create-project-with-spring-boot-md-267-5",
+      "id" : "VIS011---spring-application-response_dark-png---in-jvm-create-project-with-spring-boot-md-271-5",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"spring-application-response_dark.png\"\" in jvm-create-project-with-spring-boot.md:267:5"
+      "description" : "\"\"spring-application-response_dark.png\"\" in jvm-create-project-with-spring-boot.md:271:5"
     }, {
-      "id" : "VIS011---spring-boot-project-view_dark-png---in-jvm-create-project-with-spring-boot-md-70-4",
+      "id" : "VIS011---spring-boot-project-view_dark-png---in-jvm-create-project-with-spring-boot-md-74-4",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"spring-boot-project-view_dark.png\"\" in jvm-create-project-with-spring-boot.md:70:4"
+      "description" : "\"\"spring-boot-project-view_dark.png\"\" in jvm-create-project-with-spring-boot.md:74:4"
     }, {
       "id" : "VIS011---stackoverflow_dark-svg---in-getting-started-md-96-5--jvm-get-started-spring-boot-md-32-3",
       "problemId" : "VIS011",
