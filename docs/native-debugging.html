@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-07-02T16:39:29.866641181"><link rel="canonical" href="https://kotlinlang.org/docs/native-debugging.html" data-react-helmet="true"><script>
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-07-04T03:15:53.846375321"><link rel="canonical" href="https://kotlinlang.org/docs/native-debugging.html" data-react-helmet="true"><script>
     (function (w, d, s, l, i) {
         w[l] = w[l] || [];
         w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
@@ -24,7 +24,7 @@
     "@id": "https://kotlinlang.org/docs/#website",
     "url": "https://kotlinlang.org/docs/",
     "name": "Kotlin Help"
-}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="native-debugging" data-main-title="Debugging Kotlin/Native" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Platforms///Native" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/native/native-debugging.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="native-debugging" id="native-debugging.md">Debugging Kotlin/Native</h1><p id="z593ind_2">Currently, the Kotlin/Native compiler produces debug info compatible with the DWARF 2 specification, so modern debugger tools can perform the following operations:</p><ul class="list _bullet" id="z593ind_3"><li class="list__item" id="z593ind_10"><p id="z593ind_14">breakpoints</p></li><li class="list__item" id="z593ind_11"><p id="z593ind_15">stepping</p></li><li class="list__item" id="z593ind_12"><p id="z593ind_16">inspection of type information</p></li><li class="list__item" id="z593ind_13"><p id="z593ind_17">variable inspection</p></li></ul><aside class="prompt" data-type="note" data-title="" id="z593ind_4"><p id="z593ind_18">Supporting the DWARF 2 specification means that the debugger tool recognizes Kotlin as C89, because before the DWARF 5 specification, there is no identifier for the Kotlin language type in specification.</p></aside><section class="chapter"><h2 id="produce-binaries-with-debug-info-with-kotlin-native-compiler" data-toc="produce-binaries-with-debug-info-with-kotlin-native-compiler">Produce binaries with debug info with Kotlin/Native compiler</h2><p id="z593ind_19">To produce binaries with the Kotlin/Native compiler, use the <code class="code" id="z593ind_21">-g</code> option on the command line.</p><div class="code-block" data-lang="bash">
+}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="native-debugging" data-main-title="Debugging Kotlin/Native" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Platforms///Native" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/native/native-debugging.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="native-debugging" id="native-debugging.md">Debugging Kotlin/Native</h1><p id="gweutm_2">Currently, the Kotlin/Native compiler produces debug info compatible with the DWARF 2 specification, so modern debugger tools can perform the following operations:</p><ul class="list _bullet" id="gweutm_3"><li class="list__item" id="gweutm_10"><p id="gweutm_14">breakpoints</p></li><li class="list__item" id="gweutm_11"><p id="gweutm_15">stepping</p></li><li class="list__item" id="gweutm_12"><p id="gweutm_16">inspection of type information</p></li><li class="list__item" id="gweutm_13"><p id="gweutm_17">variable inspection</p></li></ul><aside class="prompt" data-type="note" data-title="" id="gweutm_4"><p id="gweutm_18">Supporting the DWARF 2 specification means that the debugger tool recognizes Kotlin as C89, because before the DWARF 5 specification, there is no identifier for the Kotlin language type in specification.</p></aside><section class="chapter"><h2 id="produce-binaries-with-debug-info-with-kotlin-native-compiler" data-toc="produce-binaries-with-debug-info-with-kotlin-native-compiler">Produce binaries with debug info with Kotlin/Native compiler</h2><p id="gweutm_19">To produce binaries with the Kotlin/Native compiler, use the <code class="code" id="gweutm_21">-g</code> option on the command line.</p><div class="code-block" data-lang="bash">
 0:b-debugger-fixes:minamoto@unit-703(0)# cat - &gt; hello.kt
 fun main(args: Array&lt;String&gt;) {
   println(&quot;Hello world&quot;)
@@ -56,35 +56,35 @@ Process 28473 stopped
 -&gt; 3      println(&quot;I need your clothes, your boots and your motocycle&quot;)
    4    }
 (lldb)
-</div></section><section class="chapter"><h2 id="breakpoints" data-toc="breakpoints">Breakpoints</h2><p id="z593ind_22">Modern debuggers provide several ways to set a breakpoint, see below for a tool-by-tool breakdown:</p><section class="chapter"><h3 id="lldb" data-toc="lldb">lldb</h3><ul class="list _bullet" id="z593ind_25"><li class="list__item" id="z593ind_28"><p id="z593ind_29">by name</p><div class="code-block" data-lang="bash">
+</div></section><section class="chapter"><h2 id="breakpoints" data-toc="breakpoints">Breakpoints</h2><p id="gweutm_22">Modern debuggers provide several ways to set a breakpoint, see below for a tool-by-tool breakdown:</p><section class="chapter"><h3 id="lldb" data-toc="lldb">lldb</h3><ul class="list _bullet" id="gweutm_25"><li class="list__item" id="gweutm_28"><p id="gweutm_29">by name</p><div class="code-block" data-lang="bash">
 (lldb) b -n kfun:main(kotlin.Array&lt;kotlin.String&gt;)
 Breakpoint 4: where = terminator.kexe`kfun:main(kotlin.Array&lt;kotlin.String&gt;) + 4 at hello.kt:2, address = 0x00000001000012e4
-</div></li></ul><p id="z593ind_26"><span class="emphasis" id="z593ind_31"><code class="code" id="z593ind_32">-n</code> is optional, this flag is applied by default</span></p><ul class="list _bullet" id="z593ind_27"><li class="list__item" id="z593ind_33"><p id="z593ind_36">by location (filename, line number)</p><div class="code-block" data-lang="bash">
+</div></li></ul><p id="gweutm_26"><span class="emphasis" id="gweutm_31"><code class="code" id="gweutm_32">-n</code> is optional, this flag is applied by default</span></p><ul class="list _bullet" id="gweutm_27"><li class="list__item" id="gweutm_33"><p id="gweutm_36">by location (filename, line number)</p><div class="code-block" data-lang="bash">
 (lldb) b -f hello.kt -l 1
 Breakpoint 1: where = terminator.kexe`kfun:main(kotlin.Array&lt;kotlin.String&gt;) + 4 at hello.kt:2, address = 0x00000001000012e4
-</div></li><li class="list__item" id="z593ind_34"><p id="z593ind_38">by address</p><div class="code-block" data-lang="bash">
+</div></li><li class="list__item" id="gweutm_34"><p id="gweutm_38">by address</p><div class="code-block" data-lang="bash">
 (lldb) b -a 0x00000001000012e4
 Breakpoint 2: address = 0x00000001000012e4
-</div></li><li class="list__item" id="z593ind_35"><p id="z593ind_40">by regex, you might find it useful for debugging generated artifacts, like lambda etc. (where used <code class="code" id="z593ind_42">#</code> symbol in name).</p><div class="code-block" data-lang="bash">
+</div></li><li class="list__item" id="gweutm_35"><p id="gweutm_40">by regex, you might find it useful for debugging generated artifacts, like lambda etc. (where used <code class="code" id="gweutm_42">#</code> symbol in name).</p><div class="code-block" data-lang="bash">
 3: regex = 'main\(', locations = 1
   3.1: where = terminator.kexe`kfun:main(kotlin.Array&lt;kotlin.String&gt;) + 4 at hello.kt:2, address = terminator.kexe[0x00000001000012e4], unresolved, hit count = 0
-</div></li></ul></section><section class="chapter"><h3 id="gdb" data-toc="gdb">gdb</h3><ul class="list _bullet" id="z593ind_43"><li class="list__item" id="z593ind_44"><p id="z593ind_48">by regex</p><div class="code-block" data-lang="bash">
+</div></li></ul></section><section class="chapter"><h3 id="gdb" data-toc="gdb">gdb</h3><ul class="list _bullet" id="gweutm_43"><li class="list__item" id="gweutm_44"><p id="gweutm_48">by regex</p><div class="code-block" data-lang="bash">
 (gdb) rbreak main(
 Breakpoint 1 at 0x1000109b4
 struct ktype:kotlin.Unit &amp;kfun:main(kotlin.Array&lt;kotlin.String&gt;);
-</div></li><li class="list__item" id="z593ind_45"><p id="z593ind_50">by name <span class="control" id="z593ind_52">unusable</span>, because <code class="code" id="z593ind_53">:</code> is a separator for the breakpoint by location</p><div class="code-block" data-lang="bash">
+</div></li><li class="list__item" id="gweutm_45"><p id="gweutm_50">by name <span class="control" id="gweutm_52">unusable</span>, because <code class="code" id="gweutm_53">:</code> is a separator for the breakpoint by location</p><div class="code-block" data-lang="bash">
 (gdb) b kfun:main(kotlin.Array&lt;kotlin.String&gt;)
 No source file named kfun.
 Make breakpoint pending on future shared library load? (y or [n]) y
 Breakpoint 1 (kfun:main(kotlin.Array&lt;kotlin.String&gt;)) pending
-</div></li><li class="list__item" id="z593ind_46"><p id="z593ind_54">by location</p><div class="code-block" data-lang="bash">
+</div></li><li class="list__item" id="gweutm_46"><p id="gweutm_54">by location</p><div class="code-block" data-lang="bash">
 (gdb) b hello.kt:1
 Breakpoint 2 at 0x100001704: file /Users/minamoto/ws/.git-trees/hello.kt, line 1.
-</div></li><li class="list__item" id="z593ind_47"><p id="z593ind_56">by address</p><div class="code-block" data-lang="bash">
+</div></li><li class="list__item" id="gweutm_47"><p id="gweutm_56">by address</p><div class="code-block" data-lang="bash">
 (gdb) b *0x100001704
 Note: breakpoint 2 also set at pc 0x100001704.
 Breakpoint 3 at 0x100001704: file /Users/minamoto/ws/.git-trees/hello.kt, line 2.
-</div></li></ul></section></section><section class="chapter"><h2 id="stepping" data-toc="stepping">Stepping</h2><p id="z593ind_58">Stepping functions works mostly the same way as for C/C++ programs.</p></section><section class="chapter"><h2 id="variable-inspection" data-toc="variable-inspection">Variable inspection</h2><p id="z593ind_59">Variable inspections for <code class="code" id="z593ind_63">var</code> variables works out of the box for primitive types. For non-primitive types there are custom pretty printers for lldb in <code class="code" id="z593ind_64">konan_lldb.py</code>:</p><div class="code-block" data-lang="bash">
+</div></li></ul></section></section><section class="chapter"><h2 id="stepping" data-toc="stepping">Stepping</h2><p id="gweutm_58">Stepping functions works mostly the same way as for C/C++ programs.</p></section><section class="chapter"><h2 id="variable-inspection" data-toc="variable-inspection">Variable inspection</h2><p id="gweutm_59">Variable inspections for <code class="code" id="gweutm_63">var</code> variables works out of the box for primitive types. For non-primitive types there are custom pretty printers for lldb in <code class="code" id="gweutm_64">konan_lldb.py</code>:</p><div class="code-block" data-lang="bash">
 λ cat main.kt | nl
      1  fun main(args: Array&lt;String&gt;) {
      2      var x = 1
@@ -127,7 +127,7 @@ Process 4985 launched: './program.kexe' (x86_64)
 (lldb) script lldb.frame.FindVariable(&quot;p&quot;).GetChildMemberWithName(&quot;x&quot;).Dereference().GetValue()
 '1'
 (lldb) 
-</div><p id="z593ind_61">Getting representation of the object variable (var) could also be done using the built-in runtime function <code class="code" id="z593ind_65">Konan_DebugPrint</code> (this approach also works for gdb, using a module of command syntax):</p><div class="code-block" data-lang="bash">
+</div><p id="gweutm_61">Getting representation of the object variable (var) could also be done using the built-in runtime function <code class="code" id="gweutm_65">Konan_DebugPrint</code> (this approach also works for gdb, using a module of command syntax):</p><div class="code-block" data-lang="bash">
 0:b-debugger-fixes:minamoto@unit-703(0)# cat ../debugger-plugin/1.kt | nl -p
      1  fun foo(a:String, b:Int) = a + b
      2  fun one() = 1
@@ -164,4 +164,4 @@ Process 80496 launched: './program.kexe' (x86_64)
 (a_variable) one is 1(int32_t) $0 = 0
 (lldb)
 
-</div></section><section class="chapter"><h2 id="known-issues" data-toc="known-issues">Known issues</h2><ul class="list _bullet" id="z593ind_66"><li class="list__item" id="z593ind_67"><p id="z593ind_68">performance of Python bindings.</p></li></ul></section><div class="last-modified">02 July 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="native-migration-guide.html" class="navigation-links__prev">Migrate to the new memory manager</a><a href="native-ios-symbolication.html" class="navigation-links__next">Symbolicating iOS crash reports</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>
+</div></section><section class="chapter"><h2 id="known-issues" data-toc="known-issues">Known issues</h2><ul class="list _bullet" id="gweutm_66"><li class="list__item" id="gweutm_67"><p id="gweutm_68">performance of Python bindings.</p></li></ul></section><div class="last-modified">04 July 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="native-migration-guide.html" class="navigation-links__prev">Migrate to the new memory manager</a><a href="native-ios-symbolication.html" class="navigation-links__next">Symbolicating iOS crash reports</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>
