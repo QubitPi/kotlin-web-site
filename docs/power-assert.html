@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-07-04T03:15:54.584790938"><link rel="canonical" href="https://kotlinlang.org/docs/power-assert.html" data-react-helmet="true"><script>
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-07-05T00:45:39.458721769"><link rel="canonical" href="https://kotlinlang.org/docs/power-assert.html" data-react-helmet="true"><script>
     (function (w, d, s, l, i) {
         w[l] = w[l] || [];
         w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
@@ -24,7 +24,7 @@
     "@id": "https://kotlinlang.org/docs/#website",
     "url": "https://kotlinlang.org/docs/",
     "name": "Kotlin Help"
-}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="power-assert" data-main-title="Power-assert compiler plugin" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Compiler and plugins///Kotlin compiler plugins" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/power-assert.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="power-assert" id="power-assert.md">Power-assert compiler plugin</h1><aside class="prompt" data-type="warning" data-title="" id="o3pfjo_2"><p id="o3pfjo_12">The Power-assert compiler plugin is <a href="components-stability.html" id="o3pfjo_13">Experimental</a>. It may be changed at any time. Use it only for evaluation purposes. We would appreciate your feedback in <a href="https://kotl.in/issue" id="o3pfjo_14" data-external="true" rel="noopener noreferrer" target="_blank">YouTrack</a>.</p></aside><p id="o3pfjo_3">The Kotlin Power-assert compiler plugin improves the debugging experience by providing detailed failure messages with contextual information. It simplifies the process of writing tests by automatically generating intermediate values in failure messages. It helps you understand why a test failed without needing complex assertion libraries.</p><p id="o3pfjo_4">This is an example message provided by the plugin:</p><div class="code-block" data-lang="none">
+}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="power-assert" data-main-title="Power-assert compiler plugin" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Compiler and plugins///Kotlin compiler plugins" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/power-assert.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="power-assert" id="power-assert.md">Power-assert compiler plugin</h1><aside class="prompt" data-type="warning" data-title="" id="u88byn_2"><p id="u88byn_12">The Power-assert compiler plugin is <a href="components-stability.html" id="u88byn_13">Experimental</a>. It may be changed at any time. Use it only for evaluation purposes. We would appreciate your feedback in <a href="https://kotl.in/issue" id="u88byn_14" data-external="true" rel="noopener noreferrer" target="_blank">YouTrack</a>.</p></aside><p id="u88byn_3">The Kotlin Power-assert compiler plugin improves the debugging experience by providing detailed failure messages with contextual information. It simplifies the process of writing tests by automatically generating intermediate values in failure messages. It helps you understand why a test failed without needing complex assertion libraries.</p><p id="u88byn_4">This is an example message provided by the plugin:</p><div class="code-block" data-lang="none">
 Incorrect length
 assert(hello.length == world.substring(1, 4).length) { &quot;Incorrect length&quot; }
        |     |      |  |     |               |
@@ -34,38 +34,38 @@ assert(hello.length == world.substring(1, 4).length) { &quot;Incorrect length&qu
        |     |      false
        |     5
        Hello
-</div><p id="o3pfjo_6">The Power-assert plugin key features:</p><ul class="list _bullet" id="o3pfjo_7"><li class="list__item" id="o3pfjo_15"><p id="o3pfjo_18"><span class="control" id="o3pfjo_19">Enhanced error messages</span>: The plugin captures and displays the values of variables and sub-expressions within the assertion to clearly identify the cause of failure.</p></li><li class="list__item" id="o3pfjo_16"><p id="o3pfjo_20"><span class="control" id="o3pfjo_21">Simplified testing</span>: Automatically generates informative failure messages, reducing the need for complex assertion libraries.</p></li><li class="list__item" id="o3pfjo_17"><p id="o3pfjo_22"><span class="control" id="o3pfjo_23">Support for multiple functions</span>: By default, it transforms <code class="code" id="o3pfjo_24">assert()</code> function calls but can also transform other functions, such as <code class="code" id="o3pfjo_25">require()</code>, <code class="code" id="o3pfjo_26">check()</code>, and <code class="code" id="o3pfjo_27">assertTrue()</code>.</p></li></ul><section class="chapter"><h2 id="apply-the-plugin" data-toc="apply-the-plugin">Apply the plugin</h2><p id="o3pfjo_28">To enable the Power-assert plugin, configure your <code class="code" id="o3pfjo_30">build.gradle(.kts)</code> file as follows:</p><div class="tabs" id="o3pfjo_29" data-group="build-script" data-anchors="[o3pfjo_31,o3pfjo_32]"><div class="tabs__content" data-gtm="tab" id="o3pfjo_31" data-sync-tabs="kotlin" data-title="Kotlin"><div class="code-block" data-lang="kotlin" data-title="Kotlin">
+</div><p id="u88byn_6">The Power-assert plugin key features:</p><ul class="list _bullet" id="u88byn_7"><li class="list__item" id="u88byn_15"><p id="u88byn_18"><span class="control" id="u88byn_19">Enhanced error messages</span>: The plugin captures and displays the values of variables and sub-expressions within the assertion to clearly identify the cause of failure.</p></li><li class="list__item" id="u88byn_16"><p id="u88byn_20"><span class="control" id="u88byn_21">Simplified testing</span>: Automatically generates informative failure messages, reducing the need for complex assertion libraries.</p></li><li class="list__item" id="u88byn_17"><p id="u88byn_22"><span class="control" id="u88byn_23">Support for multiple functions</span>: By default, it transforms <code class="code" id="u88byn_24">assert()</code> function calls but can also transform other functions, such as <code class="code" id="u88byn_25">require()</code>, <code class="code" id="u88byn_26">check()</code>, and <code class="code" id="u88byn_27">assertTrue()</code>.</p></li></ul><section class="chapter"><h2 id="apply-the-plugin" data-toc="apply-the-plugin">Apply the plugin</h2><p id="u88byn_28">To enable the Power-assert plugin, configure your <code class="code" id="u88byn_30">build.gradle(.kts)</code> file as follows:</p><div class="tabs" id="u88byn_29" data-group="build-script" data-anchors="[u88byn_31,u88byn_32]"><div class="tabs__content" data-gtm="tab" id="u88byn_31" data-sync-tabs="kotlin" data-title="Kotlin"><div class="code-block" data-lang="kotlin" data-title="Kotlin">
 // build.gradle.kts
 plugins {
     kotlin(&quot;multiplatform&quot;) version &quot;2.0.0&quot;
     kotlin(&quot;plugin.power-assert&quot;) version &quot;2.0.0&quot;
 }
-</div></div><div class="tabs__content" data-gtm="tab" id="o3pfjo_32" data-sync-tabs="groovy" data-title="Groovy"><div class="code-block" data-lang="groovy" data-title="Groovy">
+</div></div><div class="tabs__content" data-gtm="tab" id="u88byn_32" data-sync-tabs="groovy" data-title="Groovy"><div class="code-block" data-lang="groovy" data-title="Groovy">
 // build.gradle
 plugins {
     id 'org.jetbrains.kotlin.multiplatform' version '2.0.0'
     id 'org.jetbrains.kotlin.plugin.power-assert' version '2.0.0'
 }
-</div></div></div></section><section class="chapter"><h2 id="configure-the-plugin" data-toc="configure-the-plugin">Configure the plugin</h2><p id="o3pfjo_35">The Power-assert plugin provides several options to customize its behavior:</p><ul class="list _bullet" id="o3pfjo_36"><li class="list__item" id="o3pfjo_41"><p id="o3pfjo_43"><span class="control" id="o3pfjo_44"><code class="code" id="o3pfjo_46">functions</code></span>: A list of fully-qualified function paths. The Power-assert plugin will transform the calls to these functions. If not specified, only <code class="code" id="o3pfjo_45">kotlin.assert()</code> calls will be transformed by default.</p></li><li class="list__item" id="o3pfjo_42"><p id="o3pfjo_47"><span class="control" id="o3pfjo_48"><code class="code" id="o3pfjo_50">includedSourceSets</code></span>: A list of Gradle source sets that the Power-assert plugin will transform. If not specified, all <span class="emphasis" id="o3pfjo_49">test source sets</span> will be transformed by default.</p></li></ul><p id="o3pfjo_37">To customize the behavior, add the <code class="code" id="o3pfjo_51">powerAssert {}</code> block to your build script file:</p><div class="tabs" id="o3pfjo_38" data-group="build-script" data-anchors="[o3pfjo_52,o3pfjo_53]"><div class="tabs__content" data-gtm="tab" id="o3pfjo_52" data-sync-tabs="kotlin" data-title="Kotlin"><div class="code-block" data-lang="kotlin" data-title="Kotlin">
+</div></div></div></section><section class="chapter"><h2 id="configure-the-plugin" data-toc="configure-the-plugin">Configure the plugin</h2><p id="u88byn_35">The Power-assert plugin provides several options to customize its behavior:</p><ul class="list _bullet" id="u88byn_36"><li class="list__item" id="u88byn_41"><p id="u88byn_43"><span class="control" id="u88byn_44"><code class="code" id="u88byn_46">functions</code></span>: A list of fully-qualified function paths. The Power-assert plugin will transform the calls to these functions. If not specified, only <code class="code" id="u88byn_45">kotlin.assert()</code> calls will be transformed by default.</p></li><li class="list__item" id="u88byn_42"><p id="u88byn_47"><span class="control" id="u88byn_48"><code class="code" id="u88byn_50">includedSourceSets</code></span>: A list of Gradle source sets that the Power-assert plugin will transform. If not specified, all <span class="emphasis" id="u88byn_49">test source sets</span> will be transformed by default.</p></li></ul><p id="u88byn_37">To customize the behavior, add the <code class="code" id="u88byn_51">powerAssert {}</code> block to your build script file:</p><div class="tabs" id="u88byn_38" data-group="build-script" data-anchors="[u88byn_52,u88byn_53]"><div class="tabs__content" data-gtm="tab" id="u88byn_52" data-sync-tabs="kotlin" data-title="Kotlin"><div class="code-block" data-lang="kotlin" data-title="Kotlin">
 // build.gradle.kts
 powerAssert {
     functions = listOf(&quot;kotlin.assert&quot;, &quot;kotlin.test.assertTrue&quot;, &quot;kotlin.test.assertEquals&quot;, &quot;kotlin.test.assertNull&quot;)
     includedSourceSets = listOf(&quot;commonMain&quot;, &quot;jvmMain&quot;, &quot;jsMain&quot;, &quot;nativeMain&quot;)
 }
-</div></div><div class="tabs__content" data-gtm="tab" id="o3pfjo_53" data-sync-tabs="groovy" data-title="Groovy"><div class="code-block" data-lang="groovy" data-title="Groovy">
+</div></div><div class="tabs__content" data-gtm="tab" id="u88byn_53" data-sync-tabs="groovy" data-title="Groovy"><div class="code-block" data-lang="groovy" data-title="Groovy">
 // build.gradle
 powerAssert {
     functions = [&quot;kotlin.assert&quot;, &quot;kotlin.test.assertTrue&quot;, &quot;kotlin.test.assertEquals&quot;, &quot;kotlin.test.assertNull&quot;]
     includedSourceSets = [&quot;commonMain&quot;, &quot;jvmMain&quot;, &quot;jsMain&quot;, &quot;nativeMain&quot;]
 }
-</div></div></div><p id="o3pfjo_39">Since the plugin is Experimental, you will see warnings every time you build your app. To exclude these warnings, add this <code class="code" id="o3pfjo_56">@OptIn</code> annotation before declaring the <code class="code" id="o3pfjo_57">powerAssert {}</code> block:</p><div class="code-block" data-lang="kotlin">
+</div></div></div><p id="u88byn_39">Since the plugin is Experimental, you will see warnings every time you build your app. To exclude these warnings, add this <code class="code" id="u88byn_56">@OptIn</code> annotation before declaring the <code class="code" id="u88byn_57">powerAssert {}</code> block:</p><div class="code-block" data-lang="kotlin">
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 
 @OptIn(ExperimentalKotlinGradlePluginApi::class)
 powerAssert {
     ...
 }
-</div></section><section class="chapter"><h2 id="use-the-plugin" data-toc="use-the-plugin">Use the plugin</h2><p id="o3pfjo_58">This section provides examples of using the Power-assert compiler plugin.</p><p id="o3pfjo_59">See the complete code of the build script file <code class="code" id="o3pfjo_64">build.gradle.kts</code> for all these examples:</p><div class="code-collapse" data-lang="kotlin" data-is-expanded="false" data-synopsis="import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi">
+</div></section><section class="chapter"><h2 id="use-the-plugin" data-toc="use-the-plugin">Use the plugin</h2><p id="u88byn_58">This section provides examples of using the Power-assert compiler plugin.</p><p id="u88byn_59">See the complete code of the build script file <code class="code" id="u88byn_64">build.gradle.kts</code> for all these examples:</p><div class="code-collapse" data-lang="kotlin" data-is-expanded="false" data-synopsis="import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi">
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 
 plugins {
@@ -92,7 +92,7 @@ tasks.test {
 powerAssert {
     functions = listOf(&quot;kotlin.assert&quot;, &quot;kotlin.test.assertEquals&quot;, &quot;kotlin.test.assertTrue&quot;, &quot;kotlin.test.assertNull&quot;, &quot;kotlin.require&quot;, &quot;org.example.AssertScope.assert&quot;)
 }
-</div><section class="chapter"><h3 id="assert-function" data-toc="assert-function">Assert function</h3><p id="o3pfjo_65">Consider the following test with the <code class="code" id="o3pfjo_77">assert()</code> function:</p><div class="code-block" data-lang="kotlin">
+</div><section class="chapter"><h3 id="assert-function" data-toc="assert-function">Assert function</h3><p id="u88byn_65">Consider the following test with the <code class="code" id="u88byn_77">assert()</code> function:</p><div class="code-block" data-lang="kotlin">
 import kotlin.test.Test
 
 class SampleTest {
@@ -104,7 +104,7 @@ class SampleTest {
         assert(hello.length == world.substring(1, 4).length) { &quot;Incorrect length&quot; }
     }
 }
-</div><p id="o3pfjo_67">If you run the <code class="code" id="o3pfjo_78">testFunction()</code> test with the Power-assert plugin enabled, you get the explicit failure message:</p><div class="code-block" data-lang="none">
+</div><p id="u88byn_67">If you run the <code class="code" id="u88byn_78">testFunction()</code> test with the Power-assert plugin enabled, you get the explicit failure message:</p><div class="code-block" data-lang="none">
 Incorrect length
 assert(hello.length == world.substring(1, 4).length) { &quot;Incorrect length&quot; }
        |     |      |  |     |               |
@@ -114,7 +114,7 @@ assert(hello.length == world.substring(1, 4).length) { &quot;Incorrect length&qu
        |     |      false
        |     5
        Hello
-</div><p id="o3pfjo_69">To get a more complete error message, always inline the variable into the test function parameters. Consider the following test function:</p><div class="code-block" data-lang="kotlin">
+</div><p id="u88byn_69">To get a more complete error message, always inline the variable into the test function parameters. Consider the following test function:</p><div class="code-block" data-lang="kotlin">
 class ComplexExampleTest {
 
     data class Person(val name: String, val age: Int)
@@ -127,13 +127,13 @@ class ComplexExampleTest {
         assert(isValidName &amp;&amp; isValidAge)
     }
 }
-</div><p id="o3pfjo_71">The output of the executed code doesn't provide enough information to find the cause of the problem:</p><div class="code-block" data-lang="none">
+</div><p id="u88byn_71">The output of the executed code doesn't provide enough information to find the cause of the problem:</p><div class="code-block" data-lang="none">
 Assertion failed
 assert(isValidName &amp;&amp; isValidAge)
        |              |
        |              false
        true
-</div><p id="o3pfjo_73">Inline the variable into the <code class="code" id="o3pfjo_79">assert()</code> function:</p><div class="code-block" data-lang="kotlin">
+</div><p id="u88byn_73">Inline the variable into the <code class="code" id="u88byn_79">assert()</code> function:</p><div class="code-block" data-lang="kotlin">
 class ComplexExampleTest {
 
     data class Person(val name: String, val age: Int)
@@ -144,7 +144,7 @@ class ComplexExampleTest {
         assert(person.name.startsWith(&quot;A&quot;) &amp;&amp; person.name.length &gt; 3 &amp;&amp; person.age &gt; 20 &amp;&amp; person.age &lt; 29)
     }
 }
-</div><p id="o3pfjo_75">After execution, you get more explicit information about what went wrong:</p><div class="code-block" data-lang="none">
+</div><p id="u88byn_75">After execution, you get more explicit information about what went wrong:</p><div class="code-block" data-lang="none">
 Assertion failed
 assert(person.name.startsWith(&quot;A&quot;) &amp;&amp; person.name.length &gt; 3 &amp;&amp; person.age &gt; 20 &amp;&amp; person.age &lt; 29)
        |      |    |                  |      |    |      |      |      |   |
@@ -158,7 +158,7 @@ assert(person.name.startsWith(&quot;A&quot;) &amp;&amp; person.name.length &gt; 
        |      |    true
        |      Alice
        Person(name=Alice, age=10)
-</div></section><section class="chapter"><h3 id="beyond-assert-function" data-toc="beyond-assert-function">Beyond assert function</h3><p id="o3pfjo_80">The Power-assert plugin can transform various functions beyond <code class="code" id="o3pfjo_88">assert</code> which is transformed by default. Functions like <code class="code" id="o3pfjo_89">require()</code>, <code class="code" id="o3pfjo_90">check()</code>, <code class="code" id="o3pfjo_91">assertTrue()</code>, <code class="code" id="o3pfjo_92">assertEqual()</code> and others can also be transformed, if they have a form that allows taking a <code class="code" id="o3pfjo_93">String</code> or <code class="code" id="o3pfjo_94">() -&gt; String</code> value as the last parameter.</p><p id="o3pfjo_81">Before using a new function in a test, specify the function in the <code class="code" id="o3pfjo_95">powerAssert {}</code> block of your build script file. For example, the <code class="code" id="o3pfjo_96">require()</code> function:</p><div class="code-block" data-lang="kotlin">
+</div></section><section class="chapter"><h3 id="beyond-assert-function" data-toc="beyond-assert-function">Beyond assert function</h3><p id="u88byn_80">The Power-assert plugin can transform various functions beyond <code class="code" id="u88byn_88">assert</code> which is transformed by default. Functions like <code class="code" id="u88byn_89">require()</code>, <code class="code" id="u88byn_90">check()</code>, <code class="code" id="u88byn_91">assertTrue()</code>, <code class="code" id="u88byn_92">assertEqual()</code> and others can also be transformed, if they have a form that allows taking a <code class="code" id="u88byn_93">String</code> or <code class="code" id="u88byn_94">() -&gt; String</code> value as the last parameter.</p><p id="u88byn_81">Before using a new function in a test, specify the function in the <code class="code" id="u88byn_95">powerAssert {}</code> block of your build script file. For example, the <code class="code" id="u88byn_96">require()</code> function:</p><div class="code-block" data-lang="kotlin">
 // build.gradle.kts
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 
@@ -166,7 +166,7 @@ import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 powerAssert {
     functions = listOf(&quot;kotlin.assert&quot;, &quot;kotlin.require&quot;)
 }
-</div><p id="o3pfjo_83">After adding the function, you can use it in your tests:</p><div class="code-block" data-lang="kotlin">
+</div><p id="u88byn_83">After adding the function, you can use it in your tests:</p><div class="code-block" data-lang="kotlin">
 class RequireExampleTest {
 
     @Test
@@ -175,13 +175,13 @@ class RequireExampleTest {
         require(value.isNotEmpty()) { &quot;Value should not be empty&quot; }
     }
 }
-</div><p id="o3pfjo_85">The output for this example uses the Power-assert plugin to provide detailed information about the failed test:</p><div class="code-block" data-lang="none">
+</div><p id="u88byn_85">The output for this example uses the Power-assert plugin to provide detailed information about the failed test:</p><div class="code-block" data-lang="none">
 Value should not be empty
 require(value.isNotEmpty()) { &quot;Value should not be empty&quot; }
         |     |
         |     false
         
-</div><p id="o3pfjo_87">The message shows the intermediate values that lead to the failure, making it easier to debug.</p></section><section class="chapter"><h3 id="soft-assertions" data-toc="soft-assertions">Soft assertions</h3><p id="o3pfjo_97">The Power-assert plugin supports soft assertions, which do not immediately fail the test but instead collect assertion failures and report them at the end of the test run. This can be useful when you want to see all assertion failures in a single run without stopping at the first failure.</p><p id="o3pfjo_98">To enable soft assertions, implement the way you will collect error messages:</p><div class="code-block" data-lang="kotlin">
+</div><p id="u88byn_87">The message shows the intermediate values that lead to the failure, making it easier to debug.</p></section><section class="chapter"><h3 id="soft-assertions" data-toc="soft-assertions">Soft assertions</h3><p id="u88byn_97">The Power-assert plugin supports soft assertions, which do not immediately fail the test but instead collect assertion failures and report them at the end of the test run. This can be useful when you want to see all assertion failures in a single run without stopping at the first failure.</p><p id="u88byn_98">To enable soft assertions, implement the way you will collect error messages:</p><div class="code-block" data-lang="kotlin">
 fun &lt;R&gt; assertSoftly(block: AssertScope.() -&gt; R): R {
     val scope = AssertScopeImpl()
     val result = scope.block()
@@ -203,12 +203,12 @@ class AssertScopeImpl : AssertScope {
         }
     }
 }
-</div><p id="o3pfjo_100">Add these functions to the <code class="code" id="o3pfjo_107">powerAssert {}</code> block to make them available for the Power-assert plugin:</p><div class="code-block" data-lang="kotlin">
+</div><p id="u88byn_100">Add these functions to the <code class="code" id="u88byn_107">powerAssert {}</code> block to make them available for the Power-assert plugin:</p><div class="code-block" data-lang="kotlin">
 @OptIn(ExperimentalKotlinGradlePluginApi::class)
 powerAssert {
     functions = listOf(&quot;kotlin.assert&quot;, &quot;kotlin.test.assert&quot;, &quot;org.example.AssertScope.assert&quot;)
 }
-</div><aside class="prompt" data-type="tip" data-title="" id="o3pfjo_102"><p id="o3pfjo_108">You should specify the full name of the package where you declare the <code class="code" id="o3pfjo_109">AssertScope.assert()</code> function.</p></aside><p id="o3pfjo_103">After that, you could use it in your test code:</p><div class="code-block" data-lang="kotlin">
+</div><aside class="prompt" data-type="tip" data-title="" id="u88byn_102"><p id="u88byn_108">You should specify the full name of the package where you declare the <code class="code" id="u88byn_109">AssertScope.assert()</code> function.</p></aside><p id="u88byn_103">After that, you could use it in your test code:</p><div class="code-block" data-lang="kotlin">
 // Import the assertSoftly() function
 import org.example.assertSoftly
         
@@ -233,7 +233,7 @@ class SoftAssertExampleTest1 {
         }
     }
 }
-</div><p id="o3pfjo_105">In the output, all the <code class="code" id="o3pfjo_110">assert()</code> function error messages will be printed one after another:</p><div class="code-block" data-lang="none">
+</div><p id="u88byn_105">In the output, all the <code class="code" id="u88byn_110">assert()</code> function error messages will be printed one after another:</p><div class="code-block" data-lang="none">
 Charlie has an invalid salary: 40000
 assert(employee.salary &gt; 50000) { &quot;${employee.name} has an invalid salary: ${employee.salary}&quot; }
        |        |      |
@@ -246,4 +246,4 @@ assert(employee.age &lt; 100) { &quot;${employee.name} has an invalid age: ${emp
        |        |   false
        |        150
        Employee(name=Dave, age=150, salary=70000)
-</div></section></section><section class="chapter"><h2 id="what-s-next" data-toc="what-s-next">What's next</h2><ul class="list _bullet" id="o3pfjo_111"><li class="list__item" id="o3pfjo_112"><p id="o3pfjo_113">Look through a <a href="https://github.com/JetBrains/kotlin/tree/master/libraries/tools/kotlin-gradle-plugin-integration-tests/src/test/resources/testProject/powerAssertSourceSets" id="o3pfjo_114" data-external="true" rel="noopener noreferrer" target="_blank">simple project with the plugin enabled</a> and a more <a href="https://github.com/JetBrains/kotlin/tree/master/libraries/tools/kotlin-gradle-plugin-integration-tests/src/test/resources/testProject/powerAssertSimple" id="o3pfjo_115" data-external="true" rel="noopener noreferrer" target="_blank">complex project with multiple source sets</a>.</p></li></ul></section><div class="last-modified">04 July 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="lombok.html" class="navigation-links__prev">Lombok compiler plugin</a><a href="compose-compiler-migration-guide.html" class="navigation-links__next">Compose compiler migration guide</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>
+</div></section></section><section class="chapter"><h2 id="what-s-next" data-toc="what-s-next">What's next</h2><ul class="list _bullet" id="u88byn_111"><li class="list__item" id="u88byn_112"><p id="u88byn_113">Look through a <a href="https://github.com/JetBrains/kotlin/tree/master/libraries/tools/kotlin-gradle-plugin-integration-tests/src/test/resources/testProject/powerAssertSourceSets" id="u88byn_114" data-external="true" rel="noopener noreferrer" target="_blank">simple project with the plugin enabled</a> and a more <a href="https://github.com/JetBrains/kotlin/tree/master/libraries/tools/kotlin-gradle-plugin-integration-tests/src/test/resources/testProject/powerAssertSimple" id="u88byn_115" data-external="true" rel="noopener noreferrer" target="_blank">complex project with multiple source sets</a>.</p></li></ul></section><div class="last-modified">05 July 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="lombok.html" class="navigation-links__prev">Lombok compiler plugin</a><a href="compose-compiler-migration-guide.html" class="navigation-links__next">Compose compiler migration guide</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>
