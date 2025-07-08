@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-07-05T00:45:40.300285623"><link rel="canonical" href="https://kotlinlang.org/docs/ksp-command-line.html" data-react-helmet="true"><script>
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-07-08T03:21:48.23683571"><link rel="canonical" href="https://kotlinlang.org/docs/ksp-command-line.html" data-react-helmet="true"><script>
     (function (w, d, s, l, i) {
         w[l] = w[l] || [];
         w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
@@ -24,7 +24,7 @@
     "@id": "https://kotlinlang.org/docs/#website",
     "url": "https://kotlinlang.org/docs/",
     "name": "Kotlin Help"
-}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="ksp-command-line" data-main-title="Running KSP from command line" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Compiler and plugins///Kotlin Symbol Processing API" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/ksp/ksp-command-line.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="ksp-command-line" id="ksp-command-line.md">Running KSP from command line</h1><p id="-nxvpzy_2">KSP is a Kotlin compiler plugin and needs to run with Kotlin compiler. Download and extract them.</p><div class="code-block" data-lang="bash">
+}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="ksp-command-line" data-main-title="Running KSP from command line" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Compiler and plugins///Kotlin Symbol Processing API" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/ksp/ksp-command-line.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="ksp-command-line" id="ksp-command-line.md">Running KSP from command line</h1><p id="rpkr7p_2">KSP is a Kotlin compiler plugin and needs to run with Kotlin compiler. Download and extract them.</p><div class="code-block" data-lang="bash">
 #!/bin/bash
 
 # Kotlin compiler
@@ -34,11 +34,11 @@ unzip kotlin-compiler-2.1.21.zip
 # KSP
 wget https://github.com/google/ksp/releases/download/2.1.21-2.0.1/artifacts.zip
 unzip artifacts.zip
-</div><p id="-nxvpzy_4">To run KSP with <code class="code" id="-nxvpzy_11">kotlinc</code>, pass the <code class="code" id="-nxvpzy_12">-Xplugin</code> option to <code class="code" id="-nxvpzy_13">kotlinc</code>.</p><div class="code-block" data-lang="none">
+</div><p id="rpkr7p_4">To run KSP with <code class="code" id="rpkr7p_11">kotlinc</code>, pass the <code class="code" id="rpkr7p_12">-Xplugin</code> option to <code class="code" id="rpkr7p_13">kotlinc</code>.</p><div class="code-block" data-lang="none">
 -Xplugin=/path/to/symbol-processing-cmdline-2.1.21-2.0.1.jar
-</div><p id="-nxvpzy_6">This is different from the <code class="code" id="-nxvpzy_14">symbol-processing-2.1.21-2.0.1.jar</code>, which is designed to be used with <code class="code" id="-nxvpzy_15">kotlin-compiler-embeddable</code> when running with Gradle. The command line <code class="code" id="-nxvpzy_16">kotlinc</code> needs <code class="code" id="-nxvpzy_17">symbol-processing-cmdline-2.1.21-2.0.1.jar</code>.</p><p id="-nxvpzy_7">You'll also need the API jar.</p><div class="code-block" data-lang="none">
+</div><p id="rpkr7p_6">This is different from the <code class="code" id="rpkr7p_14">symbol-processing-2.1.21-2.0.1.jar</code>, which is designed to be used with <code class="code" id="rpkr7p_15">kotlin-compiler-embeddable</code> when running with Gradle. The command line <code class="code" id="rpkr7p_16">kotlinc</code> needs <code class="code" id="rpkr7p_17">symbol-processing-cmdline-2.1.21-2.0.1.jar</code>.</p><p id="rpkr7p_7">You'll also need the API jar.</p><div class="code-block" data-lang="none">
 -Xplugin=/path/to/symbol-processing-api-2.1.21-2.0.1.jar
-</div><p id="-nxvpzy_9">See the complete example:</p><div class="code-block" data-lang="bash">
+</div><p id="rpkr7p_9">See the complete example:</p><div class="code-block" data-lang="bash">
 #!/bin/bash
 
 KSP_PLUGIN_ID=com.google.devtools.ksp.symbol-processing
@@ -67,4 +67,4 @@ $KOTLINC \
         -P $KSP_PLUGIN_OPT:apoption=key1=value1 \
         -P $KSP_PLUGIN_OPT:apoption=key2=value2 \
         $*
-</div><div class="last-modified">05 July 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="ksp-multiplatform.html" class="navigation-links__prev">KSP with Kotlin Multiplatform</a><a href="ksp-faq.html" class="navigation-links__next">KSP FAQ</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>
+</div><div class="last-modified">08 July 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="ksp-multiplatform.html" class="navigation-links__prev">KSP with Kotlin Multiplatform</a><a href="ksp-faq.html" class="navigation-links__next">KSP FAQ</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>
