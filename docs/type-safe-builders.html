@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-07-08T03:21:47.115878042"><link rel="canonical" href="https://kotlinlang.org/docs/type-safe-builders.html" data-react-helmet="true"><script>
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-07-09T15:33:15.815745481"><link rel="canonical" href="https://kotlinlang.org/docs/type-safe-builders.html" data-react-helmet="true"><script>
     (function (w, d, s, l, i) {
         w[l] = w[l] || [];
         w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
@@ -24,7 +24,7 @@
     "@id": "https://kotlinlang.org/docs/#website",
     "url": "https://kotlinlang.org/docs/",
     "name": "Kotlin Help"
-}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="type-safe-builders" data-main-title="Type-safe builders" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Concepts///Functions///Builders" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/type-safe-builders.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="type-safe-builders" id="type-safe-builders.md">Type-safe builders</h1><p id="-pjjwcl_2">By using well-named functions as builders in combination with <a href="lambdas.html#function-literals-with-receiver" id="-pjjwcl_10">function literals with receiver</a> it is possible to create type-safe, statically-typed builders in Kotlin.</p><p id="-pjjwcl_3">Type-safe builders allow creating Kotlin-based domain-specific languages (DSLs) suitable for building complex hierarchical data structures in a semi-declarative way. Sample use cases for the builders are:</p><ul class="list _bullet" id="-pjjwcl_4"><li class="list__item" id="-pjjwcl_11"><p id="-pjjwcl_13">Generating markup with Kotlin code, such as <a href="https://github.com/Kotlin/kotlinx.html" id="-pjjwcl_14" data-external="true" rel="noopener noreferrer" target="_blank">HTML</a> or XML</p></li><li class="list__item" id="-pjjwcl_12"><p id="-pjjwcl_15">Configuring routes for a web server: <a href="https://ktor.io/docs/routing.html" id="-pjjwcl_16" data-external="true" rel="noopener noreferrer" target="_blank">Ktor</a></p></li></ul><p id="-pjjwcl_5">Consider the following code:</p><div class="code-block" data-lang="kotlin">
+}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="type-safe-builders" data-main-title="Type-safe builders" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Concepts///Functions///Builders" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/type-safe-builders.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="type-safe-builders" id="type-safe-builders.md">Type-safe builders</h1><p id="z4j2mc5_2">By using well-named functions as builders in combination with <a href="lambdas.html#function-literals-with-receiver" id="z4j2mc5_10">function literals with receiver</a> it is possible to create type-safe, statically-typed builders in Kotlin.</p><p id="z4j2mc5_3">Type-safe builders allow creating Kotlin-based domain-specific languages (DSLs) suitable for building complex hierarchical data structures in a semi-declarative way. Sample use cases for the builders are:</p><ul class="list _bullet" id="z4j2mc5_4"><li class="list__item" id="z4j2mc5_11"><p id="z4j2mc5_13">Generating markup with Kotlin code, such as <a href="https://github.com/Kotlin/kotlinx.html" id="z4j2mc5_14" data-external="true" rel="noopener noreferrer" target="_blank">HTML</a> or XML</p></li><li class="list__item" id="z4j2mc5_12"><p id="z4j2mc5_15">Configuring routes for a web server: <a href="https://ktor.io/docs/routing.html" id="z4j2mc5_16" data-external="true" rel="noopener noreferrer" target="_blank">Ktor</a></p></li></ul><p id="z4j2mc5_5">Consider the following code:</p><div class="code-block" data-lang="kotlin">
 import com.example.html.* // see declarations below
 
 fun result() =
@@ -56,27 +56,27 @@ fun result() =
             }
         }
     }
-</div><p id="-pjjwcl_7">This is completely legitimate Kotlin code. You can <a href="https://play.kotlinlang.org/byExample/09_Kotlin_JS/06_HtmlBuilder" id="-pjjwcl_17" data-external="true" rel="noopener noreferrer" target="_blank">play with this code online (modify it and run in the browser) here</a>.</p><section class="chapter"><h2 id="how-it-works" data-toc="how-it-works">How it works</h2><p id="-pjjwcl_18">Assume that you need to implement a type-safe builder in Kotlin. First of all, define the model you want to build. In this case you need to model HTML tags. It is easily done with a bunch of classes. For example, <code class="code" id="-pjjwcl_43">HTML</code> is a class that describes the <code class="code" id="-pjjwcl_44">&lt;html&gt;</code> tag defining children like <code class="code" id="-pjjwcl_45">&lt;head&gt;</code> and <code class="code" id="-pjjwcl_46">&lt;body&gt;</code>. (See its declaration <a href="#full-definition-of-the-com-example-html-package" id="-pjjwcl_47">below</a>.)</p><p id="-pjjwcl_19">Now, let's recall why you can say something like this in the code:</p><div class="code-block" data-lang="kotlin">
+</div><p id="z4j2mc5_7">This is completely legitimate Kotlin code. You can <a href="https://play.kotlinlang.org/byExample/09_Kotlin_JS/06_HtmlBuilder" id="z4j2mc5_17" data-external="true" rel="noopener noreferrer" target="_blank">play with this code online (modify it and run in the browser) here</a>.</p><section class="chapter"><h2 id="how-it-works" data-toc="how-it-works">How it works</h2><p id="z4j2mc5_18">Assume that you need to implement a type-safe builder in Kotlin. First of all, define the model you want to build. In this case you need to model HTML tags. It is easily done with a bunch of classes. For example, <code class="code" id="z4j2mc5_43">HTML</code> is a class that describes the <code class="code" id="z4j2mc5_44">&lt;html&gt;</code> tag defining children like <code class="code" id="z4j2mc5_45">&lt;head&gt;</code> and <code class="code" id="z4j2mc5_46">&lt;body&gt;</code>. (See its declaration <a href="#full-definition-of-the-com-example-html-package" id="z4j2mc5_47">below</a>.)</p><p id="z4j2mc5_19">Now, let's recall why you can say something like this in the code:</p><div class="code-block" data-lang="kotlin">
 html {
  // ...
 }
-</div><p id="-pjjwcl_21"><code class="code" id="-pjjwcl_48">html</code> is actually a function call that takes a <a href="lambdas.html" id="-pjjwcl_49">lambda expression</a> as an argument. This function is defined as follows:</p><div class="code-block" data-lang="kotlin">
+</div><p id="z4j2mc5_21"><code class="code" id="z4j2mc5_48">html</code> is actually a function call that takes a <a href="lambdas.html" id="z4j2mc5_49">lambda expression</a> as an argument. This function is defined as follows:</p><div class="code-block" data-lang="kotlin">
 fun html(init: HTML.() -&gt; Unit): HTML {
     val html = HTML()
     html.init()
     return html
 }
-</div><p id="-pjjwcl_23">This function takes one parameter named <code class="code" id="-pjjwcl_50">init</code>, which is itself a function. The type of the function is <code class="code" id="-pjjwcl_51">HTML.() -&gt; Unit</code>, which is a <span class="emphasis" id="-pjjwcl_52">function type with receiver</span>. This means that you need to pass an instance of type <code class="code" id="-pjjwcl_53">HTML</code> (a <span class="emphasis" id="-pjjwcl_54">receiver</span>) to the function, and you can call members of that instance inside the function.</p><p id="-pjjwcl_24">The receiver can be accessed through the <code class="code" id="-pjjwcl_55">this</code> keyword:</p><div class="code-block" data-lang="kotlin">
+</div><p id="z4j2mc5_23">This function takes one parameter named <code class="code" id="z4j2mc5_50">init</code>, which is itself a function. The type of the function is <code class="code" id="z4j2mc5_51">HTML.() -&gt; Unit</code>, which is a <span class="emphasis" id="z4j2mc5_52">function type with receiver</span>. This means that you need to pass an instance of type <code class="code" id="z4j2mc5_53">HTML</code> (a <span class="emphasis" id="z4j2mc5_54">receiver</span>) to the function, and you can call members of that instance inside the function.</p><p id="z4j2mc5_24">The receiver can be accessed through the <code class="code" id="z4j2mc5_55">this</code> keyword:</p><div class="code-block" data-lang="kotlin">
 html {
     this.head { ... }
     this.body { ... }
 }
-</div><p id="-pjjwcl_26">(<code class="code" id="-pjjwcl_56">head</code> and <code class="code" id="-pjjwcl_57">body</code> are member functions of <code class="code" id="-pjjwcl_58">HTML</code>.)</p><p id="-pjjwcl_27">Now, <code class="code" id="-pjjwcl_59">this</code> can be omitted, as usual, and you get something that looks very much like a builder already:</p><div class="code-block" data-lang="kotlin">
+</div><p id="z4j2mc5_26">(<code class="code" id="z4j2mc5_56">head</code> and <code class="code" id="z4j2mc5_57">body</code> are member functions of <code class="code" id="z4j2mc5_58">HTML</code>.)</p><p id="z4j2mc5_27">Now, <code class="code" id="z4j2mc5_59">this</code> can be omitted, as usual, and you get something that looks very much like a builder already:</p><div class="code-block" data-lang="kotlin">
 html {
     head { ... }
     body { ... }
 }
-</div><p id="-pjjwcl_29">So, what does this call do? Let's look at the body of <code class="code" id="-pjjwcl_60">html</code> function as defined above. It creates a new instance of <code class="code" id="-pjjwcl_61">HTML</code>, then it initializes it by calling the function that is passed as an argument (in this example this boils down to calling <code class="code" id="-pjjwcl_62">head</code> and <code class="code" id="-pjjwcl_63">body</code> on the <code class="code" id="-pjjwcl_64">HTML</code> instance), and then it returns this instance. This is exactly what a builder should do.</p><p id="-pjjwcl_30">The <code class="code" id="-pjjwcl_65">head</code> and <code class="code" id="-pjjwcl_66">body</code> functions in the <code class="code" id="-pjjwcl_67">HTML</code> class are defined similarly to <code class="code" id="-pjjwcl_68">html</code>. The only difference is that they add the built instances to the <code class="code" id="-pjjwcl_69">children</code> collection of the enclosing <code class="code" id="-pjjwcl_70">HTML</code> instance:</p><div class="code-block" data-lang="kotlin">
+</div><p id="z4j2mc5_29">So, what does this call do? Let's look at the body of <code class="code" id="z4j2mc5_60">html</code> function as defined above. It creates a new instance of <code class="code" id="z4j2mc5_61">HTML</code>, then it initializes it by calling the function that is passed as an argument (in this example this boils down to calling <code class="code" id="z4j2mc5_62">head</code> and <code class="code" id="z4j2mc5_63">body</code> on the <code class="code" id="z4j2mc5_64">HTML</code> instance), and then it returns this instance. This is exactly what a builder should do.</p><p id="z4j2mc5_30">The <code class="code" id="z4j2mc5_65">head</code> and <code class="code" id="z4j2mc5_66">body</code> functions in the <code class="code" id="z4j2mc5_67">HTML</code> class are defined similarly to <code class="code" id="z4j2mc5_68">html</code>. The only difference is that they add the built instances to the <code class="code" id="z4j2mc5_69">children</code> collection of the enclosing <code class="code" id="z4j2mc5_70">HTML</code> instance:</p><div class="code-block" data-lang="kotlin">
 fun head(init: Head.() -&gt; Unit): Head {
     val head = Head()
     head.init()
@@ -90,69 +90,69 @@ fun body(init: Body.() -&gt; Unit): Body {
     children.add(body)
     return body
 }
-</div><p id="-pjjwcl_32">Actually these two functions do just the same thing, so you can have a generic version, <code class="code" id="-pjjwcl_71">initTag</code>:</p><div class="code-block" data-lang="kotlin">
+</div><p id="z4j2mc5_32">Actually these two functions do just the same thing, so you can have a generic version, <code class="code" id="z4j2mc5_71">initTag</code>:</p><div class="code-block" data-lang="kotlin">
 protected fun &lt;T : Element&gt; initTag(tag: T, init: T.() -&gt; Unit): T {
     tag.init()
     children.add(tag)
     return tag
 }
-</div><p id="-pjjwcl_34">So, now your functions are very simple:</p><div class="code-block" data-lang="kotlin">
+</div><p id="z4j2mc5_34">So, now your functions are very simple:</p><div class="code-block" data-lang="kotlin">
 fun head(init: Head.() -&gt; Unit) = initTag(Head(), init)
 
 fun body(init: Body.() -&gt; Unit) = initTag(Body(), init)
-</div><p id="-pjjwcl_36">And you can use them to build <code class="code" id="-pjjwcl_72">&lt;head&gt;</code> and <code class="code" id="-pjjwcl_73">&lt;body&gt;</code> tags.</p><p id="-pjjwcl_37">One other thing to be discussed here is how you add text to tag bodies. In the example above you say something like:</p><div class="code-block" data-lang="kotlin">
+</div><p id="z4j2mc5_36">And you can use them to build <code class="code" id="z4j2mc5_72">&lt;head&gt;</code> and <code class="code" id="z4j2mc5_73">&lt;body&gt;</code> tags.</p><p id="z4j2mc5_37">One other thing to be discussed here is how you add text to tag bodies. In the example above you say something like:</p><div class="code-block" data-lang="kotlin">
 html {
     head {
         title {+&quot;XML encoding with Kotlin&quot;}
     }
     // ...
 }
-</div><p id="-pjjwcl_39">So basically, you just put a string inside a tag body, but there is this little <code class="code" id="-pjjwcl_74">+</code> in front of it, so it is a function call that invokes a prefix <code class="code" id="-pjjwcl_75">unaryPlus()</code> operation. That operation is actually defined by an extension function <code class="code" id="-pjjwcl_76">unaryPlus()</code> that is a member of the <code class="code" id="-pjjwcl_77">TagWithText</code> abstract class (a parent of <code class="code" id="-pjjwcl_78">Title</code>):</p><div class="code-block" data-lang="kotlin">
+</div><p id="z4j2mc5_39">So basically, you just put a string inside a tag body, but there is this little <code class="code" id="z4j2mc5_74">+</code> in front of it, so it is a function call that invokes a prefix <code class="code" id="z4j2mc5_75">unaryPlus()</code> operation. That operation is actually defined by an extension function <code class="code" id="z4j2mc5_76">unaryPlus()</code> that is a member of the <code class="code" id="z4j2mc5_77">TagWithText</code> abstract class (a parent of <code class="code" id="z4j2mc5_78">Title</code>):</p><div class="code-block" data-lang="kotlin">
 operator fun String.unaryPlus() {
     children.add(TextElement(this))
 }
-</div><p id="-pjjwcl_41">So, what the prefix <code class="code" id="-pjjwcl_79">+</code> does here is wrapping a string into an instance of <code class="code" id="-pjjwcl_80">TextElement</code> and adding it to the <code class="code" id="-pjjwcl_81">children</code> collection, so that it becomes a proper part of the tag tree.</p><p id="-pjjwcl_42">All this is defined in a package <code class="code" id="-pjjwcl_82">com.example.html</code> that is imported at the top of the builder example above. In the last section you can read through the full definition of this package.</p></section><section class="chapter"><h2 id="scope-control-dslmarker" data-toc="scope-control-dslmarker">Scope control: @DslMarker</h2><p id="-pjjwcl_83">When using DSLs, one might have come across the problem that too many functions can be called in the context. You can call methods of every available implicit receiver inside a lambda and therefore get an inconsistent result, like the tag <code class="code" id="-pjjwcl_106">head</code> inside another <code class="code" id="-pjjwcl_107">head</code>:</p><div class="code-block" data-lang="kotlin">
+</div><p id="z4j2mc5_41">So, what the prefix <code class="code" id="z4j2mc5_79">+</code> does here is wrapping a string into an instance of <code class="code" id="z4j2mc5_80">TextElement</code> and adding it to the <code class="code" id="z4j2mc5_81">children</code> collection, so that it becomes a proper part of the tag tree.</p><p id="z4j2mc5_42">All this is defined in a package <code class="code" id="z4j2mc5_82">com.example.html</code> that is imported at the top of the builder example above. In the last section you can read through the full definition of this package.</p></section><section class="chapter"><h2 id="scope-control-dslmarker" data-toc="scope-control-dslmarker">Scope control: @DslMarker</h2><p id="z4j2mc5_83">When using DSLs, one might have come across the problem that too many functions can be called in the context. You can call methods of every available implicit receiver inside a lambda and therefore get an inconsistent result, like the tag <code class="code" id="z4j2mc5_106">head</code> inside another <code class="code" id="z4j2mc5_107">head</code>:</p><div class="code-block" data-lang="kotlin">
 html {
     head {
         head {} // should be forbidden
     }
     // ...
 }
-</div><p id="-pjjwcl_85">In this example only members of the nearest implicit receiver <code class="code" id="-pjjwcl_108">this@head</code> must be available; <code class="code" id="-pjjwcl_109">head()</code> is a member of the outer receiver <code class="code" id="-pjjwcl_110">this@html</code>, so it must be illegal to call it.</p><p id="-pjjwcl_86">To address this problem, there is a special mechanism to control receiver scope.</p><p id="-pjjwcl_87">To make the compiler start controlling scopes you only have to annotate the types of all receivers used in the DSL with the same marker annotation. For instance, for HTML Builders you declare an annotation <code class="code" id="-pjjwcl_111">@HTMLTagMarker</code>:</p><div class="code-block" data-lang="kotlin">
+</div><p id="z4j2mc5_85">In this example only members of the nearest implicit receiver <code class="code" id="z4j2mc5_108">this@head</code> must be available; <code class="code" id="z4j2mc5_109">head()</code> is a member of the outer receiver <code class="code" id="z4j2mc5_110">this@html</code>, so it must be illegal to call it.</p><p id="z4j2mc5_86">To address this problem, there is a special mechanism to control receiver scope.</p><p id="z4j2mc5_87">To make the compiler start controlling scopes you only have to annotate the types of all receivers used in the DSL with the same marker annotation. For instance, for HTML Builders you declare an annotation <code class="code" id="z4j2mc5_111">@HTMLTagMarker</code>:</p><div class="code-block" data-lang="kotlin">
 @DslMarker
 annotation class HtmlTagMarker
-</div><p id="-pjjwcl_89">An annotation class is called a DSL marker if it is annotated with the <code class="code" id="-pjjwcl_112">@DslMarker</code> annotation.</p><p id="-pjjwcl_90">In our DSL all the tag classes extend the same superclass <code class="code" id="-pjjwcl_113">Tag</code>. It's enough to annotate only the superclass with <code class="code" id="-pjjwcl_114">@HtmlTagMarker</code> and after that the Kotlin compiler will treat all the inherited classes as annotated:</p><div class="code-block" data-lang="kotlin">
+</div><p id="z4j2mc5_89">An annotation class is called a DSL marker if it is annotated with the <code class="code" id="z4j2mc5_112">@DslMarker</code> annotation.</p><p id="z4j2mc5_90">In our DSL all the tag classes extend the same superclass <code class="code" id="z4j2mc5_113">Tag</code>. It's enough to annotate only the superclass with <code class="code" id="z4j2mc5_114">@HtmlTagMarker</code> and after that the Kotlin compiler will treat all the inherited classes as annotated:</p><div class="code-block" data-lang="kotlin">
 @HtmlTagMarker
 abstract class Tag(val name: String) { ... }
-</div><p id="-pjjwcl_92">You don't have to annotate the <code class="code" id="-pjjwcl_115">HTML</code> or <code class="code" id="-pjjwcl_116">Head</code> classes with <code class="code" id="-pjjwcl_117">@HtmlTagMarker</code> because their superclass is already annotated:</p><div class="code-block" data-lang="kotlin">
+</div><p id="z4j2mc5_92">You don't have to annotate the <code class="code" id="z4j2mc5_115">HTML</code> or <code class="code" id="z4j2mc5_116">Head</code> classes with <code class="code" id="z4j2mc5_117">@HtmlTagMarker</code> because their superclass is already annotated:</p><div class="code-block" data-lang="kotlin">
 class HTML() : Tag(&quot;html&quot;) { ... }
 
 class Head() : Tag(&quot;head&quot;) { ... }
-</div><p id="-pjjwcl_94">After you've added this annotation, the Kotlin compiler knows which implicit receivers are part of the same DSL and allows to call members of the nearest receivers only:</p><div class="code-block" data-lang="kotlin">
+</div><p id="z4j2mc5_94">After you've added this annotation, the Kotlin compiler knows which implicit receivers are part of the same DSL and allows to call members of the nearest receivers only:</p><div class="code-block" data-lang="kotlin">
 html {
     head {
         head { } // error: a member of outer receiver
     }
     // ...
 }
-</div><p id="-pjjwcl_96">Note that it's still possible to call the members of the outer receiver, but to do that you have to specify this receiver explicitly:</p><div class="code-block" data-lang="kotlin">
+</div><p id="z4j2mc5_96">Note that it's still possible to call the members of the outer receiver, but to do that you have to specify this receiver explicitly:</p><div class="code-block" data-lang="kotlin">
 html {
     head {
         this@html.head { } // possible
     }
     // ...
 }
-</div><p id="-pjjwcl_98">You can also apply the <code class="code" id="-pjjwcl_118">@DslMarker</code> annotation directly to <a href="lambdas.html#function-types" id="-pjjwcl_119">function types</a>. Simply annotate the <code class="code" id="-pjjwcl_120">@DslMarker</code> annotation with <code class="code" id="-pjjwcl_121">@Target(AnnotationTarget.TYPE)</code>:</p><div class="code-block" data-lang="kotlin">
+</div><p id="z4j2mc5_98">You can also apply the <code class="code" id="z4j2mc5_118">@DslMarker</code> annotation directly to <a href="lambdas.html#function-types" id="z4j2mc5_119">function types</a>. Simply annotate the <code class="code" id="z4j2mc5_120">@DslMarker</code> annotation with <code class="code" id="z4j2mc5_121">@Target(AnnotationTarget.TYPE)</code>:</p><div class="code-block" data-lang="kotlin">
 @Target(AnnotationTarget.TYPE)
 @DslMarker
 annotation class HtmlTagMarker
-</div><p id="-pjjwcl_100">As a result, the <code class="code" id="-pjjwcl_122">@DslMarker</code> annotation can be applied to function types, most commonly to lambdas with receivers. For example:</p><div class="code-block" data-lang="kotlin">
+</div><p id="z4j2mc5_100">As a result, the <code class="code" id="z4j2mc5_122">@DslMarker</code> annotation can be applied to function types, most commonly to lambdas with receivers. For example:</p><div class="code-block" data-lang="kotlin">
 fun html(init: @HtmlTagMarker HTML.() -&gt; Unit): HTML { ... }
 
 fun HTML.head(init: @HtmlTagMarker Head.() -&gt; Unit): Head { ... }
 
 fun Head.title(init: @HtmlTagMarker Title.() -&gt; Unit): Title { ... }
-</div><p id="-pjjwcl_102">When you call these functions, the <code class="code" id="-pjjwcl_123">@DslMarker</code> annotation restricts access to outer receivers in the body of a lambda marked with it unless you specify them explicitly:</p><div class="code-block" data-lang="kotlin">
+</div><p id="z4j2mc5_102">When you call these functions, the <code class="code" id="z4j2mc5_123">@DslMarker</code> annotation restricts access to outer receivers in the body of a lambda marked with it unless you specify them explicitly:</p><div class="code-block" data-lang="kotlin">
 html {
     head {
         title {
@@ -160,7 +160,7 @@ html {
         }
     }
 }
-</div><p id="-pjjwcl_104">Only the nearest receiver's members and extensions are accessible within a lambda, preventing unintended interactions between nested scopes.</p><section class="chapter"><h3 id="full-definition-of-the-com-example-html-package" data-toc="full-definition-of-the-com-example-html-package">Full definition of the com.example.html package</h3><p id="-pjjwcl_124">This is how the package <code class="code" id="-pjjwcl_126">com.example.html</code> is defined (only the elements used in the example above). It builds an HTML tree. It makes heavy use of <a href="extensions.html" id="-pjjwcl_127">extension functions</a> and <a href="lambdas.html#function-literals-with-receiver" id="-pjjwcl_128">lambdas with receiver</a>.</p><div class="code-block" data-lang="kotlin">
+</div><p id="z4j2mc5_104">Only the nearest receiver's members and extensions are accessible within a lambda, preventing unintended interactions between nested scopes.</p><section class="chapter"><h3 id="full-definition-of-the-com-example-html-package" data-toc="full-definition-of-the-com-example-html-package">Full definition of the com.example.html package</h3><p id="z4j2mc5_124">This is how the package <code class="code" id="z4j2mc5_126">com.example.html</code> is defined (only the elements used in the example above). It builds an HTML tree. It makes heavy use of <a href="extensions.html" id="z4j2mc5_127">extension functions</a> and <a href="lambdas.html#function-literals-with-receiver" id="z4j2mc5_128">lambdas with receiver</a>.</p><div class="code-block" data-lang="kotlin">
 package com.example.html
 
 interface Element {
@@ -256,4 +256,4 @@ fun html(init: HTML.() -&gt; Unit): HTML {
     html.init()
     return html
 }
-</div></section></section><div class="last-modified">08 July 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="operator-overloading.html" class="navigation-links__prev">Operator overloading</a><a href="using-builders-with-builder-inference.html" class="navigation-links__next">Using builders with builder type inference</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>
+</div></section></section><div class="last-modified">09 July 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="operator-overloading.html" class="navigation-links__prev">Operator overloading</a><a href="using-builders-with-builder-inference.html" class="navigation-links__next">Using builders with builder type inference</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>
