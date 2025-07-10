@@ -399,10 +399,10 @@
       "name" : "Dark version of image or video file cannot be found",
       "description" : "\"\"gradle-build-scan-k2_dark.png\"\" in whatsnew19.md:87:1"
     }, {
-      "id" : "VIS011---gradle-console-rich-output_dark-png---in-whatsnew-eap-md-442-1--whatsnew22-md-1028-1",
+      "id" : "VIS011---gradle-console-rich-output_dark-png---in-whatsnew22-md-1028-1",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"gradle-console-rich-output_dark.png\"\" in whatsnew-eap.md:442:1; whatsnew22.md:1028:1"
+      "description" : "\"\"gradle-console-rich-output_dark.png\"\" in whatsnew22.md:1028:1"
     }, {
       "id" : "VIS011---gradle-kts-load-config_dark-png---in-whatsnew14-md-1010-3",
       "problemId" : "VIS011",
