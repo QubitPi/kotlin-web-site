@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-07-11T20:43:47.98338502"><link rel="canonical" href="https://kotlinlang.org/docs/sam-with-receiver-plugin.html" data-react-helmet="true"><script>
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-07-14T15:29:28.324612631"><link rel="canonical" href="https://kotlinlang.org/docs/sam-with-receiver-plugin.html" data-react-helmet="true"><script>
     (function (w, d, s, l, i) {
         w[l] = w[l] || [];
         w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
@@ -24,7 +24,7 @@
     "@id": "https://kotlinlang.org/docs/#website",
     "url": "https://kotlinlang.org/docs/",
     "name": "Kotlin Help"
-}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="sam-with-receiver-plugin" data-main-title="SAM-with-receiver compiler plugin" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Compiler and plugins///Kotlin compiler plugins" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/sam-with-receiver-plugin.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="sam-with-receiver-plugin" id="sam-with-receiver-plugin.md">SAM-with-receiver compiler plugin</h1><p id="efjgrr_2">The <span class="emphasis" id="efjgrr_9">sam-with-receiver</span> compiler plugin makes the first parameter of the annotated Java &quot;single abstract method&quot; (SAM) interface method a receiver in Kotlin. This conversion only works when the SAM interface is passed as a Kotlin lambda, both for SAM adapters and SAM constructors (see the <a href="java-interop.html#sam-conversions" id="efjgrr_10">SAM conversions documentation</a> for more details).</p><p id="efjgrr_3">Here is an example:</p><div class="code-block" data-lang="java">
+}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="sam-with-receiver-plugin" data-main-title="SAM-with-receiver compiler plugin" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Compiler and plugins///Kotlin compiler plugins" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/sam-with-receiver-plugin.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="sam-with-receiver-plugin" id="sam-with-receiver-plugin.md">SAM-with-receiver compiler plugin</h1><p id="msqa0m_2">The <span class="emphasis" id="msqa0m_9">sam-with-receiver</span> compiler plugin makes the first parameter of the annotated Java &quot;single abstract method&quot; (SAM) interface method a receiver in Kotlin. This conversion only works when the SAM interface is passed as a Kotlin lambda, both for SAM adapters and SAM constructors (see the <a href="java-interop.html#sam-conversions" id="msqa0m_10">SAM conversions documentation</a> for more details).</p><p id="msqa0m_3">Here is an example:</p><div class="code-block" data-lang="java">
 public @interface SamWithReceiver {}
 
 @SamWithReceiver
@@ -41,15 +41,15 @@ fun test(context: TaskContext) {
         println(&quot;$name is finished&quot;)
     }
 }
-</div><section class="chapter"><h2 id="gradle" data-toc="gradle">Gradle</h2><p id="efjgrr_11">The usage is the same to <a href="all-open-plugin.html" id="efjgrr_15">all-open</a> and <a href="no-arg-plugin.html" id="efjgrr_16">no-arg</a>, except the fact that sam-with-receiver does not have any built-in presets, and you need to specify your own list of special-treated annotations.</p><div class="tabs" id="efjgrr_12" data-group="build-script" data-anchors="[efjgrr_17,efjgrr_18]"><div class="tabs__content" data-gtm="tab" id="efjgrr_17" data-sync-tabs="kotlin" data-title="Kotlin"><div class="code-block" data-lang="kotlin" data-title="Kotlin">
+</div><section class="chapter"><h2 id="gradle" data-toc="gradle">Gradle</h2><p id="msqa0m_11">The usage is the same to <a href="all-open-plugin.html" id="msqa0m_15">all-open</a> and <a href="no-arg-plugin.html" id="msqa0m_16">no-arg</a>, except the fact that sam-with-receiver does not have any built-in presets, and you need to specify your own list of special-treated annotations.</p><div class="tabs" id="msqa0m_12" data-group="build-script" data-anchors="[msqa0m_17,msqa0m_18]"><div class="tabs__content" data-gtm="tab" id="msqa0m_17" data-sync-tabs="kotlin" data-title="Kotlin"><div class="code-block" data-lang="kotlin" data-title="Kotlin">
 plugins {
     kotlin(&quot;plugin.sam.with.receiver&quot;) version &quot;2.2.0&quot;
 }
-</div></div><div class="tabs__content" data-gtm="tab" id="efjgrr_18" data-sync-tabs="groovy" data-title="Groovy"><div class="code-block" data-lang="groovy" data-title="Groovy">
+</div></div><div class="tabs__content" data-gtm="tab" id="msqa0m_18" data-sync-tabs="groovy" data-title="Groovy"><div class="code-block" data-lang="groovy" data-title="Groovy">
 plugins {
     id &quot;org.jetbrains.kotlin.plugin.sam.with.receiver&quot; version &quot;2.2.0&quot;
 }
-</div></div></div><p id="efjgrr_13">Then specify the list of SAM-with-receiver annotations:</p><div class="code-block" data-lang="groovy">
+</div></div></div><p id="msqa0m_13">Then specify the list of SAM-with-receiver annotations:</p><div class="code-block" data-lang="groovy">
 samWithReceiver {
     annotation(&quot;com.my.SamWithReceiver&quot;)
 }
@@ -79,7 +79,7 @@ samWithReceiver {
         &lt;/dependency&gt;
     &lt;/dependencies&gt;
 &lt;/plugin&gt;
-</div></section><section class="chapter"><h2 id="command-line-compiler" data-toc="command-line-compiler">Command-line compiler</h2><p id="efjgrr_22">Add the plugin JAR file to the compiler plugin classpath and specify the list of sam-with-receiver annotations:</p><div class="code-block" data-lang="bash">
+</div></section><section class="chapter"><h2 id="command-line-compiler" data-toc="command-line-compiler">Command-line compiler</h2><p id="msqa0m_22">Add the plugin JAR file to the compiler plugin classpath and specify the list of sam-with-receiver annotations:</p><div class="code-block" data-lang="bash">
 -Xplugin=$KOTLIN_HOME/lib/sam-with-receiver-compiler-plugin.jar
 -P plugin:org.jetbrains.kotlin.samWithReceiver:annotation=com.my.SamWithReceiver
-</div></section><div class="last-modified">11 July 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="no-arg-plugin.html" class="navigation-links__prev">No-arg compiler plugin</a><a href="kapt.html" class="navigation-links__next">kapt compiler plugin</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>
+</div></section><div class="last-modified">14 July 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="no-arg-plugin.html" class="navigation-links__prev">No-arg compiler plugin</a><a href="kapt.html" class="navigation-links__next">kapt compiler plugin</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>

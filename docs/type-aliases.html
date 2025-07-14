@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-07-11T20:43:47.434351787"><link rel="canonical" href="https://kotlinlang.org/docs/type-aliases.html" data-react-helmet="true"><script>
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-07-14T15:29:27.833259134"><link rel="canonical" href="https://kotlinlang.org/docs/type-aliases.html" data-react-helmet="true"><script>
     (function (w, d, s, l, i) {
         w[l] = w[l] || [];
         w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
@@ -24,15 +24,15 @@
     "@id": "https://kotlinlang.org/docs/#website",
     "url": "https://kotlinlang.org/docs/",
     "name": "Kotlin Help"
-}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="type-aliases" data-main-title="Type aliases" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Concepts///Classes and objects" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/type-aliases.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="type-aliases" id="type-aliases.md">Type aliases</h1><p id="-loorzg_2">Type aliases provide alternative names for existing types. If the type name is too long you can introduce a different shorter name and use the new one instead.</p><p id="-loorzg_3">It's useful to shorten long generic types. For instance, it's often tempting to shrink collection types:</p><div class="code-block" data-lang="kotlin">
+}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="type-aliases" data-main-title="Type aliases" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Concepts///Classes and objects" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/type-aliases.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="type-aliases" id="type-aliases.md">Type aliases</h1><p id="-u83qu5_2">Type aliases provide alternative names for existing types. If the type name is too long you can introduce a different shorter name and use the new one instead.</p><p id="-u83qu5_3">It's useful to shorten long generic types. For instance, it's often tempting to shrink collection types:</p><div class="code-block" data-lang="kotlin">
 typealias NodeSet = Set&lt;Network.Node&gt;
 
 typealias FileTable&lt;K&gt; = MutableMap&lt;K, MutableList&lt;File&gt;&gt;
-</div><p id="-loorzg_5">You can provide different aliases for function types:</p><div class="code-block" data-lang="kotlin">
+</div><p id="-u83qu5_5">You can provide different aliases for function types:</p><div class="code-block" data-lang="kotlin">
 typealias MyHandler = (Int, String, Any) -&gt; Unit
 
 typealias Predicate&lt;T&gt; = (T) -&gt; Boolean
-</div><p id="-loorzg_7">You can have new names for inner and nested classes:</p><div class="code-block" data-lang="kotlin">
+</div><p id="-u83qu5_7">You can have new names for inner and nested classes:</p><div class="code-block" data-lang="kotlin">
 class A {
     inner class Inner
 }
@@ -42,7 +42,7 @@ class B {
 
 typealias AInner = A.Inner
 typealias BInner = B.Inner
-</div><p id="-loorzg_9">Type aliases do not introduce new types. They are equivalent to the corresponding underlying types. When you add <code class="code" id="-loorzg_12">typealias Predicate&lt;T&gt;</code> and use <code class="code" id="-loorzg_13">Predicate&lt;Int&gt;</code> in your code, the Kotlin compiler always expands it to <code class="code" id="-loorzg_14">(Int) -&gt; Boolean</code>. Thus you can pass a variable of your type whenever a general function type is required and vice versa:</p><div class="code-block" data-lang="kotlin" data-runnable="true">
+</div><p id="-u83qu5_9">Type aliases do not introduce new types. They are equivalent to the corresponding underlying types. When you add <code class="code" id="-u83qu5_12">typealias Predicate&lt;T&gt;</code> and use <code class="code" id="-u83qu5_13">Predicate&lt;Int&gt;</code> in your code, the Kotlin compiler always expands it to <code class="code" id="-u83qu5_14">(Int) -&gt; Boolean</code>. Thus you can pass a variable of your type whenever a general function type is required and vice versa:</p><div class="code-block" data-lang="kotlin" data-runnable="true">
 typealias Predicate&lt;T&gt; = (T) -&gt; Boolean
 
 fun foo(p: Predicate&lt;Int&gt;) = p(42)
@@ -54,29 +54,29 @@ fun main() {
     val p: Predicate&lt;Int&gt; = { it &gt; 0 }
     println(listOf(1, -2).filter(p)) // prints &quot;[1]&quot;
 }
-</div><section class="chapter"><h2 id="nested-type-aliases" data-toc="nested-type-aliases" data-label-id="beta">Nested type aliases</h2><p id="-loorzg_16">In Kotlin, you can define type aliases inside other declarations, as long as they don't capture type parameters from their outer class:</p><div class="code-block" data-lang="kotlin">
+</div><section class="chapter"><h2 id="nested-type-aliases" data-toc="nested-type-aliases" data-label-id="beta">Nested type aliases</h2><p id="-u83qu5_16">In Kotlin, you can define type aliases inside other declarations, as long as they don't capture type parameters from their outer class:</p><div class="code-block" data-lang="kotlin">
 class Dijkstra {
    typealias VisitedNodes = Set&lt;Node&gt;
 
    private fun step(visited: VisitedNodes, ...) = ...
 }
-</div><p id="-loorzg_18">Capturing means that the type alias refers to a type parameter defined in the outer class:</p><div class="code-block" data-lang="kotlin">
+</div><p id="-u83qu5_18">Capturing means that the type alias refers to a type parameter defined in the outer class:</p><div class="code-block" data-lang="kotlin">
 class Graph&lt;Node&gt; {
     // Incorrect because captures Node
     typealias Path = List&lt;Node&gt;
 }
-</div><p id="-loorzg_20">To fix this issue, declare the type parameter directly in the type alias:</p><div class="code-block" data-lang="kotlin">
+</div><p id="-u83qu5_20">To fix this issue, declare the type parameter directly in the type alias:</p><div class="code-block" data-lang="kotlin">
 class Graph&lt;Node&gt; {
     // Correct because Node is a type alias parameter
     typealias Path&lt;Node&gt; = List&lt;Node&gt;
 }
-</div><p id="-loorzg_22">Nested type aliases allow for cleaner, more maintainable code by improving encapsulation, reducing package-level clutter, and simplifying internal implementations.</p><section class="chapter"><h3 id="rules-for-nested-type-aliases" data-toc="rules-for-nested-type-aliases">Rules for nested type aliases</h3><p id="-loorzg_25">Nested type aliases follow specific rules to ensure clear and consistent behavior:</p><ul class="list _bullet" id="-loorzg_26"><li class="list__item" id="-loorzg_27"><p id="-loorzg_32">Nested type aliases must follow all existing type alias rules.</p></li><li class="list__item" id="-loorzg_28"><p id="-loorzg_33">In terms of visibility, the alias can't expose more than its referenced types allow.</p></li><li class="list__item" id="-loorzg_29"><p id="-loorzg_34">Their scope is the same as <a href="nested-classes.html" id="-loorzg_35">nested classes</a>. You can define them inside classes, and they hide any parent type aliases with the same name as they don't override.</p></li><li class="list__item" id="-loorzg_30"><p id="-loorzg_36">Nested type aliases can be marked as <code class="code" id="-loorzg_37">internal</code> or <code class="code" id="-loorzg_38">private</code> to limit their visibility.</p></li><li class="list__item" id="-loorzg_31"><p id="-loorzg_39">Nested type aliases are not supported in Kotlin Multiplatform's <a href="https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-expect-actual.html" id="-loorzg_40" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="-loorzg_41">expect/actual</code> declarations</a>.</p></li></ul></section><section class="chapter"><h3 id="how-to-enable-nested-type-aliases" data-toc="how-to-enable-nested-type-aliases">How to enable nested type aliases</h3><p id="-loorzg_42">To enable nested type aliases in your project, use the following compiler option in the command line:</p><div class="code-block" data-lang="bash">
+</div><p id="-u83qu5_22">Nested type aliases allow for cleaner, more maintainable code by improving encapsulation, reducing package-level clutter, and simplifying internal implementations.</p><section class="chapter"><h3 id="rules-for-nested-type-aliases" data-toc="rules-for-nested-type-aliases">Rules for nested type aliases</h3><p id="-u83qu5_25">Nested type aliases follow specific rules to ensure clear and consistent behavior:</p><ul class="list _bullet" id="-u83qu5_26"><li class="list__item" id="-u83qu5_27"><p id="-u83qu5_32">Nested type aliases must follow all existing type alias rules.</p></li><li class="list__item" id="-u83qu5_28"><p id="-u83qu5_33">In terms of visibility, the alias can't expose more than its referenced types allow.</p></li><li class="list__item" id="-u83qu5_29"><p id="-u83qu5_34">Their scope is the same as <a href="nested-classes.html" id="-u83qu5_35">nested classes</a>. You can define them inside classes, and they hide any parent type aliases with the same name as they don't override.</p></li><li class="list__item" id="-u83qu5_30"><p id="-u83qu5_36">Nested type aliases can be marked as <code class="code" id="-u83qu5_37">internal</code> or <code class="code" id="-u83qu5_38">private</code> to limit their visibility.</p></li><li class="list__item" id="-u83qu5_31"><p id="-u83qu5_39">Nested type aliases are not supported in Kotlin Multiplatform's <a href="https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-expect-actual.html" id="-u83qu5_40" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="-u83qu5_41">expect/actual</code> declarations</a>.</p></li></ul></section><section class="chapter"><h3 id="how-to-enable-nested-type-aliases" data-toc="how-to-enable-nested-type-aliases">How to enable nested type aliases</h3><p id="-u83qu5_42">To enable nested type aliases in your project, use the following compiler option in the command line:</p><div class="code-block" data-lang="bash">
 -Xnested-type-aliases
-</div><p id="-loorzg_44">Or add it to the <code class="code" id="-loorzg_46">compilerOptions {}</code> block of your Gradle build file:</p><div class="code-block" data-lang="kotlin">
+</div><p id="-u83qu5_44">Or add it to the <code class="code" id="-u83qu5_46">compilerOptions {}</code> block of your Gradle build file:</p><div class="code-block" data-lang="kotlin">
 // build.gradle.kts
 kotlin {
     compilerOptions {
         freeCompilerArgs.add(&quot;-Xnested-type-aliases&quot;)
     }
 }
-</div></section></section><div class="last-modified">11 July 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="delegated-properties.html" class="navigation-links__prev">Delegated properties</a><a href="functions.html" class="navigation-links__next">Functions</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>
+</div></section></section><div class="last-modified">14 July 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="delegated-properties.html" class="navigation-links__prev">Delegated properties</a><a href="functions.html" class="navigation-links__next">Functions</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>
