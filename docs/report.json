@@ -389,6 +389,11 @@
       "name" : "Dark version of image or video file cannot be found",
       "description" : "\"\"github-notebook_dark.png\"\" in kotlin-notebook-share.md:14:3"
     }, {
+      "id" : "VIS011---github_dark-svg---in-api-references-topic-14-13--api-references-topic-21-13--api-references-topic-28-13--api-references-topic-35-13--api-references-topic-42-13--api-references-topic-49-13--api-references-topic-56-13--api-references-topic-63-13--api-references-topic-70-13",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"github_dark.svg\"\" in api-references.topic:14:13; api-references.topic:21:13; api-references.topic:28:13; api-references.topic:35:13; api-references.topic:42:13; api-references.topic:49:13; api-references.topic:56:13; api-references.topic:63:13; api-references.topic:70:13"
+    }, {
       "id" : "VIS011---gradle-build-scan-k1_dark-png---in-whatsnew19-md-85-1",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
@@ -579,10 +584,10 @@
       "name" : "Dark version of image or video file cannot be found",
       "description" : "\"\"java-15-multiline-output_dark.png\"\" in java-to-kotlin-idioms-strings.md:321:1"
     }, {
-      "id" : "VIS011---join-slack-channel_dark-svg---in-wasm-get-started-md-109-1--wasm-wasi-md-125-1",
+      "id" : "VIS011---join-slack-channel_dark-svg---in-wasm-get-started-md-115-1--wasm-wasi-md-125-1",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"join-slack-channel_dark.svg\"\" in wasm-get-started.md:109:1; wasm-wasi.md:125:1"
+      "description" : "\"\"join-slack-channel_dark.svg\"\" in wasm-get-started.md:115:1; wasm-wasi.md:125:1"
     }, {
       "id" : "VIS011---joy-of-kotlin_dark-png---in-books-md-101-1",
       "problemId" : "VIS011",
@@ -1538,15 +1543,15 @@
       "description" : "\"\"shared-mutable-state-and-concurrency.md\"\" in native-faq.md:127:68"
     } ],
     "REF009" : [ {
-      "id" : "REF009---api-guidelines-tree---in-kr-tree-375-4",
+      "id" : "REF009---api-guidelines-tree---in-kr-tree-376-4",
       "problemId" : "REF009",
       "name" : "Cannot include from topic that does not exist",
-      "description" : "\"\"api-guidelines.tree\"\" in kr.tree:375:4"
+      "description" : "\"\"api-guidelines.tree\"\" in kr.tree:376:4"
     }, {
-      "id" : "REF009---dokka-tree---in-kr-tree-318-4",
+      "id" : "REF009---dokka-tree---in-kr-tree-319-4",
       "problemId" : "REF009",
       "name" : "Cannot include from topic that does not exist",
-      "description" : "\"\"dokka.tree\"\" in kr.tree:318:4"
+      "description" : "\"\"dokka.tree\"\" in kr.tree:319:4"
     }, {
       "id" : "REF009---kc-tree---in-kr-tree-276-4",
       "problemId" : "REF009",
