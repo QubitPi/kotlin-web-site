@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-07-16T16:35:59.819619245"><link rel="canonical" href="https://kotlinlang.org/docs/ksp-command-line.html" data-react-helmet="true"><script>
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-07-17T17:49:54.269338736"><link rel="canonical" href="https://kotlinlang.org/docs/ksp-command-line.html" data-react-helmet="true"><script>
     (function (w, d, s, l, i) {
         w[l] = w[l] || [];
         w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
@@ -24,28 +24,28 @@
     "@id": "https://kotlinlang.org/docs/#website",
     "url": "https://kotlinlang.org/docs/",
     "name": "Kotlin Help"
-}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="ksp-command-line" data-main-title="Running KSP from command line" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Compiler and plugins///Kotlin Symbol Processing API" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/ksp/ksp-command-line.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="ksp-command-line" id="ksp-command-line.md">Running KSP from command line</h1><p id="-73olho_2">KSP is a Kotlin compiler plugin and needs to run with Kotlin compiler. Download and extract them.</p><div class="code-block" data-lang="bash">
+}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="ksp-command-line" data-main-title="Running KSP from command line" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Compiler and plugins///Kotlin Symbol Processing API" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/ksp/ksp-command-line.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="ksp-command-line" id="ksp-command-line.md">Running KSP from command line</h1><p id="-n0yh42_2">KSP is a Kotlin compiler plugin and needs to run with Kotlin compiler. Download and extract them.</p><div class="code-block" data-lang="bash">
 #!/bin/bash
 
 # Kotlin compiler
-wget https://github.com/JetBrains/kotlin/releases/download/v2.1.21/kotlin-compiler-2.1.21.zip
-unzip kotlin-compiler-2.1.21.zip
+wget https://github.com/JetBrains/kotlin/releases/download/v2.2.0/kotlin-compiler-2.2.0.zip
+unzip kotlin-compiler-2.2.0.zip
 
 # KSP
-wget https://github.com/google/ksp/releases/download/2.1.21-2.0.1/artifacts.zip
+wget https://github.com/google/ksp/releases/download/2.2.0-2.0.2/artifacts.zip
 unzip artifacts.zip
-</div><p id="-73olho_4">To run KSP with <code class="code" id="-73olho_11">kotlinc</code>, pass the <code class="code" id="-73olho_12">-Xplugin</code> option to <code class="code" id="-73olho_13">kotlinc</code>.</p><div class="code-block" data-lang="none">
--Xplugin=/path/to/symbol-processing-cmdline-2.1.21-2.0.1.jar
-</div><p id="-73olho_6">This is different from the <code class="code" id="-73olho_14">symbol-processing-2.1.21-2.0.1.jar</code>, which is designed to be used with <code class="code" id="-73olho_15">kotlin-compiler-embeddable</code> when running with Gradle. The command line <code class="code" id="-73olho_16">kotlinc</code> needs <code class="code" id="-73olho_17">symbol-processing-cmdline-2.1.21-2.0.1.jar</code>.</p><p id="-73olho_7">You'll also need the API jar.</p><div class="code-block" data-lang="none">
--Xplugin=/path/to/symbol-processing-api-2.1.21-2.0.1.jar
-</div><p id="-73olho_9">See the complete example:</p><div class="code-block" data-lang="bash">
+</div><p id="-n0yh42_4">To run KSP with <code class="code" id="-n0yh42_11">kotlinc</code>, pass the <code class="code" id="-n0yh42_12">-Xplugin</code> option to <code class="code" id="-n0yh42_13">kotlinc</code>.</p><div class="code-block" data-lang="none">
+-Xplugin=/path/to/symbol-processing-cmdline-2.2.0-2.0.2.jar
+</div><p id="-n0yh42_6">This is different from the <code class="code" id="-n0yh42_14">symbol-processing-2.2.0-2.0.2.jar</code>, which is designed to be used with <code class="code" id="-n0yh42_15">kotlin-compiler-embeddable</code> when running with Gradle. The command line <code class="code" id="-n0yh42_16">kotlinc</code> needs <code class="code" id="-n0yh42_17">symbol-processing-cmdline-2.2.0-2.0.2.jar</code>.</p><p id="-n0yh42_7">You'll also need the API jar.</p><div class="code-block" data-lang="none">
+-Xplugin=/path/to/symbol-processing-api-2.2.0-2.0.2.jar
+</div><p id="-n0yh42_9">See the complete example:</p><div class="code-block" data-lang="bash">
 #!/bin/bash
 
 KSP_PLUGIN_ID=com.google.devtools.ksp.symbol-processing
 KSP_PLUGIN_OPT=plugin:$KSP_PLUGIN_ID
 
-KSP_PLUGIN_JAR=./com/google/devtools/ksp/symbol-processing-cmdline/2.1.21-2.0.1/symbol-processing-cmdline-2.1.21-2.0.1.jar
-KSP_API_JAR=./com/google/devtools/ksp/symbol-processing-api/2.1.21-2.0.1/symbol-processing-api-2.1.21-2.0.1.jar
+KSP_PLUGIN_JAR=./com/google/devtools/ksp/symbol-processing-cmdline/2.2.0-2.0.2/symbol-processing-cmdline-2.2.0-2.0.2.jar
+KSP_API_JAR=./com/google/devtools/ksp/symbol-processing-api/2.2.0-2.0.2/symbol-processing-api-2.2.0-2.0.2.jar
 KOTLINC=./kotlinc/bin/kotlinc
 
 AP=/path/to/your-processor.jar
@@ -67,4 +67,4 @@ $KOTLINC \
         -P $KSP_PLUGIN_OPT:apoption=key1=value1 \
         -P $KSP_PLUGIN_OPT:apoption=key2=value2 \
         $*
-</div><div class="last-modified">16 July 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="ksp-multiplatform.html" class="navigation-links__prev">KSP with Kotlin Multiplatform</a><a href="ksp-faq.html" class="navigation-links__next">KSP FAQ</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>
+</div><div class="last-modified">17 July 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="ksp-multiplatform.html" class="navigation-links__prev">KSP with Kotlin Multiplatform</a><a href="ksp-faq.html" class="navigation-links__next">KSP FAQ</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>
