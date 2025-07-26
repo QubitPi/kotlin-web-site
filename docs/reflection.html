@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-07-24T18:52:09.181597422"><link rel="canonical" href="https://kotlinlang.org/docs/reflection.html" data-react-helmet="true"><script>
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-07-26T03:42:23.821787698"><link rel="canonical" href="https://kotlinlang.org/docs/reflection.html" data-react-helmet="true"><script>
     (function (w, d, s, l, i) {
         w[l] = w[l] || [];
         w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
@@ -24,29 +24,29 @@
     "@id": "https://kotlinlang.org/docs/#website",
     "url": "https://kotlinlang.org/docs/",
     "name": "Kotlin Help"
-}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="reflection" data-main-title="Reflection" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Concepts" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/reflection.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="reflection" id="reflection.md">Reflection</h1><p id="z7iyjyc_2"><span class="emphasis" id="z7iyjyc_7">Reflection</span> is a set of language and library features that allows you to introspect the structure of your program at runtime. Functions and properties are first-class citizens in Kotlin, and the ability to introspect them (for example, learning the name or the type of a property or function at runtime) is essential when using a functional or reactive style.</p><aside class="prompt" data-type="note" data-title="" id="z7iyjyc_3"><p id="z7iyjyc_8">Kotlin/JS provides limited support for reflection features. <a href="js-reflection.html" id="z7iyjyc_9">Learn more about reflection in Kotlin/JS</a>.</p></aside><section class="chapter"><h2 id="jvm-dependency" data-toc="jvm-dependency">JVM dependency</h2><p id="z7iyjyc_10">On the JVM platform, the Kotlin compiler distribution includes the runtime component required for using the reflection features as a separate artifact, <code class="code" id="z7iyjyc_14">kotlin-reflect.jar</code>. This is done to reduce the required size of the runtime library for applications that do not use reflection features.</p><p id="z7iyjyc_11">To use reflection in a Gradle or Maven project, add the dependency on <code class="code" id="z7iyjyc_15">kotlin-reflect</code>:</p><ul class="list _bullet" id="z7iyjyc_12"><li class="list__item" id="z7iyjyc_16"><p id="z7iyjyc_18">In Gradle:</p><div class="tabs" id="z7iyjyc_19" data-group="build-script" data-anchors="[z7iyjyc_20,z7iyjyc_21]"><div class="tabs__content" data-gtm="tab" id="z7iyjyc_20" data-sync-tabs="kotlin" data-title="Kotlin"><div class="code-block" data-lang="kotlin" data-title="Kotlin">
+}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="reflection" data-main-title="Reflection" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Concepts" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/reflection.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="reflection" id="reflection.md">Reflection</h1><p id="x3sbwp_2"><span class="emphasis" id="x3sbwp_7">Reflection</span> is a set of language and library features that allows you to introspect the structure of your program at runtime. Functions and properties are first-class citizens in Kotlin, and the ability to introspect them (for example, learning the name or the type of a property or function at runtime) is essential when using a functional or reactive style.</p><aside class="prompt" data-type="note" data-title="" id="x3sbwp_3"><p id="x3sbwp_8">Kotlin/JS provides limited support for reflection features. <a href="js-reflection.html" id="x3sbwp_9">Learn more about reflection in Kotlin/JS</a>.</p></aside><section class="chapter"><h2 id="jvm-dependency" data-toc="jvm-dependency">JVM dependency</h2><p id="x3sbwp_10">On the JVM platform, the Kotlin compiler distribution includes the runtime component required for using the reflection features as a separate artifact, <code class="code" id="x3sbwp_14">kotlin-reflect.jar</code>. This is done to reduce the required size of the runtime library for applications that do not use reflection features.</p><p id="x3sbwp_11">To use reflection in a Gradle or Maven project, add the dependency on <code class="code" id="x3sbwp_15">kotlin-reflect</code>:</p><ul class="list _bullet" id="x3sbwp_12"><li class="list__item" id="x3sbwp_16"><p id="x3sbwp_18">In Gradle:</p><div class="tabs" id="x3sbwp_19" data-group="build-script" data-anchors="[x3sbwp_20,x3sbwp_21]"><div class="tabs__content" data-gtm="tab" id="x3sbwp_20" data-sync-tabs="kotlin" data-title="Kotlin"><div class="code-block" data-lang="kotlin" data-title="Kotlin">
 dependencies {
     implementation(kotlin(&quot;reflect&quot;))
 }
-</div></div><div class="tabs__content" data-gtm="tab" id="z7iyjyc_21" data-sync-tabs="groovy" data-title="Groovy"><div class="code-block" data-lang="groovy" data-title="Groovy">
+</div></div><div class="tabs__content" data-gtm="tab" id="x3sbwp_21" data-sync-tabs="groovy" data-title="Groovy"><div class="code-block" data-lang="groovy" data-title="Groovy">
 dependencies {
     implementation &quot;org.jetbrains.kotlin:kotlin-reflect:2.2.0&quot;
 }
-</div></div></div></li><li class="list__item" id="z7iyjyc_17"><p id="z7iyjyc_24">In Maven:</p><div class="code-block" data-lang="markup">
+</div></div></div></li><li class="list__item" id="x3sbwp_17"><p id="x3sbwp_24">In Maven:</p><div class="code-block" data-lang="markup">
 &lt;dependencies&gt;
     &lt;dependency&gt;
         &lt;groupId&gt;org.jetbrains.kotlin&lt;/groupId&gt;
         &lt;artifactId&gt;kotlin-reflect&lt;/artifactId&gt;
     &lt;/dependency&gt;
 &lt;/dependencies&gt;
-</div></li></ul><p id="z7iyjyc_13">If you don't use Gradle or Maven, make sure you have <code class="code" id="z7iyjyc_26">kotlin-reflect.jar</code> in the classpath of your project. In other supported cases (IntelliJ IDEA projects that use the command-line compiler or Ant), it is added by default. In the command-line compiler and Ant, you can use the <code class="code" id="z7iyjyc_27">-no-reflect</code> compiler option to exclude <code class="code" id="z7iyjyc_28">kotlin-reflect.jar</code> from the classpath.</p></section><section class="chapter"><h2 id="class-references" data-toc="class-references">Class references</h2><p id="z7iyjyc_29">The most basic reflection feature is getting the runtime reference to a Kotlin class. To obtain the reference to a statically known Kotlin class, you can use the <span class="emphasis" id="z7iyjyc_34">class literal</span> syntax:</p><div class="code-block" data-lang="kotlin">
+</div></li></ul><p id="x3sbwp_13">If you don't use Gradle or Maven, make sure you have <code class="code" id="x3sbwp_26">kotlin-reflect.jar</code> in the classpath of your project. In other supported cases (IntelliJ IDEA projects that use the command-line compiler or Ant), it is added by default. In the command-line compiler and Ant, you can use the <code class="code" id="x3sbwp_27">-no-reflect</code> compiler option to exclude <code class="code" id="x3sbwp_28">kotlin-reflect.jar</code> from the classpath.</p></section><section class="chapter"><h2 id="class-references" data-toc="class-references">Class references</h2><p id="x3sbwp_29">The most basic reflection feature is getting the runtime reference to a Kotlin class. To obtain the reference to a statically known Kotlin class, you can use the <span class="emphasis" id="x3sbwp_34">class literal</span> syntax:</p><div class="code-block" data-lang="kotlin">
 val c = MyClass::class
-</div><p id="z7iyjyc_31">The reference is a <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html" id="z7iyjyc_35" data-external="true" rel="noopener noreferrer" target="_blank">KClass</a> type value.</p><aside class="prompt" data-type="note" data-title="" id="z7iyjyc_32"><p id="z7iyjyc_36">On JVM: a Kotlin class reference is not the same as a Java class reference. To obtain a Java class reference, use the <code class="code" id="z7iyjyc_37">.java</code> property on a <code class="code" id="z7iyjyc_38">KClass</code> instance.</p></aside><section class="chapter"><h3 id="bound-class-references" data-toc="bound-class-references">Bound class references</h3><p id="z7iyjyc_39">You can get the reference to the class of a specific object with the same <code class="code" id="z7iyjyc_42">::class</code> syntax by using the object as a receiver:</p><div class="code-block" data-lang="kotlin">
+</div><p id="x3sbwp_31">The reference is a <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html" id="x3sbwp_35" data-external="true" rel="noopener noreferrer" target="_blank">KClass</a> type value.</p><aside class="prompt" data-type="note" data-title="" id="x3sbwp_32"><p id="x3sbwp_36">On JVM: a Kotlin class reference is not the same as a Java class reference. To obtain a Java class reference, use the <code class="code" id="x3sbwp_37">.java</code> property on a <code class="code" id="x3sbwp_38">KClass</code> instance.</p></aside><section class="chapter"><h3 id="bound-class-references" data-toc="bound-class-references">Bound class references</h3><p id="x3sbwp_39">You can get the reference to the class of a specific object with the same <code class="code" id="x3sbwp_42">::class</code> syntax by using the object as a receiver:</p><div class="code-block" data-lang="kotlin">
 val widget: Widget = ...
 assert(widget is GoodWidget) { &quot;Bad widget: ${widget::class.qualifiedName}&quot; }
-</div><p id="z7iyjyc_41">You will obtain the reference to the exact class of an object, for example, <code class="code" id="z7iyjyc_43">GoodWidget</code> or <code class="code" id="z7iyjyc_44">BadWidget</code>, regardless of the type of the receiver expression (<code class="code" id="z7iyjyc_45">Widget</code>).</p></section></section><section class="chapter"><h2 id="callable-references" data-toc="callable-references">Callable references</h2><p id="z7iyjyc_46">References to functions, properties, and constructors can also be called or used as instances of <a href="lambdas.html#function-types" id="z7iyjyc_54">function types</a>.</p><p id="z7iyjyc_47">The common supertype for all callable references is <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-callable/index.html" id="z7iyjyc_55" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="z7iyjyc_57">KCallable&lt;out R&gt;</code></a>, where <code class="code" id="z7iyjyc_56">R</code> is the return value type. It is the property type for properties, and the constructed type for constructors.</p><section class="chapter"><h3 id="function-references" data-toc="function-references">Function references</h3><p id="z7iyjyc_58">When you have a named function declared as below, you can call it directly (<code class="code" id="z7iyjyc_72">isOdd(5)</code>):</p><div class="code-block" data-lang="kotlin">
+</div><p id="x3sbwp_41">You will obtain the reference to the exact class of an object, for example, <code class="code" id="x3sbwp_43">GoodWidget</code> or <code class="code" id="x3sbwp_44">BadWidget</code>, regardless of the type of the receiver expression (<code class="code" id="x3sbwp_45">Widget</code>).</p></section></section><section class="chapter"><h2 id="callable-references" data-toc="callable-references">Callable references</h2><p id="x3sbwp_46">References to functions, properties, and constructors can also be called or used as instances of <a href="lambdas.html#function-types" id="x3sbwp_54">function types</a>.</p><p id="x3sbwp_47">The common supertype for all callable references is <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-callable/index.html" id="x3sbwp_55" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="x3sbwp_57">KCallable&lt;out R&gt;</code></a>, where <code class="code" id="x3sbwp_56">R</code> is the return value type. It is the property type for properties, and the constructed type for constructors.</p><section class="chapter"><h3 id="function-references" data-toc="function-references">Function references</h3><p id="x3sbwp_58">When you have a named function declared as below, you can call it directly (<code class="code" id="x3sbwp_72">isOdd(5)</code>):</p><div class="code-block" data-lang="kotlin">
 fun isOdd(x: Int) = x % 2 != 0
-</div><p id="z7iyjyc_60">Alternatively, you can use the function as a function type value, that is, pass it to another function. To do so, use the <code class="code" id="z7iyjyc_73">::</code> operator:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
+</div><p id="x3sbwp_60">Alternatively, you can use the function as a function type value, that is, pass it to another function. To do so, use the <code class="code" id="x3sbwp_73">::</code> operator:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
 fun isOdd(x: Int) = x % 2 != 0
 
 fun main() {
@@ -55,7 +55,7 @@ fun main() {
     println(numbers.filter(::isOdd))
 //sampleEnd
 }
-</div><p id="z7iyjyc_62">Here <code class="code" id="z7iyjyc_74">::isOdd</code> is a value of function type <code class="code" id="z7iyjyc_75">(Int) -&gt; Boolean</code>.</p><p id="z7iyjyc_63">Function references belong to one of the <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-function/index.html" id="z7iyjyc_76" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="z7iyjyc_78">KFunction&lt;out R&gt;</code></a> subtypes, depending on the parameter count. For instance, <code class="code" id="z7iyjyc_77">KFunction3&lt;T1, T2, T3, R&gt;</code>.</p><p id="z7iyjyc_64"><code class="code" id="z7iyjyc_79">::</code> can be used with overloaded functions when the expected type is known from the context. For example:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
+</div><p id="x3sbwp_62">Here <code class="code" id="x3sbwp_74">::isOdd</code> is a value of function type <code class="code" id="x3sbwp_75">(Int) -&gt; Boolean</code>.</p><p id="x3sbwp_63">Function references belong to one of the <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-function/index.html" id="x3sbwp_76" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="x3sbwp_78">KFunction&lt;out R&gt;</code></a> subtypes, depending on the parameter count. For instance, <code class="code" id="x3sbwp_77">KFunction3&lt;T1, T2, T3, R&gt;</code>.</p><p id="x3sbwp_64"><code class="code" id="x3sbwp_79">::</code> can be used with overloaded functions when the expected type is known from the context. For example:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
 fun main() {
 //sampleStart
     fun isOdd(x: Int) = x % 2 != 0
@@ -65,15 +65,15 @@ fun main() {
     println(numbers.filter(::isOdd)) // refers to isOdd(x: Int)
 //sampleEnd
 }
-</div><p id="z7iyjyc_66">Alternatively, you can provide the necessary context by storing the method reference in a variable with an explicitly specified type:</p><div class="code-block" data-lang="kotlin">
+</div><p id="x3sbwp_66">Alternatively, you can provide the necessary context by storing the method reference in a variable with an explicitly specified type:</p><div class="code-block" data-lang="kotlin">
 val predicate: (String) -&gt; Boolean = ::isOdd   // refers to isOdd(x: String)
-</div><p id="z7iyjyc_68">If you need to use a member of a class or an extension function, it needs to be qualified: <code class="code" id="z7iyjyc_80">String::toCharArray</code>.</p><p id="z7iyjyc_69">Even if you initialize a variable with a reference to an extension function, the inferred function type will have no receiver, but it will have an additional parameter accepting a receiver object. To have a function type with a receiver instead, specify the type explicitly:</p><div class="code-block" data-lang="kotlin">
+</div><p id="x3sbwp_68">If you need to use a member of a class or an extension function, it needs to be qualified: <code class="code" id="x3sbwp_80">String::toCharArray</code>.</p><p id="x3sbwp_69">Even if you initialize a variable with a reference to an extension function, the inferred function type will have no receiver, but it will have an additional parameter accepting a receiver object. To have a function type with a receiver instead, specify the type explicitly:</p><div class="code-block" data-lang="kotlin">
 val isEmptyStringList: List&lt;String&gt;.() -&gt; Boolean = List&lt;String&gt;::isEmpty
-</div><section class="chapter"><h4 id="example-function-composition" data-toc="example-function-composition">Example: function composition</h4><p id="z7iyjyc_81">Consider the following function:</p><div class="code-block" data-lang="kotlin">
+</div><section class="chapter"><h4 id="example-function-composition" data-toc="example-function-composition">Example: function composition</h4><p id="x3sbwp_81">Consider the following function:</p><div class="code-block" data-lang="kotlin">
 fun &lt;A, B, C&gt; compose(f: (B) -&gt; C, g: (A) -&gt; B): (A) -&gt; C {
     return { x -&gt; f(g(x)) }
 }
-</div><p id="z7iyjyc_83">It returns a composition of two functions passed to it: <code class="code" id="z7iyjyc_85">compose(f, g) = f(g(*))</code>. You can apply this function to callable references:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
+</div><p id="x3sbwp_83">It returns a composition of two functions passed to it: <code class="code" id="x3sbwp_85">compose(f, g) = f(g(*))</code>. You can apply this function to callable references:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
 fun &lt;A, B, C&gt; compose(f: (B) -&gt; C, g: (A) -&gt; B): (A) -&gt; C {
     return { x -&gt; f(g(x)) }
 }
@@ -90,28 +90,28 @@ fun main() {
     println(strings.filter(oddLength))
 //sampleEnd
 }
-</div></section></section><section class="chapter"><h3 id="property-references" data-toc="property-references">Property references</h3><p id="z7iyjyc_86">To access properties as first-class objects in Kotlin, use the <code class="code" id="z7iyjyc_97">::</code> operator:</p><div class="code-block" data-lang="kotlin">
+</div></section></section><section class="chapter"><h3 id="property-references" data-toc="property-references">Property references</h3><p id="x3sbwp_86">To access properties as first-class objects in Kotlin, use the <code class="code" id="x3sbwp_97">::</code> operator:</p><div class="code-block" data-lang="kotlin">
 val x = 1
 
 fun main() {
     println(::x.get())
     println(::x.name) 
 }
-</div><p id="z7iyjyc_88">The expression <code class="code" id="z7iyjyc_98">::x</code> evaluates to a <code class="code" id="z7iyjyc_99">KProperty0&lt;Int&gt;</code> type property object. You can read its value using <code class="code" id="z7iyjyc_100">get()</code> or retrieve the property name using the <code class="code" id="z7iyjyc_101">name</code> property. For more information, see the <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-property/index.html" id="z7iyjyc_102" data-external="true" rel="noopener noreferrer" target="_blank">docs on the <code class="code" id="z7iyjyc_103">KProperty</code> class</a>.</p><p id="z7iyjyc_89">For a mutable property such as <code class="code" id="z7iyjyc_104">var y = 1</code>, <code class="code" id="z7iyjyc_105">::y</code> returns a value with the <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-mutable-property/index.html" id="z7iyjyc_106" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="z7iyjyc_108">KMutableProperty0&lt;Int&gt;</code></a> type which has a <code class="code" id="z7iyjyc_107">set()</code> method:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
+</div><p id="x3sbwp_88">The expression <code class="code" id="x3sbwp_98">::x</code> evaluates to a <code class="code" id="x3sbwp_99">KProperty0&lt;Int&gt;</code> type property object. You can read its value using <code class="code" id="x3sbwp_100">get()</code> or retrieve the property name using the <code class="code" id="x3sbwp_101">name</code> property. For more information, see the <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-property/index.html" id="x3sbwp_102" data-external="true" rel="noopener noreferrer" target="_blank">docs on the <code class="code" id="x3sbwp_103">KProperty</code> class</a>.</p><p id="x3sbwp_89">For a mutable property such as <code class="code" id="x3sbwp_104">var y = 1</code>, <code class="code" id="x3sbwp_105">::y</code> returns a value with the <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-mutable-property/index.html" id="x3sbwp_106" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="x3sbwp_108">KMutableProperty0&lt;Int&gt;</code></a> type which has a <code class="code" id="x3sbwp_107">set()</code> method:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
 var y = 1
 
 fun main() {
     ::y.set(2)
     println(y)
 }
-</div><p id="z7iyjyc_91">A property reference can be used where a function with a single generic parameter is expected:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
+</div><p id="x3sbwp_91">A property reference can be used where a function with a single generic parameter is expected:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
 fun main() {
 //sampleStart
     val strs = listOf(&quot;a&quot;, &quot;bc&quot;, &quot;def&quot;)
     println(strs.map(String::length))
 //sampleEnd
 }
-</div><p id="z7iyjyc_93">To access a property that is a member of a class, qualify it as follows:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
+</div><p id="x3sbwp_93">To access a property that is a member of a class, qualify it as follows:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
 fun main() {
 //sampleStart
     class A(val p: Int)
@@ -119,14 +119,14 @@ fun main() {
     println(prop.get(A(1)))
 //sampleEnd
 }
-</div><p id="z7iyjyc_95">For an extension property:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
+</div><p id="x3sbwp_95">For an extension property:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
 val String.lastChar: Char
     get() = this[length - 1]
 
 fun main() {
     println(String::lastChar.get(&quot;abc&quot;))
 }
-</div></section><section class="chapter"><h3 id="interoperability-with-java-reflection" data-toc="interoperability-with-java-reflection">Interoperability with Java reflection</h3><p id="z7iyjyc_109">On the JVM platform, the standard library contains extensions for reflection classes that provide a mapping to and from Java reflection objects (see package <code class="code" id="z7iyjyc_113">kotlin.reflect.jvm</code>). For example, to find a backing field or a Java method that serves as a getter for a Kotlin property, you can write something like this:</p><div class="code-block" data-lang="kotlin">
+</div></section><section class="chapter"><h3 id="interoperability-with-java-reflection" data-toc="interoperability-with-java-reflection">Interoperability with Java reflection</h3><p id="x3sbwp_109">On the JVM platform, the standard library contains extensions for reflection classes that provide a mapping to and from Java reflection objects (see package <code class="code" id="x3sbwp_113">kotlin.reflect.jvm</code>). For example, to find a backing field or a Java method that serves as a getter for a Kotlin property, you can write something like this:</p><div class="code-block" data-lang="kotlin">
 import kotlin.reflect.jvm.*
  
 class A(val p: Int)
@@ -135,17 +135,17 @@ fun main() {
     println(A::p.javaGetter) // prints &quot;public final int A.getP()&quot;
     println(A::p.javaField)  // prints &quot;private final int A.p&quot;
 }
-</div><p id="z7iyjyc_111">To get the Kotlin class that corresponds to a Java class, use the <code class="code" id="z7iyjyc_114">.kotlin</code> extension property:</p><div class="code-block" data-lang="kotlin">
+</div><p id="x3sbwp_111">To get the Kotlin class that corresponds to a Java class, use the <code class="code" id="x3sbwp_114">.kotlin</code> extension property:</p><div class="code-block" data-lang="kotlin">
 fun getKClass(o: Any): KClass&lt;Any&gt; = o.javaClass.kotlin
-</div></section><section class="chapter"><h3 id="constructor-references" data-toc="constructor-references">Constructor references</h3><p id="z7iyjyc_115">Constructors can be referenced just like methods and properties. You can use them wherever the program expects a function type object that takes the same parameters as the constructor and returns an object of the appropriate type. Constructors are referenced by using the <code class="code" id="z7iyjyc_120">::</code> operator and adding the class name. Consider the following function that expects a function parameter with no parameters and return type <code class="code" id="z7iyjyc_121">Foo</code>:</p><div class="code-block" data-lang="kotlin">
+</div></section><section class="chapter"><h3 id="constructor-references" data-toc="constructor-references">Constructor references</h3><p id="x3sbwp_115">Constructors can be referenced just like methods and properties. You can use them wherever the program expects a function type object that takes the same parameters as the constructor and returns an object of the appropriate type. Constructors are referenced by using the <code class="code" id="x3sbwp_120">::</code> operator and adding the class name. Consider the following function that expects a function parameter with no parameters and return type <code class="code" id="x3sbwp_121">Foo</code>:</p><div class="code-block" data-lang="kotlin">
 class Foo
 
 fun function(factory: () -&gt; Foo) {
     val x: Foo = factory()
 }
-</div><p id="z7iyjyc_117">Using <code class="code" id="z7iyjyc_122">::Foo</code>, the zero-argument constructor of the class <code class="code" id="z7iyjyc_123">Foo</code>, you can call it like this:</p><div class="code-block" data-lang="kotlin">
+</div><p id="x3sbwp_117">Using <code class="code" id="x3sbwp_122">::Foo</code>, the zero-argument constructor of the class <code class="code" id="x3sbwp_123">Foo</code>, you can call it like this:</p><div class="code-block" data-lang="kotlin">
 function(::Foo)
-</div><p id="z7iyjyc_119">Callable references to constructors are typed as one of the <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-function/index.html" id="z7iyjyc_124" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="z7iyjyc_125">KFunction&lt;out R&gt;</code></a> subtypes depending on the parameter count.</p></section><section class="chapter"><h3 id="bound-function-and-property-references" data-toc="bound-function-and-property-references">Bound function and property references</h3><p id="z7iyjyc_126">You can refer to an instance method of a particular object:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
+</div><p id="x3sbwp_119">Callable references to constructors are typed as one of the <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-function/index.html" id="x3sbwp_124" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="x3sbwp_125">KFunction&lt;out R&gt;</code></a> subtypes depending on the parameter count.</p></section><section class="chapter"><h3 id="bound-function-and-property-references" data-toc="bound-function-and-property-references">Bound function and property references</h3><p id="x3sbwp_126">You can refer to an instance method of a particular object:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
 fun main() {
 //sampleStart
     val numberRegex = &quot;\\d+&quot;.toRegex()
@@ -155,7 +155,7 @@ fun main() {
     println(isNumber(&quot;29&quot;))
 //sampleEnd
 }
-</div><p id="z7iyjyc_128">Instead of calling the method <code class="code" id="z7iyjyc_135">matches</code> directly, the example uses a reference to it. Such a reference is bound to its receiver. It can be called directly (like in the example above) or used whenever a function type expression is expected:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
+</div><p id="x3sbwp_128">Instead of calling the method <code class="code" id="x3sbwp_135">matches</code> directly, the example uses a reference to it. Such a reference is bound to its receiver. It can be called directly (like in the example above) or used whenever a function type expression is expected:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
 fun main() {
 //sampleStart
     val numberRegex = &quot;\\d+&quot;.toRegex()
@@ -163,22 +163,22 @@ fun main() {
     println(strings.filter(numberRegex::matches))
 //sampleEnd
 }
-</div><p id="z7iyjyc_130">Compare the types of the bound and the unbound references. The bound callable reference has its receiver &quot;attached&quot; to it, so the type of the receiver is no longer a parameter:</p><div class="code-block" data-lang="kotlin">
+</div><p id="x3sbwp_130">Compare the types of the bound and the unbound references. The bound callable reference has its receiver &quot;attached&quot; to it, so the type of the receiver is no longer a parameter:</p><div class="code-block" data-lang="kotlin">
 val isNumber: (CharSequence) -&gt; Boolean = numberRegex::matches
 
 val matches: (Regex, CharSequence) -&gt; Boolean = Regex::matches
-</div><p id="z7iyjyc_132">A property reference can be bound as well:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
+</div><p id="x3sbwp_132">A property reference can be bound as well:</p><div class="code-block" data-lang="kotlin" data-runnable="true" data-min-compiler-version="1.3">
 fun main() {
 //sampleStart
     val prop = &quot;abc&quot;::length
     println(prop.get())
 //sampleEnd
 }
-</div><p id="z7iyjyc_134">You don't need to specify <code class="code" id="z7iyjyc_136">this</code> as the receiver: <code class="code" id="z7iyjyc_137">this::foo</code> and <code class="code" id="z7iyjyc_138">::foo</code> are equivalent.</p></section><section class="chapter"><h3 id="bound-constructor-references" data-toc="bound-constructor-references">Bound constructor references</h3><p id="z7iyjyc_139">A bound callable reference to a constructor of an <a href="nested-classes.html#inner-classes" id="z7iyjyc_141">inner class</a> can be obtained by providing an instance of the outer class:</p><div class="code-block" data-lang="kotlin">
+</div><p id="x3sbwp_134">You don't need to specify <code class="code" id="x3sbwp_136">this</code> as the receiver: <code class="code" id="x3sbwp_137">this::foo</code> and <code class="code" id="x3sbwp_138">::foo</code> are equivalent.</p></section><section class="chapter"><h3 id="bound-constructor-references" data-toc="bound-constructor-references">Bound constructor references</h3><p id="x3sbwp_139">A bound callable reference to a constructor of an <a href="nested-classes.html#inner-classes" id="x3sbwp_141">inner class</a> can be obtained by providing an instance of the outer class:</p><div class="code-block" data-lang="kotlin">
 class Outer {
     inner class Inner
 }
 
 val o = Outer()
 val boundInnerCtor = o::Inner
-</div></section></section><div class="last-modified">24 July 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="destructuring-declarations.html" class="navigation-links__prev">Destructuring declarations</a><a href="get-started-with-kotlin-notebooks.html" class="navigation-links__next">Get started with Kotlin Notebook</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>
+</div></section></section><div class="last-modified">26 July 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="destructuring-declarations.html" class="navigation-links__prev">Destructuring declarations</a><a href="get-started-with-kotlin-notebooks.html" class="navigation-links__next">Get started with Kotlin Notebook</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>
