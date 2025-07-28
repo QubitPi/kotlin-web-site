@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-07-26T03:42:23.370243002"><link rel="canonical" href="https://kotlinlang.org/docs/using-builders-with-builder-inference.html" data-react-helmet="true"><script>
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-07-28T16:03:08.706701846"><link rel="canonical" href="https://kotlinlang.org/docs/using-builders-with-builder-inference.html" data-react-helmet="true"><script>
     (function (w, d, s, l, i) {
         w[l] = w[l] || [];
         w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
@@ -24,7 +24,7 @@
     "@id": "https://kotlinlang.org/docs/#website",
     "url": "https://kotlinlang.org/docs/",
     "name": "Kotlin Help"
-}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="using-builders-with-builder-inference" data-main-title="Using builders with builder type inference" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Concepts///Functions///Builders" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/using-builders-with-builder-inference.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="using-builders-with-builder-inference" id="using-builders-with-builder-inference.md">Using builders with builder type inference</h1><p id="p2qk3u_2">Kotlin supports <span class="emphasis" id="p2qk3u_8">builder type inference</span> (or builder inference), which can come in useful when you are working with generic builders. It helps the compiler infer the type arguments of a builder call based on the type information about other calls inside its lambda argument.</p><p id="p2qk3u_3">Consider this example of <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/build-map.html" id="p2qk3u_9" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="p2qk3u_10">buildMap()</code></a> usage:</p><div class="code-block" data-lang="kotlin">
+}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="using-builders-with-builder-inference" data-main-title="Using builders with builder type inference" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Concepts///Functions///Builders" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/using-builders-with-builder-inference.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="using-builders-with-builder-inference" id="using-builders-with-builder-inference.md">Using builders with builder type inference</h1><p id="-utna91_2">Kotlin supports <span class="emphasis" id="-utna91_8">builder type inference</span> (or builder inference), which can come in useful when you are working with generic builders. It helps the compiler infer the type arguments of a builder call based on the type information about other calls inside its lambda argument.</p><p id="-utna91_3">Consider this example of <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/build-map.html" id="-utna91_9" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="-utna91_10">buildMap()</code></a> usage:</p><div class="code-block" data-lang="kotlin">
 fun addEntryToMap(baseMap: Map&lt;String, Number&gt;, additionalEntry: Pair&lt;String, Int&gt;?) {
    val myMap = buildMap {
        putAll(baseMap)
@@ -33,9 +33,9 @@ fun addEntryToMap(baseMap: Map&lt;String, Number&gt;, additionalEntry: Pair&lt;S
        }
    }
 }
-</div><p id="p2qk3u_5">There is not enough type information here to infer type arguments in a regular way, but builder inference can analyze the calls inside the lambda argument. Based on the type information about <code class="code" id="p2qk3u_11">putAll()</code> and <code class="code" id="p2qk3u_12">put()</code> calls, the compiler can automatically infer type arguments of the <code class="code" id="p2qk3u_13">buildMap()</code> call into <code class="code" id="p2qk3u_14">String</code> and <code class="code" id="p2qk3u_15">Number</code>. Builder inference allows to omit type arguments while using generic builders.</p><section class="chapter"><h2 id="writing-your-own-builders" data-toc="writing-your-own-builders">Writing your own builders</h2><section class="chapter"><h3 id="requirements-for-enabling-builder-inference" data-toc="requirements-for-enabling-builder-inference">Requirements for enabling builder inference</h3><aside class="prompt" data-type="note" data-title="" id="p2qk3u_18"><p id="p2qk3u_21">Before Kotlin 1.7.0, enabling builder inference for a builder function required <code class="code" id="p2qk3u_22">-Xenable-builder-inference</code> compiler option. In 1.7.0 the option is enabled by default.</p></aside><p id="p2qk3u_19">To let builder inference work for your own builder, make sure its declaration has a builder lambda parameter of a function type with a receiver. There are also two requirements for the receiver type:</p><ol class="list _decimal" id="p2qk3u_20" type="1"><li class="list__item" id="p2qk3u_23"><p id="p2qk3u_25">It should use the type arguments that builder inference is supposed to infer. For example:</p><div class="code-block" data-lang="kotlin">
+</div><p id="-utna91_5">There is not enough type information here to infer type arguments in a regular way, but builder inference can analyze the calls inside the lambda argument. Based on the type information about <code class="code" id="-utna91_11">putAll()</code> and <code class="code" id="-utna91_12">put()</code> calls, the compiler can automatically infer type arguments of the <code class="code" id="-utna91_13">buildMap()</code> call into <code class="code" id="-utna91_14">String</code> and <code class="code" id="-utna91_15">Number</code>. Builder inference allows to omit type arguments while using generic builders.</p><section class="chapter"><h2 id="writing-your-own-builders" data-toc="writing-your-own-builders">Writing your own builders</h2><section class="chapter"><h3 id="requirements-for-enabling-builder-inference" data-toc="requirements-for-enabling-builder-inference">Requirements for enabling builder inference</h3><aside class="prompt" data-type="note" data-title="" id="-utna91_18"><p id="-utna91_21">Before Kotlin 1.7.0, enabling builder inference for a builder function required <code class="code" id="-utna91_22">-Xenable-builder-inference</code> compiler option. In 1.7.0 the option is enabled by default.</p></aside><p id="-utna91_19">To let builder inference work for your own builder, make sure its declaration has a builder lambda parameter of a function type with a receiver. There are also two requirements for the receiver type:</p><ol class="list _decimal" id="-utna91_20" type="1"><li class="list__item" id="-utna91_23"><p id="-utna91_25">It should use the type arguments that builder inference is supposed to infer. For example:</p><div class="code-block" data-lang="kotlin">
 fun &lt;V&gt; buildList(builder: MutableList&lt;V&gt;.() -&gt; Unit) { ... }
-</div><aside class="prompt" data-type="note" data-title="" id="p2qk3u_27"><p id="p2qk3u_29">Note that passing the type parameter's type directly like <code class="code" id="p2qk3u_30">fun &lt;T&gt; myBuilder(builder: T.() -&gt; Unit)</code> is not yet supported.</p></aside><p id="p2qk3u_28"></p></li><li class="list__item" id="p2qk3u_24"><p id="p2qk3u_31">It should provide public members or extensions that contain the corresponding type parameters in their signature. For example:</p><div class="code-block" data-lang="kotlin">
+</div><aside class="prompt" data-type="note" data-title="" id="-utna91_27"><p id="-utna91_29">Note that passing the type parameter's type directly like <code class="code" id="-utna91_30">fun &lt;T&gt; myBuilder(builder: T.() -&gt; Unit)</code> is not yet supported.</p></aside><p id="-utna91_28"></p></li><li class="list__item" id="-utna91_24"><p id="-utna91_31">It should provide public members or extensions that contain the corresponding type parameters in their signature. For example:</p><div class="code-block" data-lang="kotlin">
 class ItemHolder&lt;T&gt; {
     private val items = mutableListOf&lt;T&gt;()
 
@@ -65,9 +65,9 @@ fun test(s: String) {
         // ...
     }
 }
-</div></li></ol></section><section class="chapter"><h3 id="supported-features" data-toc="supported-features">Supported features</h3><p id="p2qk3u_33">Builder inference supports:</p><ul class="list _bullet" id="p2qk3u_34"><li class="list__item" id="p2qk3u_35"><p id="p2qk3u_38">Inferring several type arguments</p><div class="code-block" data-lang="kotlin">
+</div></li></ol></section><section class="chapter"><h3 id="supported-features" data-toc="supported-features">Supported features</h3><p id="-utna91_33">Builder inference supports:</p><ul class="list _bullet" id="-utna91_34"><li class="list__item" id="-utna91_35"><p id="-utna91_38">Inferring several type arguments</p><div class="code-block" data-lang="kotlin">
 fun &lt;K, V&gt; myBuilder(builder: MutableMap&lt;K, V&gt;.() -&gt; Unit): Map&lt;K, V&gt; { ... }
-</div></li><li class="list__item" id="p2qk3u_36"><p id="p2qk3u_40">Inferring type arguments of several builder lambdas within one call including interdependent ones</p><div class="code-block" data-lang="kotlin">
+</div></li><li class="list__item" id="-utna91_36"><p id="-utna91_40">Inferring type arguments of several builder lambdas within one call including interdependent ones</p><div class="code-block" data-lang="kotlin">
 fun &lt;K, V&gt; myBuilder(
     listBuilder: MutableList&lt;V&gt;.() -&gt; Unit,
     mapBuilder: MutableMap&lt;K, V&gt;.() -&gt; Unit
@@ -81,7 +81,7 @@ fun main() {
     )
     // result has Pair&lt;List&lt;Int&gt;, Map&lt;String, Int&gt;&gt; type
 }
-</div></li><li class="list__item" id="p2qk3u_37"><p id="p2qk3u_42">Inferring type arguments whose type parameters are lambda's parameter or return types</p><div class="code-block" data-lang="kotlin">
+</div></li><li class="list__item" id="-utna91_37"><p id="-utna91_42">Inferring type arguments whose type parameters are lambda's parameter or return types</p><div class="code-block" data-lang="kotlin">
 fun &lt;K, V&gt; myBuilder1(
     mapBuilder: MutableMap&lt;K, V&gt;.() -&gt; K
 ): Map&lt;K, V&gt; = mutableMapOf&lt;K, V&gt;().apply { mapBuilder() }
@@ -103,21 +103,21 @@ fun main() {
         put(it, &quot;value 2&quot;)
     }
 }
-</div></li></ul></section></section><section class="chapter"><h2 id="how-builder-inference-works" data-toc="how-builder-inference-works">How builder inference works</h2><section class="chapter"><h3 id="postponed-type-variables" data-toc="postponed-type-variables">Postponed type variables</h3><p id="p2qk3u_46">Builder inference works in terms of <span class="emphasis" id="p2qk3u_54">postponed type variables</span>, which appear inside the builder lambda during builder inference analysis. A postponed type variable is a type argument's type, which is in the process of inferring. The compiler uses it to collect type information about the type argument.</p><p id="p2qk3u_47">Consider the example with <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/build-list.html" id="p2qk3u_55" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="p2qk3u_56">buildList()</code></a>:</p><div class="code-block" data-lang="kotlin">
+</div></li></ul></section></section><section class="chapter"><h2 id="how-builder-inference-works" data-toc="how-builder-inference-works">How builder inference works</h2><section class="chapter"><h3 id="postponed-type-variables" data-toc="postponed-type-variables">Postponed type variables</h3><p id="-utna91_46">Builder inference works in terms of <span class="emphasis" id="-utna91_54">postponed type variables</span>, which appear inside the builder lambda during builder inference analysis. A postponed type variable is a type argument's type, which is in the process of inferring. The compiler uses it to collect type information about the type argument.</p><p id="-utna91_47">Consider the example with <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/build-list.html" id="-utna91_55" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="-utna91_56">buildList()</code></a>:</p><div class="code-block" data-lang="kotlin">
 val result = buildList {
     val x = get(0)
 }
-</div><p id="p2qk3u_49">Here <code class="code" id="p2qk3u_57">x</code> has a type of postponed type variable: the <code class="code" id="p2qk3u_58">get()</code> call returns a value of type <code class="code" id="p2qk3u_59">E</code>, but <code class="code" id="p2qk3u_60">E</code> itself is not yet fixed. At this moment, a concrete type for <code class="code" id="p2qk3u_61">E</code> is unknown.</p><p id="p2qk3u_50">When a value of a postponed type variable gets associated with a concrete type, builder inference collects this information to infer the resulting type of the corresponding type argument at the end of the builder inference analysis. For example:</p><div class="code-block" data-lang="kotlin">
+</div><p id="-utna91_49">Here <code class="code" id="-utna91_57">x</code> has a type of postponed type variable: the <code class="code" id="-utna91_58">get()</code> call returns a value of type <code class="code" id="-utna91_59">E</code>, but <code class="code" id="-utna91_60">E</code> itself is not yet fixed. At this moment, a concrete type for <code class="code" id="-utna91_61">E</code> is unknown.</p><p id="-utna91_50">When a value of a postponed type variable gets associated with a concrete type, builder inference collects this information to infer the resulting type of the corresponding type argument at the end of the builder inference analysis. For example:</p><div class="code-block" data-lang="kotlin">
 val result = buildList {
     val x = get(0)
     val y: String = x
 } // result has the List&lt;String&gt; type inferred
-</div><p id="p2qk3u_52">After the postponed type variable gets assigned to a variable of the <code class="code" id="p2qk3u_62">String</code> type, builder inference gets the information that <code class="code" id="p2qk3u_63">x</code> is a subtype of <code class="code" id="p2qk3u_64">String</code>. This assignment is the last statement in the builder lambda, so the builder inference analysis ends with the result of inferring the type argument <code class="code" id="p2qk3u_65">E</code> into <code class="code" id="p2qk3u_66">String</code>.</p><p id="p2qk3u_53">Note that you can always call <code class="code" id="p2qk3u_67">equals()</code>, <code class="code" id="p2qk3u_68">hashCode()</code>, and <code class="code" id="p2qk3u_69">toString()</code> functions with a postponed type variable as a receiver.</p></section><section class="chapter"><h3 id="contributing-to-builder-inference-results" data-toc="contributing-to-builder-inference-results">Contributing to builder inference results</h3><p id="p2qk3u_70">Builder inference can collect different varieties of type information that contribute to the analysis result. It considers:</p><ul class="list _bullet" id="p2qk3u_71"><li class="list__item" id="p2qk3u_78"><p id="p2qk3u_82">Calling methods on a lambda's receiver that use the type parameter's type</p><div class="code-block" data-lang="kotlin">
+</div><p id="-utna91_52">After the postponed type variable gets assigned to a variable of the <code class="code" id="-utna91_62">String</code> type, builder inference gets the information that <code class="code" id="-utna91_63">x</code> is a subtype of <code class="code" id="-utna91_64">String</code>. This assignment is the last statement in the builder lambda, so the builder inference analysis ends with the result of inferring the type argument <code class="code" id="-utna91_65">E</code> into <code class="code" id="-utna91_66">String</code>.</p><p id="-utna91_53">Note that you can always call <code class="code" id="-utna91_67">equals()</code>, <code class="code" id="-utna91_68">hashCode()</code>, and <code class="code" id="-utna91_69">toString()</code> functions with a postponed type variable as a receiver.</p></section><section class="chapter"><h3 id="contributing-to-builder-inference-results" data-toc="contributing-to-builder-inference-results">Contributing to builder inference results</h3><p id="-utna91_70">Builder inference can collect different varieties of type information that contribute to the analysis result. It considers:</p><ul class="list _bullet" id="-utna91_71"><li class="list__item" id="-utna91_78"><p id="-utna91_82">Calling methods on a lambda's receiver that use the type parameter's type</p><div class="code-block" data-lang="kotlin">
 val result = buildList {
     // Type argument is inferred into String based on the passed &quot;value&quot; argument
     add(&quot;value&quot;)
 } // result has the List&lt;String&gt; type inferred
-</div></li><li class="list__item" id="p2qk3u_79"><p id="p2qk3u_84">Specifying the expected type for calls that return the type parameter's type</p><div class="code-block" data-lang="kotlin">
+</div></li><li class="list__item" id="-utna91_79"><p id="-utna91_84">Specifying the expected type for calls that return the type parameter's type</p><div class="code-block" data-lang="kotlin">
 val result = buildList {
     // Type argument is inferred into Float based on the expected type
     val x: Float = get(0)
@@ -135,7 +135,7 @@ fun main() {
         // ...
     } // result has the Foo&lt;CharSequence&gt; type
 }
-</div></li><li class="list__item" id="p2qk3u_80"><p id="p2qk3u_87">Passing postponed type variables' types into methods that expect concrete types</p><div class="code-block" data-lang="kotlin">
+</div></li><li class="list__item" id="-utna91_80"><p id="-utna91_87">Passing postponed type variables' types into methods that expect concrete types</p><div class="code-block" data-lang="kotlin">
 fun takeMyLong(x: Long) { ... }
 
 fun String.isMoreThat3() = length &gt; 3
@@ -158,7 +158,7 @@ fun main() {
         takeListOfStrings(this)
     } // result3 has the List&lt;String&gt; type
 }
-</div></li><li class="list__item" id="p2qk3u_81"><p id="p2qk3u_89">Taking a callable reference to the lambda receiver's member</p><div class="code-block" data-lang="kotlin">
+</div></li><li class="list__item" id="-utna91_81"><p id="-utna91_89">Taking a callable reference to the lambda receiver's member</p><div class="code-block" data-lang="kotlin">
 fun main() {
     val result = buildList {
         val x: KFunction1&lt;Int, Float&gt; = ::get
@@ -172,7 +172,7 @@ fun main() {
         takeFunction(::get)
     } // result has the List&lt;Float&gt; type
 }
-</div></li></ul><p id="p2qk3u_72">At the end of the analysis, builder inference considers all collected type information and tries to merge it into the resulting type. See the example.</p><div class="code-block" data-lang="kotlin">
+</div></li></ul><p id="-utna91_72">At the end of the analysis, builder inference considers all collected type information and tries to merge it into the resulting type. See the example.</p><div class="code-block" data-lang="kotlin">
 val result = buildList { // Inferring postponed type variable E
     // Considering E is Number or a subtype of Number
     val n: Number? = getOrNull(0)
@@ -180,7 +180,7 @@ val result = buildList { // Inferring postponed type variable E
     add(1)
     // E gets inferred into Int
 } // result has the List&lt;Int&gt; type
-</div><p id="p2qk3u_74">The resulting type is the most specific type that corresponds to the type information collected during the analysis. If the given type information is contradictory and cannot be merged, the compiler reports an error.</p><p id="p2qk3u_75">Note that the Kotlin compiler uses builder inference only if regular type inference cannot infer a type argument. This means you can contribute type information outside a builder lambda, and then builder inference analysis is not required. Consider the example:</p><div class="code-block" data-lang="kotlin">
+</div><p id="-utna91_74">The resulting type is the most specific type that corresponds to the type information collected during the analysis. If the given type information is contradictory and cannot be merged, the compiler reports an error.</p><p id="-utna91_75">Note that the Kotlin compiler uses builder inference only if regular type inference cannot infer a type argument. This means you can contribute type information outside a builder lambda, and then builder inference analysis is not required. Consider the example:</p><div class="code-block" data-lang="kotlin">
 fun someMap() = mutableMapOf&lt;CharSequence, String&gt;()
 
 fun &lt;E&gt; MutableMap&lt;E, String&gt;.f(x: MutableMap&lt;E, String&gt;) { ... }
@@ -191,4 +191,4 @@ fun main() {
         f(someMap()) // Type mismatch (required String, found CharSequence)
     }
 }
-</div><p id="p2qk3u_77">Here a type mismatch appears because the expected type of the map is specified outside the builder lambda. The compiler analyzes all the statements inside with the fixed receiver type <code class="code" id="p2qk3u_92">Map&lt;in String, String&gt;</code>.</p></section></section><div class="last-modified">26 July 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="type-safe-builders.html" class="navigation-links__prev">Type-safe builders</a><a href="context-parameters.html" class="navigation-links__next">Context parameters</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>
+</div><p id="-utna91_77">Here a type mismatch appears because the expected type of the map is specified outside the builder lambda. The compiler analyzes all the statements inside with the fixed receiver type <code class="code" id="-utna91_92">Map&lt;in String, String&gt;</code>.</p></section></section><div class="last-modified">28 July 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="type-safe-builders.html" class="navigation-links__prev">Type-safe builders</a><a href="context-parameters.html" class="navigation-links__next">Context parameters</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>
