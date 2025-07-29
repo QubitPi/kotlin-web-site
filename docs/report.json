@@ -289,6 +289,11 @@
       "name" : "Dark version of image or video file cannot be found",
       "description" : "\"\"debug-config_dark.png\"\" in js-debugging.md:47:1"
     }, {
+      "id" : "VIS011---default-hierarchy-example-with-web_dark-svg---in-whatsnew-eap-md-300-1",
+      "problemId" : "VIS011",
+      "name" : "Dark version of image or video file cannot be found",
+      "description" : "\"\"default-hierarchy-example-with-web_dark.svg\"\" in whatsnew-eap.md:300:1"
+    }, {
       "id" : "VIS011---default-hierarchy-example_dark-svg---in-whatsnew1820-md-778-1--whatsnew1920-md-453-1",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
@@ -1439,10 +1444,10 @@
       "name" : "Dark version of image or video file cannot be found",
       "description" : "\"\"xcode-gradle-output_dark.png\"\" in whatsnew1820.md:879:1"
     }, {
-      "id" : "VIS011---xcode-swift-export-run-script-phase_dark-png---in-whatsnew21-md-694-4",
+      "id" : "VIS011---xcode-swift-export-run-script-phase_dark-png---in-whatsnew-eap-md-240-3--whatsnew21-md-694-4",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"xcode-swift-export-run-script-phase_dark.png\"\" in whatsnew21.md:694:4"
+      "description" : "\"\"xcode-swift-export-run-script-phase_dark.png\"\" in whatsnew-eap.md:240:3; whatsnew21.md:694:4"
     }, {
       "id" : "VIS011---youtrack-logo_dark-png---in-test-page-md-365-1",
       "problemId" : "VIS011",
