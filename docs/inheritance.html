@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-07-29T19:02:59.382554875"><link rel="canonical" href="https://kotlinlang.org/docs/inheritance.html" data-react-helmet="true"><script>
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-07-30T17:33:00.568998068"><link rel="canonical" href="https://kotlinlang.org/docs/inheritance.html" data-react-helmet="true"><script>
     (function (w, d, s, l, i) {
         w[l] = w[l] || [];
         w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
@@ -24,22 +24,22 @@
     "@id": "https://kotlinlang.org/docs/#website",
     "url": "https://kotlinlang.org/docs/",
     "name": "Kotlin Help"
-}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="inheritance" data-main-title="Inheritance" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Concepts///Classes and objects" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/inheritance.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="inheritance" id="inheritance.md">Inheritance</h1><p id="-p1dfee_2">All classes in Kotlin have a common superclass, <code class="code" id="-p1dfee_17">Any</code>, which is the default superclass for a class with no supertypes declared:</p><div class="code-block" data-lang="kotlin">
+}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="inheritance" data-main-title="Inheritance" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Concepts///Classes and objects" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/inheritance.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="inheritance" id="inheritance.md">Inheritance</h1><p id="d0ztar_2">All classes in Kotlin have a common superclass, <code class="code" id="d0ztar_17">Any</code>, which is the default superclass for a class with no supertypes declared:</p><div class="code-block" data-lang="kotlin">
 class Example // Implicitly inherits from Any
-</div><p id="-p1dfee_4"><code class="code" id="-p1dfee_18">Any</code> has three methods: <code class="code" id="-p1dfee_19">equals()</code>, <code class="code" id="-p1dfee_20">hashCode()</code>, and <code class="code" id="-p1dfee_21">toString()</code>. Thus, these methods are defined for all Kotlin classes.</p><p id="-p1dfee_5">By default, Kotlin classes are final &ndash; they can't be inherited. To make a class inheritable, mark it with the <code class="code" id="-p1dfee_22">open</code> keyword:</p><div class="code-block" data-lang="kotlin">
+</div><p id="d0ztar_4"><code class="code" id="d0ztar_18">Any</code> has three methods: <code class="code" id="d0ztar_19">equals()</code>, <code class="code" id="d0ztar_20">hashCode()</code>, and <code class="code" id="d0ztar_21">toString()</code>. Thus, these methods are defined for all Kotlin classes.</p><p id="d0ztar_5">By default, Kotlin classes are final &ndash; they can't be inherited. To make a class inheritable, mark it with the <code class="code" id="d0ztar_22">open</code> keyword:</p><div class="code-block" data-lang="kotlin">
 open class Base // Class is open for inheritance
 
-</div><p id="-p1dfee_7">To declare an explicit supertype, place the type after a colon in the class header:</p><div class="code-block" data-lang="kotlin">
+</div><p id="d0ztar_7">To declare an explicit supertype, place the type after a colon in the class header:</p><div class="code-block" data-lang="kotlin">
 open class Base(p: Int)
 
 class Derived(p: Int) : Base(p)
-</div><p id="-p1dfee_9">If the derived class has a primary constructor, the base class can (and must) be initialized in that primary constructor according to its parameters.</p><p id="-p1dfee_10">If the derived class has no primary constructor, then each secondary constructor has to initialize the base type using the <code class="code" id="-p1dfee_23">super</code> keyword or it has to delegate to another constructor which does. Note that in this case different secondary constructors can call different constructors of the base type:</p><div class="code-block" data-lang="kotlin">
+</div><p id="d0ztar_9">If the derived class has a primary constructor, the base class can (and must) be initialized in that primary constructor according to its parameters.</p><p id="d0ztar_10">If the derived class has no primary constructor, then each secondary constructor has to initialize the base type using the <code class="code" id="d0ztar_23">super</code> keyword or it has to delegate to another constructor which does. Note that in this case different secondary constructors can call different constructors of the base type:</p><div class="code-block" data-lang="kotlin">
 class MyView : View {
     constructor(ctx: Context) : super(ctx)
 
     constructor(ctx: Context, attrs: AttributeSet) : super(ctx, attrs)
 }
-</div><section class="chapter"><h2 id="overriding-methods" data-toc="overriding-methods">Overriding methods</h2><p id="-p1dfee_24">Kotlin requires explicit modifiers for overridable members and overrides:</p><div class="code-block" data-lang="kotlin">
+</div><section class="chapter"><h2 id="overriding-methods" data-toc="overriding-methods">Overriding methods</h2><p id="d0ztar_24">Kotlin requires explicit modifiers for overridable members and overrides:</p><div class="code-block" data-lang="kotlin">
 open class Shape {
     open fun draw() { /*...*/ }
     fun fill() { /*...*/ }
@@ -48,11 +48,11 @@ open class Shape {
 class Circle() : Shape() {
     override fun draw() { /*...*/ }
 }
-</div><p id="-p1dfee_26">The <code class="code" id="-p1dfee_29">override</code> modifier is required for <code class="code" id="-p1dfee_30">Circle.draw()</code>. If it's missing, the compiler will complain. If there is no <code class="code" id="-p1dfee_31">open</code> modifier on a function, like <code class="code" id="-p1dfee_32">Shape.fill()</code>, declaring a method with the same signature in a subclass is not allowed, either with <code class="code" id="-p1dfee_33">override</code> or without it. The <code class="code" id="-p1dfee_34">open</code> modifier has no effect when added to members of a final class &ndash; a class without an <code class="code" id="-p1dfee_35">open</code> modifier.</p><p id="-p1dfee_27">A member marked <code class="code" id="-p1dfee_36">override</code> is itself open, so it may be overridden in subclasses. If you want to prohibit re-overriding, use <code class="code" id="-p1dfee_37">final</code>:</p><div class="code-block" data-lang="kotlin">
+</div><p id="d0ztar_26">The <code class="code" id="d0ztar_29">override</code> modifier is required for <code class="code" id="d0ztar_30">Circle.draw()</code>. If it's missing, the compiler will complain. If there is no <code class="code" id="d0ztar_31">open</code> modifier on a function, like <code class="code" id="d0ztar_32">Shape.fill()</code>, declaring a method with the same signature in a subclass is not allowed, either with <code class="code" id="d0ztar_33">override</code> or without it. The <code class="code" id="d0ztar_34">open</code> modifier has no effect when added to members of a final class &ndash; a class without an <code class="code" id="d0ztar_35">open</code> modifier.</p><p id="d0ztar_27">A member marked <code class="code" id="d0ztar_36">override</code> is itself open, so it may be overridden in subclasses. If you want to prohibit re-overriding, use <code class="code" id="d0ztar_37">final</code>:</p><div class="code-block" data-lang="kotlin">
 open class Rectangle() : Shape() {
     final override fun draw() { /*...*/ }
 }
-</div></section><section class="chapter"><h2 id="overriding-properties" data-toc="overriding-properties">Overriding properties</h2><p id="-p1dfee_38">The overriding mechanism works on properties in the same way that it does on methods. Properties declared on a superclass that are then redeclared on a derived class must be prefaced with <code class="code" id="-p1dfee_43">override</code>, and they must have a compatible type. Each declared property can be overridden by a property with an initializer or by a property with a <code class="code" id="-p1dfee_44">get</code> method:</p><div class="code-block" data-lang="kotlin">
+</div></section><section class="chapter"><h2 id="overriding-properties" data-toc="overriding-properties">Overriding properties</h2><p id="d0ztar_38">The overriding mechanism works on properties in the same way that it does on methods. Properties declared on a superclass that are then redeclared on a derived class must be prefaced with <code class="code" id="d0ztar_43">override</code>, and they must have a compatible type. Each declared property can be overridden by a property with an initializer or by a property with a <code class="code" id="d0ztar_44">get</code> method:</p><div class="code-block" data-lang="kotlin">
 open class Shape {
     open val vertexCount: Int = 0
 }
@@ -60,7 +60,7 @@ open class Shape {
 class Rectangle : Shape() {
     override val vertexCount = 4
 }
-</div><p id="-p1dfee_40">You can also override a <code class="code" id="-p1dfee_45">val</code> property with a <code class="code" id="-p1dfee_46">var</code> property, but not vice versa. This is allowed because a <code class="code" id="-p1dfee_47">val</code> property essentially declares a <code class="code" id="-p1dfee_48">get</code> method, and overriding it as a <code class="code" id="-p1dfee_49">var</code> additionally declares a <code class="code" id="-p1dfee_50">set</code> method in the derived class.</p><p id="-p1dfee_41">Note that you can use the <code class="code" id="-p1dfee_51">override</code> keyword as part of the property declaration in a primary constructor:</p><div class="code-block" data-lang="kotlin">
+</div><p id="d0ztar_40">You can also override a <code class="code" id="d0ztar_45">val</code> property with a <code class="code" id="d0ztar_46">var</code> property, but not vice versa. This is allowed because a <code class="code" id="d0ztar_47">val</code> property essentially declares a <code class="code" id="d0ztar_48">get</code> method, and overriding it as a <code class="code" id="d0ztar_49">var</code> additionally declares a <code class="code" id="d0ztar_50">set</code> method in the derived class.</p><p id="d0ztar_41">Note that you can use the <code class="code" id="d0ztar_51">override</code> keyword as part of the property declaration in a primary constructor:</p><div class="code-block" data-lang="kotlin">
 interface Shape {
     val vertexCount: Int
 }
@@ -70,7 +70,7 @@ class Rectangle(override val vertexCount: Int = 4) : Shape // Always has 4 verti
 class Polygon : Shape {
     override var vertexCount: Int = 0  // Can be set to any number later
 }
-</div></section><section class="chapter"><h2 id="derived-class-initialization-order" data-toc="derived-class-initialization-order">Derived class initialization order</h2><p id="-p1dfee_52">During the construction of a new instance of a derived class, the base class initialization is done as the first step (preceded only by evaluation of the arguments for the base class constructor), which means that it happens before the initialization logic of the derived class is run.</p><div class="code-block" data-lang="kotlin" data-runnable="true">
+</div></section><section class="chapter"><h2 id="derived-class-initialization-order" data-toc="derived-class-initialization-order">Derived class initialization order</h2><p id="d0ztar_52">During the construction of a new instance of a derived class, the base class initialization is done as the first step (preceded only by evaluation of the arguments for the base class constructor), which means that it happens before the initialization logic of the derived class is run.</p><div class="code-block" data-lang="kotlin" data-runnable="true">
 //sampleStart
 open class Base(val name: String) {
 
@@ -96,7 +96,7 @@ fun main() {
     println(&quot;Constructing the derived class(\&quot;hello\&quot;, \&quot;world\&quot;)&quot;)
     Derived(&quot;hello&quot;, &quot;world&quot;)
 }
-</div><p id="-p1dfee_54">This means that when the base class constructor is executed, the properties declared or overridden in the derived class have not yet been initialized. Using any of those properties in the base class initialization logic (either directly or indirectly through another overridden <code class="code" id="-p1dfee_55">open</code> member implementation) may lead to incorrect behavior or a runtime failure. When designing a base class, you should therefore avoid using <code class="code" id="-p1dfee_56">open</code> members in the constructors, property initializers, or <code class="code" id="-p1dfee_57">init</code> blocks.</p></section><section class="chapter"><h2 id="calling-the-superclass-implementation" data-toc="calling-the-superclass-implementation">Calling the superclass implementation</h2><p id="-p1dfee_58">Code in a derived class can call its superclass functions and property accessor implementations using the <code class="code" id="-p1dfee_62">super</code> keyword:</p><div class="code-block" data-lang="kotlin">
+</div><p id="d0ztar_54">This means that when the base class constructor is executed, the properties declared or overridden in the derived class have not yet been initialized. Using any of those properties in the base class initialization logic (either directly or indirectly through another overridden <code class="code" id="d0ztar_55">open</code> member implementation) may lead to incorrect behavior or a runtime failure. When designing a base class, you should therefore avoid using <code class="code" id="d0ztar_56">open</code> members in the constructors, property initializers, or <code class="code" id="d0ztar_57">init</code> blocks.</p></section><section class="chapter"><h2 id="calling-the-superclass-implementation" data-toc="calling-the-superclass-implementation">Calling the superclass implementation</h2><p id="d0ztar_58">Code in a derived class can call its superclass functions and property accessor implementations using the <code class="code" id="d0ztar_62">super</code> keyword:</p><div class="code-block" data-lang="kotlin">
 open class Rectangle {
     open fun draw() { println(&quot;Drawing a rectangle&quot;) }
     val borderColor: String get() = &quot;black&quot;
@@ -110,7 +110,7 @@ class FilledRectangle : Rectangle() {
 
     val fillColor: String get() = super.borderColor
 }
-</div><p id="-p1dfee_60">Inside an inner class, accessing the superclass of the outer class is done using the <code class="code" id="-p1dfee_63">super</code> keyword qualified with the outer class name: <code class="code" id="-p1dfee_64">super@Outer</code>:</p><div class="code-block" data-lang="kotlin" data-runnable="true">
+</div><p id="d0ztar_60">Inside an inner class, accessing the superclass of the outer class is done using the <code class="code" id="d0ztar_63">super</code> keyword qualified with the outer class name: <code class="code" id="d0ztar_64">super@Outer</code>:</p><div class="code-block" data-lang="kotlin" data-runnable="true">
 open class Rectangle {
     open fun draw() { println(&quot;Drawing a rectangle&quot;) }
     val borderColor: String get() = &quot;black&quot;
@@ -138,7 +138,7 @@ fun main() {
     val fr = FilledRectangle()
         fr.draw()
 }
-</div></section><section class="chapter"><h2 id="overriding-rules" data-toc="overriding-rules">Overriding rules</h2><p id="-p1dfee_65">In Kotlin, implementation inheritance is regulated by the following rule: if a class inherits multiple implementations of the same member from its immediate superclasses, it must override this member and provide its own implementation (perhaps, using one of the inherited ones).</p><p id="-p1dfee_66">To denote the supertype from which the inherited implementation is taken, use <code class="code" id="-p1dfee_69">super</code> qualified by the supertype name in angle brackets, such as <code class="code" id="-p1dfee_70">super&lt;Base&gt;</code>:</p><div class="code-block" data-lang="kotlin">
+</div></section><section class="chapter"><h2 id="overriding-rules" data-toc="overriding-rules">Overriding rules</h2><p id="d0ztar_65">In Kotlin, implementation inheritance is regulated by the following rule: if a class inherits multiple implementations of the same member from its immediate superclasses, it must override this member and provide its own implementation (perhaps, using one of the inherited ones).</p><p id="d0ztar_66">To denote the supertype from which the inherited implementation is taken, use <code class="code" id="d0ztar_69">super</code> qualified by the supertype name in angle brackets, such as <code class="code" id="d0ztar_70">super&lt;Base&gt;</code>:</p><div class="code-block" data-lang="kotlin">
 open class Rectangle {
     open fun draw() { /* ... */ }
 }
@@ -154,4 +154,4 @@ class Square() : Rectangle(), Polygon {
         super&lt;Polygon&gt;.draw() // call to Polygon.draw()
     }
 }
-</div><p id="-p1dfee_68">It's fine to inherit from both <code class="code" id="-p1dfee_71">Rectangle</code> and <code class="code" id="-p1dfee_72">Polygon</code>, but both of them have their implementations of <code class="code" id="-p1dfee_73">draw()</code>, so you need to override <code class="code" id="-p1dfee_74">draw()</code> in <code class="code" id="-p1dfee_75">Square</code> and provide a separate implementation for it to eliminate the ambiguity.</p></section><div class="last-modified">29 July 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="classes.html" class="navigation-links__prev">Classes</a><a href="properties.html" class="navigation-links__next">Properties</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>
+</div><p id="d0ztar_68">It's fine to inherit from both <code class="code" id="d0ztar_71">Rectangle</code> and <code class="code" id="d0ztar_72">Polygon</code>, but both of them have their implementations of <code class="code" id="d0ztar_73">draw()</code>, so you need to override <code class="code" id="d0ztar_74">draw()</code> in <code class="code" id="d0ztar_75">Square</code> and provide a separate implementation for it to eliminate the ambiguity.</p></section><div class="last-modified">30 July 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="classes.html" class="navigation-links__prev">Classes</a><a href="properties.html" class="navigation-links__next">Properties</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>

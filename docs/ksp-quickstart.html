@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-07-29T19:03:01.206448323"><link rel="canonical" href="https://kotlinlang.org/docs/ksp-quickstart.html" data-react-helmet="true"><script>
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-07-30T17:33:02.489098723"><link rel="canonical" href="https://kotlinlang.org/docs/ksp-quickstart.html" data-react-helmet="true"><script>
     (function (w, d, s, l, i) {
         w[l] = w[l] || [];
         w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
@@ -24,25 +24,25 @@
     "@id": "https://kotlinlang.org/docs/#website",
     "url": "https://kotlinlang.org/docs/",
     "name": "Kotlin Help"
-}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="ksp-quickstart" data-main-title="KSP quickstart" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Compiler and plugins///Kotlin Symbol Processing API" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/ksp/ksp-quickstart.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="ksp-quickstart" id="ksp-quickstart.md">KSP quickstart</h1><p id="ox15zw_2">For a quick start, you can create your own processor or get a <a href="https://github.com/google/ksp/tree/main/examples/playground" id="ox15zw_8" data-external="true" rel="noopener noreferrer" target="_blank">sample one</a>.</p><section class="chapter"><h2 id="add-a-processor" data-toc="add-a-processor">Add a processor</h2><p id="ox15zw_9">To add a processor, you need to include the KSP Gradle Plugin and add a dependency on the processor:</p><ol class="list _decimal" id="ox15zw_10" type="1"><li class="list__item" id="ox15zw_13"><p id="ox15zw_16">Add the KSP Gradle Plugin <code class="code" id="ox15zw_18">com.google.devtools.ksp</code> to your <code class="code" id="ox15zw_19">build.gradle(.kts)</code> file:</p><div class="tabs" id="ox15zw_17" data-group="build-script" data-anchors="[ox15zw_20,ox15zw_21]"><div class="tabs__content" data-gtm="tab" id="ox15zw_20" data-sync-tabs="kotlin" data-title="Kotlin"><div class="code-block" data-lang="kotlin" data-title="Kotlin">
+}</script><!-- End Schema.org --><style>a[href="test-page.html"] { visibility: hidden; }</style></head><body data-id="ksp-quickstart" data-main-title="KSP quickstart" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Compiler and plugins///Kotlin Symbol Processing API" data-edit-url="https://github.com/JetBrains/kotlin-web-site/edit/master/docs/topics/ksp/ksp-quickstart.md"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Kotlin  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="ksp-quickstart" id="ksp-quickstart.md">KSP quickstart</h1><p id="xxm9bn_2">For a quick start, you can create your own processor or get a <a href="https://github.com/google/ksp/tree/main/examples/playground" id="xxm9bn_8" data-external="true" rel="noopener noreferrer" target="_blank">sample one</a>.</p><section class="chapter"><h2 id="add-a-processor" data-toc="add-a-processor">Add a processor</h2><p id="xxm9bn_9">To add a processor, you need to include the KSP Gradle Plugin and add a dependency on the processor:</p><ol class="list _decimal" id="xxm9bn_10" type="1"><li class="list__item" id="xxm9bn_13"><p id="xxm9bn_16">Add the KSP Gradle Plugin <code class="code" id="xxm9bn_18">com.google.devtools.ksp</code> to your <code class="code" id="xxm9bn_19">build.gradle(.kts)</code> file:</p><div class="tabs" id="xxm9bn_17" data-group="build-script" data-anchors="[xxm9bn_20,xxm9bn_21]"><div class="tabs__content" data-gtm="tab" id="xxm9bn_20" data-sync-tabs="kotlin" data-title="Kotlin"><div class="code-block" data-lang="kotlin" data-title="Kotlin">
 plugins {
     id(&quot;com.google.devtools.ksp&quot;) version &quot;2.2.0-2.0.2&quot;
 }
-</div></div><div class="tabs__content" data-gtm="tab" id="ox15zw_21" data-sync-tabs="groovy" data-title="Groovy"><div class="code-block" data-lang="groovy" data-title="Groovy">
+</div></div><div class="tabs__content" data-gtm="tab" id="xxm9bn_21" data-sync-tabs="groovy" data-title="Groovy"><div class="code-block" data-lang="groovy" data-title="Groovy">
 plugins {
     id 'com.google.devtools.ksp' version '2.2.0-2.0.2'
 }
-</div></div></div></li><li class="list__item" id="ox15zw_14"><p id="ox15zw_24">Add a dependency on the processor. This example uses <a href="https://dagger.dev/dev-guide/ksp.html" id="ox15zw_26" data-external="true" rel="noopener noreferrer" target="_blank">Dagger</a>. Replace it with the processor you want to add.</p><div class="tabs" id="ox15zw_25" data-group="build-script" data-anchors="[ox15zw_27,ox15zw_28]"><div class="tabs__content" data-gtm="tab" id="ox15zw_27" data-sync-tabs="kotlin" data-title="Kotlin"><div class="code-block" data-lang="kotlin" data-title="Kotlin">
+</div></div></div></li><li class="list__item" id="xxm9bn_14"><p id="xxm9bn_24">Add a dependency on the processor. This example uses <a href="https://dagger.dev/dev-guide/ksp.html" id="xxm9bn_26" data-external="true" rel="noopener noreferrer" target="_blank">Dagger</a>. Replace it with the processor you want to add.</p><div class="tabs" id="xxm9bn_25" data-group="build-script" data-anchors="[xxm9bn_27,xxm9bn_28]"><div class="tabs__content" data-gtm="tab" id="xxm9bn_27" data-sync-tabs="kotlin" data-title="Kotlin"><div class="code-block" data-lang="kotlin" data-title="Kotlin">
 dependencies {
     implementation(&quot;com.google.dagger:dagger-compiler:2.51.1&quot;)
     ksp(&quot;com.google.dagger:dagger-compiler:2.51.1&quot;)
 }
-</div></div><div class="tabs__content" data-gtm="tab" id="ox15zw_28" data-sync-tabs="groovy" data-title="Groovy"><div class="code-block" data-lang="groovy" data-title="Groovy">
+</div></div><div class="tabs__content" data-gtm="tab" id="xxm9bn_28" data-sync-tabs="groovy" data-title="Groovy"><div class="code-block" data-lang="groovy" data-title="Groovy">
 dependencies {
     implementation 'com.google.dagger:dagger-compiler:2.51.1'
     ksp 'com.google.dagger:dagger-compiler:2.51.1'
 }
-</div></div></div></li><li class="list__item" id="ox15zw_15"><p id="ox15zw_31">Run <code class="code" id="ox15zw_32">./gradlew build</code>. You can find the generated code in the <code class="code" id="ox15zw_33">build/generated/ksp</code> directory.</p></li></ol><p id="ox15zw_11">Here is a full example:</p><div class="tabs" id="ox15zw_12" data-group="build-script" data-anchors="[ox15zw_34,ox15zw_35]"><div class="tabs__content" data-gtm="tab" id="ox15zw_34" data-sync-tabs="kotlin" data-title="Kotlin"><div class="code-block" data-lang="kotlin" data-title="Kotlin">
+</div></div></div></li><li class="list__item" id="xxm9bn_15"><p id="xxm9bn_31">Run <code class="code" id="xxm9bn_32">./gradlew build</code>. You can find the generated code in the <code class="code" id="xxm9bn_33">build/generated/ksp</code> directory.</p></li></ol><p id="xxm9bn_11">Here is a full example:</p><div class="tabs" id="xxm9bn_12" data-group="build-script" data-anchors="[xxm9bn_34,xxm9bn_35]"><div class="tabs__content" data-gtm="tab" id="xxm9bn_34" data-sync-tabs="kotlin" data-title="Kotlin"><div class="code-block" data-lang="kotlin" data-title="Kotlin">
 plugins {
     id(&quot;com.google.devtools.ksp&quot;) version &quot;2.2.0-2.0.2&quot;
     kotlin(&quot;jvm&quot;)
@@ -57,7 +57,7 @@ dependencies {
     implementation(&quot;com.google.dagger:dagger-compiler:2.51.1&quot;)
     ksp(&quot;com.google.dagger:dagger-compiler:2.51.1&quot;)
 }
-</div></div><div class="tabs__content" data-gtm="tab" id="ox15zw_35" data-sync-tabs="groovy" data-title="Groovy"><div class="code-block" data-lang="groovy" data-title="Groovy">
+</div></div><div class="tabs__content" data-gtm="tab" id="xxm9bn_35" data-sync-tabs="groovy" data-title="Groovy"><div class="code-block" data-lang="groovy" data-title="Groovy">
 plugins {
     id 'com.google.devtools.ksp' version '2.2.0-2.0.2'
     id 'org.jetbrains.kotlin.jvm' version '2.2.0'
@@ -72,7 +72,7 @@ dependencies {
     implementation 'com.google.dagger:dagger-compiler:2.51.1'
     ksp 'com.google.dagger:dagger-compiler:2.51.1'
 }
-</div></div></div></section><section class="chapter"><h2 id="create-a-processor-of-your-own" data-toc="create-a-processor-of-your-own">Create a processor of your own</h2><ol class="list _decimal" id="ox15zw_38" type="1"><li class="list__item" id="ox15zw_39"><p id="ox15zw_44">Create an empty gradle project.</p></li><li class="list__item" id="ox15zw_40"><p id="ox15zw_45">Specify version <code class="code" id="ox15zw_47">2.2.0</code> of the Kotlin plugin in the root project for use in other project modules:</p><div class="tabs" id="ox15zw_46" data-group="build-script" data-anchors="[ox15zw_48,ox15zw_49]"><div class="tabs__content" data-gtm="tab" id="ox15zw_48" data-sync-tabs="kotlin" data-title="Kotlin"><div class="code-block" data-lang="kotlin" data-title="Kotlin">
+</div></div></div></section><section class="chapter"><h2 id="create-a-processor-of-your-own" data-toc="create-a-processor-of-your-own">Create a processor of your own</h2><ol class="list _decimal" id="xxm9bn_38" type="1"><li class="list__item" id="xxm9bn_39"><p id="xxm9bn_44">Create an empty gradle project.</p></li><li class="list__item" id="xxm9bn_40"><p id="xxm9bn_45">Specify version <code class="code" id="xxm9bn_47">2.2.0</code> of the Kotlin plugin in the root project for use in other project modules:</p><div class="tabs" id="xxm9bn_46" data-group="build-script" data-anchors="[xxm9bn_48,xxm9bn_49]"><div class="tabs__content" data-gtm="tab" id="xxm9bn_48" data-sync-tabs="kotlin" data-title="Kotlin"><div class="code-block" data-lang="kotlin" data-title="Kotlin">
 plugins {
     kotlin(&quot;jvm&quot;) version &quot;2.2.0&quot; apply false
 }
@@ -82,7 +82,7 @@ buildscript {
         classpath(kotlin(&quot;gradle-plugin&quot;, version = &quot;2.2.0&quot;))
     }
 }
-</div></div><div class="tabs__content" data-gtm="tab" id="ox15zw_49" data-sync-tabs="groovy" data-title="Groovy"><div class="code-block" data-lang="groovy" data-title="Groovy">
+</div></div><div class="tabs__content" data-gtm="tab" id="xxm9bn_49" data-sync-tabs="groovy" data-title="Groovy"><div class="code-block" data-lang="groovy" data-title="Groovy">
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '2.2.0' apply false
 }
@@ -92,7 +92,7 @@ buildscript {
         classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:2.2.0'
     }
 }
-</div></div></div></li><li class="list__item" id="ox15zw_41"><p id="ox15zw_52">Add a module for hosting the processor.</p></li><li class="list__item" id="ox15zw_42"><p id="ox15zw_53">In the module's build script, apply Kotlin plugin and add the KSP API to the <code class="code" id="ox15zw_55">dependencies</code> block.</p><div class="tabs" id="ox15zw_54" data-group="build-script" data-anchors="[ox15zw_56,ox15zw_57]"><div class="tabs__content" data-gtm="tab" id="ox15zw_56" data-sync-tabs="kotlin" data-title="Kotlin"><div class="code-block" data-lang="kotlin" data-title="Kotlin">
+</div></div></div></li><li class="list__item" id="xxm9bn_41"><p id="xxm9bn_52">Add a module for hosting the processor.</p></li><li class="list__item" id="xxm9bn_42"><p id="xxm9bn_53">In the module's build script, apply Kotlin plugin and add the KSP API to the <code class="code" id="xxm9bn_55">dependencies</code> block.</p><div class="tabs" id="xxm9bn_54" data-group="build-script" data-anchors="[xxm9bn_56,xxm9bn_57]"><div class="tabs__content" data-gtm="tab" id="xxm9bn_56" data-sync-tabs="kotlin" data-title="Kotlin"><div class="code-block" data-lang="kotlin" data-title="Kotlin">
 plugins {
     kotlin(&quot;jvm&quot;)
 }
@@ -104,7 +104,7 @@ repositories {
 dependencies {
     implementation(&quot;com.google.devtools.ksp:symbol-processing-api:2.2.0-2.0.2&quot;)
 }
-</div></div><div class="tabs__content" data-gtm="tab" id="ox15zw_57" data-sync-tabs="groovy" data-title="Groovy"><div class="code-block" data-lang="groovy" data-title="Groovy">
+</div></div><div class="tabs__content" data-gtm="tab" id="xxm9bn_57" data-sync-tabs="groovy" data-title="Groovy"><div class="code-block" data-lang="groovy" data-title="Groovy">
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '2.2.0'
 }
@@ -116,19 +116,19 @@ repositories {
 dependencies {
     implementation 'com.google.devtools.ksp:symbol-processing-api:2.2.0-2.0.2'
 }
-</div></div></div></li><li class="list__item" id="ox15zw_43"><p id="ox15zw_60">You'll need to implement <a href="https://github.com/google/ksp/tree/main/api/src/main/kotlin/com/google/devtools/ksp/processing/SymbolProcessor.kt" id="ox15zw_62" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="ox15zw_66">com.google.devtools.ksp.processing.SymbolProcessor</code></a> and <a href="https://github.com/google/ksp/tree/main/api/src/main/kotlin/com/google/devtools/ksp/processing/SymbolProcessorProvider.kt" id="ox15zw_63" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="ox15zw_67">com.google.devtools.ksp.processing.SymbolProcessorProvider</code></a>. Your implementation of <code class="code" id="ox15zw_64">SymbolProcessorProvider</code> will be loaded as a service to instantiate the <code class="code" id="ox15zw_65">SymbolProcessor</code> you implement. Note the following:</p><ul class="list _bullet" id="ox15zw_61"><li class="list__item" id="ox15zw_68"><p id="ox15zw_74">Implement <a href="https://github.com/google/ksp/blob/master/api/src/main/kotlin/com/google/devtools/ksp/processing/SymbolProcessorProvider.kt" id="ox15zw_75" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="ox15zw_79">SymbolProcessorProvider.create()</code></a> to create a <code class="code" id="ox15zw_76">SymbolProcessor</code>. Pass dependencies that your processor needs (such as <code class="code" id="ox15zw_77">CodeGenerator</code>, processor options) through the parameters of <code class="code" id="ox15zw_78">SymbolProcessorProvider.create()</code>.</p></li><li class="list__item" id="ox15zw_69"><p id="ox15zw_80">Your main logic should be in the <a href="https://github.com/google/ksp/blob/master/api/src/main/kotlin/com/google/devtools/ksp/processing/SymbolProcessor.kt" id="ox15zw_81" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="ox15zw_82">SymbolProcessor.process()</code></a> method.</p></li><li class="list__item" id="ox15zw_70"><p id="ox15zw_83">Use <code class="code" id="ox15zw_84">resolver.getSymbolsWithAnnotation()</code> to get the symbols you want to process, given the fully-qualified name of an annotation.</p></li><li class="list__item" id="ox15zw_71"><p id="ox15zw_85">A common use case for KSP is to implement a customized visitor (interface <code class="code" id="ox15zw_86">com.google.devtools.ksp.symbol.KSVisitor</code>) for operating on symbols. A simple template visitor is <code class="code" id="ox15zw_87">com.google.devtools.ksp.symbol.KSDefaultVisitor</code>.</p></li><li class="list__item" id="ox15zw_72"><p id="ox15zw_88">For sample implementations of the <code class="code" id="ox15zw_90">SymbolProcessorProvider</code> and <code class="code" id="ox15zw_91">SymbolProcessor</code> interfaces, see the following files in the sample project.</p><ul class="list _bullet" id="ox15zw_89"><li class="list__item" id="ox15zw_92"><p id="ox15zw_94"><code class="code" id="ox15zw_95">src/main/kotlin/BuilderProcessor.kt</code></p></li><li class="list__item" id="ox15zw_93"><p id="ox15zw_96"><code class="code" id="ox15zw_97">src/main/kotlin/TestProcessor.kt</code></p></li></ul></li><li class="list__item" id="ox15zw_73"><p id="ox15zw_98">After writing your own processor, register your processor provider to the package by including its fully-qualified name in <code class="code" id="ox15zw_99">src/main/resources/META-INF/services/com.google.devtools.ksp.processing.SymbolProcessorProvider</code>.</p></li></ul></li></ol></section><section class="chapter"><h2 id="use-your-own-processor-in-a-project" data-toc="use-your-own-processor-in-a-project">Use your own processor in a project</h2><ol class="list _decimal" id="ox15zw_100" type="1"><li class="list__item" id="ox15zw_103"><p id="ox15zw_106">Create another module that contains a workload where you want to try out your processor.</p><div class="tabs" id="ox15zw_107" data-group="build-script" data-anchors="[ox15zw_108,ox15zw_109]"><div class="tabs__content" data-gtm="tab" id="ox15zw_108" data-sync-tabs="kotlin" data-title="Kotlin"><div class="code-block" data-lang="kotlin" data-title="Kotlin">
+</div></div></div></li><li class="list__item" id="xxm9bn_43"><p id="xxm9bn_60">You'll need to implement <a href="https://github.com/google/ksp/tree/main/api/src/main/kotlin/com/google/devtools/ksp/processing/SymbolProcessor.kt" id="xxm9bn_62" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="xxm9bn_66">com.google.devtools.ksp.processing.SymbolProcessor</code></a> and <a href="https://github.com/google/ksp/tree/main/api/src/main/kotlin/com/google/devtools/ksp/processing/SymbolProcessorProvider.kt" id="xxm9bn_63" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="xxm9bn_67">com.google.devtools.ksp.processing.SymbolProcessorProvider</code></a>. Your implementation of <code class="code" id="xxm9bn_64">SymbolProcessorProvider</code> will be loaded as a service to instantiate the <code class="code" id="xxm9bn_65">SymbolProcessor</code> you implement. Note the following:</p><ul class="list _bullet" id="xxm9bn_61"><li class="list__item" id="xxm9bn_68"><p id="xxm9bn_74">Implement <a href="https://github.com/google/ksp/blob/master/api/src/main/kotlin/com/google/devtools/ksp/processing/SymbolProcessorProvider.kt" id="xxm9bn_75" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="xxm9bn_79">SymbolProcessorProvider.create()</code></a> to create a <code class="code" id="xxm9bn_76">SymbolProcessor</code>. Pass dependencies that your processor needs (such as <code class="code" id="xxm9bn_77">CodeGenerator</code>, processor options) through the parameters of <code class="code" id="xxm9bn_78">SymbolProcessorProvider.create()</code>.</p></li><li class="list__item" id="xxm9bn_69"><p id="xxm9bn_80">Your main logic should be in the <a href="https://github.com/google/ksp/blob/master/api/src/main/kotlin/com/google/devtools/ksp/processing/SymbolProcessor.kt" id="xxm9bn_81" data-external="true" rel="noopener noreferrer" target="_blank"><code class="code" id="xxm9bn_82">SymbolProcessor.process()</code></a> method.</p></li><li class="list__item" id="xxm9bn_70"><p id="xxm9bn_83">Use <code class="code" id="xxm9bn_84">resolver.getSymbolsWithAnnotation()</code> to get the symbols you want to process, given the fully-qualified name of an annotation.</p></li><li class="list__item" id="xxm9bn_71"><p id="xxm9bn_85">A common use case for KSP is to implement a customized visitor (interface <code class="code" id="xxm9bn_86">com.google.devtools.ksp.symbol.KSVisitor</code>) for operating on symbols. A simple template visitor is <code class="code" id="xxm9bn_87">com.google.devtools.ksp.symbol.KSDefaultVisitor</code>.</p></li><li class="list__item" id="xxm9bn_72"><p id="xxm9bn_88">For sample implementations of the <code class="code" id="xxm9bn_90">SymbolProcessorProvider</code> and <code class="code" id="xxm9bn_91">SymbolProcessor</code> interfaces, see the following files in the sample project.</p><ul class="list _bullet" id="xxm9bn_89"><li class="list__item" id="xxm9bn_92"><p id="xxm9bn_94"><code class="code" id="xxm9bn_95">src/main/kotlin/BuilderProcessor.kt</code></p></li><li class="list__item" id="xxm9bn_93"><p id="xxm9bn_96"><code class="code" id="xxm9bn_97">src/main/kotlin/TestProcessor.kt</code></p></li></ul></li><li class="list__item" id="xxm9bn_73"><p id="xxm9bn_98">After writing your own processor, register your processor provider to the package by including its fully-qualified name in <code class="code" id="xxm9bn_99">src/main/resources/META-INF/services/com.google.devtools.ksp.processing.SymbolProcessorProvider</code>.</p></li></ul></li></ol></section><section class="chapter"><h2 id="use-your-own-processor-in-a-project" data-toc="use-your-own-processor-in-a-project">Use your own processor in a project</h2><ol class="list _decimal" id="xxm9bn_100" type="1"><li class="list__item" id="xxm9bn_103"><p id="xxm9bn_106">Create another module that contains a workload where you want to try out your processor.</p><div class="tabs" id="xxm9bn_107" data-group="build-script" data-anchors="[xxm9bn_108,xxm9bn_109]"><div class="tabs__content" data-gtm="tab" id="xxm9bn_108" data-sync-tabs="kotlin" data-title="Kotlin"><div class="code-block" data-lang="kotlin" data-title="Kotlin">
 pluginManagement { 
     repositories { 
         gradlePluginPortal()
     }
 }
-</div></div><div class="tabs__content" data-gtm="tab" id="ox15zw_109" data-sync-tabs="groovy" data-title="Groovy"><div class="code-block" data-lang="groovy" data-title="Groovy">
+</div></div><div class="tabs__content" data-gtm="tab" id="xxm9bn_109" data-sync-tabs="groovy" data-title="Groovy"><div class="code-block" data-lang="groovy" data-title="Groovy">
 pluginManagement {
     repositories {
         gradlePluginPortal()
     }
 }
-</div></div></div></li><li class="list__item" id="ox15zw_104"><p id="ox15zw_112">In the module's build script, apply the <code class="code" id="ox15zw_114">com.google.devtools.ksp</code> plugin with the specified version and add your processor to the list of dependencies.</p><div class="tabs" id="ox15zw_113" data-group="build-script" data-anchors="[ox15zw_115,ox15zw_116]"><div class="tabs__content" data-gtm="tab" id="ox15zw_115" data-sync-tabs="kotlin" data-title="Kotlin"><div class="code-block" data-lang="kotlin" data-title="Kotlin">
+</div></div></div></li><li class="list__item" id="xxm9bn_104"><p id="xxm9bn_112">In the module's build script, apply the <code class="code" id="xxm9bn_114">com.google.devtools.ksp</code> plugin with the specified version and add your processor to the list of dependencies.</p><div class="tabs" id="xxm9bn_113" data-group="build-script" data-anchors="[xxm9bn_115,xxm9bn_116]"><div class="tabs__content" data-gtm="tab" id="xxm9bn_115" data-sync-tabs="kotlin" data-title="Kotlin"><div class="code-block" data-lang="kotlin" data-title="Kotlin">
 plugins {
     id(&quot;com.google.devtools.ksp&quot;) version &quot;2.2.0-2.0.2&quot;
 }
@@ -138,7 +138,7 @@ dependencies {
     implementation(project(&quot;:test-processor&quot;))
     ksp(project(&quot;:test-processor&quot;))
 }
-</div></div><div class="tabs__content" data-gtm="tab" id="ox15zw_116" data-sync-tabs="groovy" data-title="Groovy"><div class="code-block" data-lang="groovy" data-title="Groovy">
+</div></div><div class="tabs__content" data-gtm="tab" id="xxm9bn_116" data-sync-tabs="groovy" data-title="Groovy"><div class="code-block" data-lang="groovy" data-title="Groovy">
 plugins {
     id 'com.google.devtools.ksp' version '2.2.0-2.0.2'
 }
@@ -148,7 +148,7 @@ dependencies {
     implementation project(':test-processor')
     ksp project(':test-processor')
 }
-</div></div></div></li><li class="list__item" id="ox15zw_105"><p id="ox15zw_119">Run <code class="code" id="ox15zw_120">./gradlew build</code>. You can find the generated code under <code class="code" id="ox15zw_121">build/generated/ksp</code>.</p></li></ol><p id="ox15zw_101">Here's a sample build script to apply the KSP plugin to a workload:</p><div class="tabs" id="ox15zw_102" data-group="build-script" data-anchors="[ox15zw_122,ox15zw_123]"><div class="tabs__content" data-gtm="tab" id="ox15zw_122" data-sync-tabs="kotlin" data-title="Kotlin"><div class="code-block" data-lang="kotlin" data-title="Kotlin">
+</div></div></div></li><li class="list__item" id="xxm9bn_105"><p id="xxm9bn_119">Run <code class="code" id="xxm9bn_120">./gradlew build</code>. You can find the generated code under <code class="code" id="xxm9bn_121">build/generated/ksp</code>.</p></li></ol><p id="xxm9bn_101">Here's a sample build script to apply the KSP plugin to a workload:</p><div class="tabs" id="xxm9bn_102" data-group="build-script" data-anchors="[xxm9bn_122,xxm9bn_123]"><div class="tabs__content" data-gtm="tab" id="xxm9bn_122" data-sync-tabs="kotlin" data-title="Kotlin"><div class="code-block" data-lang="kotlin" data-title="Kotlin">
 plugins {
     id(&quot;com.google.devtools.ksp&quot;) version &quot;2.2.0-2.0.2&quot;
     kotlin(&quot;jvm&quot;) 
@@ -163,7 +163,7 @@ dependencies {
     implementation(project(&quot;:test-processor&quot;))
     ksp(project(&quot;:test-processor&quot;))
 }
-</div></div><div class="tabs__content" data-gtm="tab" id="ox15zw_123" data-sync-tabs="groovy" data-title="Groovy"><div class="code-block" data-lang="groovy" data-title="Groovy">
+</div></div><div class="tabs__content" data-gtm="tab" id="xxm9bn_123" data-sync-tabs="groovy" data-title="Groovy"><div class="code-block" data-lang="groovy" data-title="Groovy">
 plugins {
     id 'com.google.devtools.ksp' version '2.2.0-2.0.2'
     id 'org.jetbrains.kotlin.jvm' version '2.2.0'
@@ -178,18 +178,18 @@ dependencies {
     implementation project(':test-processor')
     ksp project(':test-processor')
 }
-</div></div></div></section><section class="chapter"><h2 id="pass-options-to-processors" data-toc="pass-options-to-processors">Pass options to processors</h2><p id="ox15zw_126">Processor options in <code class="code" id="ox15zw_128">SymbolProcessorEnvironment.options</code> are specified in gradle build scripts:</p><div class="code-block" data-lang="none">
+</div></div></div></section><section class="chapter"><h2 id="pass-options-to-processors" data-toc="pass-options-to-processors">Pass options to processors</h2><p id="xxm9bn_126">Processor options in <code class="code" id="xxm9bn_128">SymbolProcessorEnvironment.options</code> are specified in gradle build scripts:</p><div class="code-block" data-lang="none">
 ksp {
     arg(&quot;option1&quot;, &quot;value1&quot;)
     arg(&quot;option2&quot;, &quot;value2&quot;)
     ...
 }
-</div></section><section class="chapter"><h2 id="make-ide-aware-of-generated-code" data-toc="make-ide-aware-of-generated-code">Make IDE aware of generated code</h2><aside class="prompt" data-type="note" data-title="" id="ox15zw_129"><p id="ox15zw_140">Generated source files are registered automatically since KSP 1.8.0-1.0.9. If you're using KSP 1.0.9 or newer and don't need to make the IDE aware of generated resources, feel free to skip this section.</p></aside><p id="ox15zw_130">By default, IntelliJ IDEA or other IDEs don't know about the generated code. So it will mark references to generated symbols unresolvable. To make an IDE be able to reason about the generated symbols, mark the following paths as generated source roots:</p><div class="code-block" data-lang="none">
+</div></section><section class="chapter"><h2 id="make-ide-aware-of-generated-code" data-toc="make-ide-aware-of-generated-code">Make IDE aware of generated code</h2><aside class="prompt" data-type="note" data-title="" id="xxm9bn_129"><p id="xxm9bn_140">Generated source files are registered automatically since KSP 1.8.0-1.0.9. If you're using KSP 1.0.9 or newer and don't need to make the IDE aware of generated resources, feel free to skip this section.</p></aside><p id="xxm9bn_130">By default, IntelliJ IDEA or other IDEs don't know about the generated code. So it will mark references to generated symbols unresolvable. To make an IDE be able to reason about the generated symbols, mark the following paths as generated source roots:</p><div class="code-block" data-lang="none">
 build/generated/ksp/main/kotlin/
 build/generated/ksp/main/java/
-</div><p id="ox15zw_132">If your IDE supports resource directories, also mark the following one:</p><div class="code-block" data-lang="none">
+</div><p id="xxm9bn_132">If your IDE supports resource directories, also mark the following one:</p><div class="code-block" data-lang="none">
 build/generated/ksp/main/resources/
-</div><p id="ox15zw_134">It may also be necessary to configure these directories in your KSP consumer module's build script:</p><div class="tabs" id="ox15zw_135" data-group="build-script" data-anchors="[ox15zw_141,ox15zw_142]"><div class="tabs__content" data-gtm="tab" id="ox15zw_141" data-sync-tabs="kotlin" data-title="Kotlin"><div class="code-block" data-lang="kotlin" data-title="Kotlin">
+</div><p id="xxm9bn_134">It may also be necessary to configure these directories in your KSP consumer module's build script:</p><div class="tabs" id="xxm9bn_135" data-group="build-script" data-anchors="[xxm9bn_141,xxm9bn_142]"><div class="tabs__content" data-gtm="tab" id="xxm9bn_141" data-sync-tabs="kotlin" data-title="Kotlin"><div class="code-block" data-lang="kotlin" data-title="Kotlin">
 kotlin {
     sourceSets.main {
         kotlin.srcDir(&quot;build/generated/ksp/main/kotlin&quot;)
@@ -198,18 +198,18 @@ kotlin {
         kotlin.srcDir(&quot;build/generated/ksp/test/kotlin&quot;)
     }
 }
-</div></div><div class="tabs__content" data-gtm="tab" id="ox15zw_142" data-sync-tabs="groovy" data-title="Groovy"><div class="code-block" data-lang="groovy" data-title="Groovy">
+</div></div><div class="tabs__content" data-gtm="tab" id="xxm9bn_142" data-sync-tabs="groovy" data-title="Groovy"><div class="code-block" data-lang="groovy" data-title="Groovy">
 kotlin {
     sourceSets {
         main.kotlin.srcDirs += 'build/generated/ksp/main/kotlin'
         test.kotlin.srcDirs += 'build/generated/ksp/test/kotlin'
     }
 }
-</div></div></div><p id="ox15zw_136">If you are using IntelliJ IDEA and KSP in a Gradle plugin then the above snippet will give the following warning:</p><div class="code-block" data-lang="none">
+</div></div></div><p id="xxm9bn_136">If you are using IntelliJ IDEA and KSP in a Gradle plugin then the above snippet will give the following warning:</p><div class="code-block" data-lang="none">
 Execution optimizations have been disabled for task ':publishPluginJar' to ensure correctness due to the following reasons:
 Gradle detected a problem with the following location: '../build/generated/ksp/main/kotlin'. 
 Reason: Task ':publishPluginJar' uses this output of task ':kspKotlin' without declaring an explicit or implicit dependency.
-</div><p id="ox15zw_138">In this case, use the following script instead:</p><div class="tabs" id="ox15zw_139" data-group="build-script" data-anchors="[ox15zw_145,ox15zw_146]"><div class="tabs__content" data-gtm="tab" id="ox15zw_145" data-sync-tabs="kotlin" data-title="Kotlin"><div class="code-block" data-lang="kotlin" data-title="Kotlin">
+</div><p id="xxm9bn_138">In this case, use the following script instead:</p><div class="tabs" id="xxm9bn_139" data-group="build-script" data-anchors="[xxm9bn_145,xxm9bn_146]"><div class="tabs__content" data-gtm="tab" id="xxm9bn_145" data-sync-tabs="kotlin" data-title="Kotlin"><div class="code-block" data-lang="kotlin" data-title="Kotlin">
 plugins {
     // ...
     idea
@@ -223,7 +223,7 @@ idea {
         generatedSourceDirs = generatedSourceDirs + file(&quot;build/generated/ksp/main/kotlin&quot;) + file(&quot;build/generated/ksp/test/kotlin&quot;)
     }
 }
-</div></div><div class="tabs__content" data-gtm="tab" id="ox15zw_146" data-sync-tabs="groovy" data-title="Groovy"><div class="code-block" data-lang="groovy" data-title="Groovy">
+</div></div><div class="tabs__content" data-gtm="tab" id="xxm9bn_146" data-sync-tabs="groovy" data-title="Groovy"><div class="code-block" data-lang="groovy" data-title="Groovy">
 plugins {
     // ...
     id 'idea'
@@ -237,4 +237,4 @@ idea {
         generatedSourceDirs = generatedSourceDirs + file('build/generated/ksp/main/kotlin') + file('build/generated/ksp/test/kotlin')
     }
 }
-</div></div></div></section><div class="last-modified">29 July 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="ksp-overview.html" class="navigation-links__prev">Kotlin Symbol Processing API</a><a href="ksp-why-ksp.html" class="navigation-links__next">Why KSP</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>
+</div></div></div></section><div class="last-modified">30 July 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="ksp-overview.html" class="navigation-links__prev">Kotlin Symbol Processing API</a><a href="ksp-why-ksp.html" class="navigation-links__next">Why KSP</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b776/app.js"></script></body></html>
