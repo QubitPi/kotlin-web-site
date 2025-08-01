@@ -229,25 +229,25 @@
       "name" : "Dark version of image or video file cannot be found",
       "description" : "\"\"coroutines-dump-wn_dark.png\"\" in whatsnew14.md:342:1"
     }, {
-      "id" : "VIS011---create-database-schema_dark-png---in-jvm-spring-boot-add-db-support-md-173-4",
+      "id" : "VIS011---create-database-schema_dark-png---in-jvm-spring-boot-add-db-support-md-174-4",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"create-database-schema_dark.png\"\" in jvm-spring-boot-add-db-support.md:173:4"
+      "description" : "\"\"create-database-schema_dark.png\"\" in jvm-spring-boot-add-db-support.md:174:4"
     }, {
       "id" : "VIS011---create-spring-ai-project_dark-png---in-spring-ai-guide-md-66-4",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
       "description" : "\"\"create-spring-ai-project_dark.png\"\" in spring-ai-guide.md:66:4"
     }, {
-      "id" : "VIS011---create-spring-boot-project_dark-png---in-jvm-create-project-with-spring-boot-md-54-4",
+      "id" : "VIS011---create-spring-boot-project_dark-png---in-jvm-create-project-with-spring-boot-md-55-4",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"create-spring-boot-project_dark.png\"\" in jvm-create-project-with-spring-boot.md:54:4"
+      "description" : "\"\"create-spring-boot-project_dark.png\"\" in jvm-create-project-with-spring-boot.md:55:4"
     }, {
-      "id" : "VIS011---create-test_dark-png---in-jvm-test-using-junit-md-120-4--test-page-md-357-1",
+      "id" : "VIS011---create-test_dark-png---in-jvm-test-using-junit-md-120-4--test-page-md-358-1",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"create-test_dark.png\"\" in jvm-test-using-junit.md:120:4; test-page.md:357:1"
+      "description" : "\"\"create-test_dark.png\"\" in jvm-test-using-junit.md:120:4; test-page.md:358:1"
     }, {
       "id" : "VIS011---current-layout_dark-png---in-js-react-md-361-1",
       "problemId" : "VIS011",
@@ -339,15 +339,15 @@
       "name" : "Dark version of image or video file cannot be found",
       "description" : "\"\"embedded-images-output_dark.png\"\" in data-analysis-notebooks-output-formats.md:172:1"
     }, {
-      "id" : "VIS011---execute-get-requests_dark-png---in-jvm-spring-boot-add-db-support-md-248-4",
+      "id" : "VIS011---execute-get-requests_dark-png---in-jvm-spring-boot-add-db-support-md-249-4",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"execute-get-requests_dark.png\"\" in jvm-spring-boot-add-db-support.md:248:4"
+      "description" : "\"\"execute-get-requests_dark.png\"\" in jvm-spring-boot-add-db-support.md:249:4"
     }, {
-      "id" : "VIS011---execute-post-requests_dark-png---in-jvm-spring-boot-add-db-support-md-244-4",
+      "id" : "VIS011---execute-post-requests_dark-png---in-jvm-spring-boot-add-db-support-md-245-4",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"execute-post-requests_dark.png\"\" in jvm-spring-boot-add-db-support.md:244:4"
+      "description" : "\"\"execute-post-requests_dark.png\"\" in jvm-spring-boot-add-db-support.md:245:4"
     }, {
       "id" : "VIS011---external-images-output_dark-png---in-data-analysis-notebooks-output-formats-md-160-1",
       "problemId" : "VIS011",
@@ -379,10 +379,10 @@
       "name" : "Dark version of image or video file cannot be found",
       "description" : "\"\"generate-test_dark.png\"\" in jvm-test-using-junit.md:116:4"
     }, {
-      "id" : "VIS011---get-kotlin-language-map_dark-png---in-jvm-spring-boot-using-crudrepository-md-218-1",
+      "id" : "VIS011---get-kotlin-language-map_dark-png---in-jvm-spring-boot-using-crudrepository-md-219-1",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"get-kotlin-language-map_dark.png\"\" in jvm-spring-boot-using-crudrepository.md:218:1"
+      "description" : "\"\"get-kotlin-language-map_dark.png\"\" in jvm-spring-boot-using-crudrepository.md:219:1"
     }, {
       "id" : "VIS011---get-started-coroutines_dark-svg---in-coroutines-overview-md-19-1",
       "problemId" : "VIS011",
@@ -444,60 +444,60 @@
       "name" : "Dark version of image or video file cannot be found",
       "description" : "\"\"hello-react-js_dark.png\"\" in js-react.md:176:1"
     }, {
-      "id" : "VIS011---icon-1-done_dark-svg---in-jvm-spring-boot-add-data-class-md-6-1--jvm-spring-boot-add-db-support-md-6-1--jvm-spring-boot-using-crudrepository-md-6-1--kotlin-notebook-add-dependencies-md-5-1--kotlin-notebook-create-md-5-1--kotlin-tour-basic-types-md-6-1--kotlin-tour-classes-md-6-1--kotlin-tour-collections-md-6-1--kotlin-tour-control-flow-md-6-1--kotlin-tour-functions-md-6-1--kotlin-tour-intermediate-classes-interfaces-md-6-1--kotlin-tour-intermediate-lambdas-receiver-md-6-1--kotlin-tour-intermediate-libraries-and-apis-md-6-1--kotlin-tour-intermediate-null-safety-md-6-1--kotlin-tour-intermediate-objects-md-6-1--kotlin-tour-intermediate-open-special-classes-md-6-1--kotlin-tour-intermediate-properties-md-6-1--kotlin-tour-intermediate-scope-functions-md-6-1--kotlin-tour-null-safety-md-6-1--mapping-function-pointers-from-c-md-5-1--mapping-strings-from-c-md-5-1--mapping-struct-union-types-from-c-md-5-1--test-page-md-8-1",
+      "id" : "VIS011---icon-1-done_dark-svg---in-jvm-spring-boot-add-data-class-md-7-1--jvm-spring-boot-add-db-support-md-7-1--jvm-spring-boot-using-crudrepository-md-7-1--kotlin-notebook-add-dependencies-md-5-1--kotlin-notebook-create-md-5-1--kotlin-tour-basic-types-md-6-1--kotlin-tour-classes-md-6-1--kotlin-tour-collections-md-6-1--kotlin-tour-control-flow-md-6-1--kotlin-tour-functions-md-6-1--kotlin-tour-intermediate-classes-interfaces-md-6-1--kotlin-tour-intermediate-lambdas-receiver-md-6-1--kotlin-tour-intermediate-libraries-and-apis-md-6-1--kotlin-tour-intermediate-null-safety-md-6-1--kotlin-tour-intermediate-objects-md-6-1--kotlin-tour-intermediate-open-special-classes-md-6-1--kotlin-tour-intermediate-properties-md-6-1--kotlin-tour-intermediate-scope-functions-md-6-1--kotlin-tour-null-safety-md-6-1--mapping-function-pointers-from-c-md-5-1--mapping-strings-from-c-md-5-1--mapping-struct-union-types-from-c-md-5-1--test-page-md-9-1",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"icon-1-done_dark.svg\"\" in jvm-spring-boot-add-data-class.md:6:1; jvm-spring-boot-add-db-support.md:6:1; jvm-spring-boot-using-crudrepository.md:6:1; kotlin-notebook-add-dependencies.md:5:1; kotlin-notebook-create.md:5:1; kotlin-tour-basic-types.md:6:1; kotlin-tour-classes.md:6:1; kotlin-tour-collections.md:6:1; kotlin-tour-control-flow.md:6:1; kotlin-tour-functions.md:6:1; kotlin-tour-intermediate-classes-interfaces.md:6:1; kotlin-tour-intermediate-lambdas-receiver.md:6:1; kotlin-tour-intermediate-libraries-and-apis.md:6:1; kotlin-tour-intermediate-null-safety.md:6:1; kotlin-tour-intermediate-objects.md:6:1; kotlin-tour-intermediate-open-special-classes.md:6:1; kotlin-tour-intermediate-properties.md:6:1; kotlin-tour-intermediate-scope-functions.md:6:1; kotlin-tour-null-safety.md:6:1; mapping-function-pointers-from-c.md:5:1; mapping-strings-from-c.md:5:1; mapping-struct-union-types-from-c.md:5:1; test-page.md:8:1"
+      "description" : "\"\"icon-1-done_dark.svg\"\" in jvm-spring-boot-add-data-class.md:7:1; jvm-spring-boot-add-db-support.md:7:1; jvm-spring-boot-using-crudrepository.md:7:1; kotlin-notebook-add-dependencies.md:5:1; kotlin-notebook-create.md:5:1; kotlin-tour-basic-types.md:6:1; kotlin-tour-classes.md:6:1; kotlin-tour-collections.md:6:1; kotlin-tour-control-flow.md:6:1; kotlin-tour-functions.md:6:1; kotlin-tour-intermediate-classes-interfaces.md:6:1; kotlin-tour-intermediate-lambdas-receiver.md:6:1; kotlin-tour-intermediate-libraries-and-apis.md:6:1; kotlin-tour-intermediate-null-safety.md:6:1; kotlin-tour-intermediate-objects.md:6:1; kotlin-tour-intermediate-open-special-classes.md:6:1; kotlin-tour-intermediate-properties.md:6:1; kotlin-tour-intermediate-scope-functions.md:6:1; kotlin-tour-null-safety.md:6:1; mapping-function-pointers-from-c.md:5:1; mapping-strings-from-c.md:5:1; mapping-struct-union-types-from-c.md:5:1; test-page.md:9:1"
     }, {
-      "id" : "VIS011---icon-1_dark-svg---in-get-started-with-kotlin-notebooks-md-9-1--jvm-create-project-with-spring-boot-md-6-1--jvm-get-started-spring-boot-md-9-1--kotlin-notebook-set-up-env-md-5-1--kotlin-tour-hello-world-md-6-1--kotlin-tour-intermediate-extension-functions-md-6-1--mapping-primitive-data-types-from-c-md-5-1",
+      "id" : "VIS011---icon-1_dark-svg---in-get-started-with-kotlin-notebooks-md-9-1--jvm-create-project-with-spring-boot-md-7-1--jvm-get-started-spring-boot-md-10-1--kotlin-notebook-set-up-env-md-5-1--kotlin-tour-hello-world-md-6-1--kotlin-tour-intermediate-extension-functions-md-6-1--mapping-primitive-data-types-from-c-md-5-1",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"icon-1_dark.svg\"\" in get-started-with-kotlin-notebooks.md:9:1; jvm-create-project-with-spring-boot.md:6:1; jvm-get-started-spring-boot.md:9:1; kotlin-notebook-set-up-env.md:5:1; kotlin-tour-hello-world.md:6:1; kotlin-tour-intermediate-extension-functions.md:6:1; mapping-primitive-data-types-from-c.md:5:1"
+      "description" : "\"\"icon-1_dark.svg\"\" in get-started-with-kotlin-notebooks.md:9:1; jvm-create-project-with-spring-boot.md:7:1; jvm-get-started-spring-boot.md:10:1; kotlin-notebook-set-up-env.md:5:1; kotlin-tour-hello-world.md:6:1; kotlin-tour-intermediate-extension-functions.md:6:1; mapping-primitive-data-types-from-c.md:5:1"
     }, {
-      "id" : "VIS011---icon-2-done_dark-svg---in-jvm-spring-boot-add-db-support-md-6-1--jvm-spring-boot-using-crudrepository-md-6-1--kotlin-notebook-add-dependencies-md-6-1--kotlin-tour-classes-md-7-1--kotlin-tour-collections-md-7-1--kotlin-tour-control-flow-md-7-1--kotlin-tour-functions-md-7-1--kotlin-tour-intermediate-classes-interfaces-md-7-1--kotlin-tour-intermediate-lambdas-receiver-md-7-1--kotlin-tour-intermediate-libraries-and-apis-md-7-1--kotlin-tour-intermediate-null-safety-md-7-1--kotlin-tour-intermediate-objects-md-7-1--kotlin-tour-intermediate-open-special-classes-md-7-1--kotlin-tour-intermediate-properties-md-7-1--kotlin-tour-null-safety-md-7-1--mapping-function-pointers-from-c-md-6-1--mapping-strings-from-c-md-6-1--test-page-md-9-1",
+      "id" : "VIS011---icon-2-done_dark-svg---in-jvm-spring-boot-add-db-support-md-7-1--jvm-spring-boot-using-crudrepository-md-7-1--kotlin-notebook-add-dependencies-md-6-1--kotlin-tour-classes-md-7-1--kotlin-tour-collections-md-7-1--kotlin-tour-control-flow-md-7-1--kotlin-tour-functions-md-7-1--kotlin-tour-intermediate-classes-interfaces-md-7-1--kotlin-tour-intermediate-lambdas-receiver-md-7-1--kotlin-tour-intermediate-libraries-and-apis-md-7-1--kotlin-tour-intermediate-null-safety-md-7-1--kotlin-tour-intermediate-objects-md-7-1--kotlin-tour-intermediate-open-special-classes-md-7-1--kotlin-tour-intermediate-properties-md-7-1--kotlin-tour-null-safety-md-7-1--mapping-function-pointers-from-c-md-6-1--mapping-strings-from-c-md-6-1--test-page-md-10-1",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"icon-2-done_dark.svg\"\" in jvm-spring-boot-add-db-support.md:6:1; jvm-spring-boot-using-crudrepository.md:6:1; kotlin-notebook-add-dependencies.md:6:1; kotlin-tour-classes.md:7:1; kotlin-tour-collections.md:7:1; kotlin-tour-control-flow.md:7:1; kotlin-tour-functions.md:7:1; kotlin-tour-intermediate-classes-interfaces.md:7:1; kotlin-tour-intermediate-lambdas-receiver.md:7:1; kotlin-tour-intermediate-libraries-and-apis.md:7:1; kotlin-tour-intermediate-null-safety.md:7:1; kotlin-tour-intermediate-objects.md:7:1; kotlin-tour-intermediate-open-special-classes.md:7:1; kotlin-tour-intermediate-properties.md:7:1; kotlin-tour-null-safety.md:7:1; mapping-function-pointers-from-c.md:6:1; mapping-strings-from-c.md:6:1; test-page.md:9:1"
+      "description" : "\"\"icon-2-done_dark.svg\"\" in jvm-spring-boot-add-db-support.md:7:1; jvm-spring-boot-using-crudrepository.md:7:1; kotlin-notebook-add-dependencies.md:6:1; kotlin-tour-classes.md:7:1; kotlin-tour-collections.md:7:1; kotlin-tour-control-flow.md:7:1; kotlin-tour-functions.md:7:1; kotlin-tour-intermediate-classes-interfaces.md:7:1; kotlin-tour-intermediate-lambdas-receiver.md:7:1; kotlin-tour-intermediate-libraries-and-apis.md:7:1; kotlin-tour-intermediate-null-safety.md:7:1; kotlin-tour-intermediate-objects.md:7:1; kotlin-tour-intermediate-open-special-classes.md:7:1; kotlin-tour-intermediate-properties.md:7:1; kotlin-tour-null-safety.md:7:1; mapping-function-pointers-from-c.md:6:1; mapping-strings-from-c.md:6:1; test-page.md:10:1"
     }, {
-      "id" : "VIS011---icon-2-todo_dark-svg---in-jvm-create-project-with-spring-boot-md-6-1--kotlin-notebook-set-up-env-md-6-1--kotlin-tour-hello-world-md-7-1--kotlin-tour-intermediate-extension-functions-md-7-1--mapping-primitive-data-types-from-c-md-6-1",
+      "id" : "VIS011---icon-2-todo_dark-svg---in-jvm-create-project-with-spring-boot-md-7-1--kotlin-notebook-set-up-env-md-6-1--kotlin-tour-hello-world-md-7-1--kotlin-tour-intermediate-extension-functions-md-7-1--mapping-primitive-data-types-from-c-md-6-1",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"icon-2-todo_dark.svg\"\" in jvm-create-project-with-spring-boot.md:6:1; kotlin-notebook-set-up-env.md:6:1; kotlin-tour-hello-world.md:7:1; kotlin-tour-intermediate-extension-functions.md:7:1; mapping-primitive-data-types-from-c.md:6:1"
+      "description" : "\"\"icon-2-todo_dark.svg\"\" in jvm-create-project-with-spring-boot.md:7:1; kotlin-notebook-set-up-env.md:6:1; kotlin-tour-hello-world.md:7:1; kotlin-tour-intermediate-extension-functions.md:7:1; mapping-primitive-data-types-from-c.md:6:1"
     }, {
-      "id" : "VIS011---icon-2_dark-svg---in-get-started-with-kotlin-notebooks-md-11-1--jvm-get-started-spring-boot-md-11-1--jvm-spring-boot-add-data-class-md-6-1--kotlin-notebook-create-md-6-1--kotlin-tour-basic-types-md-7-1--kotlin-tour-intermediate-scope-functions-md-7-1--mapping-struct-union-types-from-c-md-6-1",
+      "id" : "VIS011---icon-2_dark-svg---in-get-started-with-kotlin-notebooks-md-11-1--jvm-get-started-spring-boot-md-12-1--jvm-spring-boot-add-data-class-md-7-1--kotlin-notebook-create-md-6-1--kotlin-tour-basic-types-md-7-1--kotlin-tour-intermediate-scope-functions-md-7-1--mapping-struct-union-types-from-c-md-6-1",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"icon-2_dark.svg\"\" in get-started-with-kotlin-notebooks.md:11:1; jvm-get-started-spring-boot.md:11:1; jvm-spring-boot-add-data-class.md:6:1; kotlin-notebook-create.md:6:1; kotlin-tour-basic-types.md:7:1; kotlin-tour-intermediate-scope-functions.md:7:1; mapping-struct-union-types-from-c.md:6:1"
+      "description" : "\"\"icon-2_dark.svg\"\" in get-started-with-kotlin-notebooks.md:11:1; jvm-get-started-spring-boot.md:12:1; jvm-spring-boot-add-data-class.md:7:1; kotlin-notebook-create.md:6:1; kotlin-tour-basic-types.md:7:1; kotlin-tour-intermediate-scope-functions.md:7:1; mapping-struct-union-types-from-c.md:6:1"
     }, {
-      "id" : "VIS011---icon-3-done_dark-svg---in-jvm-spring-boot-using-crudrepository-md-6-1--kotlin-tour-classes-md-8-1--kotlin-tour-control-flow-md-8-1--kotlin-tour-functions-md-8-1--kotlin-tour-intermediate-classes-interfaces-md-8-1--kotlin-tour-intermediate-libraries-and-apis-md-8-1--kotlin-tour-intermediate-null-safety-md-8-1--kotlin-tour-intermediate-objects-md-8-1--kotlin-tour-intermediate-open-special-classes-md-8-1--kotlin-tour-intermediate-properties-md-8-1--kotlin-tour-null-safety-md-8-1--mapping-strings-from-c-md-7-1",
+      "id" : "VIS011---icon-3-done_dark-svg---in-jvm-spring-boot-using-crudrepository-md-7-1--kotlin-tour-classes-md-8-1--kotlin-tour-control-flow-md-8-1--kotlin-tour-functions-md-8-1--kotlin-tour-intermediate-classes-interfaces-md-8-1--kotlin-tour-intermediate-libraries-and-apis-md-8-1--kotlin-tour-intermediate-null-safety-md-8-1--kotlin-tour-intermediate-objects-md-8-1--kotlin-tour-intermediate-open-special-classes-md-8-1--kotlin-tour-intermediate-properties-md-8-1--kotlin-tour-null-safety-md-8-1--mapping-strings-from-c-md-7-1",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"icon-3-done_dark.svg\"\" in jvm-spring-boot-using-crudrepository.md:6:1; kotlin-tour-classes.md:8:1; kotlin-tour-control-flow.md:8:1; kotlin-tour-functions.md:8:1; kotlin-tour-intermediate-classes-interfaces.md:8:1; kotlin-tour-intermediate-libraries-and-apis.md:8:1; kotlin-tour-intermediate-null-safety.md:8:1; kotlin-tour-intermediate-objects.md:8:1; kotlin-tour-intermediate-open-special-classes.md:8:1; kotlin-tour-intermediate-properties.md:8:1; kotlin-tour-null-safety.md:8:1; mapping-strings-from-c.md:7:1"
+      "description" : "\"\"icon-3-done_dark.svg\"\" in jvm-spring-boot-using-crudrepository.md:7:1; kotlin-tour-classes.md:8:1; kotlin-tour-control-flow.md:8:1; kotlin-tour-functions.md:8:1; kotlin-tour-intermediate-classes-interfaces.md:8:1; kotlin-tour-intermediate-libraries-and-apis.md:8:1; kotlin-tour-intermediate-null-safety.md:8:1; kotlin-tour-intermediate-objects.md:8:1; kotlin-tour-intermediate-open-special-classes.md:8:1; kotlin-tour-intermediate-properties.md:8:1; kotlin-tour-null-safety.md:8:1; mapping-strings-from-c.md:7:1"
     }, {
-      "id" : "VIS011---icon-3-todo_dark-svg---in-jvm-create-project-with-spring-boot-md-6-1--jvm-spring-boot-add-data-class-md-6-1--kotlin-notebook-create-md-7-1--kotlin-notebook-set-up-env-md-7-1--kotlin-tour-basic-types-md-8-1--kotlin-tour-hello-world-md-8-1--kotlin-tour-intermediate-extension-functions-md-8-1--kotlin-tour-intermediate-scope-functions-md-8-1--mapping-primitive-data-types-from-c-md-7-1--mapping-struct-union-types-from-c-md-7-1",
+      "id" : "VIS011---icon-3-todo_dark-svg---in-jvm-create-project-with-spring-boot-md-7-1--jvm-spring-boot-add-data-class-md-7-1--kotlin-notebook-create-md-7-1--kotlin-notebook-set-up-env-md-7-1--kotlin-tour-basic-types-md-8-1--kotlin-tour-hello-world-md-8-1--kotlin-tour-intermediate-extension-functions-md-8-1--kotlin-tour-intermediate-scope-functions-md-8-1--mapping-primitive-data-types-from-c-md-7-1--mapping-struct-union-types-from-c-md-7-1",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"icon-3-todo_dark.svg\"\" in jvm-create-project-with-spring-boot.md:6:1; jvm-spring-boot-add-data-class.md:6:1; kotlin-notebook-create.md:7:1; kotlin-notebook-set-up-env.md:7:1; kotlin-tour-basic-types.md:8:1; kotlin-tour-hello-world.md:8:1; kotlin-tour-intermediate-extension-functions.md:8:1; kotlin-tour-intermediate-scope-functions.md:8:1; mapping-primitive-data-types-from-c.md:7:1; mapping-struct-union-types-from-c.md:7:1"
+      "description" : "\"\"icon-3-todo_dark.svg\"\" in jvm-create-project-with-spring-boot.md:7:1; jvm-spring-boot-add-data-class.md:7:1; kotlin-notebook-create.md:7:1; kotlin-notebook-set-up-env.md:7:1; kotlin-tour-basic-types.md:8:1; kotlin-tour-hello-world.md:8:1; kotlin-tour-intermediate-extension-functions.md:8:1; kotlin-tour-intermediate-scope-functions.md:8:1; mapping-primitive-data-types-from-c.md:7:1; mapping-struct-union-types-from-c.md:7:1"
     }, {
-      "id" : "VIS011---icon-3_dark-svg---in-get-started-with-kotlin-notebooks-md-13-1--jvm-get-started-spring-boot-md-13-1--jvm-spring-boot-add-db-support-md-6-1--kotlin-notebook-add-dependencies-md-7-1--kotlin-tour-collections-md-8-1--kotlin-tour-intermediate-lambdas-receiver-md-8-1--mapping-function-pointers-from-c-md-7-1--test-page-md-10-1",
+      "id" : "VIS011---icon-3_dark-svg---in-get-started-with-kotlin-notebooks-md-13-1--jvm-get-started-spring-boot-md-14-1--jvm-spring-boot-add-db-support-md-7-1--kotlin-notebook-add-dependencies-md-7-1--kotlin-tour-collections-md-8-1--kotlin-tour-intermediate-lambdas-receiver-md-8-1--mapping-function-pointers-from-c-md-7-1--test-page-md-11-1",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"icon-3_dark.svg\"\" in get-started-with-kotlin-notebooks.md:13:1; jvm-get-started-spring-boot.md:13:1; jvm-spring-boot-add-db-support.md:6:1; kotlin-notebook-add-dependencies.md:7:1; kotlin-tour-collections.md:8:1; kotlin-tour-intermediate-lambdas-receiver.md:8:1; mapping-function-pointers-from-c.md:7:1; test-page.md:10:1"
+      "description" : "\"\"icon-3_dark.svg\"\" in get-started-with-kotlin-notebooks.md:13:1; jvm-get-started-spring-boot.md:14:1; jvm-spring-boot-add-db-support.md:7:1; kotlin-notebook-add-dependencies.md:7:1; kotlin-tour-collections.md:8:1; kotlin-tour-intermediate-lambdas-receiver.md:8:1; mapping-function-pointers-from-c.md:7:1; test-page.md:11:1"
     }, {
       "id" : "VIS011---icon-4-done_dark-svg---in-kotlin-tour-classes-md-9-1--kotlin-tour-functions-md-9-1--kotlin-tour-intermediate-libraries-and-apis-md-9-1--kotlin-tour-intermediate-null-safety-md-9-1--kotlin-tour-intermediate-objects-md-9-1--kotlin-tour-intermediate-open-special-classes-md-9-1--kotlin-tour-intermediate-properties-md-9-1--kotlin-tour-null-safety-md-9-1",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
       "description" : "\"\"icon-4-done_dark.svg\"\" in kotlin-tour-classes.md:9:1; kotlin-tour-functions.md:9:1; kotlin-tour-intermediate-libraries-and-apis.md:9:1; kotlin-tour-intermediate-null-safety.md:9:1; kotlin-tour-intermediate-objects.md:9:1; kotlin-tour-intermediate-open-special-classes.md:9:1; kotlin-tour-intermediate-properties.md:9:1; kotlin-tour-null-safety.md:9:1"
     }, {
-      "id" : "VIS011---icon-4-todo_dark-svg---in-jvm-create-project-with-spring-boot-md-6-1--jvm-spring-boot-add-data-class-md-6-1--jvm-spring-boot-add-db-support-md-6-1--kotlin-tour-basic-types-md-9-1--kotlin-tour-collections-md-9-1--kotlin-tour-hello-world-md-9-1--kotlin-tour-intermediate-extension-functions-md-9-1--kotlin-tour-intermediate-lambdas-receiver-md-9-1--kotlin-tour-intermediate-scope-functions-md-9-1--mapping-function-pointers-from-c-md-8-1--mapping-primitive-data-types-from-c-md-8-1--mapping-struct-union-types-from-c-md-8-1--test-page-md-11-1",
+      "id" : "VIS011---icon-4-todo_dark-svg---in-jvm-create-project-with-spring-boot-md-7-1--jvm-spring-boot-add-data-class-md-7-1--jvm-spring-boot-add-db-support-md-7-1--kotlin-tour-basic-types-md-9-1--kotlin-tour-collections-md-9-1--kotlin-tour-hello-world-md-9-1--kotlin-tour-intermediate-extension-functions-md-9-1--kotlin-tour-intermediate-lambdas-receiver-md-9-1--kotlin-tour-intermediate-scope-functions-md-9-1--mapping-function-pointers-from-c-md-8-1--mapping-primitive-data-types-from-c-md-8-1--mapping-struct-union-types-from-c-md-8-1--test-page-md-12-1",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"icon-4-todo_dark.svg\"\" in jvm-create-project-with-spring-boot.md:6:1; jvm-spring-boot-add-data-class.md:6:1; jvm-spring-boot-add-db-support.md:6:1; kotlin-tour-basic-types.md:9:1; kotlin-tour-collections.md:9:1; kotlin-tour-hello-world.md:9:1; kotlin-tour-intermediate-extension-functions.md:9:1; kotlin-tour-intermediate-lambdas-receiver.md:9:1; kotlin-tour-intermediate-scope-functions.md:9:1; mapping-function-pointers-from-c.md:8:1; mapping-primitive-data-types-from-c.md:8:1; mapping-struct-union-types-from-c.md:8:1; test-page.md:11:1"
+      "description" : "\"\"icon-4-todo_dark.svg\"\" in jvm-create-project-with-spring-boot.md:7:1; jvm-spring-boot-add-data-class.md:7:1; jvm-spring-boot-add-db-support.md:7:1; kotlin-tour-basic-types.md:9:1; kotlin-tour-collections.md:9:1; kotlin-tour-hello-world.md:9:1; kotlin-tour-intermediate-extension-functions.md:9:1; kotlin-tour-intermediate-lambdas-receiver.md:9:1; kotlin-tour-intermediate-scope-functions.md:9:1; mapping-function-pointers-from-c.md:8:1; mapping-primitive-data-types-from-c.md:8:1; mapping-struct-union-types-from-c.md:8:1; test-page.md:12:1"
     }, {
-      "id" : "VIS011---icon-4_dark-svg---in-jvm-get-started-spring-boot-md-15-1--jvm-spring-boot-using-crudrepository-md-6-1--kotlin-tour-control-flow-md-9-1--kotlin-tour-intermediate-classes-interfaces-md-9-1--mapping-strings-from-c-md-8-1",
+      "id" : "VIS011---icon-4_dark-svg---in-jvm-get-started-spring-boot-md-16-1--jvm-spring-boot-using-crudrepository-md-7-1--kotlin-tour-control-flow-md-9-1--kotlin-tour-intermediate-classes-interfaces-md-9-1--mapping-strings-from-c-md-8-1",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"icon-4_dark.svg\"\" in jvm-get-started-spring-boot.md:15:1; jvm-spring-boot-using-crudrepository.md:6:1; kotlin-tour-control-flow.md:9:1; kotlin-tour-intermediate-classes-interfaces.md:9:1; mapping-strings-from-c.md:8:1"
+      "description" : "\"\"icon-4_dark.svg\"\" in jvm-get-started-spring-boot.md:16:1; jvm-spring-boot-using-crudrepository.md:7:1; kotlin-tour-control-flow.md:9:1; kotlin-tour-intermediate-classes-interfaces.md:9:1; mapping-strings-from-c.md:8:1"
     }, {
       "id" : "VIS011---icon-5-done_dark-svg---in-kotlin-tour-classes-md-10-1--kotlin-tour-intermediate-libraries-and-apis-md-10-1--kotlin-tour-intermediate-null-safety-md-10-1--kotlin-tour-intermediate-open-special-classes-md-10-1--kotlin-tour-intermediate-properties-md-10-1--kotlin-tour-null-safety-md-10-1",
       "problemId" : "VIS011",
@@ -584,10 +584,10 @@
       "name" : "Dark version of image or video file cannot be found",
       "description" : "\"\"iosmain-hierarchy_dark.png\"\" in whatsnew14.md:840:1"
     }, {
-      "id" : "VIS011---java-15-multiline-output_dark-png---in-java-to-kotlin-idioms-strings-md-321-1",
+      "id" : "VIS011---java-15-multiline-output_dark-png---in-java-to-kotlin-idioms-strings-md-323-1",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"java-15-multiline-output_dark.png\"\" in java-to-kotlin-idioms-strings.md:321:1"
+      "description" : "\"\"java-15-multiline-output_dark.png\"\" in java-to-kotlin-idioms-strings.md:323:1"
     }, {
       "id" : "VIS011---join-slack-channel_dark-svg---in-wasm-get-started-md-115-1--wasm-wasi-md-125-1",
       "problemId" : "VIS011",
@@ -719,10 +719,10 @@
       "name" : "Dark version of image or video file cannot be found",
       "description" : "\"\"kotlin-logo_dark.png\"\" in kotlin-brand-assets.md:10:1"
     }, {
-      "id" : "VIS011---kotlin-multiline-output_dark-png---in-java-to-kotlin-idioms-strings-md-345-1",
+      "id" : "VIS011---kotlin-multiline-output_dark-png---in-java-to-kotlin-idioms-strings-md-347-1",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"kotlin-multiline-output_dark.png\"\" in java-to-kotlin-idioms-strings.md:345:1"
+      "description" : "\"\"kotlin-multiline-output_dark.png\"\" in java-to-kotlin-idioms-strings.md:347:1"
     }, {
       "id" : "VIS011---kotlin-night-board_dark-svg---in-kotlin-brand-assets-md-142-1",
       "problemId" : "VIS011",
@@ -809,10 +809,10 @@
       "name" : "Dark version of image or video file cannot be found",
       "description" : "\"\"kotlin-user-group_dark.png\"\" in kotlin-brand-assets.md:100:1"
     }, {
-      "id" : "VIS011---ksp-class-diagram_dark-svg---in-ksp-additional-details-md-7-1--test-page-md-369-1",
+      "id" : "VIS011---ksp-class-diagram_dark-svg---in-ksp-additional-details-md-7-1--test-page-md-370-1",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"ksp-class-diagram_dark.svg\"\" in ksp-additional-details.md:7:1; test-page.md:369:1"
+      "description" : "\"\"ksp-class-diagram_dark.svg\"\" in ksp-additional-details.md:7:1; test-page.md:370:1"
     }, {
       "id" : "VIS011---latex-output_dark-png---in-data-analysis-notebooks-output-formats-md-190-4",
       "problemId" : "VIS011",
@@ -859,20 +859,20 @@
       "name" : "Dark version of image or video file cannot be found",
       "description" : "\"\"mascot-in-action_dark.png\"\" in kotlin-brand-assets.md:40:1"
     }, {
-      "id" : "VIS011---messages-in-json-format_dark-png---in-jvm-spring-boot-add-data-class-md-171-5",
+      "id" : "VIS011---messages-in-json-format_dark-png---in-jvm-spring-boot-add-data-class-md-172-5",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"messages-in-json-format_dark.png\"\" in jvm-spring-boot-add-data-class.md:171:5"
+      "description" : "\"\"messages-in-json-format_dark.png\"\" in jvm-spring-boot-add-data-class.md:172:5"
     }, {
       "id" : "VIS011---migration-inspection-wn_dark-png---in-whatsnew14-md-1518-1",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
       "description" : "\"\"migration-inspection-wn_dark.png\"\" in whatsnew14.md:1518:1"
     }, {
-      "id" : "VIS011---multiplatform-create-project-button_dark-png---in-test-page-md-373-1--whatsnew1920-md-580-1",
+      "id" : "VIS011---multiplatform-create-project-button_dark-png---in-test-page-md-374-1--whatsnew1920-md-580-1",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"multiplatform-create-project-button_dark.png\"\" in test-page.md:373:1; whatsnew1920.md:580:1"
+      "description" : "\"\"multiplatform-create-project-button_dark.png\"\" in test-page.md:374:1; whatsnew1920.md:580:1"
     }, {
       "id" : "VIS011---multiplatform-hierarchy-completion_dark-animated-gif---in-whatsnew1920-md-457-1",
       "problemId" : "VIS011",
@@ -894,10 +894,10 @@
       "name" : "Dark version of image or video file cannot be found",
       "description" : "\"\"multiplatform-project-2-wn_dark.png\"\" in whatsnew14.md:304:1"
     }, {
-      "id" : "VIS011---multiplatform-web-wizard_dark-png---in-test-page-md-353-1--whatsnew1920-md-555-1",
+      "id" : "VIS011---multiplatform-web-wizard_dark-png---in-test-page-md-354-1--whatsnew1920-md-555-1",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"multiplatform-web-wizard_dark.png\"\" in test-page.md:353:1; whatsnew1920.md:555:1"
+      "description" : "\"\"multiplatform-web-wizard_dark.png\"\" in test-page.md:354:1; whatsnew1920.md:555:1"
     }, {
       "id" : "VIS011---native-gc-signposts_dark-png---in-native-memory-manager-md-66-4",
       "problemId" : "VIS011",
@@ -974,10 +974,10 @@
       "name" : "Dark version of image or video file cannot be found",
       "description" : "\"\"original-dataset_dark.png\"\" in data-analysis-work-with-data-sources.md:128:1"
     }, {
-      "id" : "VIS011---passing-null-to-function_dark-png---in-java-to-kotlin-nullability-guide-md-73-1",
+      "id" : "VIS011---passing-null-to-function_dark-png---in-java-to-kotlin-nullability-guide-md-75-1",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"passing-null-to-function_dark.png\"\" in java-to-kotlin-nullability-guide.md:73:1"
+      "description" : "\"\"passing-null-to-function_dark.png\"\" in java-to-kotlin-nullability-guide.md:75:1"
     }, {
       "id" : "VIS011---plain-text-output_dark-png---in-data-analysis-notebooks-output-formats-md-63-1",
       "problemId" : "VIS011",
@@ -1049,10 +1049,10 @@
       "name" : "Dark version of image or video file cannot be found",
       "description" : "\"\"results-of-expanding-group-data-analysis_dark.png\"\" in data-analysis-work-with-api.md:187:1"
     }, {
-      "id" : "VIS011---retrieve-message-by-its-id_dark-png---in-jvm-spring-boot-add-db-support-md-494-5",
+      "id" : "VIS011---retrieve-message-by-its-id_dark-png---in-jvm-spring-boot-add-db-support-md-495-5",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"retrieve-message-by-its-id_dark.png\"\" in jvm-spring-boot-add-db-support.md:494:5"
+      "description" : "\"\"retrieve-message-by-its-id_dark.png\"\" in jvm-spring-boot-add-db-support.md:495:5"
     }, {
       "id" : "VIS011---return-to-grouped-dataset_dark-png---in-data-analysis-work-with-api-md-191-1",
       "problemId" : "VIS011",
@@ -1084,10 +1084,10 @@
       "name" : "Dark version of image or video file cannot be found",
       "description" : "\"\"run-migration-wn_dark.png\"\" in whatsnew14.md:1513:1"
     }, {
-      "id" : "VIS011---run-spring-boot-application_dark-png---in-jvm-create-project-with-spring-boot-md-255-5",
+      "id" : "VIS011---run-spring-boot-application_dark-png---in-jvm-create-project-with-spring-boot-md-256-5",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"run-spring-boot-application_dark.png\"\" in jvm-create-project-with-spring-boot.md:255:5"
+      "description" : "\"\"run-spring-boot-application_dark.png\"\" in jvm-create-project-with-spring-boot.md:256:5"
     }, {
       "id" : "VIS011---run-test_dark-png---in-jvm-test-using-junit-md-154-4",
       "problemId" : "VIS011",
@@ -1154,15 +1154,15 @@
       "name" : "Dark version of image or video file cannot be found",
       "description" : "\"\"sequence-processing_dark.svg\"\" in sequences.md:180:1"
     }, {
-      "id" : "VIS011---set-up-spring-boot-project_dark-png---in-jvm-create-project-with-spring-boot-md-64-4",
+      "id" : "VIS011---set-up-spring-boot-project_dark-png---in-jvm-create-project-with-spring-boot-md-65-4",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"set-up-spring-boot-project_dark.png\"\" in jvm-create-project-with-spring-boot.md:64:4"
+      "description" : "\"\"set-up-spring-boot-project_dark.png\"\" in jvm-create-project-with-spring-boot.md:65:4"
     }, {
-      "id" : "VIS011---slack_dark-svg---in-getting-started-md-95-5--jvm-get-started-spring-boot-md-31-3--wasm-debugging-md-213-3--wasm-overview-md-94-3--wasm-overview-md-99-3",
+      "id" : "VIS011---slack_dark-svg---in-getting-started-md-95-5--jvm-get-started-spring-boot-md-32-3--wasm-debugging-md-213-3--wasm-overview-md-94-3--wasm-overview-md-99-3",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"slack_dark.svg\"\" in getting-started.md:95:5; jvm-get-started-spring-boot.md:31:3; wasm-debugging.md:213:3; wasm-overview.md:94:3; wasm-overview.md:99:3"
+      "description" : "\"\"slack_dark.svg\"\" in getting-started.md:95:5; jvm-get-started-spring-boot.md:32:3; wasm-debugging.md:213:3; wasm-overview.md:94:3; wasm-overview.md:99:3"
     }, {
       "id" : "VIS011---social-buttons_dark-png---in-js-react-md-1024-1",
       "problemId" : "VIS011",
@@ -1184,20 +1184,20 @@
       "name" : "Dark version of image or video file cannot be found",
       "description" : "\"\"spring-ai-project-view_dark.png\"\" in spring-ai-guide.md:87:1"
     }, {
-      "id" : "VIS011---spring-application-response_dark-png---in-jvm-create-project-with-spring-boot-md-271-5",
+      "id" : "VIS011---spring-application-response_dark-png---in-jvm-create-project-with-spring-boot-md-272-5",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"spring-application-response_dark.png\"\" in jvm-create-project-with-spring-boot.md:271:5"
+      "description" : "\"\"spring-application-response_dark.png\"\" in jvm-create-project-with-spring-boot.md:272:5"
     }, {
-      "id" : "VIS011---spring-boot-project-view_dark-png---in-jvm-create-project-with-spring-boot-md-74-4",
+      "id" : "VIS011---spring-boot-project-view_dark-png---in-jvm-create-project-with-spring-boot-md-75-4",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"spring-boot-project-view_dark.png\"\" in jvm-create-project-with-spring-boot.md:74:4"
+      "description" : "\"\"spring-boot-project-view_dark.png\"\" in jvm-create-project-with-spring-boot.md:75:4"
     }, {
-      "id" : "VIS011---stackoverflow_dark-svg---in-getting-started-md-96-5--jvm-get-started-spring-boot-md-32-3",
+      "id" : "VIS011---stackoverflow_dark-svg---in-getting-started-md-96-5--jvm-get-started-spring-boot-md-33-3",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"stackoverflow_dark.svg\"\" in getting-started.md:96:5; jvm-get-started-spring-boot.md:32:3"
+      "description" : "\"\"stackoverflow_dark.svg\"\" in getting-started.md:96:5; jvm-get-started-spring-boot.md:33:3"
     }, {
       "id" : "VIS011---start-beginner-tour_dark-svg---in-kotlin-tour-welcome-md-16-1",
       "problemId" : "VIS011",
@@ -1449,15 +1449,15 @@
       "name" : "Dark version of image or video file cannot be found",
       "description" : "\"\"xcode-swift-export-run-script-phase_dark.png\"\" in whatsnew-eap.md:240:3; whatsnew21.md:694:4"
     }, {
-      "id" : "VIS011---youtrack-logo_dark-png---in-test-page-md-365-1",
+      "id" : "VIS011---youtrack-logo_dark-png---in-test-page-md-366-1",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"youtrack-logo_dark.png\"\" in test-page.md:365:1"
+      "description" : "\"\"youtrack-logo_dark.png\"\" in test-page.md:366:1"
     }, {
-      "id" : "VIS011---youtube_dark-svg---in-advent-of-code-md-104-1--advent-of-code-md-115-1--advent-of-code-md-125-1--advent-of-code-md-136-1--advent-of-code-md-145-1--advent-of-code-md-161-1--advent-of-code-md-171-1--advent-of-code-md-181-1--advent-of-code-md-191-1--advent-of-code-md-208-1--advent-of-code-md-219-1--advent-of-code-md-230-1--advent-of-code-md-241-1--advent-of-code-md-252-1--advent-of-code-md-263-1--advent-of-code-md-275-1--advent-of-code-md-287-1--advent-of-code-md-298-1--advent-of-code-md-33-1--advent-of-code-md-43-1--advent-of-code-md-55-1--advent-of-code-md-65-1--advent-of-code-md-75-1--advent-of-code-md-85-1--advent-of-code-md-94-1--getting-started-md-97-20--jvm-get-started-spring-boot-md-33-3",
+      "id" : "VIS011---youtube_dark-svg---in-advent-of-code-md-104-1--advent-of-code-md-115-1--advent-of-code-md-125-1--advent-of-code-md-136-1--advent-of-code-md-145-1--advent-of-code-md-161-1--advent-of-code-md-171-1--advent-of-code-md-181-1--advent-of-code-md-191-1--advent-of-code-md-208-1--advent-of-code-md-219-1--advent-of-code-md-230-1--advent-of-code-md-241-1--advent-of-code-md-252-1--advent-of-code-md-263-1--advent-of-code-md-275-1--advent-of-code-md-287-1--advent-of-code-md-298-1--advent-of-code-md-33-1--advent-of-code-md-43-1--advent-of-code-md-55-1--advent-of-code-md-65-1--advent-of-code-md-75-1--advent-of-code-md-85-1--advent-of-code-md-94-1--getting-started-md-97-20--jvm-get-started-spring-boot-md-34-3",
       "problemId" : "VIS011",
       "name" : "Dark version of image or video file cannot be found",
-      "description" : "\"\"youtube_dark.svg\"\" in advent-of-code.md:104:1; advent-of-code.md:115:1; advent-of-code.md:125:1; advent-of-code.md:136:1; advent-of-code.md:145:1; advent-of-code.md:161:1; advent-of-code.md:171:1; advent-of-code.md:181:1; advent-of-code.md:191:1; advent-of-code.md:208:1; advent-of-code.md:219:1; advent-of-code.md:230:1; advent-of-code.md:241:1; advent-of-code.md:252:1; advent-of-code.md:263:1; advent-of-code.md:275:1; advent-of-code.md:287:1; advent-of-code.md:298:1; advent-of-code.md:33:1; advent-of-code.md:43:1; advent-of-code.md:55:1; advent-of-code.md:65:1; advent-of-code.md:75:1; advent-of-code.md:85:1; advent-of-code.md:94:1; getting-started.md:97:20; jvm-get-started-spring-boot.md:33:3"
+      "description" : "\"\"youtube_dark.svg\"\" in advent-of-code.md:104:1; advent-of-code.md:115:1; advent-of-code.md:125:1; advent-of-code.md:136:1; advent-of-code.md:145:1; advent-of-code.md:161:1; advent-of-code.md:171:1; advent-of-code.md:181:1; advent-of-code.md:191:1; advent-of-code.md:208:1; advent-of-code.md:219:1; advent-of-code.md:230:1; advent-of-code.md:241:1; advent-of-code.md:252:1; advent-of-code.md:263:1; advent-of-code.md:275:1; advent-of-code.md:287:1; advent-of-code.md:298:1; advent-of-code.md:33:1; advent-of-code.md:43:1; advent-of-code.md:55:1; advent-of-code.md:65:1; advent-of-code.md:75:1; advent-of-code.md:85:1; advent-of-code.md:94:1; getting-started.md:97:20; jvm-get-started-spring-boot.md:34:3"
     } ]
   },
   "testsErrors" : {
